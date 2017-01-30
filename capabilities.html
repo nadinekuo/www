@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="head.js" type="text/javascript">
+  </script>
+  <title>Capabilities</title>
+</head>
+<body id="about">
+  <script src="menu.js" type="text/javascript"></script>
+  <div class="container">
+    <div class="row">
+      <div class="section col-xs-12" data-shorthand="About the ET">
+        <a class='local_anchor' id="about"></a>
+        <h1>Capabilities of the Einstein Toolkit</h1>
+      </div>
+      <div class="col-xs-12">
+          <h2>Vacuum Spacetimes</h2>
+          <p>Evolution of vacuum spacetime is provided by the McLachlan code. McLachlan solves the Einstein vacuum equations in 3D Cartesian coordinates using adaptive mesh refinement
+          and can be combined with matter codes for modeling spacetimes containing matter. McLachlan is implemented using the Kranc package. Features of McLachlan include:</p>
+          <ul>
+            <li>complete implementation of the BSSNOK general relativity spacetime evolution equations including all the standard tricks that ensures stability</li>
+            <li>up-winding for the shift advection terms</li>
+            <li>standard moving puncture Gamma-driver and 1 + log gauges</li>
+            <li>phi- and W- methods</li>
+            <li>static and radiative outer boundary conditions</li>
+            <li>inclusion of matter through the TmunuBase interface</li>
+            <li>up to 8th order finite differencing</li>
+            <li>OpenMP parallelization through Carpet/LoopControl in addition to MPI parallelization through Carpet</li>
+            <li>multi-block code infrastructures by applying the Jacobian to transform local derivatives to global derivatives</li>
+          </ul>
+          <h2 style="word-wrap: break-word;"><b>Relativistic Magneto&#8203;hydrodynamics</b></h2>
+          <h3>GRHydro</h3>
+          <p>The Einstein Toolkit GRHydro modules can evolve spacetimes with general relativistic hydrodynamics in 3D Cartesian coordinates. GRHydro was once based on the public
+          version of the <a href="http://www.whiskycode.org/">Whisky code</a> developed originally by the EU Network on Sources of Gravitational Radiation and later by a collaboration
+          led by AEI/SISSA, but was later expanded and cleaned up considerably. Features of GRHydro include at the moment:</p>
+          <ul>
+            <li>Evolution of the equations of general relativistic magneto-hydrodynamics (GRMHD) in 3D Cartesian coordinates on a curved dynamical background.</li>
+          </ul>
+          <h3>IllinoisGRMHD</h3>
+          <p>IllinoisGRMHD solves the equations of General Relativistic MagnetoHydroDynamics (GRMHD) using a high-resolution shock capturing scheme. It is a rewrite of the Illinois
+          Numerical Relativity (ILNR) group's GRMHD code, and generates results that agree to roundoff error with that original code. Its feature set coincides with the features of the
+          ILNR group's recent code (ca. 2009--2014), which was used in their modeling of the following systems:</p>
+          <ul>
+            <li>Magnetized circumbinary disk accretion onto binary black holes</li>
+            <li>Magnetized black hole--neutron star mergers</li>
+            <li>Magnetized Bondi flow, Bondi-Hoyle-Littleton accretion</li>
+            <li>White dwarf--neutron star mergers</li>
+          </ul>
+          <p>IllinoisGRMHD is particularly good at modeling GRMHD flows into black holes without the need for excision. Its HARM-based conservative-to-primitive solver has also been
+          modified to check the physicality of conservative variables prior to primitive inversion, and move them into the physical range if they become unphysical.</p>
+          <h2>Initial Data</h2>
+          <ul>
+            <li>Single and binary black holes</li>
+            <li>Single TOV stars</li>
+            <li>LORENE data</li>
+          </ul>
+          <h2>Relativity Tools</h2>
+          <ul>
+            <li>Apparent horizon finding</li>
+            <li>Black hole excision</li>
+          </ul>
+          <h2>Analysis</h2>
+          <ul>
+            <li>TrK, det(g), R_ab, R</li>
+            <li>ADM constraint violation</li>
+            <li>Basic hydrodynamics analysis routines</li>
+            <li>Extraction of gravitational waves</li>
+          </ul>
+          <h2>Computational Infrastructure</h2>
+          <ul>
+            <li>Adaptive mesh refinement</li>
+            <li>Reflection and rotation symmetry boundary conditions</li>
+            <li>Radiation boundary conditions</li>
+            <li>Flexible Cartesian 3-D meshes</li>
+            <li>Multidimensional I/O using HDF5, ASCII, Jpegs</li>
+            <li>Method of lines time integration</li>
+            <li>Courant time steeping</li>
+            <li>Seamless use of BLAS, GSL, HDF5, LAPACK</li>
+          </ul>
+          <h2>Tools</h2>
+          <ul>
+            <li>Checking for NaNs</li>
+            <li>Memory poisoning to identify uninitialized variables</li>
+            <li>Timing report by thorn, schedule bin, and method</li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <script src="footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

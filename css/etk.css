@@ -1,6 +1,6 @@
 body {
   background-color: #CCE1FF;
-  padding-top: 70px;
+  padding-top: 50px;
 }
 
 #seminars, td, th  {
@@ -80,16 +80,14 @@ text-decoration: none;
   text-decoration: none;
 }
 
-.nav > li > a.main-menu-noleftpadding {
-  padding-left: 0;
-}
-.nav > li > a.main-menu-norightpadding {
-  padding-right: 0;
-}
-
 .listmenu {
   background-color: #222;
   text-align: center;
+}
+
+.nav > li > a.main-menu {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .dropdown-menu > .active > a {
@@ -210,6 +208,10 @@ hr.members {
 
 ul.members {
   margin-bottom : 0;
+}
+
+.btn-warning {
+  background: #f36831;
 }
 
 @media only screen and (min-width: 992px) {}

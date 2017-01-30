@@ -57,16 +57,7 @@ document.write(''+
 ''+
 '    <ul class="nav navbar-nav">'+
 '      <li ><a class="main-menu text" href="'+root+'index.html">Home</a></li>'+
-'      <li ><a class="main-menu text main-menu-norightpadding" href="'+root+'about.html">About</a></li>'+
-'      <li class="dropdown main-menu" >'+
-'        <a class="dropdown-toggle text main-menu-noleftpadding" data-toggle="dropdown" href="'+root+'about.html">'+
-'        <span class="caret"></span></a>'+
-'        <ul class="listmenu dropdown-menu" role="menu">'+
-'          <li class="main-menu"><a href="'+root+'about.html#about">Index</a></li>'+
-'          <li class="main-menu"><a href="'+root+'about.html#capabilities">Capabilities</a></li>'+
-'          <li class="main-menu"><a href="'+root+'about.html#guidelines">Guidelines</a></li>'+
-'        </ul>'+
-'      </li>'+
+'      <li ><a class="main-menu text" href="'+root+'about.html">About</a></li>'+
 '      <li ><a  class="main-menu" href="'+root+'download.html">Download</a></li>'+
 '      <li ><a  class="main-menu" href="'+root+'documentation.html">Documentation</a></li>'+
 '      <li ><a  class="main-menu" href="'+root+'contribute.html">Contribute</a></li>'+
