@@ -1,0 +1,776 @@
+#!/usr/bin/perl -W
+use List::Util qw(min max);
+use strict;
+my $pi = 3.14159265358979;
+
+# Define parameter space
+my $r_sonic = 8.0; 
+my $eos_gamma = 4./3.;
+my @accretion_rate=( 12.5663706143592, 2*12.5663706143592 ); # Sample two ... small and large
+my @mag_field = ( 0, 11.391320826888, 11.391320826888/2); 
+my @spacetime_coords = ( "Kerr-Schild" ); # or "Isotropic"
+my @resolutions = ( 100, 150 ); # Points per grid, in radius
+my $task = "evo";  # id or evo
+
+# force usage of MHD even for B=0?
+my $forceMHD = 1;
+
+# evolve magnetic filed using?
+my $bvec_evolution_method = "constraint transport"; #, "divergence cleaning"
+
+# reset everything outside of r_inner<r<r_outer to ID values at each step?
+my $evolve_only_annulus = "yes";
+
+# Loop over parameter space and generate parfile
+print "Generating the following parameter files:\n";
+my ( $mdot, $bmag, $coords, $radial_offset, $npts );
+$radial_offset = 0.0;
+foreach $mdot (@accretion_rate) {
+   foreach $bmag (@mag_field) {
+      foreach $coords (@spacetime_coords) {
+         foreach $npts (@resolutions) {
+
+           
+            my $parfile_name = "MBondi_B".sprintf("%.2f",$bmag).
+                                     "_Mdot".sprintf("%.2f",$mdot).
+                                     "_Npts".$npts;
+            if ( $coords eq "Isotropic" ) {
+               $parfile_name .= "_Iso.par";
+            } else {
+               $parfile_name .= "_Sch.par";
+            }
+            print "\t$parfile_name:\t\tB=$bmag, dot(m)=$mdot in $coords\n";
+
+####################
+## Grid Structure ##
+####################
+
+my $h = 11./$npts;
+my $levels = 1;
+
+           my $max_level = $levels-1;
+           my @rflevels = (0 .. $max_level);
+           my @spacing = (0 .. $max_level);
+           my $CarpetRegrid2_Center1_Radii = "";
+           my $Grid_Info_Lines = "#    RF       Extent      Spacing\n";
+           for ( my $lvl=0; $lvl<$levels; $lvl++ ) {
+               my $level_exp = $levels - ($lvl+1); 
+               $rflevels[$lvl]=($h*$npts)*(2**$level_exp);
+               # move level where sonic point happened further out
+               #if($lvl == 2) {    
+               #  $rflevels[2] = "$rflevels[$lvl]*1.5";
+               #}
+               $spacing[$lvl] = $h*(2**$level_exp);
+               if ( $lvl > 0 ) { 
+                  $CarpetRegrid2_Center1_Radii .= "CarpetRegrid2::radius_1[$lvl] = $rflevels[$lvl]\n";
+               }
+               $Grid_Info_Lines .= "#    $lvl\t\t$rflevels[$lvl]\t$spacing[$lvl]\n";
+           }
+
+#####################
+## Grid Symmetries ##
+#####################
+my $reflectx="no";
+my $reflecty="no";
+my $reflectz="no";
+my $rotate180="no";
+my $rotate90="yes";
+
+           # Process the above options
+           my $xmin_shiftout = 0;
+           my $ymin_shiftout = 0;
+           my $zmin_shiftout = 0;
+           my $xmin = -$rflevels[0];
+           my $ymin = -$rflevels[0];
+           my $zmin = -$rflevels[0];
+           my $rotatethorn = "";
+           my $zstagger = 0.;
+
+           if ($reflectx eq "yes") {
+               $xmin_shiftout = 1; 
+               $xmin = 0;
+           }
+           if ($reflecty eq "yes") {
+               $ymin_shiftout = 1; 
+               $ymin = 0;
+           }
+           if ($reflectz eq "yes") {
+               $zmin_shiftout = 1;
+               $zmin = 0;
+           }
+           if ($rotate180 eq "yes") {
+               $rotatethorn = "RotatingSymmetry180";
+               # Almost reflectx
+               $xmin = 0;
+               $xmin_shiftout = 1;
+           }
+           if ($rotate90 eq "yes") {
+               $rotatethorn = "RotatingSymmetry90";
+               # Almost reflectx and reflecty
+               $xmin = 0;
+               $xmin_shiftout = 1;
+               $ymin = 0;
+               $ymin_shiftout = 1;
+           }
+           if ( $coords eq "Kerr-Schild" ) {
+               $zstagger = $spacing[-1]/2.;
+           }
+
+           $Grid_Info_Lines .= "#    Reflections=($reflectx,$reflecty,$reflectz) $rotatethorn";
+
+#############################
+## Initial Data, Spacetime ##
+#############################
+
+my ($spacetime_id, $initial_bh_radius);
+      if ( $coords eq "Isotropic" ) {
+         $spacetime_id = "twopunctures";
+         $initial_bh_radius = 0.5;
+      } else {
+         $spacetime_id = "kerr-schild"; # twopunctures, kerr-schild
+         $initial_bh_radius = 2.0-$radial_offset;
+      }
+
+      my $Initial_Spacetime_Pars = "";
+      my $boodi_id_coords = $coords;
+      my ($spacetime_id_thorns);
+      if ( $spacetime_id eq "twopunctures" ) {
+
+         $spacetime_id_thorns = "TwoPunctures";
+         $Initial_Spacetime_Pars = <<END;
+ADMBase::metric_type   = "physical"
+ADMBase::initial_data  = "twopunctures"
+ADMBase::initial_lapse = "twopunctures-averaged"
+ADMBase::initial_shift = "zero"
+ADMBase::initial_dtlapse = "zero"
+ADMBase::initial_dtshift = "zero"
+
+TwoPunctures::npoints_A         = 15
+TwoPunctures::npoints_B         = 15
+TwoPunctures::npoints_phi       = 14
+TwoPunctures::Newton_tol        = 1.e-10
+#TwoPunctures::grid_setup_method = "evaluation"
+TwoPunctures::grid_setup_method = "Taylor expansion"
+
+TwoPunctures::par_b             = 1.0
+TwoPunctures::par_m_plus        = 1.0
+TwoPunctures::par_m_minus       = 0.0
+
+TwoPunctures::Newton_maxit      = 10
+TwoPunctures::TP_Tiny           = 1.e-10
+TwoPunctures::center_offset[0]  = -1.0
+TwoPunctures::center_offset[1]  = 0
+TwoPunctures::center_offset[2]  = 0
+END
+
+      } elsif ( $spacetime_id eq "kerr-schild" ) {
+
+         $spacetime_id_thorns = "Exact CoordGauge";
+         $Initial_Spacetime_Pars = <<END;
+ADMBase::initial_data="exact"
+ADMBase::initial_lapse="exact"
+ADMBase::initial_dtlapse="exact"
+ADMBase::initial_shift="exact"
+ADMBase::initial_dtshift="exact"
+# not evolving is much faster than having Exact reset the data all the time
+# however it only works well for unigrid runs since it applis the boundary
+# condition to the metric variables
+ADMBase::evolution_method="static"
+ADMBase::lapse_evolution_method="static"
+ADMBase::shift_evolution_method="static"
+ADMBase::dtlapse_evolution_method="static"
+ADMBase::dtshift_evolution_method="static"
+Exact::overwrite_boundary = "exact"
+ADMBase::admbase_boundary_condition = "none"
+
+Exact::exact_model="Kerr/Kerr-Schild"
+Exact::Kerr_KerrSchild__mass=1.
+Exact::Kerr_KerrSchild__spin=0.
+Exact::Kerr_KerrSchild__epsilon=$radial_offset
+Exact::Kerr_KerrSchild__power=1
+
+END
+
+      } else {
+        print "Bad spacetime initial data.\n";
+        die;
+      }
+
+
+##########################
+## Initial Data, Matter ##
+##########################
+
+      my $initial_matter;
+      if ( $forceMHD or $bmag > 0 ) { 
+           $initial_matter="magnetized_bondi_solution"; 
+      } else { 
+           $initial_matter="hydro_bondi_solution"; 
+      }
+      if ( $coords eq "Isotropic" ) { $initial_matter.="_iso"; }
+      my $matter_id_thorns = "GRHydro_InitData";
+      my $Initial_Matter_Pars = <<END;
+HydroBase::initial_hydro         = "$initial_matter"
+
+GRHydro_InitData::mdot_sonicpt_bondi = $mdot
+GRHydro_InitData::r_sonicpt_bondi    = $r_sonic
+GRHydro_InitData::bondi_bmag          = $bmag
+GRHydro_InitData::bondi_radial_offset= $radial_offset
+GRHydro_InitData::bondi_coordinates  = "$coords"
+GRHydro_InitData::bondi_evolve_only_annulus = "$evolve_only_annulus"
+GRHydro_InitData::bondi_Bvec_method = "direct"
+GRHydro_InitData::bondi_overwrite_boundary = "yes"
+GRHydro_InitData::bondi_freeze_inner_radius = 1
+GRHydro_InitData::bondi_freeze_outer_radius = 250
+GRHydro_InitData::bondi_rmax[0]      = 2*$rflevels[0]
+GRHydro_InitData::bondi_rmin[0]      = 1e-1
+END
+
+##########################
+## Evolution, Spacetime ##
+##########################
+
+my ($spacetime_evo, $diss_vars); 
+      if ( $coords eq "Isotropic" ) {
+         $spacetime_evo = "McLachlan";
+      } else {
+         $spacetime_evo = "Exact";  # McLachlan or Exact
+      }
+
+      my $spacetime_thorns = "";
+      my $spacetime_evolution_lines = "";
+      if ( $spacetime_evo eq "Exact" ) {
+         $diss_vars = "";
+         ## Do nothing.
+      } elsif ( $spacetime_evo eq "McLachlan" ) {
+
+         $spacetime_thorns = "ML_BSSN ML_BSSN_Helper NewRad";
+         $spacetime_evolution_lines = <<END;
+ADMBase::evolution_method        = "ML_BSSN"
+ADMBase::lapse_evolution_method  = "ML_BSSN"
+ADMBase::shift_evolution_method  = "ML_BSSN"
+ADMBase::dtlapse_evolution_method= "ML_BSSN"
+ADMBase::dtshift_evolution_method= "ML_BSSN"
+
+ML_BSSN::timelevels = 3
+
+ML_BSSN::harmonicN           = 1      # 1+log
+ML_BSSN::harmonicF           = 2.0    # 1+log
+ML_BSSN::ShiftGammaCoeff     = 0.75
+ML_BSSN::AlphaDriver         = 1.0
+#ML_BSSN::BetaDriver          = 0.1
+ML_BSSN::BetaDriver          = 1.0
+ML_BSSN::LapseAdvectionCoeff = 1.0
+ML_BSSN::ShiftAdvectionCoeff = 1.0
+
+ML_BSSN::MinimumLapse        = 1.0e-8
+
+ML_BSSN::my_initial_boundary_condition = "extrapolate-gammas"
+ML_BSSN::my_rhs_boundary_condition     = "NewRad" 
+Boundary::radpower                     = 2
+
+ML_BSSN::ML_log_confac_bound = "none"
+ML_BSSN::ML_metric_bound     = "none"
+ML_BSSN::ML_Gamma_bound      = "none"
+ML_BSSN::ML_trace_curv_bound = "none"
+ML_BSSN::ML_curv_bound       = "none"
+ML_BSSN::ML_lapse_bound      = "none"
+ML_BSSN::ML_dtlapse_bound    = "none"
+ML_BSSN::ML_shift_bound      = "none"
+ML_BSSN::ML_dtshift_bound    = "none"
+END
+
+         $diss_vars = <<END;
+
+           ML_BSSN::ML_log_confac
+           ML_BSSN::ML_metric
+           ML_BSSN::ML_curv
+           ML_BSSN::ML_trace_curv
+           ML_BSSN::ML_Gamma
+           ML_BSSN::ML_lapse
+           ML_BSSN::ML_shift
+END
+
+      } else {
+         print "Spacetime evolution Choice errors in rpar file.\n";
+         die;
+      } 
+
+#######################
+## Evolution, Matter ##
+#######################
+
+my $GRHydro_relevant_lines = "";
+      my ( $riemann_solver, $bvec_evo_method, $grhydro_evolved_vars );
+      my ($extra_output_vars, $extra_info_vars, $extra_scalar_vars) = ("", "", "");
+      my $divB_treatment = "";
+      if ( $forceMHD or $bmag > 0 ) {
+         $riemann_solver = "HLLE";
+         $bvec_evo_method = "GRHydro";
+         $Initial_Matter_Pars .= "\nHydroBase::initial_bvec = \"magnetized Bondi\"\n";
+         $grhydro_evolved_vars = 9; ## Includes Bvec & psidc
+         $extra_output_vars = "HydroBase::Bvec\n GRHydro::psidc\n GRHydro::divB\n GRHydro::bcons GRHydro::bcom_sq GRHydro::bcom0 GRHydro::bcom";
+         $extra_info_vars = "GRHydro::divB GRHydro::bcom_sq";
+         $extra_scalar_vars = "GRHydro::divB GRHydro::bcom_sq GRHydro::bcom";
+         if ( $bvec_evolution_method eq "constraint transport" ) { 
+           $divB_treatment .= "GRHydro::transport_constraints = \"yes\"\n";
+           $divB_treatment .= "GRHydro::clean_divergence      = \"no\"\n\n";
+         } elsif ( $bvec_evolution_method eq "divergence cleaning" ) {
+           $divB_treatment .= "GRHydro::transport_constraints = \"no\"\n";
+           $divB_treatment .= "GRHydro::clean_divergence      = \"yes\"\n\n";
+           $divB_treatment .= "GRHydro::kap_dc           = 1.e-1\n";
+           $divB_treatment .= "GRHydro::psidcspeed       = \"light speed\"\n";
+           $diss_vars .= " GRHydro::psidc";
+         } else {
+           die "Unknown Bvec evolution method $bvec_evolution_method";
+         }
+         $divB_treatment .= "GRHydro::track_divB       = \"yes\"\n";
+         $divB_treatment .= "GRHydro::calculate_bcom   = \"yes\"\n";
+         $diss_vars .= "";
+         
+      } else {
+         $riemann_solver = "HLLE";
+         $bvec_evo_method = "none";
+         $Initial_Matter_Pars .= "\nHydroBase::initial_bvec = \"none\"\n";
+         $grhydro_evolved_vars = 5; 
+      }
+my $eos_k;
+      {
+         # computes K from sound speed at sonic point. Copied from C code in GRHydro_BondiM.c
+         my( $cs, $vs_sq, $vs, $cs_sq, $rhos, $gtemp, $hs );
+         my $M = 1;
+         $cs_sq  =  $M / ( 2.*$r_sonic - 3.*$M ) ; 
+         $cs     =  sqrt($cs_sq);
+         $vs_sq  =  $M / ( 2. * $r_sonic ) ; 
+         $vs     =  sqrt($vs_sq); 
+         $rhos   =  $mdot / ( 4. * $pi * $vs * $r_sonic * $r_sonic ) ; 
+         $gtemp  =  $eos_gamma - 1.;
+         $hs     =  1. / ( 1. - $cs_sq / ($eos_gamma - 1.) );
+         $eos_k  = $hs * $cs_sq * $rhos**(-$gtemp) / $eos_gamma ; 
+      }
+
+      $GRHydro_relevant_lines .= "GRHydro::riemann_solver            = \"$riemann_solver\"\n";
+      $GRHydro_relevant_lines .= "HydroBase::Bvec_evolution_method   = \"$bvec_evo_method\"\n";
+      $GRHydro_relevant_lines .= $divB_treatment;
+
+############################################
+## Termination Times and Output Intervals ##
+############################################
+my $outInfo = 16;
+my $out0d   = -1;
+my $out1d   = -1;
+my $out2d   = -1;
+my $out3d   = -1;
+
+my $dt = $h/2;
+my $max_runtime = 1410; #'@WALLTIME_MINUTES@-15';
+my $final_time = 101;
+my $last_it = 10000000;
+      if ( $task eq "id" ) { $last_it = 0; }
+
+################################################################
+############### Generate Parameter File ########################
+################################################################
+
+my $lines = <<EOF;
+
+#====================================================================
+# Bondi accretion onto a BH with McLachlan and GRHydro_InitData
+#
+$Grid_Info_Lines
+#
+#====================================================================
+
+ActiveThorns = "$spacetime_id_thorns $matter_id_thorns GenericFD CoordBase SymBase Boundary InitBase NanChecker TerminationTrigger CartGrid3d Time MoL TimerReport CarpetIOBasic CarpetIOScalar IOUtil Carpet CarpetLib Vectors CarpetMask CarpetReduce CarpetInterp CarpetSlab CarpetIOASCII LoopControl GSL CarpetRegrid2 ADMBase StaticConformal Dissipation SphericalSurface AEILocalInterp SpaceMask ReflectionSymmetry $rotatethorn CarpetIOHDF5 HydroBase GRHydro EOS_Omni TmunuBase ADMCoupling ADMMacros Formaline $spacetime_thorns CoordGauge ML_ADMConstraints Hydro_Analysis Constants QuasiLocalMeasures AHFinderDirect SummationByParts SetMask_SphericalSurface SystemStatistics Slab" # NoExcision" # CarpetEvolutionMask"
+
+Cactus::cctk_run_title    = "Bondi test"
+Cactus::highlight_warning_messages = "no"
+Cactus::cctk_full_warnings = "yes"
+
+Cactus::terminate = "any"
+Cactus::max_runtime = $max_runtime
+Cactus::cctk_final_time = $final_time
+Cactus::cctk_itlast = $last_it
+TerminationTrigger::termination_from_file = "yes"
+TerminationTrigger::create_termination_file = "yes"
+TerminationTrigger::termination_file = "TERMINATE"
+
+#############################################################
+# Debugging: Verbosity, poison, etc.
+#############################################################
+
+CarpetRegrid2::verbose  = 0
+
+CarpetLib::print_memstats_every = 512 
+TimerReport::out_every  = 512
+TimerReport::out_filename = "TimerReport"
+TimerReport::output_all_timers_readable = "yes"
+TimerReport::n_top_timers = 20
+
+
+Carpet::poison_new_timelevels = "yes"
+Carpet::check_for_poison = "no"
+
+CarpetLib::poison_new_memory = "yes"
+CarpetLib::poison_value = 114
+CarpetLib::max_allowed_memory_MB = 3500
+
+#############################################################
+# Grid Basics: Cactus
+#############################################################
+
+CartGrid3D::type                        = "coordbase"
+CartGrid3D::domain                      = "full"
+CartGrid3D::avoid_origin                = "no"
+
+CoordBase::domainsize                   = minmax
+
+CoordBase::boundary_size_x_lower        = 2
+CoordBase::boundary_size_y_lower        = 2
+CoordBase::boundary_size_z_lower        = 2
+CoordBase::boundary_shiftout_x_lower    = $xmin_shiftout
+CoordBase::boundary_shiftout_y_lower    = $ymin_shiftout
+CoordBase::boundary_shiftout_z_lower    = $zmin_shiftout
+CoordBase::boundary_size_x_upper        = 2
+CoordBase::boundary_size_y_upper        = 2
+CoordBase::boundary_size_z_upper        = 2
+CoordBase::boundary_shiftout_x_upper    = 0
+CoordBase::boundary_shiftout_y_upper    = 0
+CoordBase::boundary_shiftout_z_upper    = 0
+
+ReflectionSymmetry::reflection_x   = "$reflectx"
+ReflectionSymmetry::reflection_y   = "$reflecty"
+ReflectionSymmetry::reflection_z   = "$reflectz"
+ReflectionSymmetry::avoid_origin_x = no
+ReflectionSymmetry::avoid_origin_y = no
+ReflectionSymmetry::avoid_origin_z = no
+
+CoordBase::xmin                         = $xmin
+CoordBase::ymin                         = $ymin
+CoordBase::zmin                         = $zmin+$zstagger
+CoordBase::xmax                         = $rflevels[0]
+CoordBase::ymax                         = $rflevels[0]
+CoordBase::zmax                         = $rflevels[0]+$zstagger
+CoordBase::dx                           = $spacing[0]
+CoordBase::dy                           = $spacing[0]
+CoordBase::dz                           = $spacing[0]
+
+Driver::ghost_size = 2
+
+#############################################################
+# Mesh refinement
+#############################################################
+
+Carpet::domain_from_coordbase = "yes"
+Carpet::max_refinement_levels = $levels
+Carpet::prolongation_order_space = 5
+Carpet::prolongation_order_time = 2
+
+CarpetRegrid2::num_centres          = 1
+CarpetRegrid2::regrid_every         = 128
+CarpetRegrid2::freeze_unaligned_levels = "yes" 
+CarpetRegrid2::freeze_unaligned_parent_levels = "yes" 
+Carpet::grid_coordinates_filename = "grid.asc" 
+CarpetRegrid2::symmetry_rotating180        = "$rotate180"
+CarpetRegrid2::symmetry_rotating90         = "$rotate90"
+
+CarpetRegrid2::num_levels_1  =  $levels
+CarpetRegrid2::position_x_1  =  0
+CarpetRegrid2::position_y_1  =  0
+CarpetRegrid2::position_z_1  =  0
+
+$CarpetRegrid2_Center1_Radii
+
+#CarpetMask::excluded_surface       [0] = 0
+#CarpetMask::excluded_surface_factor[0] = 1.0
+
+#############################################################
+# General Carpet parameters
+#############################################################
+
+Carpet::use_buffer_zones = "yes"
+Carpet::schedule_barriers = "no"
+
+CarpetInterp::tree_search = "yes"
+CarpetInterp::check_tree_search = "no"
+
+#############################################################
+# Time stepping
+#############################################################
+
+Time::dtfac = 0.5
+MoL::ODE_Method             = "rk3"
+MoL::MoL_Intermediate_Steps = 3
+MoL::MoL_Num_Scratch_Levels = 1
+
+#############################################################
+# Initial Spacetime
+#############################################################
+
+InitBase::initial_data_setup_method = "init_some_levels"
+Carpet::init_fill_timelevels = "yes"
+
+$Initial_Spacetime_Pars
+
+#NoExcision::method = "old"
+#NoExcision::num_regions = 0
+#NoExcision::use_user_regions = yes
+#NoExcision::smooth_regions = "no"
+#NoExcision::radius[0] = 0.85*$initial_bh_radius
+
+#############################################################
+# Initial Hydro
+#############################################################
+
+SpaceMask::use_mask = "yes"
+HydroBase::timelevels = 3
+ADMBase::lapse_timelevels = 3
+ADMBase::shift_timelevels = 3
+ADMBase::metric_timelevels = 3
+
+$Initial_Matter_Pars
+
+TmunuBase::stress_energy_storage = "yes"
+TmunuBase::stress_energy_at_RHS = "yes"
+TmunuBase::timelevels = 1
+TmunuBase::prolongation_type = "none"
+TmunuBase::support_old_CalcTmunu_mechanism = "no"
+
+#############################################################
+# Evolution, Numerics 
+#############################################################
+
+ADMMacros::spatial_order = 4
+SummationByParts::order = 4
+
+SphericalSurface::nsurfaces = 2
+SphericalSurface::maxntheta = 39
+SphericalSurface::maxnphi = 76
+
+SphericalSurface::ntheta      [0] = 39
+SphericalSurface::nphi        [0] = 76
+SphericalSurface::nghoststheta[0] = 2
+SphericalSurface::nghostsphi  [0] = 2
+SphericalSurface::radius      [0] = $initial_bh_radius
+
+SphericalSurface::ntheta      [1] = 39
+SphericalSurface::nphi        [1] = 76
+SphericalSurface::nghoststheta[1] = 2
+SphericalSurface::nghostsphi  [1] = 2
+SphericalSurface::set_spherical[1] = "yes"
+SphericalSurface::radius      [1] = $initial_bh_radius
+
+#SetMask_SphericalSurface::SetMask_SurfaceIndex[0] = 0
+#SetMask_SphericalSurface::SetMask_RadiusFactor[0] = 0.85
+#SetMask_SphericalSurface::SetMask_SurfaceIndex[1] = 1
+#SetMask_SphericalSurface::SetMask_RadiusFactor[1] = 0.85
+
+Dissipation::ah_slope = 0.2
+Dissipation::order    = 3
+Dissipation::epsdis   = 0.01
+Dissipation::extra_dissipation_in_horizons = "yes"
+Dissipation::ah_max_epsdis=0.1
+Dissipation::update_ah_every = 16
+Dissipation::surface_number[0] = 0
+Dissipation::horizon_number[0] = 1
+Dissipation::vars = " $diss_vars"
+
+#CarpetEvolutionMask::verbose = no
+#CarpetEvolutionMask::enlarge_evolved_region_by = 0
+#CarpetEvolutionMask::writeNaNs = yes
+#CarpetEvolutionMask::enforce_mask = yes
+#CarpetEvolutionMask::enforce_vars = "
+# GRHydro::dens GRHydro::scon GRHydro::tau
+# GRHydro::Bcons GRHydro::psidc
+#"
+
+
+#############################################################
+# Evolution, Matter 
+#############################################################
+
+HydroBase::evolution_method      = "GRHydro"
+
+$GRHydro_relevant_lines
+
+GRHydro::recon_method              = "tvd"
+GRHydro::GRHydro_stencil            = 2
+# we provide our own custom boundary condition by
+# resetting the boundary data to initial data.
+# "none" enforces the symmetry boundary condition.
+GRHydro::bound                     = "none"
+GRHydro::rho_abs_min               = 1.0e-10*1.02840977540176
+GRHydro::initial_rho_abs_min       = 1.0e-10*1.02840977540176
+GRHydro::grhydro_atmo_tolerance    = 0.0001
+#GRHydro::use_evolution_mask = always
+#GRHydro::reconstruct_Wv = yes
+
+
+GRHydro::initial_Gamma             = $eos_gamma # WhiskyMHD paper and Duez et al MHD paper use 4/3
+EOS_Omni::gl_gamma                 = $eos_gamma
+EOS_Omni::poly_gamma               = $eos_gamma
+EOS_Omni::poly_k                   = $eos_k
+GRHydro::GRHydro_eos_type           = "General"
+GRHydro::GRHydro_eos_table          = "Ideal_Fluid"
+
+GRHydro::c2p_reset_pressure        = "yes"
+
+
+GRHydro::GRHydro_MaxNumSandRVars    = 16
+GRHydro::GRHydro_MaxNumEvolvedVars  = $grhydro_evolved_vars
+#GRHydro::GRHydro_MaxNumConstrainedVars = 12
+
+#############################################################
+# Evolution, Spacetime
+#############################################################
+
+$spacetime_evolution_lines
+
+##############
+## Analysis ##
+##############
+
+AHFinderDirect::N_horizons = 1
+AHFinderDirect::find_every = 512
+AHFinderDirect::output_h_every = 0
+  
+AHFinderDirect::reset_horizon_after_not_finding      [1] = "no"
+AHFinderDirect::initial_guess__coord_sphere__radius  [1] = 0.8*$initial_bh_radius
+AHFinderDirect::origin_x                             [1] = 0.0
+AHFinderDirect::origin_y                             [1] = 0.0
+AHFinderDirect::origin_z                             [1] = 0.0
+AHFinderDirect::initial_guess__coord_sphere__x_center[1] = 0.0
+AHFinderDirect::initial_guess__coord_sphere__y_center[1] = 0.0
+AHFinderDirect::initial_guess__coord_sphere__z_center[1] = 0.0
+AHFinderDirect::which_surface_to_store_info          [1] = 0
+
+#Hydro_Analysis::Hydro_Analysis_comp_rho_max = "true"
+
+QuasiLocalMeasures::num_surfaces   = 1
+QuasiLocalMeasures::spatial_order  = 4
+QuasiLocalMeasures::interpolator = "Lagrange polynomial interpolation"
+QuasiLocalMeasures::interpolator_options = "order=4"
+QuasiLocalMeasures::surface_index  [0] = 0
+
+############
+## Output ##
+############
+
+IO::out_dir = \$parfile
+IO::out_fileinfo           = "all"
+
+CarpetIOBasic::real_prec = 19
+CarpetIOBasic::real_width = CarpetIOBasic::real_prec+5
+IOBasic::outInfo_every = $outInfo
+IOBasic::outInfo_reductions = "norm_inf"
+IOBasic::outInfo_vars  = "
+ Carpet::physical_time_per_hour
+ HydroBase::rho
+ HydroBase::w_lorentz
+ ML_ADMConstraints::ML_Ham
+ SystemStatistics::maxrss_mb
+ $extra_info_vars
+"
+
+IOScalar::outScalar_every      = $out0d
+IOScalar::one_file_per_group   = "yes"
+IOScalar::outScalar_reductions = "minimum maximum average norm1 norm2 norm_inf"
+IOScalar::outScalar_vars       = " 
+ ADMBase::curv
+ ADMBase::lapse
+ ADMBase::metric
+ ADMBase::shift
+ GRHydro::dens
+ HydroBase::rho
+ HydroBase::vel
+ HydroBase::w_lorentz
+ ML_ADMConstraints::ML_Ham
+ ML_ADMConstraints::ML_mom
+ SystemStatistics::process_memory_mb
+ SphericalSurface::sf_radius
+ $extra_scalar_vars
+"
+
+IOASCII::one_file_per_group     = "yes"
+IOASCII::output_symmetry_points = "yes"
+
+IOASCII::out0D_every     = $out0d
+IOASCII::out0D_vars      = "
+ Carpet::timing
+ Hydro_Analysis::Hydro_Analysis_rho_max_loc
+ QuasiLocalMeasures::qlm_scalars
+ SphericalSurface::sf_active
+ SphericalSurface::sf_coordinate_descriptors
+ SphericalSurface::sf_info
+ SphericalSurface::sf_origin
+ SphericalSurface::sf_radius
+ SphericalSurface::sf_valid
+"
+
+#Set these IOASCII options for initial data only:
+IOASCII::out1D_every     = $out1d
+IOASCII::out1D_d         = "yes"
+IOASCII::out1D_vars      = "
+ ADMBase::curv
+ ADMBase::lapse
+ ADMBase::metric
+ ADMBase::shift
+ GRHydro::dens
+ GRHydro::scon
+ HydroBase::rho
+ HydroBase::eps
+ HydroBase::press
+ HydroBase::vel
+ HydroBase::w_lorentz
+ ML_ADMConstraints::ML_Ham
+ ML_ADMConstraints::ML_mom
+ $extra_output_vars
+"
+
+CarpetIOHDF5::out3D_every     = $out3d
+CarpetIOHDF5::out3D_vars      = "
+ HydroBase::rho
+ HydroBase::vel
+ HydroBase::w_lorentz
+ ADMBase::metric
+ ADMBase::curv
+ ADMBase::lapse
+ ADMBase::shift
+ ML_ADMConstraints::ML_Ham
+ ML_ADMConstraints::ML_mom
+# SphericalSurface::sf_radius{out_every=256}
+ HydroBase::hydro_excision_mask
+ $extra_output_vars
+"
+
+#------------------------------------------------------------------------------
+# Checkpoint/Recovery:
+#------------------------------------------------------------------------------
+IOHDF5::checkpoint                  = "yes"
+IO::checkpoint_dir                  = \$parfile
+IO::checkpoint_ID                   = "yes"
+#IO::checkpoint_every                = 240
+#IO::checkpoint_every_walltime_hours = 6.0
+IO::checkpoint_keep=3
+IO::checkpoint_on_terminate         = "yes"
+
+IO::recover     = "autoprobe"
+IO::recover_dir = \$parfile
+
+
+EOF
+
+
+#my $filename = "$0";
+#$filename =~ s/\.rpar/.par/g; 
+
+open(OUT,">$parfile_name");
+print OUT "$lines";
+close(OUT);
+
+         }
+      }
+   }
+}
+
+

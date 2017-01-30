@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="head.js" type="text/javascript">
+  </script>
+  <title>Download</title>
+</head>
+<body id="download">
+  <header>
+    <script src="menu.js" type="text/javascript"></script>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Download & Requirements</h1>
+        <p>The Einstein Toolkit is hosted on many different machines around the world. We provide a script called <a href="https://github.com/gridaphobe/CRL">GetComponents</a> to
+        simplify downloading the toolkit. This page just describes how to download the toolkit - you may also be interested in the <a href=
+        "https://docs.einsteintoolkit.org/et-docs/Tutorial_for_New_Users">Tutorial for New Users</a> which leads you through these steps and more on the Queen Bee supercomputer, or
+        in a simpler <a href="https://docs.einsteintoolkit.org/et-docs/Simplified_Tutorial_for_New_Users">tutorial</a> for setup on a typical Linux box.</p>
+        <p>Enter the directory on your machine in which you would like to download the ET (for example, your home directory), and type the commands listed below. This will create a
+        directory called Cactus in which the components of the Einstein Toolkit are downloaded.</p>
+        <h2>Current release: Payne-Gaposchkin (released on December 16th, 2016)</h2>
+        <p>This is the recommended version of the toolkit for most users. See the <a href="about/releases/ET_2016_11_announcement.html">release notes</a> for more information.</p>
+        <p>Note: OSX users cannot use the 'subversion' client shipped by Apple. In that case install subversion either from homebrew or macports.</p>
+        <pre>
+curl -kLO https://raw.githubusercontent.com/gridaphobe/CRL/ET_2016_11/GetComponents
+chmod a+x GetComponents
+./GetComponents --parallel https://bitbucket.org/einsteintoolkit/manifest/raw/ET_2016_11/einsteintoolkit.th</pre>A tarball of the release is also available <a href="/tarballs/">here</a>, but using GetComponents is
+the preferred method to obtain the code. Use the tarball only if there is no way to use GetComponents (which should
+almost never be the case).
+        <h2>Current development version</h2>
+        This version is under constant development and, while we try to make sure it
+        remains bug-free, it has not been tested to the same standard as the released version.
+        <pre>
+curl -kLO https://raw.githubusercontent.com/gridaphobe/CRL/master/GetComponents
+chmod a+x GetComponents
+./GetComponents --parallel https://bitbucket.org/einsteintoolkit/manifest/raw/master/einsteintoolkit.th</pre>
+        <h2>Requirements</h2>
+        <p>The Einstein Toolkit has been tested on many different large-scale production resources and can be compiled and run on just about any laptop, workstation, cluster or
+        supercomputer with standard HPC software installed. The main requirements are:</p>
+        <ul>
+          <li><b>Client tools for Source Code Repositories:</b> SVN and git (used by GetComponents)</li>
+          <li><b>Compilers:</b> C, C++ and Fortran 90</li>
+          <li><b>MPI implementation:</b> This is needed for the Carpet driver (the PUGH driver can be used for single core development on machines without MPI)</li>
+          <li><b>Standard development tools:</b> Python, Perl, etc.</li>
+          <li><b>Operating System:</b> Cactus and the Einstein Toolkit is supported on all commonly used variants of Unix (e.g. Linux, MacOSX, AIX). On Microsoft Windows machines the
+          Einstein Toolkit can be partially used with the cygwin environment, although this is not regularly tested.</li>
+          <li>
+            <b>Suggested Tools:</b> clang-format-3.7 for some repositories (e.g., Carpet).<br>
+            Debian: <a href="https://packages.debian.org/search?keywords=clang-format-3.7&searchon=names&suite=all&section=all">Debian Repository</a> <a href=
+            "https://www.debian.org/">Debian</a>, <a href="https://www.debian.org/releases/stable/">Jessie (stable)</a>, <a href="download/clang-format/">Backport Page</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container section">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1><b>Tools</b></h1>This page will contain details of visualization and other tools to use with the Einstein Toolkit. For now, we provide links to some initial tools:
+      </div>
+      <div class="col-sm-6">
+        <h2>Simulation Factory</h2>
+        The <a href="http://simfactory.org/">Simulation Factory</a> provides capabilities for compiling and deploying a Cactus application on machines and ging simulations.
+      </div>
+      <div class="col-sm-6">
+        <h2>Visualization</h2>
+        The <a href="http://cactuscode.org/documentation/visualization/">Cactus visualization page</a> describes different visualization packages that can be used to analyze Cactus output.
+      </div>
+      <div class="col-sm-6">
+        <h2>Kranc</h2>
+        The <a href="http://kranccode.org">Kranc package</a> provides a means to generate new codes for Einstein Equations and other systems. Kranc is used to generate the used in the McLachlan code.
+      </div>
+      <div class="col-sm-6">
+        <h2>Alpaca</h2>
+        The <a href="http://www.cactuscode.org/community/projects/alpaca/">Alpaca project</a> provides high-level tools that help design and maintain large, complex applications. The Alpaca tools allow both developers and end-users to examine and validate the correctness of an application, and aid them in measuring and improving its performance in production environments.
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container section">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1>Citation</h1>
+        The development of production level scientific software, such as the components of the Einstein Toolkit, represents the academic output of researchers. These scientific contributions should be acknowledged and respected on par with those solely based in theory or experiment.<br>
+        <strong>Go to Citation Page:</strong> <a class="btn btn-primary" href="citation.html" role="button">Citation</a>
+      </div>
+      <div class="col-sm-6">
+        <h1>Past Releases</h1>
+        Sometimes, older releases can be useful, .e.g., if they have been used in a specific publication, and results are to be reproduced. This is why past releases of the Einstein Toolkit are being kept available.<br>
+        <strong>Go to Past Releases Page:</strong> <a class="btn btn-info" href="past-releases.html" role="button">Past Releases</a>
+      </div>
+    </div>
+  </div><br>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-sm-12 col-xs-12 col-xs-12">
+        <script src="footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

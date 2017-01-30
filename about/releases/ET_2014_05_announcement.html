@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="../../head.js" type="text/javascript"></script>
+  <title>05-21-2014</title>
+
+</head>
+
+<body>
+  <header>
+    <script src="../../menu.js" type="text/javascript">
+    </script>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 section">
+        <h1>Release Announcement</h1>
+        <p>We are pleased to announce the ninth release (code name "<a href=
+        "http://en.wikipedia.org/wiki/John_Archibald_Wheeler">Wheeler</a>") of the Einstein
+        Toolkit, an open, community developed software infrastructure for relativistic
+        astrophysics. This release includes various improvements to the Cactus flesh, Carpet and
+        GRHydro. In addition, bug fixes accumulated since the previous release in November 2013
+        have been included.</p>
+
+
+        <p>The Einstein Toolkit is a collection of software components and tools for simulating and
+        analyzing general relativistic astrophysical systems that builds on numerous software
+        efforts in the numerical relativity community including CactusEinstein, the Carpet AMR
+        infrastructure and the relativistic magneto-hydrodynamics code GRHydro. The Cactus
+        Framework is used as the underlying computational infrastructure providing large-scale
+        parallelization, general computational components, and a model for collaborative, portable
+        code development. The toolkit includes modules to build complete codes for simulating black
+        hole spacetimes as well as systems governed by relativistic magneto-hydrodynamics.</p>
+
+
+        <p>The Einstein Toolkit uses a distributed software model and its different modules are
+        developed, distributed, and supported either by the core team of Einstein Toolkit
+        Maintainers, or by individual groups. Where modules are provided by external groups, the
+        Einstein Toolkit Maintainers provide quality control for modules for inclusion in the
+        toolkit and help coordinate support. The Einstein Toolkit Maintainers currently involve
+        postdocs and faculty from six different institutions, and host weekly meetings that are
+        open for anyone to join in.</p>
+
+
+        <p>Guiding principles for the design and implementation of the toolkit include: open,
+        community-driven software development; well thought out and stable interfaces; separation
+        of physics software from computational science infrastructure; provision of complete
+        working production code; training and education for a new generation of researchers.</p>
+
+
+        <p>For more information about using or contributing to the Einstein Toolkit, or to join the
+        Einstein Toolkit Consortium, please visit our web pages at &lt;<a href=
+        "http://einsteintoolkit.org">http://einsteintoolkit.org</a>&gt;.</p>
+
+
+        <p>The Einstein Toolkit is primarily supported by NSF 1212401/1212426/1212433/1212460
+        (Einstein Toolkit), and also by 0905046/0941653 (PetaCactus) and 0710874 (LONI Grid).</p>
+
+
+        <p>The Einstein Toolkit contains about 200 regression test cases. On a large portion of the
+        tested machines, almost all of these test suites pass, using both MPI and OpenMP
+        parallelization.</p>
+
+
+        <h4>The changes between this and the previous release include:</h4>
+
+
+        <ul>
+          <li><b>Larger changes since last release</b>
+          </li>
+        </ul>
+
+
+        <ul>
+          <li>Removed components
+
+            <ul>
+              <li>ADM</li>
+
+
+              <li>LegoExcision</li>
+            </ul>
+          </li>
+
+
+          <li>Deprecated components (still included, but don't use for new code)
+
+            <ul>
+              <li>ADMConstraints (use ML_ADMConstraints instead)</li>
+
+
+              <li>ADMCoupling</li>
+
+
+              <li>ADMMacros</li>
+
+
+              <li>DistortedBHIVP</li>
+
+
+              <li>IDAxiBrillBH</li>
+
+
+              <li>IDAxiOddBrillBH</li>
+
+
+              <li>RotatingDBHIVP</li>
+            </ul>
+          </li>
+
+
+          <li>New components:
+
+            <ul>
+              <li>CactusExamples: 10 small example thorns</li>
+
+
+              <li>TestMoL</li>
+
+
+              <li>CarpetExtra: 10 test thorns</li>
+
+
+              <li>IllinoisGRMHD (not enabled by default, proposed for the next release)</li>
+            </ul>
+          </li>
+
+
+          <li>Simfactory
+
+            <ul>
+              <li>updates to many machines</li>
+            </ul>
+          </li>
+
+
+          <li>Cactus flesh:
+
+            <ul>
+              <li>Cactus complex number arithmetic functions are deprecated</li>
+
+
+              <li>Drop explicit support for Fortran 77 in Cactus</li>
+
+
+              <li>Prevent Cactus from choking on very large parameter files</li>
+
+
+              <li>Update to work with Chemora. Not currently used by regular Cactus.</li>
+
+
+              <li>The workaround CCTK_DISABLE_RESTRICT for bugs in the Intel compiler is no longer
+              necessary for version newer or equal 14, which is now taken into account.</li>
+
+
+              <li>Support for Clang on OSX</li>
+            </ul>
+          </li>
+
+
+          <li>MoL: Automatically count number of evolved variables</li>
+
+
+          <li>ADMConstraints: remove support for conformal metrics</li>
+
+
+          <li>EOS_Omni: new c++ backend</li>
+
+
+          <li>GRHydro
+
+            <ul>
+              <li>rewrite major parts of the code in c++, both versions are still included, the c++
+              version is not enabled by default yet (see parameter use_cxx_code). The default will
+              change for the next release and the Fortran version will be removed after that.</li>
+
+
+              <li>Lots of smaller changes and bug fixes</li>
+            </ul>
+          </li>
+
+
+          <li>Kranc:
+
+            <ul>
+              <li>Use a namespace to protect certain thorn functions; this means that calculations
+              can no longer be named the same as the thorn</li>
+
+
+              <li>Add the ability to merge arbitrary files into the thorn at Kranc time (e.g. for
+              docs, tests)</li>
+
+
+              <li>Add ability to tile loops over grids</li>
+
+
+              <li>Add ability to count floating point operations in a calculation</li>
+
+
+              <li>Display a function call backtrace when errors are detected during running
+              Kranc</li>
+
+
+              <li>Correct accidental interchange of sinh and cosh in vectorised code</li>
+
+
+              <li>Substantial internal code cleanup and reorganization; no intentional changes
+              affecting the user as a result</li>
+
+
+              <li>Improvements to Chemora support (GPUs)</li>
+
+
+              <li>Improvements to script language support</li>
+
+
+              <li>Make GFOffset available to calculations</li>
+
+
+              <li>Improve support for xTensor as an alternative to TensorTools</li>
+
+
+              <li>Include some regression tests for Kranc</li>
+
+
+              <li>Include some unit tests for Kranc</li>
+
+
+              <li>Make internal code generation significantly more robust</li>
+
+
+              <li>Remove old code, including obsolete Fortran code generation which hasn't been
+              used or worked for a long time</li>
+
+
+              <li>Remove almost all dependence on GenericFD; required code is now embedded in the
+              generated thorn</li>
+
+
+              <li>Many other small changes</li>
+            </ul>
+          </li>
+
+
+          <li>McLachlan: optimizations</li>
+
+
+          <li>Carpet
+
+            <ul>
+              <li>Changes to support accelerators (not used by default)</li>
+
+
+              <li>CarpetRegrid2: support Parity Symmetry thorn</li>
+
+
+              <li>Carpet: Apply boundary conditions during restricting</li>
+
+
+              <li>Include string null terminator in HDF5 attributes (only important if you happen
+              to read them in your own scripts)</li>
+            </ul>
+          </li>
+        </ul>
+
+
+        <ul>
+          <li><b>How to upgrade from Noether (ET_2013_11)</b>
+          </li>
+        </ul>
+
+
+        <p>To upgrade from the previous release, use GetComponents with the new thornlist to check
+        out the new version.</p>
+
+
+        <p>See the <a href="http://einsteintoolkit.org/download/">Download</a> page on the Einstein
+        Toolkit website for download instructions.</p>
+
+
+        <ul>
+          <li><b>Remaining issues with this release</b>
+          </li>
+        </ul>
+
+
+        <ul>
+          <li>Certain machines need to be configured specially in Simfactory because the remote
+          directories cannot be determined automatically just from the user name. See the Machine
+          notes below.</li>
+
+
+          <li>Recovering with Carpet: Carpet stores metadata (such as the simulation time) only for
+          Carpet::max_timelevels time levels, although it is possible to allocate more time levels.
+          These additional time levels then cannot be recovered; the symptom is an assertion
+          failure during recovery. The solution is to either increase Carpet::max_timelevels, or to
+          decrease the number of active time levels.</li>
+        </ul>
+
+
+        <ul>
+          <li><b>Machine notes</b>
+          </li>
+        </ul>
+
+
+        <p>Supported (tested) machines include:</p>
+
+
+        <ul>
+          <li>Default Debian, Suse and Fedora installations</li>
+
+
+          <li>Bethe</li>
+
+
+          <li>Bluewaters *</li>
+
+
+          <li>Carver</li>
+
+
+          <li>Datura</li>
+
+
+          <li>Gordon</li>
+
+
+          <li>Hopper</li>
+
+
+          <li>Loewe</li>
+
+
+          <li>Lonestar *</li>
+
+
+          <li>Supermike II</li>
+
+
+          <li>Nvidia *</li>
+
+
+          <li>Orca *</li>
+
+
+          <li>Philip</li>
+
+
+          <li>Queenbee</li>
+
+
+          <li>Shelob</li>
+
+
+          <li>Stampede (CPU)</li>
+
+
+          <li>Supermuc</li>
+
+
+          <li>Titan</li>
+
+
+          <li>Trestles</li>
+
+
+          <li>Zwicky</li>
+        </ul>
+
+
+        <p>A * means that a small number of tests still fail on that machine. All tests pass on the
+        other machines.</p>
+
+
+        <ul>
+          <li>LoneStar and Stampede: defs.local.ini needs to have sourcebasedir = $WORK and basedir
+          = $SCRATCH/simulations configured for this machine. You need to determine $WORK and
+          $SCRATCH by logging in to the machine.</li>
+        </ul>
+
+
+        <p>All repositories participating in this release carry a branch ET_2014_05 marking this
+        release. These release branches will be updated if severe errors are found.</p>
+
+
+        <p>The "Wheeler" Release Team on behalf of the Einstein Toolkit Consortium (2014-05-21)</p>
+
+
+        <p>&nbsp;&nbsp;&nbsp;Peter Diener<br>
+        &nbsp;&nbsp;&nbsp;Roland Haas<br>
+        &nbsp;&nbsp;&nbsp;Ian Hinder<br>
+        &nbsp;&nbsp;&nbsp;Frank Löffler<br>
+        &nbsp;&nbsp;&nbsp;Bruno C. Mundim<br>
+        &nbsp;&nbsp;&nbsp;Erik Schnetter<br></p>
+
+
+        <p>May 21, 2014</p>
+        <script src="../footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

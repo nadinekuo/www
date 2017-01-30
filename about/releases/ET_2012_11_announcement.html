@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="../../head.js" type="text/javascript"></script>
+  <title>11-08-2012</title>
+</head>
+
+<body>
+  <header>
+    <script src="../../menu.js" type="text/javascript">
+    </script>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 section">
+        <h2>Release Announcement</h2>
+
+
+        <p>We are pleased to announce the sixth release (code name "<a href=
+        "http://en.wikipedia.org/wiki/Hans_Christian_%C3%98rsted">Ørsted</a>") of the Einstein
+        Toolkit, an open, community developed software infrastructure for relativistic
+        astrophysics. This release includes various improvements to the MHD handling within
+        GRHydro, and improvements to the Cactus flesh. In addition, bug fixes accumulated since the
+        previous release in May 2012 have been included.</p>
+
+
+        <p>The Einstein Toolkit is a collection of software components and tools for simulating and
+        analyzing general relativistic astrophysical systems that builds on numerous software
+        efforts in the numerical relativity community including CactusEinstein, the Carpet AMR
+        infrastructure and the relativistic hydrodynamics code GRHydro (an updated and extended
+        version of the public release of the Whisky code). The Cactus Framework is used as the
+        underlying computational infrastructure providing large-scale parallelization, general
+        computational components, and a model for collaborative, portable code development. The
+        toolkit includes modules to build complete codes for simulating black hole spacetimes as
+        well as systems governed by relativistic hydrodynamics.</p>
+
+
+        <p>The Einstein Toolkit uses a distributed software model and its different modules are
+        developed, distributed, and supported either by the core team of Einstein Toolkit
+        Maintainers, or by individual groups. Where modules are provided by external groups, the
+        Einstein Toolkit Maintainers provide quality control for modules for inclusion in the
+        toolkit and help coordinate support. The Einstein Toolkit Maintainers currently involve
+        postdocs and faculty from six different institutions, and host weekly meetings that are
+        open for anyone to join in.</p>
+
+
+        <p>Guiding principles for the design and implementation of the toolkit include: open,
+        community-driven software development; well thought out and stable interfaces; separation
+        of physics software from computational science infrastructure; provision of complete
+        working production code; training and education for a new generation of researchers.</p>
+
+
+        <p>For more information about using or contributing to the Einstein Toolkit, or to join the
+        Einstein Toolkit Consortium, please visit our web pages at &lt;<a href=
+        "http://einsteintoolkit.org">http://einsteintoolkit.org</a>&gt;.</p>
+
+
+        <p>The Einstein Toolkit is primarily supported by NSF 1212401/1212426/1212433/1212460,
+        0903973/0903782/0904015 (CIGR), and also by 0905046/0941653 (PetaCactus) and 0710874 (LONI
+        Grid).</p>
+
+
+        <p>The Einstein Toolkit contain over 170 regression test cases. On a large portion of the
+        tested machines, all of these testsuites pass, using both MPI and OpenMP
+        parallelization.</p>
+
+
+        <h4>The changes between this and the previous release include:</h4>
+
+
+        <p>
+        </p>
+
+
+        <ul>
+          <li><b>Compatibility</b>
+          </li>
+        </ul>
+        <p></p>The following changes lead to potential different numerical results or the need to
+        modify optionlists:
+
+        <ul>
+          <li>Cactus: Move MPI support from flesh to a thorn; use new MPI_DIR variable to control
+          use of MPI (see below)</li>
+
+
+          <li>McLachlan: Correct some errors in CCZ4, in particular the GammaShift parameter</li>
+
+
+          <li>McLachlan: Change the default value of apply_dissipation to "never".</li>
+        </ul>
+
+
+        <p>
+        </p>
+
+
+        <ul>
+          <li><b>Changes since last release</b>
+          </li>
+        </ul>
+        <p></p>
+
+        <ul>
+          <li>GetComponents:
+
+            <ul>
+              <li>anonymous checkout is now used by default. Use --no-anonymous for authenticated
+              checkouts</li>
+
+
+              <li>no longer use "shallow git clones" by default</li>
+            </ul>
+          </li>
+
+
+          <li>simfactory
+
+            <ul>
+              <li>updates of various machine configurations</li>
+
+
+              <li>Replace large files by hard links during cleanup</li>
+
+
+              <li>Basic configuration file for Ubuntu, Debian and Fedora operating systems.</li>
+            </ul>
+          </li>
+
+
+          <li>utils: syntax highlight for vim and emacs</li>
+
+
+          <li>Cactus flesh:
+
+            <ul>
+              <li>grid functions may be padded, i.e. the driver may allocate more grid points than
+              requested. The allocated size of grid functions can be accessed using cctk_ash. Note
+              however, that this can be different from cctk_lsh. The latter is that part (size) of
+              cctk_ash that is used within a simulation, i.e. that was set as simulation size via
+              parameters. This is necessary for vectorization where the size of arrays needs to be
+              a multiple of some number, but the simulation domain might not be. There is no
+              padding by default.</li>
+
+
+              <li>correctly detect circular schedule items</li>
+
+
+              <li>replace CCTK_RESTRICT by restrict, which is now defined by the flesh</li>
+
+
+              <li>Change per thorn -DTHORN_IS_xxx to a per thorn -I bindings/include/xxx</li>
+
+
+              <li>Correct error in determining dependencies</li>
+
+
+              <li>have -reconfig target execute -cleandeps after reconfiguration</li>
+
+
+              <li>add parameters to reverse un-enforced Cactus schedule ordering</li>
+
+
+              <li>Move MPI support from flesh to a thorn</li>
+
+
+              <li>Support various new Darwin minor versions</li>
+
+
+              <li>increase default value of RELTOL to 1e-12</li>
+
+
+              <li>Enforce that arrangement names are legal C identifiers</li>
+
+
+              <li>Update Fortran API for CCTK_LOOP macros</li>
+
+
+              <li>Add autoconf check whether C99 is supported (now required)</li>
+
+
+              <li>New option -P (--exit-after-param-check) to exit after param check</li>
+
+
+              <li>allow ${parfile} in parameter files to allow ${parfile}/subdir</li>
+            </ul>
+          </li>
+
+
+          <li>Carpet
+
+            <ul>
+              <li>Now lives in git again</li>
+
+
+              <li>A parameter CarpetLib::interpolate_from_buffer_zones was introduced which, in
+              order to get the correct behaviour (not to use the buffer zones for interpolations),
+              should be set to "no". However, since this changes the way things had been done in
+              the past and this change isn't well tested yet, the default is still "yes" (as like
+              before the parameter was introduced). The default will very likely be changed for the
+              next Einstein Toolkit release, after more testing.</li>
+
+
+              <li>Added "balanced" domain decomposition</li>
+
+
+              <li>Update setting CPU affinity</li>
+
+
+              <li>change defaults of periodic_[xyz] to "yes" to match PUGH</li>
+
+
+              <li>CarpetIOHDF5: add option checkpoint_every_divisor</li>
+
+
+              <li>CarpetIOHDF5: teach the checkpointer to write index files</li>
+
+
+              <li>CarpetIOHDF5: add support for index files to file reader</li>
+
+
+              <li>LoopControl: Change printstats default to "no"</li>
+
+
+              <li>CarpetInterp2: New ENO2 interpolator.</li>
+
+
+              <li>Support more than one hierarchy of timers</li>
+
+
+              <li>Add timers for refinement levels</li>
+
+
+              <li>CarpetLib: Support higher-then 2nd order restriction operator for cell-centered
+              meshes for Langrange prolongated grid functions.</li>
+            </ul>
+          </li>
+
+
+          <li>EinsteinExact: New arrangement, to eventually replace the Exact thorn. The thorns in
+          this arrangement are generated by Kranc</li>
+
+
+          <li>McLachlan
+
+            <ul>
+              <li>Correct some errors in CCZ4, in particular the GammaShift parameter</li>
+
+
+              <li>Change the default value of apply_dissipation to "never".</li>
+            </ul>
+          </li>
+
+
+          <li>ExternalLibraries: MPI is now treated like any other library on which flesh and
+          thorns may depend, such as e.g. the GSL. It is thus configured via thorn
+          ExternalLibraries/MPI, and not via the flesh any more. In particular, the option "MPI =
+          ..." does not work any more and must not be used; instead, use e.g. "MPI_DIR = " to point
+          to an existing installation. You may also say "MPI_DIR = BUILD" to have Cactus build
+          OpenMPI automatically, which is a convenient way of using MPI on a system where it may
+          not be installed.</li>
+
+
+          <li>LocalInterp: The interpolation loop uses OpenMP</li>
+
+
+          <li>MoL: add multirate capabilities and three new multirate rk schemes</li>
+
+
+          <li>SphericalSurface: make maxnphi and maxntheta parameters steerable</li>
+
+
+          <li>NaNChecker: Add options to use restriction mask to ignore unused points, output more
+          information about the failed points, use OpenMP during NaN check</li>
+
+
+          <li>Multipole: Implement Driscoll&Healy integration</li>
+
+
+          <li>HydroBase: schedule hydrobase_InitExcisionmask global-early loop-local</li>
+
+
+          <li>TmunuBase: support_old_CalcTmunu_mechanism is now deprecated and is likely to be
+          removed soon</li>
+
+
+          <li>EOS_Omni: make more parameters steerable, add option read_table_on_single_process to
+          have a named processor read the full table and MPI_Bcast it to the other processors</li>
+
+
+          <li>GRHydro
+
+            <ul>
+              <li>C2P: resort to bisection if Newton-Raphson fails. This is only activated if user
+              requested this</li>
+
+
+              <li>introduce parameters GRHydro_Y_e_min and GRHydro_Y_e_max to fix issues with EOS
+              tables that don't extend sufficiently far</li>
+
+
+              <li>Fixes to atmosphere mask and the way we sync</li>
+
+
+              <li>various fixes to ePPM</li>
+
+
+              <li>Option to use the slow sector of multirate RK methods</li>
+
+
+              <li>fixed issues with hot EOS treatment</li>
+
+
+              <li>Option to reconstruct W*vel instead of vel</li>
+
+
+              <li>use an early atmosphere reset to ensure past timelevels are initialized
+              correctly</li>
+
+
+              <li>various MHD fixes</li>
+            </ul>
+          </li>
+
+
+          <li>Exact: openmp fixes</li>
+
+
+          <li>GRHydro_InitData: new poloidal magnetic field routine, Added option to smooth metric
+          inside horizon, Alfven wave test</li>
+
+
+          <li>SummationByParts: improve OpenMP parallelization</li>
+
+
+          <li>PITTNull*: respect Cactus' IO::truncate parameter</li>
+
+
+          <li>AEIThorns/Trigger now part of the Einstein Toolkit External libraries:</li>
+
+
+          <li>MPI: new - use this instead of the flesh mechanism (see above)</li>
+
+
+          <li>BLAS: update to 3.4.2</li>
+
+
+          <li>FFTW3: update to 3.3.2</li>
+
+
+          <li>HDF5: will likely not build fortran and C++ api for next release by default (but
+          still does now)</li>
+
+
+          <li>LAPACK: update to 3.4.2</li>
+
+
+          <li>LORENE: don't use OpenMP unless it's enabled within Cactus</li>
+
+
+          <li>OpenSSL: improve search for existing library</li>
+
+
+          <li>zlib: update to 1.2.7</li>
+
+
+          <li>hwloc: new thorn for libhwloc</li>
+        </ul>
+
+
+        <p>
+        </p>
+
+
+        <ul>
+          <li><b>How to upgrade from Lovelace (ET_2012_05)</b>
+          </li>
+        </ul>
+        <p></p>
+
+        <p>To upgrade from the previous release, use GetComponents with the new thornlist to check
+        out the new version. Due to the change of Carpet repository type, using GetComponents to
+        upgrade a Lovelace checkout is unlikely to work.</p>
+
+
+        <p>See the <a href="http://einsteintoolkit.org/download/">Download</a> page on the Einstein
+        Toolkit website for download instructions.</p>
+
+
+        <p>
+        </p>
+
+
+        <ul>
+          <li><b>Remaining issues with this release</b>
+          </li>
+        </ul>
+        <p></p>
+
+        <ul>
+          <li>Certain machines need to be configured specially in Simfactory because the remote
+          directories cannot be determined automatically just from the username. See the Machine
+          notes below.</li>
+
+
+          <li>CarpetIOHDF5: When the new parameter CarpetIOHDF5::output_symmetry_points is set to
+          "yes", then symmetry points are not actually output if CarpetIOHDF5::output_buffer_points
+          has been set to "no".</li>
+
+
+          <li>Recovering with Carpet: The maximum number of timelevels that can be recovered is
+          Carpet::prolongation_order_time+1. This is usually the case, but it is possible to write
+          parameter files e.g. with prolongation_order_time=1 that use 3 timelevels. This bug
+          manifests in an assert() failure when recovering from checkpoints. The work-around is to
+          either increase Carpet::prolongation_order_time or decrease the number of timelevels for
+          the grid function in question accordingly.</li>
+        </ul>
+
+
+        <p>
+        </p>
+
+
+        <ul>
+          <li><b>Machine notes</b>
+          </li>
+        </ul>
+        <p></p>
+
+        <ul>
+          <li>Kraken: defs.local.ini needs to have sourcebasedir = $HOME configured for this
+          machine. You need to determine $HOME by logging in to the machine.</li>
+
+
+          <li>LoneStar and Ranger: defs.local.ini needs to have sourcebasedir = $WORK and basedir =
+          $SCRATCH/simulations configured for this machine. You need to determine $WORK and
+          $SCRATCH by logging in to the machine.</li>
+
+
+          <li>Pandora: The LSU system pandora has at the time of writing not only severe problems
+          of compiling Cactus (can crash the filesystem), but in part due to this also outstanding
+          are some failing testsuite results. Please contact Peter Diener at CCT (LSU) before
+          trying to use this machine.</li>
+        </ul>
+
+
+        <p>All repositories participating in this release carry a branch ET_2012_11 marking this
+        release. These release branches will be updated if severe errors are found.</p>
+
+
+        <p>The "Ørsted" Release Team on behalf of the Einstein Toolkit Consortium (2012-11-08)</p>
+
+
+        <p>&nbsp;&nbsp;&nbsp;Eloisa Bentivegna<br>
+        &nbsp;&nbsp;&nbsp;Tanja Bode<br>
+        &nbsp;&nbsp;&nbsp;Peter Diener<br>
+        &nbsp;&nbsp;&nbsp;Roland Haas<br>
+        &nbsp;&nbsp;&nbsp;Ian Hinder<br>
+        &nbsp;&nbsp;&nbsp;Frank Löffler<br>
+        &nbsp;&nbsp;&nbsp;Bruno Mundim<br>
+        &nbsp;&nbsp;&nbsp;Christian D. Ott<br>
+        &nbsp;&nbsp;&nbsp;Erik Schnetter<br></p>
+
+
+        <p>November 8, 2012</p>
+        <script src="../footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

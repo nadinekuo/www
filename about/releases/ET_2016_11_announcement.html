@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="../../head.js" type="text/javascript"></script>
+  <title>12-16-2016</title>
+</head>
+
+<body>
+  <header>
+    <script src="../../menu.js" type="text/javascript">
+    </script>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 section">
+        <h1>Release Announcement</h1>
+
+<p>We are pleased to announce the fourteenth release (code name
+"<a href="https://en.wikipedia.org/wiki/Cecilia_Payne-Gaposchkin">Payne-Gaposchkin</a>") of the
+Einstein Toolkit, an open, community developed software infrastructure for
+relativistic astrophysics. The highlights of this release are:</p>
+
+<ul>
+<li> The Llama multi-patch infrastructure, which has been publicly
+  available for some time already, is now part of the Einstein
+  Toolkit.  An example in the Einstein Toolkit Gallery shows how to
+  run Llama with a simple wave equation.</li>
+
+<li> There is a new example in the Einstein Toolkit Gallery demonstrating
+  how to evolve a binary black hole system and reproduce a waveform
+  consistent with GW150914, the first gravitational wave event
+  detected by LIGO.</li>
+</ul>
+
+<p>In addition, bug fixes accumulated since the previous release in May 2016
+have been included.</p>
+
+<p>The Einstein Toolkit is a collection of software components and tools for
+simulating and analyzing general relativistic astrophysical systems that builds
+on numerous software efforts in the numerical relativity community including
+CactusEinstein, the Carpet AMR infrastructure and the relativistic
+magneto-hydrodynamics code GRHydro. For parts of the toolkit, the Cactus
+Framework is used as the underlying computational infrastructure providing
+large-scale parallelization, general computational components, and a model for
+collaborative, portable code development. The toolkit includes modules to build
+complete codes for simulating black hole spacetimes as well as systems governed
+by relativistic magneto-hydrodynamics.</p>
+
+<p>The Einstein Toolkit uses a distributed software model and its different
+modules are developed, distributed, and supported either by the core team of
+Einstein Toolkit Maintainers, or by individual groups. Where modules are
+provided by external groups, the Einstein Toolkit Maintainers provide quality
+control for modules for inclusion in the toolkit and help coordinate support.
+The Einstein Toolkit Maintainers currently involve postdocs and faculty from
+six different institutions, and host weekly meetings that are open for anyone
+to join in.</p>
+
+<p>Guiding principles for the design and implementation of the toolkit include:
+open, community-driven software development; well thought out and stable
+interfaces; separation of physics software from computational science
+infrastructure; provision of complete working production code; training and
+education for a new generation of researchers.</p>
+
+<p>For more information about using or contributing to the Einstein Toolkit, or to
+join the Einstein Toolkit Consortium, please visit our web pages at
+<a href="http://einsteintoolkit.org">http://einsteintoolkit.org</a>.</p>
+
+<p>The Einstein Toolkit is primarily supported by NSF
+1550551/1550461/1550436/1550514 (Einstein Toolkit Community Integration and
+Data Exploration).</p>
+
+<p>The Einstein Toolkit contains about 200 regression test cases.  On a large
+portion of the tested machines, almost all of these test suites pass, using both
+MPI and OpenMP parallelization.</p>
+
+<h4>The changes between this and the previous release include:</h4>
+
+<ul><li><b>Larger changes since last release</b></li></ul>
+
+<ul>
+  <li>
+  Cactus Flesh
+  <ul>
+   <li>Update linker flags to allow linking using newer versions of 'ar'</li>
+   <li>Add '.' to perl @INC directory to allow build using newer versions of Perl</li>
+   <li>Provide Cactus version as CACTUS capability to thorns</li>
+   <li>Allow aligning interior (instead of just origin) of grid functions</li>
+   <li>Output build timing information in VERBOSE mode</li>
+  </ul></li>
+  <li>
+  Formaline
+  <ul>
+   <li>Attempt to use fast methods where possible (hardlinks are available)</li>
+   <li>Only update files in thorns that changed.</li>
+       This should make it noticeably faster on most systems</li>
+  </ul></li>
+  <li>
+  Simfactory
+  <ul>
+   <li>use of environment variables CACTUS_NUM_PROCS and CACTUS_NUM_THREADS
+       in runscript of all machines. Update your private entries accordingly.</li>
+   <li>Updates to several machines (too many to list)</li>
+  </ul></li>
+  <li>
+  Multipole
+  <ul>
+   <li>Add possibility to have separate output directory</li>
+  </ul></li>
+  <li>
+  ExternalLibraries
+  <ul>
+   <li>Version updates if built from scratch: OpenMPI, OpenBLAS</li>
+  </ul></li>
+  <li>
+  New thorns or tools
+  <ul>
+   <li>Llama
+    <ul>
+     <li>multi-patch infrastructure for the Einstein Toolkit
+     <li>has been publicly available for some time already, but is
+         now part of the Einstein Toolkit</li>
+    </ul></li>
+  </ul></li>
+</ul>
+
+<ul><li><b>Upcoming changes for the next releases</b></li></ul>
+
+<p>The Tmunu parameter <b>support_old_CalcTmunu_mechanism</b>, will be removed after this
+release. If you rely on this, your code is probably unnecessarily slow. Let us
+know if the removal would create a problem for you.</p>
+
+<p>Most of the Fortran code in GRHydro was already replaced by more modern, and
+much easier to maintain C++ code. Up to now, both versions are compiled, and
+can be chosen at start-time. For a few releases the C++ versions are the
+default. After this release, the Fortran versions will be removed. Let us know
+if the removal would create a problem for you.</p>
+
+<ul><li><b>How to upgrade from Brahe (ET_2016_05)</b></li></ul>
+
+<p>To upgrade from the previous release, use GetComponents with the new thornlist
+to check out the new version.</p>
+
+<p>See the <a href="http://einsteintoolkit.org/download/">Download</a> page on the Einstein Toolkit website for download instructions.</p>
+
+<ul><li><b>Machine notes</b></li></ul>
+
+<p>Supported (tested) machines include:</p>
+
+<ul>
+ <li> Default Debian, Ubuntu, Fedora, CentOS, and MacOS installations</li>
+ <li> Bethe</li>
+ <li> Bluewaters</li>
+ <li> Comet (#)</li>
+ <li> Draco (#)</li>
+ <li> Edison (#)</li>
+ <li> Galileo</li>
+ <li> Gulob (#)</li>
+ <li> Gordon</li>
+ <li> Hydra (#)</li>
+ <li> Minerva</li>
+ <li> Queenbee 2</li>
+ <li> Shelob</li>
+ <li> SuperMic (#)</li>
+ <li> Supermike II</li>
+ <li> Stampede (CPU) (*#)</li>
+ <li> Wheeler</li>
+ <li> Zwicky</li>
+</ul>
+
+<ul>
+ <li>*  Stampede: defs.local.ini needs to have sourcebasedir = $WORK and basedir =
+   $SCRATCH/simulations configured for this machine.  You need to determine
+   $WORK and $SCRATCH by logging in to the machine.
+   A new configuration for KNL nodes is being worked on, but not yet included
+   in the release (but compilation works and tests mostly pass).</li>
+ <li># ML_ADMConstraints: There seems to be a problem regarding calculating the
+   constraints from the BSSN quantities. The exact problem is not known yet,
+   but indications point towards a compiler problem (Intel in all cases).
+   In all cases the metric data (evolved with ML_BSSN) is identical to the test
+   data (to round-off error) and only the ML_ADMConstraints data differ
+   significantly from the test data. If output statements of relevant
+   quantities are inserted into the code, the differences disappear
+   One consistent symptom is failing of the Dissipation and RotatingSymmetry
+   testsuites (as they include output of the constraints using
+   ML_ADMConstraints). Investigations on this matter will continue,
+   new findings, together with workarounds/solutions will be announced on
+   the users mailing list, and will be back-ported into the release branch.
+   Updates can be found in ticket
+   <a href="https://trac.einsteintoolkit.org/ticket/1995">#1995</a>.</li>
+</ul>
+
+<p>All repositories participating in this release carry a branch ET_2016_11
+marking this release.  These release branches will be updated if severe
+errors are found.</p>
+
+<p>The "Payne-Gaposchkin" Release Team on behalf of the Einstein Toolkit Consortium
+(2016-12-16)</p>
+
+<p>
+&nbsp;&nbsp;&nbsp;Steven R. Brandt<br />
+&nbsp;&nbsp;&nbsp;Peter Diener<br />
+&nbsp;&nbsp;&nbsp;Roland Haas<br />
+&nbsp;&nbsp;&nbsp;Ian Hinder<br />
+&nbsp;&nbsp;&nbsp;Frank Löffler<br />
+&nbsp;&nbsp;&nbsp;Erik Schnetter<br />
+&nbsp;&nbsp;&nbsp;Barry Wardell<br />
+</p>
+
+<p>December 16th, 2016</p>
+
+        <script src="../footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

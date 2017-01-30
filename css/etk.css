@@ -1,0 +1,217 @@
+body {
+  background-color: #CCE1FF;
+  padding-top: 70px;
+}
+
+#seminars, td, th  {
+    width: 400px;
+    border: 1px solid black;
+
+}
+
+.carousel img {
+
+  min-width: 100%;
+  max-width: none;
+}
+
+
+h1 {
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+h2 {
+	font-weight: bold;
+  font-size: x-large;
+}
+h3{
+	font-weight: bold;	
+  font-size: large;
+}
+
+h4{
+	font-weight: bold;	
+  font-size: medium;
+}
+
+h5{
+	font-weight: bold;
+  font-size: small;
+}
+
+h6{
+	font-weight: bold;
+  font-size: x-small;
+}
+
+
+
+
+.navbar{
+  border-radius: 7px;
+
+}
+.bold{
+  font-weight: bold;
+}
+.logo {
+  height: 200%;
+  margin-top: -10px;
+}
+
+
+a:hover {
+text-decoration: none;
+}
+.navbar-nav li a {
+  line-height: 10px;
+}
+
+.location {
+
+  font-size: 8pt;
+}
+
+.main-menu {
+  font-size: medium;
+}
+.main-menu:hover {
+  text-decoration: none;
+}
+
+.nav > li > a.main-menu-noleftpadding {
+  padding-left: 0;
+}
+.nav > li > a.main-menu-norightpadding {
+  padding-right: 0;
+}
+
+.listmenu {
+  background-color: #222;
+  text-align: center;
+}
+
+.dropdown-menu > .active > a {
+  color     : white;
+  font-size : smaller;
+  padding   : 10px;
+  background: #222;
+}
+.dropdown-menu > li > a {
+  color     : white;
+  font-size : smaller;
+  padding   : 10px;
+  background: #222;
+}
+.dropdown-menu > li > a:hover {
+  background: #2e6da4;
+}
+
+
+div.section {
+/*  position: relative;
+  top: 35px;*/
+}
+.local_anchor:before {
+  content: "";
+  display: block;
+  height: 30px;
+  margin: -30px 0 0;
+  text-decoration: none;
+}
+.sections-separator {
+  position: relative;
+  top: 75px;
+}
+td {
+  padding: 10px;
+}
+th {
+  padding: 10px;
+}
+.separator {
+  background-color: black;
+  border-color: black;
+  border-width: 1px;
+}
+table tr th {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+table tr td {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+table, td, th {
+
+}
+.htable {
+  border-top: solid;
+  border-width: thin;
+  padding-top: 10px;
+  padding: 0;
+  text-align: center;
+}
+.image {
+  border: 1px solid;
+  padding: 2px;
+  width: 100%;
+  margin-top: 5px;
+}
+.htablec {
+  border-top: solid;
+  border-width: thin;
+  padding-top: 10px;
+  text-align: center;
+}
+.tabled {
+  border: none;
+  text-align: left;
+}
+.footer {
+  position: relative;
+  font-size: 12px;
+/*  top: 100px; */
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+.schedule-small {
+  border: none;
+  padding: 0;
+  text-align: left;
+  word-wrap: break-word;
+}
+.schedule-large {
+  word-wrap: break-word;
+  border: none;
+  padding: 0;
+  text-align: left;
+}
+.center-aligning {
+  text-align: center;
+}
+.bbh-titles {
+  border-bottom: solid;
+  padding-bottom: 10px;
+}
+
+
+.carousel-inner > .item > img{
+  }
+
+hr.members {
+  border-color: #AAAAAA;
+  margin      : 0;
+}
+
+ul.members {
+  margin-bottom : 0;
+}
+
+@media only screen and (min-width: 992px) {}
+
+

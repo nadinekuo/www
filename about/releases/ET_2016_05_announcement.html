@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="../../head.js" type="text/javascript"></script>
+  <title>06-15-2016</title>
+</head>
+
+<body>
+  <header>
+    <script src="../../menu.js" type="text/javascript">
+    </script>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 section">
+        <h1>Release Announcement</h1>
+
+
+        <p>We are pleased to announce the thirteenth release (code name "<a href=
+        "https://en.wikipedia.org/wiki/Tycho_Brahe">Brahe</a>") of the Einstein Toolkit, an open,
+        community developed software infrastructure for relativistic astrophysics. This release
+        includes, among other things, updates to the IllinoisGRMHD code, updated requirements
+        concerning C++, and updates examples in the gallery. In addition, bug fixes accumulated
+        since the previous release in November 2015 have been included.</p>
+
+
+        <p>The Einstein Toolkit is a collection of software components and tools for simulating and
+        analyzing general relativistic astrophysical systems that builds on numerous software
+        efforts in the numerical relativity community including CactusEinstein, the Carpet AMR
+        infrastructure and the relativistic magneto-hydrodynamics code GRHydro. For parts of the
+        toolkit, the Cactus Framework is used as the underlying computational infrastructure
+        providing large-scale parallelization, general computational components, and a model for
+        collaborative, portable code development. The toolkit includes modules to build complete
+        codes for simulating black hole spacetimes as well as systems governed by relativistic
+        magneto-hydrodynamics.</p>
+
+
+        <p>The Einstein Toolkit uses a distributed software model and its different modules are
+        developed, distributed, and supported either by the core team of Einstein Toolkit
+        Maintainers, or by individual groups. Where modules are provided by external groups, the
+        Einstein Toolkit Maintainers provide quality control for modules for inclusion in the
+        toolkit and help coordinate support. The Einstein Toolkit Maintainers currently involve
+        postdocs and faculty from six different institutions, and host weekly meetings that are
+        open for anyone to join in.</p>
+
+
+        <p>Guiding principles for the design and implementation of the toolkit include: open,
+        community-driven software development; well thought out and stable interfaces; separation
+        of physics software from computational science infrastructure; provision of complete
+        working production code; training and education for a new generation of researchers.</p>
+
+
+        <p>For more information about using or contributing to the Einstein Toolkit, or to join the
+        Einstein Toolkit Consortium, please visit our web pages at &lt;<a href=
+        "http://einsteintoolkit.org">http://einsteintoolkit.org</a>&gt;.</p>
+
+
+        <p>The Einstein Toolkit is primarily supported by NSF 1212401/1212426/1212433/1212460
+        (Einstein Toolkit), and also by 0905046/0941653 (PetaCactus) and 0710874 (LONI Grid).</p>
+
+
+        <p>The Einstein Toolkit contains about 200 regression test cases. On a large portion of the
+        tested machines, almost all of these test suites pass, using both MPI and OpenMP
+        parallelization.</p>
+
+
+        <h4>The changes between this and the previous release include:</h4>
+
+
+        <ul>
+          <li><b>Larger changes since last release</b>
+          </li>
+        </ul>
+
+
+        <ul>
+          <li>Cactus Flesh
+
+            <ul>
+              <li>Enable C++11 by default, and require it to be supported</li>
+
+
+              <li>External libraries can specify additional paths (only) added as include path for
+              Fortran.</li>
+
+
+              <li>The 'checkout' target of 'make' has been removed, as it only supported cvs, was
+              unused and untested for a long time.</li>
+            </ul>
+          </li>
+
+
+          <li>IllinoisGRMHD/Convert_to_HydroBase: major update</li>
+
+
+          <li>SetMask_SphericalSurface: modify criterion for setting the mask to avoid problems
+          with intermittent apparent horizon finder failures</li>
+
+
+          <li>More examples in the <a href="http://einsteintoolkit.org/about/gallery/">Einstein
+          Toolkit Gallery</a>
+          </li>
+
+
+          <li>Simfactory
+
+            <ul>
+              <li>New configurations: acrcluster, centos, cori, minerva, sunnyvale</li>
+
+
+              <li>Updates to several machines (too many to list)</li>
+
+
+              <li>stampede: fix core affinity settings</li>
+            </ul>
+          </li>
+
+
+          <li>New thorns or tools
+
+            <ul>
+              <li>New thorn WatchDog: a thorn that terminates jobs that do not make progress over a
+              user-defined time frame, defined as time in between ANALYSIS steps.</li>
+            </ul>
+          </li>
+        </ul>
+
+
+        <ul>
+          <li><b>How to upgrade from Somerville (ET_2015_11)</b>
+          </li>
+        </ul>
+
+
+        <p>To upgrade from the previous release, use GetComponents with the new thornlist to check
+        out the new version. Switching to the new branch is not possible for most repositories due
+        to repository moves.</p>
+
+
+        <p>See the <a href="http://einsteintoolkit.org/download/">Download</a> page on the Einstein
+        Toolkit website for download instructions.</p>
+
+
+        <ul>
+          <li><b>Remaining issues with this release</b>
+          </li>
+        </ul>
+
+
+        <ul>
+          <li>Certain machines need to be configured specially in Simfactory because the remote
+          directories cannot be determined automatically just from the user name. See the Machine
+          notes below.</li>
+
+
+          <li>Recovering with Carpet: Carpet stores metadata (such as the simulation time) only for
+          Carpet::max_timelevels time levels, although it is possible to allocate more time levels.
+          These additional time levels then cannot be recovered; the symptom is an assertion
+          failure during recovery. The solution is to either increase Carpet::max_timelevels, or to
+          decrease the number of active time levels.</li>
+        </ul>
+
+
+        <ul>
+          <li><b>Machine notes</b>
+          </li>
+        </ul>
+
+
+        <p>Supported (tested) machines include:</p>
+
+
+        <ul>
+          <li>Default Debian, Ubuntu, Fedora, CentOS, and MacOS installations</li>
+
+
+          <li>Bethe</li>
+
+
+          <li>Bluewaters</li>
+
+
+          <li>Comet</li>
+
+
+          <li>Datura</li>
+
+
+          <li>Fionn</li>
+
+
+          <li>Gordon</li>
+
+
+          <li>GPC</li>
+
+
+          <li>Gullimin</li>
+
+
+          <li>MP2</li>
+
+
+          <li>Nvidia</li>
+
+
+          <li>Queenbee 2</li>
+
+
+          <li>Shelob</li>
+
+
+          <li>Supermike II</li>
+
+
+          <li>Stampede (CPU)</li>
+
+
+          <li>Titan</li>
+
+
+          <li>Zwicky</li>
+        </ul>
+
+
+        <ul>
+          <li>Stampede: defs.local.ini needs to have sourcebasedir = $WORK and basedir =
+          $SCRATCH/simulations configured for this machine. You need to determine $WORK and
+          $SCRATCH by logging in to the machine.</li>
+        </ul>
+
+
+        <p>All repositories participating in this release carry a branch ET_2016_05 marking this
+        release. These release branches will be updated if severe errors are found.</p>
+
+
+        <p>The "Brahe" Release Team on behalf of the Einstein Toolkit Consortium (2016-06-15)</p>
+
+
+        <p>&nbsp;&nbsp;&nbsp;Steven R. Brandt<br>
+        &nbsp;&nbsp;&nbsp;Peter Diener<br>
+        &nbsp;&nbsp;&nbsp;Roland Haas<br>
+        &nbsp;&nbsp;&nbsp;Ian Hinder<br>
+        &nbsp;&nbsp;&nbsp;Frank Löffler<br>
+        &nbsp;&nbsp;&nbsp;Bruno C. Mundim<br>
+        &nbsp;&nbsp;&nbsp;Erik Schnetter<br>
+        &nbsp;&nbsp;&nbsp;Barry Wardell<br></p>
+
+
+        <p>June 16, 2016</p>
+        <script src="../footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

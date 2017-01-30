@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="head.js" type="text/javascript">
+  </script>
+  <title>About</title>
+</head>
+<body id="about">
+  <script src="menu.js" type="text/javascript"></script>
+  <div class="container">
+    <div class="row">
+      <div class="section col-xs-12" data-shorthand="About the ET">
+        <a class='local_anchor' id="about"></a>
+        <h1>About the Einstein Toolkit</h1>
+      </div>
+      <div  class="col-xs-11 col-xs-offset-1">
+        <div style="border: 1px solid black; border-radius: 5px; padding: 20px;"
+             class="section" data-shorthand="About the ET">
+          <p><b>The Einstein Toolkit is a <a href="members.html">community</a>-driven software platform of core computational tools to advance and support research in relativistic astrophysics and gravitational
+          physics.</b></p>
+          <p>This means:</p>
+          <p>We are developing and supporting open software for relativistic astrophysics. Our aim is to provide the core computational tools that can enable new science, broaden our
+          community, facilitate interdisciplinary research and take advantage of emerging petascale computers and advanced cyberinfrastructure.</p>
+          <p>The Einstein Toolkit aims to include any computational tool the fits into it's scope. Currently, a large portion of the toolkit is made up by over 100 <a href=
+          "http://www.cactuscode.org">Cactus</a> components (called thorns) for computational relativity along with associated tools for simulation management and visualization. This
+          includes a vacuum spacetime solver (McLachlan), two relativistic hydrodynamics solvers (GRHydro and IllinoisGRMHD), along with components for initial data, analysis and
+          computational infrastructure. These components have been developed and improved over many years by <a href="maintainers-credits.html">many different researchers</a>.</p>
+          <p>The Einstein Toolkit is supported by a distributed model, combining core support of software, tools, and documentation with partnerships with other developers who
+          contribute open software and coordinate together on development.</p>
+          <p>The tools and thorns comprising the Einstein Toolkit are provided in this <a href=
+          "https://bitbucket.org/einsteintoolkit/manifest/raw/ET_2016_11/einsteintoolkit.th">Component List</a>. A <a href=
+          "http://docs.einsteintoolkit.org/et-docs/Tutorial_for_New_Users">tutorial</a> describes in easy steps how to download, compile, and run this resoluting code.</p>
+          <h2>Components of the Einstein Toolkit include:</h2>
+          <div class="row htable">
+            <div class="col-sm-3 col-md-2 tabled">
+              <b>Cactus Framework</b>
+            </div>
+            <div class="col-sm-9 col-md-10 tabled">
+              <p>The <a href="http://www.cactuscode.org">Cactus Framework and Computational Toolkit</a> provides an parallel, collaborative, component framework for the Einstein Toolkit.
+              Cactus was developed by the numerical relativity community but now supports scientific applications in different disciplines. The Cactus Computational Toolkit is a set of
+              thorns that provide general capabilities used by the Einstein Toolkit such as I/O, coordinates and boundary conditions. Distribution: The Cactus Framework is distributed
+              under an open source license from the Cactus website <a href="http://www.cactuscode.org">http://www.cactuscode.org</a></p>
+            </div>
+          </div>
+          <div class="row htable">
+            <div class="col-sm-3 col-md-2 tabled">
+              <b>Component Lists and GetComponents</b>
+            </div>
+            <div class="col-sm-9 col-md-10 tabled">
+              <p>The Einstein Toolkit component list contains the locations of the source code and associated tools for simulations, including Cactus thorns. The component list is
+              written using the Component Retrieval Language and can be checked out using the <a href="https://github.com/gridaphobe/CRL/raw/ET_2016_11/GetComponents">GetComponents</a>
+              tools. Distribution: <a href="https://github.com/gridaphobe/CRL/raw/ET_2016_11/GetComponents">https://github.com/gridaphobe/CRL/raw/ET_2016_11/<br>
+              GetComponents</a></p>
+            </div>
+          </div>
+          <div class="row htable">
+            <div class="col-sm-3 col-md-2 tabled">
+              <b>Simulation Factory</b>
+            </div>
+            <div class="col-sm-9 col-md-10 tabled">
+              <p>The <a href="http://www.cct.lsu.edu/~eschnett/SimFactory/">simulation factory</a> includes configuration and batch script files for compiling and running simulations
+              using the Cactus code on many different architectures. Additional capabilities provide for management of simulations, simplifying checkpoint &amp; restart, and remote use
+              of machines. The Einstein Consortium have selected the simulation factory as the default mechanism for supporting the easy use of Cactus on heterogeneous resources.
+              Distribution: Bitbucket git repository: <a href="https://bitbucket.org/simfactory/simfactory2">https://bitbucket.org/simfactory/simfactory2</a>(ET_2016_11 branch)</p>
+            </div>
+          </div>
+          <div class="row htable">
+            <div class="col-sm-3 col-md-2 tabled">
+              <b>Cactus Thorns</b>
+            </div>
+            <div class="col-sm-9 col-md-10 tabled">
+              <p>Code for the centrally supported Cactus thorns in the Einstein Toolkit. Additional thorns are maintained in external repositories with open access. Distribution:
+              Bitbucket: <a href="https://bitbucket.org/cactuscode">Cactuscode</a> and <a href="https://bitbucket.org/einsteintoolkit">Einstein Toolkit</a>. Some components are also
+              living in the Einstein Toolkit SVN repository, an overview of which is here, but includes also components that now moved to Bitbucket: <a href=
+              "https://svn.einsteintoolkit.org/cactus">https://svn.einsteintoolkit.org/cactus/</a></p>
+            </div>
+          </div>
+          <div class="row htable">
+            <div class="col-sm-3 col-md-2 tabled">
+              <b>Parameter Files</b>
+            </div>
+            <div class="col-sm-9 col-md-10 tabled">
+              <p>Example Cactus code parameter files for Einstein Toolkit beginners. Simple examples are provided for a Kerr-Schild black hole, a binary black hole coalescence, and a
+              static TOV star. See the documentation for information on how to run these on the QueenBee 2 machine. Distribution: <a href=
+              "https://bitbucket.org/cactuscode/cactusexamples">Cactuscode</a> and <a href="https://bitbucket.org/einsteintoolkit/einsteinexamples">EinsteinToolkit</a> (choose ET_2016_11
+              branch for both).</p>
+            </div>
+          </div>
+        </div><!--Div1 End-->
+      </div>
+      <div class="section col-xs-12" data-shorthand="Capabilities">
+        <a class='local_anchor' id="capabilities">&nbsp;</a>
+        <h1>Capabilities</h1>
+      </div>
+      <div class="col-xs-11 col-xs-offset-1">
+        <div style="border: 1px solid black; border-radius: 5px; padding: 20px;" class="section" data-shorthand="Capabilities">
+          <h2>Vacuum Spacetimes</h2>
+          <p>Evolution of vacuum spacetime is provided by the McLachlan code. McLachlan solves the Einstein vacuum equations in 3D Cartesian coordinates using adaptive mesh refinement
+          and can be combined with matter codes for modeling spacetimes containing matter. McLachlan is implemented using the Kranc package. Features of McLachlan include:</p>
+          <ul>
+            <li>complete implementation of the BSSNOK general relativity spacetime evolution equations including all the standard tricks that ensures stability</li>
+            <li>up-winding for the shift advection terms</li>
+            <li>standard moving puncture Gamma-driver and 1 + log gauges</li>
+            <li>phi- and W- methods</li>
+            <li>static and radiative outer boundary conditions</li>
+            <li>inclusion of matter through the TmunuBase interface</li>
+            <li>up to 8th order finite differencing</li>
+            <li>OpenMP parallelization through Carpet/LoopControl in addition to MPI parallelization through Carpet</li>
+            <li>multi-block code infrastructures by applying the Jacobian to transform local derivatives to global derivatives</li>
+          </ul>
+          <h2 style="word-wrap: break-word;"><b>Relativistic Magneto&#8203;hydrodynamics</b></h2>
+          <h3>GRHydro</h3>
+          <p>The Einstein Toolkit GRHydro modules can evolve spacetimes with general relativistic hydrodynamics in 3D Cartesian coordinates. GRHydro was once based on the public
+          version of the <a href="http://www.whiskycode.org/">Whisky code</a> developed originally by the EU Network on Sources of Gravitational Radiation and later by a collaboration
+          led by AEI/SISSA, but was later expanded and cleaned up considerably. Features of GRHydro include at the moment:</p>
+          <ul>
+            <li>Evolution of the equations of general relativistic magneto-hydrodynamics (GRMHD) in 3D Cartesian coordinates on a curved dynamical background.</li>
+          </ul>
+          <h3>IllinoisGRMHD</h3>
+          <p>IllinoisGRMHD solves the equations of General Relativistic MagnetoHydroDynamics (GRMHD) using a high-resolution shock capturing scheme. It is a rewrite of the Illinois
+          Numerical Relativity (ILNR) group's GRMHD code, and generates results that agree to roundoff error with that original code. Its feature set coincides with the features of the
+          ILNR group's recent code (ca. 2009--2014), which was used in their modeling of the following systems:</p>
+          <ul>
+            <li>Magnetized circumbinary disk accretion onto binary black holes</li>
+            <li>Magnetized black hole--neutron star mergers</li>
+            <li>Magnetized Bondi flow, Bondi-Hoyle-Littleton accretion</li>
+            <li>White dwarf--neutron star mergers</li>
+          </ul>
+          <p>IllinoisGRMHD is particularly good at modeling GRMHD flows into black holes without the need for excision. Its HARM-based conservative-to-primitive solver has also been
+          modified to check the physicality of conservative variables prior to primitive inversion, and move them into the physical range if they become unphysical.</p>
+          <h2>Initial Data</h2>
+          <ul>
+            <li>Single and binary black holes</li>
+            <li>Single TOV stars</li>
+            <li>LORENE data</li>
+          </ul>
+          <h2>Relativity Tools</h2>
+          <ul>
+            <li>Apparent horizon finding</li>
+            <li>Black hole excision</li>
+          </ul>
+          <h2>Analysis</h2>
+          <ul>
+            <li>TrK, det(g), R_ab, R</li>
+            <li>ADM constraint violation</li>
+            <li>Basic hydrodynamics analysis routines</li>
+            <li>Extraction of gravitational waves</li>
+          </ul>
+          <h2>Computational Infrastructure</h2>
+          <ul>
+            <li>Adaptive mesh refinement</li>
+            <li>Reflection and rotation symmetry boundary conditions</li>
+            <li>Radiation boundary conditions</li>
+            <li>Flexible Cartesian 3-D meshes</li>
+            <li>Multidimensional I/O using HDF5, ASCII, Jpegs</li>
+            <li>Method of lines time integration</li>
+            <li>Courant time steeping</li>
+            <li>Seamless use of BLAS, GSL, HDF5, LAPACK</li>
+          </ul>
+          <h2>Tools</h2>
+          <ul>
+            <li>Checking for NaNs</li>
+            <li>Memory poisoning to identify uninitialized variables</li>
+            <li>Timing report by thorn, schedule bin, and method</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container section">
+    <div class="row">
+            <a class='local_anchor' id="guidelines">&nbsp;</a>
+        <h1>Guidelines</h1>
+      <div  class="col-xs-11 col-xs-offset-1">
+
+      <div data-shorthand="Talks" style="border: 1px solid black; border-radius: 5px; padding: 10px;" class="section" >
+             <p>The Einstein Toolkit is a collection of software components and tools for simulating and analyzing general relativistic astrophysical systems. Such systems include
+        gravitational wave space-times, collisions of compact objects such as black holes or neutron stars, accretion onto compact objects, core collapse supernovae and Gamma-Ray
+        Bursts.</p>
+        <p>The Einstein Toolkit builds on numerous software efforts in the numerical relativity community including CactusEinstein, <a href="http://www.whiskycode.org/">Whisky</a>,
+        and <a href="http://www.carpetcode.org">Carpet</a>. The Einstein Toolkit currently uses the <a href="http://www.cactuscode.org">Cactus Framework</a> as the underlying
+        computational infrastructure that provides large-scale parallelization, general computational components, and a model for collaborative, portable code development.</p>
+        <p><b>Guiding principles for the design and implementation of the toolkit include:</b></p>
+        <ul>
+          <li><i><b>Open, community-driven software development</b> that encourages the sharing of code across the community, prevents code duplication and leads to sustainable support
+          and development of essential code.</i></li>
+          <li><i><b>Well thought out and stable interfaces</b> between components that enable multiple implementations of physics capabilities, and allow groups or individuals to
+          concentrate on their areas of interest.</i></li>
+          <li><i><b>Separation of physics software from computational science infrastructure</b> so that new technologies for large scale computing, processor accelerators, or parallel
+          I/O can be easily integrated with science codes.</i></li>
+          <li><i>The provision of <b>complete working production codes</b> to provide: prototypes, standard benchmarks and testcases; codes that are available for and usable by the
+          general astrophysics community; tools for new researchers and groups to enter this field; training and education for a new generation of researchers.</i></li>
+        </ul><br>
+        <div>
+          <p>The Toolkit includes a set of mix-and-match components (or Thorns) that support the development of codes for relativistic astrophysics. A number of full examples provide
+          prototype, production examples of complete astrophysical codes including black hole spacetimes and relativistic hydrodynamical spacetimes.</p>
+          <p>The Einstein Toolkit uses a distributed model with its software modules either developed, distributed and supported by the <a href="maintainers-credits.html">core maintainers</a> team, or by
+          individual groups. Where modules are provided by external groups, we provide quality control for modules for inclusion in the toolkit and help coordinate support.</p>
+          <p>Through this effort we want to catalyze a consortium for the development and support for community infrastucture for relativistic astrophysics. Although currently the
+          toolkit is based on Cactus, in the future we plan for the consortium to support other relevant community codes. In the shorter term we are building on the toolkit and
+          interested in tools that interface with Cactus for initial data, post-processing and visualization.</p>
+          <!--<p>The development of the Einstein Toolkit is funded through awards NSF 0701566 & 0653303 (XiRel), NSF 0903973, 0903973 & 0903782 (CIGR), NSF 0905046/0941653 (PetaCactus/PRAC). Additional support for Cactus and Carpet is provided through NSF 0721915 (Alpaca) and funding from the Center for Computation & Technology at LSU.</p>-->
+
+        </div><br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <script src="footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="../../head.js" type="text/javascript"></script>
+  <title>5-22-2013</title>
+</head>
+
+<body>
+  <header>
+    <script src="../../menu.js" type="text/javascript">
+    </script>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 section">
+        <h1>Release Announcement</h1>
+
+
+        <p>We are pleased to announce the seventh release (code name "<a href=
+        "http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Gauss</a>") of the Einstein Toolkit, an
+        open, community developed software infrastructure for relativistic astrophysics. This
+        release includes various improvements to the MHD handling within GRHydro, and improvements
+        to the Cactus flesh, especially treatment of external libraries. In addition, bug fixes
+        accumulated since the previous release in November 2012 have been included.</p>
+
+
+        <p>The Einstein Toolkit is a collection of software components and tools for simulating and
+        analyzing general relativistic astrophysical systems that builds on numerous software
+        efforts in the numerical relativity community including CactusEinstein, the Carpet AMR
+        infrastructure and the relativistic magneto-hydrodynamics code GRHydro. The Cactus
+        Framework is used as the underlying computational infrastructure providing large-scale
+        parallelization, general computational components, and a model for collaborative, portable
+        code development. The toolkit includes modules to build complete codes for simulating black
+        hole spacetimes as well as systems governed by relativistic magneto-hydrodynamics.</p>
+
+
+        <p>The Einstein Toolkit uses a distributed software model and its different modules are
+        developed, distributed, and supported either by the core team of Einstein Toolkit
+        Maintainers, or by individual groups. Where modules are provided by external groups, the
+        Einstein Toolkit Maintainers provide quality control for modules for inclusion in the
+        toolkit and help coordinate support. The Einstein Toolkit Maintainers currently involve
+        postdocs and faculty from six different institutions, and host weekly meetings that are
+        open for anyone to join in.</p>
+
+
+        <p>Guiding principles for the design and implementation of the toolkit include: open,
+        community-driven software development; well thought out and stable interfaces; separation
+        of physics software from computational science infrastructure; provision of complete
+        working production code; training and education for a new generation of researchers.</p>
+
+
+        <p>For more information about using or contributing to the Einstein Toolkit, or to join the
+        Einstein Toolkit Consortium, please visit our web pages at &lt;<a href=
+        "http://einsteintoolkit.org">http://einsteintoolkit.org</a>&gt;.</p>
+
+
+        <p>The Einstein Toolkit is primarily supported by NSF 1212401/1212426/1212433/1212460
+        (Einstein Toolkit), 0903973/0903782/0904015 (CIGR), and also by 0905046/0941653
+        (PetaCactus) and 0710874 (LONI Grid).</p>
+
+
+        <p>The Einstein Toolkit contains about 200 regression test cases. On a large portion of the
+        tested machines, almost all of these testsuites pass, using both MPI and OpenMP
+        parallelization.</p>
+
+
+        <h4>The changes between this and the previous release include:</h4>
+
+
+        <p>
+        </p>
+
+
+        <ul>
+          <li><b>Compatibility</b>
+          </li>
+        </ul>
+        <p></p>The following changes lead to potential different numerical results or the need to
+        modify optionlists:
+
+        <ul>
+          <li>The MPI thorn, as well as several other external libraries, feature an improved
+          autodetection mechanism. Most typical installations don't have to set any options to have
+          installed libraries detected.</li>
+
+
+          <li>The parsing code of some ccl files got re-written. Most existing files should work as
+          they did before, but there are a few corner-cases, e.g. using double quotes around
+          keywords that contain mathematical symbols.</li>
+        </ul>
+        <!-- TODO -->
+
+
+        <p>
+        </p>
+
+
+        <ul>
+          <li><b>Larger changes since last release</b>
+          </li>
+        </ul>
+        <p></p>
+
+        <ul>
+          <li>New components:
+
+            <ul>
+              <li>EinsteinAnalysis/Outflow</li>
+
+
+              <li>Carpet/CycleClock</li>
+
+
+              <li>LSUThorns/PeriodicCarpet</li>
+
+
+              <li>CactusTest/TestFortranCrayPointers</li>
+
+
+              <li>CactusDoc/CoreDoc</li>
+            </ul>
+          </li>
+
+
+          <li>simfactory
+
+            <ul>
+              <li>updates of various machine configurations</li>
+
+
+              <li>remove existing default allocations; use local configuration to use these</li>
+            </ul>
+          </li>
+
+
+          <li>Cactus flesh:
+
+            <ul>
+              <li>Do not buffer output from thorn configuration scripts</li>
+
+
+              <li>Introduce OPTIONAL_IFACTIVE for thorn dependencies</li>
+
+
+              <li>Automatically activate required thorns</li>
+
+
+              <li>Support IBM Blue Gene Q compilers</li>
+
+
+              <li>Change the parameter parser to Piraha</li>
+
+
+              <li>Implement CCTK_Error and friends (marked as non-returning for the compiler)</li>
+
+
+              <li>Replace Cactus complex number type with C/C++ complex numbers</li>
+
+
+              <li>Workaround for compiler-bug with Intel compiler and 'restrict'. In particular,
+              for the current and recent Intel compilers (version 13), the 'restrict' keyword is
+              disabled in Cactus code by default, because the compiler tends to produce wrong code
+              otherwise.</li>
+            </ul>
+          </li>
+
+
+          <li>Carpet
+
+            <ul>
+              <li>Also here: too many interesting fixes to mention all, some:</li>
+
+
+              <li>CarpetIOHDF5: Sliced HDF5 output index file was not stored correctly</li>
+
+
+              <li>Carpet: Correct load-balancing algorithm to really prefer splitting in the z
+              direction</li>
+
+
+              <li>CarpetRegrid2: Allow pseudo-2D domains</li>
+            </ul>
+          </li>
+
+
+          <li>MoL: Allow skipping MoL's initial copy from past to current timelevel</li>
+
+
+          <li>RotatingSymmetry90: Correct index calculation for "DD" tensors</li>
+
+
+          <li>Formaline: add off-line tarball extraction utility</li>
+
+
+          <li>ADMConstraints: support "new" interface to TmunuBase</li>
+
+
+          <li>AHFinderDirect
+
+            <ul>
+              <li>Dont use recovered origin if AH was never found</li>
+
+
+              <li>Dont use initial guess origins from parameters when tracking from gridscalar</li>
+            </ul>
+          </li>
+
+
+          <li>Hydro_Analysis
+
+            <ul>
+              <li>add option to average the location of multiple identical maxima</li>
+
+
+              <li>add parameters to control which interpolator is used in GRHydro_Separation</li>
+            </ul>
+          </li>
+
+
+          <li>HydroBase
+
+            <ul>
+              <li>Split temperature and entropy evolution methods</li>
+
+
+              <li>Add gridfunctions and boilerplate for vector potential</li>
+            </ul>
+          </li>
+
+
+          <li>TmunuBase: change the default of "support_old_CalcTmunu_mechanism" to "no"</li>
+
+
+          <li>EOS_Omni
+
+            <ul>
+              <li>improve solution for density based on pressure, temperature, Y_e (but slow)</li>
+
+
+              <li>remove poly_gamma_ini</li>
+
+
+              <li>add support for cold tabulated EOS (P=P(rho)) that can be supplemented with a
+              thermal gamma law</li>
+
+
+              <li>add possibility to stich on a polytrope to the lower end of a tabulated cold
+              EOS</li>
+
+
+              <li>extrapolate to negative temperatures</li>
+            </ul>
+          </li>
+
+
+          <li>GRHydro
+
+            <ul>
+              <li>remove poly_gamma_ini</li>
+
+
+              <li>make more paramters steerable</li>
+
+
+              <li>remove any traces of non-functional Fisheye support</li>
+
+
+              <li>Introduce variable atmopshere level / tolerance as function of radius. Off by
+              default</li>
+
+
+              <li>Implemented WENO5</li>
+
+
+              <li>Added MP5 reconstruction method</li>
+
+
+              <li>implemented H viscosity for HLLE solver to eliminate the carbuncle
+              instability</li>
+
+
+              <li>a lot of smaller fixes/extensions (too many to list here)</li>
+            </ul>
+          </li>
+
+
+          <li>GRHydro_InitData
+
+            <ul>
+              <li>add "magnetized Bondi" to hydrobase::initial_bvec</li>
+
+
+              <li>As with GRHydro: a lot of smaller fixes, too many to list here</li>
+            </ul>
+          </li>
+
+
+          <li>SetMask_SphericalSurface: fix setup of multiple spheres</li>
+
+
+          <li>HDF5: update to 1.8.10-patch1</li>
+
+
+          <li>MPI: improved auto-detection, update to OpenMPI 1.6.4</li>
+
+
+          <li>OpenSSL: update to 1.0.1e</li>
+
+
+          <li>hwloc: library dealing with low-level hardware configurations, version 1.7</li>
+
+
+          <li>zlib: update to 1.2.8</li>
+
+
+          <li>Vectors: major update</li>
+
+
+          <li>EinsteinExact: Various, smaller updates (noteworthy, but too many)</li>
+
+
+          <li>Kranc: Various, smaller updates (noteworthy, but too many)</li>
+
+
+          <li>McLachlan
+
+            <ul>
+              <li>McLachlan_BSSN: fix the Hamiltonian constraint for CCZ4</li>
+
+
+              <li>Fix the sign for 2nd and 6th order dissipation operators</li>
+            </ul>
+          </li>
+        </ul>
+
+
+        <p>
+        </p>
+
+
+        <ul>
+          <li><b>How to upgrade from Ørsted (ET_2012_11)</b>
+          </li>
+        </ul>
+        <p></p>
+
+        <p>To upgrade from the previous release, use GetComponents with the new thornlist to check
+        out the new version.</p>
+
+
+        <p>See the <a href="http://einsteintoolkit.org/download/">Download</a> page on the Einstein
+        Toolkit website for download instructions.</p>
+
+
+        <p>
+        </p>
+
+
+        <ul>
+          <li><b>Remaining issues with this release</b>
+          </li>
+        </ul>
+        <p></p>
+
+        <ul>
+          <li>Certain machines need to be configured specially in Simfactory because the remote
+          directories cannot be determined automatically just from the username. See the Machine
+          notes below.</li>
+
+
+          <li>Recovering with Carpet: The maximum number of timelevels that can be recovered is
+          Carpet::prolongation_order_time+1. This is usually the case, but it is possible to write
+          parameter files e.g. with prolongation_order_time=1 that use 3 timelevels. This bug
+          manifests in an assert() failure when recovering from checkpoints. The work-around is to
+          either increase Carpet::prolongation_order_time or decrease the number of timelevels for
+          the grid function in question accordingly.</li>
+        </ul>
+
+
+        <p>
+        </p>
+
+
+        <ul>
+          <li><b>Machine notes</b>
+          </li>
+        </ul>
+        <p></p>
+
+        <ul>
+          <li>Kraken: defs.local.ini needs to have sourcebasedir = $HOME configured for this
+          machine. You need to determine $HOME by logging in to the machine.</li>
+
+
+          <li>LoneStar and Stampede: defs.local.ini needs to have sourcebasedir = $WORK and basedir
+          = $SCRATCH/simulations configured for this machine. You need to determine $WORK and
+          $SCRATCH by logging in to the machine.</li>
+
+
+          <li>Pandora: The LSU system pandora has at the time of writing not only severe problems
+          of compiling Cactus (can crash the filesystem), but in part due to this also outstanding
+          are some failing testsuite results. Please contact Peter Diener at CCT (LSU) before
+          trying to use this machine.</li>
+        </ul>
+
+
+        <p>All repositories participating in this release carry a branch ET_2013_05 marking this
+        release. These release branches will be updated if severe errors are found.</p>
+
+
+        <p>The "Gauss" Release Team on behalf of the Einstein Toolkit Consortium (2013-05-22)</p>
+
+
+        <p>&nbsp;&nbsp;&nbsp;Eloisa Bentivegna<br>
+        &nbsp;&nbsp;&nbsp;Tanja Bode<br>
+        &nbsp;&nbsp;&nbsp;Peter Diener<br>
+        &nbsp;&nbsp;&nbsp;Roland Haas<br>
+        &nbsp;&nbsp;&nbsp;Ian Hinder<br>
+        &nbsp;&nbsp;&nbsp;Frank Löffler<br>
+        &nbsp;&nbsp;&nbsp;Bruno Mundim<br>
+        &nbsp;&nbsp;&nbsp;Christian D. Ott<br>
+        &nbsp;&nbsp;&nbsp;Erik Schnetter<br></p>
+
+
+        <p>May 22, 2013</p>
+        <script src="../footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

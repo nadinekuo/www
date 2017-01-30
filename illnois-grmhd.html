@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="head.js" type="text/javascript">
+  </script>
+  <title>Index</title>
+</head>
+<body>
+  <header>
+    <script src="menu.js" type="text/javascript">
+    </script>
+  </header>
+  <div class="container section">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>A conservation law formulation of nonlinear elasticity in general relativity</h2>
+<h3>Monday, October 14, 2013, 10am US central time</h3>
+<p>The <a href="http://horizon.tapir.caltech.edu/demo/einsteintoolkit.jsp"><i
+>Einstein Toolkit</i></a> BigBlueButton meeting was be used for audio and
+slides. The slides are available as <a href="IllinoisGRMHD.pdf">pdf</a>, and
+the recordings are available in <a href="recording/2013_10_14.ogv">Theora</a>
+or <a href="recording/2013_10_14.mp4">MP4</a> format.
+</p>
+
+
+<h3>Abstract</h3>
+<p>
+After months of work, I am pleased to release my rewrite of the Illinois
+numerical relativity group's staggered A-field GRMHD thorn to the ET
+community. The new thorn is called IllinoisGRMHD, and yields results
+identical (within roundoff error) to the original GRMHD code of the
+Illinois group with AMR &amp; unigrids, with bitant symmetry &amp; without, and
+with single or multiple MPI processes. We used precisely these GRMHD
+algorithms to produce our latest GRMHD-based papers.
+
+IllinoisGRMHD is written entirely in C, except for some C++ file I/O for
+debugging purposes, and all loops are OpenMP-compatible. The coding
+standard is C99.
+
+I would like to thank Frank and the CCT folks, who have graciously agreed
+to host IllinoisGRMHD on the ET SVN server, as the thorn awaits
+maintainers' approval for incorporation into the official ET.
+
+Download IllinoisGRMHD via the following command:
+<pre>
+svn co https://svn.einsteintoolkit.org/cactus/EinsteinEvolve/IllinoisGRMHD/trunk/
+</pre>
+
+<a href="https://svn.einsteintoolkit.org/cactus/EinsteinEvolve/IllinoisGRMHD/trunk/">Browse</a> IllinoisGRMHD source code in your web browser.
+</p>
+
+<h4>Background</h4>
+<p>
+Roughly a decade of work has gone into the original code, and nearly all of
+the credit for debugging that battle-hardened code goes to Stu Shapiro and
+other former &amp; current members of his group, to whom I give my great thanks
+and send the following message: Despite weeks entirely devoted to debugging
+this rewritten code, I found no major bugs in the original code.
+</p>
+
+<h4>License</h4>
+<p>
+The IllinoisGRMHD thorn is hereby released under the GNU GPL v2 or higher,
+to maximize compatibility with the ET thorns.
+</p>
+
+<h3>Presenter: Zachariah Etienne</h3>
+<img src="Zachariah_Etienne.jpg" width="20%" align="right" alt="Zachariah Etienne">
+<p>
+JSI fellow at U. Maryland &amp; NASA Goddard
+</p>
+<p>
+Numerical Relativity Group Research interests: My research interests span all
+of computational astrophysics. Much of my past work has focused on simulating
+the mergers of compact binary systems, including BHNS, BHBH, WDNS, and NSNS. My
+current work focuses on BHBH mergers, as well as studying MHD effects in BHNS
+mergers.
+</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-sm-12 col-xs-12 col-xs-12">
+        <script src="footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

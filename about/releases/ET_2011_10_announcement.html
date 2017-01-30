@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="../../head.js" type="text/javascript"></script>
+  <title>10-25-2011</title>
+</head>
+
+<body>
+  <header>
+    <script src="../../menu.js" type="text/javascript">
+    </script>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 section">
+        <h2>Release Announcement</h2>
+
+
+        <p>We are pleased to announce the fourth release (code name "<a href=
+        "http://en.wikipedia.org/wiki/James_Clerk_Maxwell">Maxwell</a>") of the Einstein Toolkit,
+        an open, community developed software infrastructure for relativistic astrophysics. This
+        release includes substantial changes to the underlying AMR infrastructure Carpet and the
+        Simfactory tool. GRHydro now officially supports magnetohydrodynamics. In addition, many
+        errors have been corrected since the previous release in April 2011.</p>
+
+
+        <p>The Einstein Toolkit is a collection of software components and tools for simulating and
+        analyzing general relativistic astrophysical systems. It builds on numerous software
+        efforts in the numerical relativity community including CactusEinstein, the Carpet AMR
+        infrastructure, and the relativistic hydrodynamics code GRHydro. The Cactus Framework is
+        used as the underlying computational infrastructure providing large-scale parallelization,
+        general computational components, and a model for collaborative, portable code development.
+        The toolkit includes modules to build complete codes for simulating black hole spacetimes
+        as well as systems governed by relativistic hydrodynamics.</p>
+
+
+        <p>The Einstein Toolkit uses a distributed software model, and its different modules are
+        developed, distributed, and supported either by the core team of Einstein Toolkit
+        Maintainers, or by individual research groups. Where modules are provided by external
+        groups, the Einstein Toolkit Maintainers provide quality control for modules for inclusion
+        in the toolkit and help coordinate support. The Einstein Toolkit Maintainers currently
+        involve postdocs and faculty from five different institutions, and host weekly meetings
+        that are open for anyone to join.</p>
+
+
+        <p>Guiding principles for the design and implementation of the toolkit include: open,
+        community-driven software development; well thought-out and stable interfaces; separation
+        of physics software from computational science infrastructure; provision of a complete
+        working production code; and training and education for a new generation of
+        researchers.</p>
+
+
+        <p>For more information about using or contributing to the Einstein Toolkit, or to join the
+        Einstein Toolkit Consortium, please visit our web pages at &lt;<a href=
+        "http://einsteintoolkit.org">http://einsteintoolkit.org</a>&gt;.</p>
+
+
+        <p>The Einstein Toolkit is primarily supported by NSF 0903973/0903782/0904015 (CIGR), and
+        also by NSF 0701566/0855892 (XiRel), 0721915 (Alpaca), 0905046/0941653 (PetaCactus), and
+        0710874 (LONI).</p>
+
+
+        <p>The Einstein Toolkit thorns contain over 130 regression test cases. On a large portion
+        of the tested machines, all of these testsuites <a href=
+        "http://einsteintoolkit.org/release-info/parse_testsuite_results.php">pass</a>, using both
+        MPI and OpenMP parallelisation.</p>
+
+
+        <p>The changes between this and the previous release include:</p>
+
+
+        <ul>
+          <li>Einstein Toolkit: All test cases pass on almost all of the tested twenty production
+          and development machines.</li>
+
+
+          <li>Carpet
+
+            <ul>
+              <li>Significant internal development</li>
+
+
+              <li>Grid structure is handled in a more efficient manner, leading to improved
+              parallel scalability</li>
+
+
+              <li>Grid structure output supports multipatch</li>
+
+
+              <li>Improvements to OpenMP parallelism in Carpet</li>
+
+
+              <li>Support for cell-centering</li>
+
+
+              <li>Timers are hierarchical, which makes it much easier to see where the time is
+              spent in a simulation. (Use the parameter output_timer_tree_every to output the timer
+              tree to standard output.)</li>
+
+
+              <li>A backtrace file is written to the output directory when the simulation code
+              crashes. (Note that you probably need to add the -rdynamic option to CFLAGS and
+              CXXFLAGS for the backtrace symbols to be interpreted correctly.)</li>
+            </ul>
+          </li>
+
+
+          <li>CarpetIOHDF5: There are now parameters to select whether symmetry, boundary, or
+          buffer points should be output.</li>
+
+
+          <li>CarpetRegrid2: Supports full AMR based on a regridding criterion</li>
+
+
+          <li>SimFactory
+
+            <ul>
+              <li>Internally completely rewritten</li>
+
+
+              <li>Machine database and optionlists updated</li>
+
+
+              <li>Can run the Cactus test suites as part of a job in a queuing system 
+              <!-- <li> TODO: List of new machines supported by SimFactory? --></li>
+
+
+              <li>Optionlists enable instruction vectorization by default, which can significantly
+              improve performance. (This affects those thorns that explicitly use vectorisation,
+              including McLachlan and Carpet.)</li>
+
+
+              <li>Supports parameter file scripts .rpar, written e.g. in Perl or Python.</li>
+
+
+              <li>Uses the Intel compiler by default on Kraken and Hopper</li>
+            </ul>
+          </li>
+
+
+          <li>Cactus
+
+            <ul>
+              <li>CUDA support added for GPU computing</li>
+
+
+              <li>Parameters can be used in STORAGE specifications in schedule.ccl files</li>
+
+
+              <li>Multi-line parameter values can contain comments - this makes it easier to
+              comment out entries</li>
+
+
+              <li>Mac OS 10.7 (Lion) is supported</li>
+
+
+              <li>CCTK_GFINDEX3D checks index against array bounds in debug configurations</li>
+
+
+              <li>Standard output of Cactus build process is much more compact</li>
+            </ul>
+          </li>
+
+
+          <li>McLachlan
+
+            <ul>
+              <li>Various performance improvements</li>
+
+
+              <li>BSSN has instruction vectorisation enabled by default for improved speed</li>
+            </ul>
+          </li>
+
+
+          <li>GRHydro
+
+            <ul>
+              <li>Supports GR-MHD</li>
+            </ul>
+          </li>
+
+
+          <li>WeylScal4: parallelised via OpenMP</li>
+
+
+          <li>TimerReport: "top timers" given as min/max/mean across all processes (instead of just
+          from the root process)</li>
+
+
+          <li>ADMBase
+
+            <ul>
+              <li>ADM variables have flat boundary condition applied</li>
+
+
+              <li>Shift vector has storage by default</li>
+            </ul>
+          </li>
+
+
+          <li>TwoPunctures: Outputs a BBH metadata file, as used by NINJA / NRAR projects</li>
+
+
+          <li>Vectors: New thorn for vectorizing code, can significantly improve performance of
+          codes that use it</li>
+
+
+          <li>Cauchy Characteristic Extraction and the PITT Null Code are included.
+
+            <ul>
+              <li>The Pitt code implements a robust fully nonlinear characteristic evolution scheme
+              for the Einstein equations for asymptotically flat spacetimes.</li>
+
+
+              <li>Included in the code is the gauge invariant calculation of the Bondi News
+              function at future null infinity.</li>
+
+
+              <li>Included in the code are thorns that implement Cauchy Characteristic extraction,
+              where Cauchy evolutions (McLachlan) provide boundary data for a characteristic
+              evolution. This allows for the unambiguous calculation of the gravitational waveform
+              from merging BBH spacetimes.</li>
+            </ul>
+          </li>
+
+
+          <li>FFTW3 library has been added to the ET</li>
+
+
+          <li>Kranc
+
+            <ul>
+              <li>Thorns can be generated including a Jacobian transformation of all derivatives -
+              this means they can be used with multi-patch grids</li>
+
+
+              <li>Improvements to instruction vectorization</li>
+
+
+              <li>Reduced instruction cache usage, selected via VECTORISE_INLINE = yes/no in the
+              optionlist. This can result in large speed increases.</li>
+
+
+              <li>Generated thorns check that there are sufficient ghost and boundary points for
+              the finite differencing stencils</li>
+
+
+              <li>Improved error detection</li>
+            </ul>
+          </li>
+        </ul>
+        <p></p>
+
+        <p>All repositories participating in this release carry a branch ET_2011_10
+        marking this release. These release branches will be updated if severe errors are
+        found.</p>
+
+
+        <p>This release has been tested on about twenty systems and architectures, including the
+        following:</p>
+
+
+        <ul>
+          <li>Workstations (AMD, Linux)</li>
+
+
+          <li>MacBook Pro notebook (Intel, Mac OS X)</li>
+
+
+          <li>Lenovo T61p notebook (Intel, Linux)</li>
+
+
+          <li>
+            <a href="http://supercomputers.aei.mpg.de/">Datura</a>, AEI (cluster, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://www.nics.tennessee.edu/computing-resources/kraken">Kraken</a>, NICS
+            (Cray XT5, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://www.hpc.lsu.edu/systems/system.php?system=Philip">Philip</a>, LSU
+            (Intel cluster, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://www.loni.org/systems/system.php?system=QueenBee">Queen Bee</a>, LONI
+            (Intel cluster, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://services.tacc.utexas.edu/index.php/ranger-user-guide">Ranger</a>, TACC
+            (AMD cluster, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://services.tacc.utexas.edu/index.php/lonestar-user-guide">Lonestar</a>,
+            TACC (Intel cluster, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://www.sdsc.edu/us/resources/trestles/">Trestles</a>, SDSC (AMD cluster,
+            Linux)
+          </li>
+
+
+          <li>
+            <a href="http://www.nersc.gov/users/getting-started/">Hopper</a>, NERSC (Cray XE6,
+            Linux)
+          </li>
+
+
+          <li>
+            <a href="https://www.sharcnet.ca/my/systems/show/73">Orca</a>, Sharcnet (AMD cluster,
+            Linux)
+          </li>
+        </ul>
+
+
+        <p>The <a href="http://www.simfactory.org/">Simulation Factory</a> contains ready-to-use
+        configuration details for more than 40 additional systems, including most HPC systems at
+        <a href="http://www.loni.org/">LONI</a>, <a href="http://www.nersc.gov/">NERSC</a>,
+        <a href="http://www.rzg.mpg.de/">RZG</a>, and <a href="https://www.xsede.org/">XSEDE
+        (TeraGrid)</a>.</p>
+
+
+        <p>For more details about the new release, including a detailed list of changes, fixed and
+        remaining issues and how to upgrade to the new version, visit the <a href=
+        "https://docs.einsteintoolkit.org/et-docs/index.php?title=Detailed_Release_Announcement">Detailed
+        Release Announcement Wiki Page</a></p>
+
+
+        <p>The Einstein Toolkit web site contains online documentation for its thorns, and pointers
+        for using it to build your own code. There is also a tutorial that explains how to
+        download, build, and run the code for a simple binary black hole evolution. We invite you
+        to join our mailing list &lt;<a href="../community">users@einsteintoolkit.org</a>&gt;.</p>
+
+
+        <p>On behalf of the Einstein Toolkit Consortium: the "Maxwell" Release Team</p>
+
+
+        <p>&nbsp;&nbsp;&nbsp;Eloisa Bentivegna<br>
+        &nbsp;&nbsp;&nbsp;Tanja Bode<br>
+        &nbsp;&nbsp;&nbsp;Peter Diener<br>
+        &nbsp;&nbsp;&nbsp;Roland Haas<br>
+        &nbsp;&nbsp;&nbsp;Ian Hinder<br>
+        &nbsp;&nbsp;&nbsp;Frank L&ouml;ffler<br>
+        &nbsp;&nbsp;&nbsp;Bruno Mundim<br>
+        &nbsp;&nbsp;&nbsp;Christian D. Ott<br>
+        &nbsp;&nbsp;&nbsp;Erik Schnetter<br>
+        &nbsp;&nbsp;&nbsp;Eric Seidel<br></p>
+
+
+        <p>October 25, 2011</p>
+        <script src="../footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

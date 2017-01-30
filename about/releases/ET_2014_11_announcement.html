@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="../../head.js" type="text/javascript"></script>
+  <title>11-19-2014</title>
+</head>
+
+<body>
+  <header>
+    <script src="../../menu.js" type="text/javascript">
+    </script>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 section">
+        <h1>Release Announcement</h1>
+
+
+        <p>We are pleased to announce the tenth release (code name "<a href=
+        "http://en.wikipedia.org/wiki/Caroline_Herschel">Herschel</a>" (Caroline)) of the Einstein
+        Toolkit, an open, community developed software infrastructure for relativistic
+        astrophysics. This release includes various improvements in the handling of external
+        libraries (and with that, installations), and extensions of basis thorns (most notably
+        HydroBase). In addition, bug fixes accumulated since the previous release in May 2014 have
+        been included, and most of the source code repositories moved from svn (hosted by the ET
+        directly) to git (hosted by BitBucket).</p>
+
+
+        <p>The Einstein Toolkit is a collection of software components and tools for simulating and
+        analyzing general relativistic astrophysical systems that builds on numerous software
+        efforts in the numerical relativity community including CactusEinstein, the Carpet AMR
+        infrastructure and the relativistic magneto-hydrodynamics code GRHydro. The Cactus
+        Framework is used as the underlying computational infrastructure providing large-scale
+        parallelization, general computational components, and a model for collaborative, portable
+        code development. The toolkit includes modules to build complete codes for simulating black
+        hole spacetimes as well as systems governed by relativistic magneto-hydrodynamics.</p>
+
+
+        <p>The Einstein Toolkit uses a distributed software model and its different modules are
+        developed, distributed, and supported either by the core team of Einstein Toolkit
+        Maintainers, or by individual groups. Where modules are provided by external groups, the
+        Einstein Toolkit Maintainers provide quality control for modules for inclusion in the
+        toolkit and help coordinate support. The Einstein Toolkit Maintainers currently involve
+        postdocs and faculty from six different institutions, and host weekly meetings that are
+        open for anyone to join in.</p>
+
+
+        <p>Guiding principles for the design and implementation of the toolkit include: open,
+        community-driven software development; well thought out and stable interfaces; separation
+        of physics software from computational science infrastructure; provision of complete
+        working production code; training and education for a new generation of researchers.</p>
+
+
+        <p>For more information about using or contributing to the Einstein Toolkit, or to join the
+        Einstein Toolkit Consortium, please visit our web pages at &lt;<a href=
+        "http://einsteintoolkit.org">http://einsteintoolkit.org</a>&gt;.</p>
+
+
+        <p>The Einstein Toolkit is primarily supported by NSF 1212401/1212426/1212433/1212460
+        (Einstein Toolkit), and also by 0905046/0941653 (PetaCactus) and 0710874 (LONI Grid).</p>
+
+
+        <p>The Einstein Toolkit contains about 200 regression test cases. On a large portion of the
+        tested machines, almost all of these test suites pass, using both MPI and OpenMP
+        parallelization.</p>
+
+
+        <h4>The changes between this and the previous release include:</h4>
+
+
+        <ul>
+          <li><b>Larger changes since last release</b>
+          </li>
+        </ul>
+
+
+        <ul>
+          <li>Repositories
+
+            <ul>
+              <li>Many repositories converted from Subversion to Git, including some reorganization
+              of thorns within arrangements.</li>
+            </ul>
+          </li>
+
+
+          <li>Deprecated components (still present)
+
+            <ul>
+              <li>ADMCoupling</li>
+
+
+              <li>ADMMacros</li>
+            </ul>
+          </li>
+
+
+          <li>New components:
+
+            <ul>
+              <li>CUDA and OpenCL examples</li>
+
+
+              <li>PAPI</li>
+
+
+              <li>OpenBLAS</li>
+
+
+              <li>MemSpeed</li>
+
+
+              <li>
+              </li>
+
+
+              <li>NaNCatcher</li>
+            </ul>
+          </li>
+
+
+          <li>Moved components:
+
+            <ul>
+              <li>Almost all thorns except ExternalLibraries moved to Bitbucket</li>
+
+
+              <li>GRHydro and GRHydro_InitData into EinsteinEvolve</li>
+
+
+              <li>All Carpet thorns moved to Carpet arrangement (now on BitBucket)</li>
+            </ul>
+          </li>
+
+
+          <li>Simfactory
+
+            <ul>
+              <li>Source repository moved to BitBucket</li>
+
+
+              <li>Updates to many machines</li>
+            </ul>
+          </li>
+
+
+          <li>HDF5
+
+            <ul>
+              <li>Enable fortran interface by default, disable C++ interface by default.</li>
+            </ul>
+          </li>
+
+
+          <li>MPI
+
+            <ul>
+              <li>Rewrite MPI thorn configuration script to attempt to determine paths
+              automatically using mpicxx.<br>
+              Automatic detection should succeed on most machines (no MPI variable set in option
+              list); if not, setting MPI_DIR to the installation directory of the desired MPI
+              installation should in most cases suffice.</li>
+            </ul>
+          </li>
+
+
+          <li>Cactus:
+
+            <ul>
+              <li>Plan to change output filename format from implementation::groupname to
+              implementation-groupname. Introduced new parameter IOUtil::out_group_separator which
+              currently defaults to '::' to maintain compatibility. The next release will change
+              this to '-' for compatibility with Windows filesystems.</li>
+            </ul>
+          </li>
+
+
+          <li>Kranc:
+
+            <ul>
+              <li>Kranc: Compatibility fixes for Mathematica 10</li>
+            </ul>
+          </li>
+        </ul>
+
+
+        <ul>
+          <li><b>How to upgrade from Wheeler (ET_2014_05)</b>
+          </li>
+        </ul>
+
+
+        <p>To upgrade from the previous release, use GetComponents with the new thornlist to check
+        out the new version. Switching to the new branch is not possible for most repositories due
+        to the repository move.</p>
+
+
+        <p>See the <a href="http://einsteintoolkit.org/download/">Download</a> page on the Einstein
+        Toolkit website for download instructions.</p>
+
+
+        <ul>
+          <li><b>Remaining issues with this release</b>
+          </li>
+        </ul>
+
+
+        <ul>
+          <li>Certain machines need to be configured specially in Simfactory because the remote
+          directories cannot be determined automatically just from the user name. See the Machine
+          notes below.</li>
+
+
+          <li>Recovering with Carpet: Carpet stores metadata (such as the simulation time) only for
+          Carpet::max_timelevels time levels, although it is possible to allocate more time levels.
+          These additional time levels then cannot be recovered; the symptom is an assertion
+          failure during recovery. The solution is to either increase Carpet::max_timelevels, or to
+          decrease the number of active time levels.</li>
+        </ul>
+
+
+        <ul>
+          <li><b>Machine notes</b>
+          </li>
+        </ul>
+
+
+        <p>Supported (tested) machines include:</p>
+
+
+        <ul>
+          <li>Default Debian, Suse, Fedora and MacOS installations</li>
+
+
+          <li>Bethe</li>
+
+
+          <li>Bluewaters *</li>
+
+
+          <li>Carver</li>
+
+
+          <li>Datura</li>
+
+
+          <li>Gordon</li>
+
+
+          <li>Hopper</li>
+
+
+          <li>Hydra</li>
+
+
+          <li>Loewe</li>
+
+
+          <li>Supermike II *</li>
+
+
+          <li>Nvidia *</li>
+
+
+          <li>Orca *</li>
+
+
+          <li>Philip</li>
+          <!-- <li> Queenbee 2</li>-->
+
+
+          <li>Shelob</li>
+
+
+          <li>Stampede (CPU) *</li>
+
+
+          <li>Trestles</li>
+
+
+          <li>Zwicky</li>
+        </ul>
+
+
+        <p>A * means that a small number of tests fail on that machine. Almost all tests pass on
+        the other machines.</p>
+
+
+        <ul>
+          <li>Stampede: defs.local.ini needs to have sourcebasedir = $WORK and basedir =
+          $SCRATCH/simulations configured for this machine. You need to determine $WORK and
+          $SCRATCH by logging in to the machine.</li>
+        </ul>
+
+
+        <p>All repositories participating in this release carry a branch ET_2014_11 marking this
+        release. These release branches will be updated if severe errors are found.</p>
+
+
+        <p>The "Herschel" Release Team on behalf of the Einstein Toolkit Consortium
+        (2014-11-19)</p>
+
+
+        <p>&nbsp;&nbsp;&nbsp;Steven R. Brandt<br>
+        &nbsp;&nbsp;&nbsp;Peter Diener<br>
+        &nbsp;&nbsp;&nbsp;Roland Haas<br>
+        &nbsp;&nbsp;&nbsp;Ian Hinder<br>
+        &nbsp;&nbsp;&nbsp;Frank Löffler<br>
+        &nbsp;&nbsp;&nbsp;Bruno C. Mundim<br>
+        &nbsp;&nbsp;&nbsp;Erik Schnetter<br></p>
+
+
+        <p>Nov 19, 2014</p>
+        <script src="../footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+##
+ActiveThorns = "time MoL cartgrid3d carpetioascii ioutil Fortran boundary  hydrobase grhydro grhydro_initdata nanchecker eos_omni CoordBase  LoopControl CarpetLib Carpet CarpetReduce spacemask ADMCoupling ADMMacros ADMBASE STATICCONFORMAL TMUNUBASE SymBase localreduce CarpetIOBasic initbase Periodic Slab"
+ActiveThorns = "CarpetIOHDF5"
+
+time::dtfac = 0.2
+
+methodoflines::ODE_Method = "rk2"
+methodoflines::MoL_Intermediate_Steps=2
+
+ADMBase::initial_shift = "zero"
+
+HydroBase::initial_hydro="alfvenwave"
+#GRHydro_InitData::advectedloop_type = "3D"
+#GRHydro_InitData::advectedloop_case = "V^z=0"
+#GRHydro_InitData::advectedloop_delA = "Exact"
+grhydro_initdata::alfvenwave_pressure = 0.5
+
+TmunuBase::stress_energy_storage = "yes"
+TmunuBase::stress_energy_at_RHS  = "yes"
+TmunuBase::timelevels            =  1
+TmunuBase::prolongation_type     = "none"
+TmunuBase::support_old_CalcTmunu_mechanism = "no"
+
+HydroBase::timelevels=2
+HydroBase::evolution_method="grhydro"
+HydroBase::Bvec_evolution_method="grhydro"
+
+SpaceMask::use_mask="yes"
+EOS_Omni::gl_gamma=1.666666667
+grhydro::recon_method="tvd"
+grhydro::method_type="RSA FV"
+grhydro::recon_vars="primitive"
+grhydro::riemann_solver="HLLE"
+GRHydro::decouple_normal_Bfield    = "yes"
+grhydro::tvd_limiter="vanleerMC2"
+grhydro::bound="none"
+grhydro::grhydro_eos_type = "General"
+grhydro::grhydro_eos_table="Ideal_Fluid"
+#grhydro::Grhydro_MaxNumConstrainedVars=15
+grhydro::GRHydro_MaxNumEvolvedVars=10
+
+grhydro::clean_divergence = "yes"
+GRHydro::psidcspeed                = "light speed"
+grhydro::kap_dc = 10.0
+grhydro::track_divB = "yes"
+
+
+CartGrid3D::type         = "coordbase"
+CartGrid3D::domain       = "full"
+CartGrid3D::avoid_origin = "no"
+
+CoordBase::domainsize       = "minmax"
+#CoordBase::spacing          = "gridspacing"  # "gridspacing" or "numcells"
+CoordBase::spacing          = "numcells"  # "gridspacing" or "numcells"
+
+CoordBase::xmin =  -0.5
+CoordBase::ymin =  -0.0625
+CoordBase::zmin =  -0.0625
+CoordBase::xmax =   0.5
+CoordBase::ymax =   0.0625
+CoordBase::zmax =   0.0625
+#CoordBase::dx   = 0.0078125 # dx or ncells_x
+#CoordBase::dy   = 0.0078125 # dy or ncells_y
+#CoordBase::dz   = 0.0078125 # dz or ncells_z
+CoordBase::ncells_x   = 128 # dx or ncells_x
+CoordBase::ncells_y   = 16 # dy or ncells_y
+CoordBase::ncells_z   = 16 # dz or ncells_z
+
+CoordBase::boundary_size_x_lower        = 3
+CoordBase::boundary_size_y_lower        = 3
+CoordBase::boundary_size_z_lower        = 3
+CoordBase::boundary_size_x_upper        = 3
+CoordBase::boundary_size_y_upper        = 3
+CoordBase::boundary_size_z_upper        = 3
+CoordBase::boundary_shiftout_x_lower    = 0
+CoordBase::boundary_shiftout_y_lower    = 0
+CoordBase::boundary_shiftout_z_lower    = 0
+CoordBase::boundary_shiftout_x_upper    = 0
+CoordBase::boundary_shiftout_y_upper    = 0
+CoordBase::boundary_shiftout_z_upper    = 0
+CoordBase::boundary_staggered_x_lower   = "yes"
+CoordBase::boundary_staggered_y_lower   = "yes"
+CoordBase::boundary_staggered_z_lower   = "yes"
+CoordBase::boundary_staggered_x_upper   = "yes"
+CoordBase::boundary_staggered_y_upper   = "yes"
+CoordBase::boundary_staggered_z_upper   = "yes"
+
+Driver::ghost_size               = 3
+GRHydro::GRHydro_stencil         = 3
+
+Periodic::periodic = "yes"
+Periodic::periodic_x = "yes"
+Periodic::periodic_y = "yes"
+Periodic::periodic_z = "yes"
+
+#ReflectionSymmetry::reflection_x = "no"
+#ReflectionSymmetry::reflection_y = "no"
+#ReflectionSymmetry::reflection_z = "yes"
+#ReflectionSymmetry::avoid_origin_x = "no"
+#ReflectionSymmetry::avoid_origin_y = "no"
+#ReflectionSymmetry::avoid_origin_z = "no"
+
+Cactus::terminate       = "time"
+#Cactus::cctk_final_time = 100.0
+Cactus::cctk_final_time = 10.0
+#Cactus::terminate = "iteration"
+#cactus::cctk_itlast = 1024
+
+Carpet::domain_from_coordbase    = "yes"
+
+IO::out_dir = $parfile
+CarpetIOBasic::outInfo_vars="hydrobase::rho Hydrobase::bvec GRHydro::bcons"
+CarpetIOBasic::outInfo_every=1
+CarpetIOASCII::out1D_every = 80 #t=0.5
+CarpetIOASCII::out1D_vars = "HydroBase::rho HydroBase::press HydroBase::eps  HydroBase::vel grhydro::dens grhydro::tau grhydro::scon HydroBase::Bvec grhydro::Bcons"
+
+CarpetIOHDF5::one_file_per_group             = "yes"
+CarpetIOHDF5::open_one_input_file_at_a_time  = "yes"
+
+CarpetIOHDF5::out2D_every                    = 320 # t=0.5
+CarpetIOHDF5::out2D_xy                       = "yes"
+CarpetIOHDF5::out2D_xz                       = "no"
+CarpetIOHDF5::out2D_yz                       = "no"
+CarpetIOHDF5::out2D_xyplane_z                = 0.0
+CarpetIOHDF5::out2D_vars      = "
+#  CarpetReduce::weight
+#  GRHydro::GRHydro_tracers
+#  Grid::coordinates
+ GRHydro::bcom
+ GRHydro::bcom0
+ GRHydro::bcom_sq
+  GRHydro::Bcons
+  GrHydro::dens 
+  GrHydro::divB
+  GRHydro::scon 
+  GRHydro::tau 
+  HydroBase::Bvec 
+  HydroBase::eps
+  HydroBase::press
+  HydroBase::rho
+  HydroBase::vel
+  HydroBase::w_lorentz
+"
+
+CarpetIOHDF5::out3D_every                    = 2560 #t=5 = (1 loop)
+CarpetIOHDF5::out3D_vars      = "
+#  CarpetReduce::weight
+#  GRHydro::GRHydro_tracers
+#  Grid::coordinates
+ GRHydro::bcom
+ GRHydro::bcom0
+ GRHydro::bcom_sq
+  GRHydro::Bcons
+  GrHydro::dens 
+  GrHydro::divB
+  GRHydro::scon 
+  GRHydro::tau 
+  HydroBase::Bvec 
+  HydroBase::eps
+  HydroBase::press
+  HydroBase::rho
+  HydroBase::vel
+  HydroBase::w_lorentz
+"
+
+#------------------------------------------------------------------------------
+# Checkpoint/Recovery:
+#------------------------------------------------------------------------------
+IOHDF5::checkpoint                  = "yes"
+IO::checkpoint_dir                  = $parfile
+#IO::checkpoint_ID                   = "yes"
+#IO::checkpoint_every                = 6144
+##IO::checkpoint_every_walltime_hours = 6.0
+#IO::checkpoint_keep=3
+IO::checkpoint_on_terminate         = "yes"
+
+#IO::recover     = "autoprobe"
+#IO::recover_dir = $parfile
+
+

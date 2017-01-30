@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="../../head.js" type="text/javascript"></script>
+  <title>11-23-2010</title>
+</head>
+
+<body>
+  <header>
+    <script src="../../menu.js" type="text/javascript">
+    </script>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 section sections-seprator">
+        <h2>Release Announcement</h2>
+
+
+        <p>We are pleased to announce the second release (code name "<a href=
+        "http://en.wikipedia.org/wiki/Subrahmanyan_Chandrasekhar">Chandrasekhar</a>") of the
+        Einstein Toolkit, an open, community developed software infrastructure for relativistic
+        astrophysics. This release is mainly a maintenance release incorporating fixes accumulated
+        since the previous release in June 2010, as well as additional test suites.</p>
+
+
+        <p>The Einstein Toolkit is a collection of software components and tools for simulating and
+        analyzing general relativistic astrophysical systems that builds on numerous software
+        efforts in the numerical relativity community including CactusEinstein, the Carpet AMR
+        infrastructure and on the public version of the Whisky hydrodynamics code (now modified and
+        called GRHydro). The Cactus Framework is used as the underlying computational
+        infrastructure providing large-scale parallelization, general computational components, and
+        a model for collaborative, portable code development. The toolkit includes modules to build
+        complete codes for simulating black hole spacetimes as well as systems governed by
+        relativistic hydrodynamics. Current development in the consortium is targeted at providing
+        additional infrastructure for general relativistic magnetohydrodynamics.</p>
+
+
+        <p>The Einstein Toolkit uses a distributed software model and its different modules are
+        developed, distributed, and supported either by the core team of Einstein Toolkit
+        Maintainers, or by individual groups. Where modules are provided by external groups, the
+        Einstein Toolkit Maintainers provide quality control for modules for inclusion in the
+        toolkit and help coordinate support. The Einstein Toolkit Maintainers currently involve
+        postdocs and faculty from five different institutions, and host weekly meetings that are
+        open for anyone to join in.</p>
+
+
+        <p>Guiding principles for the design and implementation of the toolkit include: open,
+        community-driven software development; well thought out and stable interfaces; separation
+        of physics software from computational science infrastructure; provision of complete
+        working production code; training and education for a new generation of researchers.</p>
+
+
+        <p>For more information about using or contributing to the Einstein Toolkit, or to join the
+        Einstein Toolkit Consortium, please visit our web pages at &lt;<a href=
+        "http://einsteintoolkit.org">http://einsteintoolkit.org</a>&gt;.</p>
+
+
+        <p>The Einstein Toolkit is primarily supported by NSF 0903973/0903782/0904015 (CIGR), and
+        also by NSF 0701566/0855892 (XiRel), 0721915 (Alpaca), 0905046/0941653 (PetaCactus) and
+        0710874 (LONI Grid).</p>
+
+
+        <p>This release comprises the following tools, arrangements, and thorns. Each
+        tool/arrangement/thorn may have its own licencing conditions, but all are available as open
+        source. Green components are new in this release, shown in red are components now not
+        longer part of the Einstein Toolkit:</p>
+
+        <pre>       Cactus                  Flesh
+</pre>
+
+        <pre>       CactusBase              Standard Cactus thorns
+       CactusConnect
+       CactusElliptic
+       <span style="color:#FF0000">CactusExternal</span>Not part of the Einstein Toolkit anymore (use ExternalLibraries/libjpeg instead of jpeg6b)CactusIO
+       CactusNumerical         <span style="color:#00FF00">new: InterpToArray</span>
+       CactusPUGH
+       CactusPUGHIO
+       <span style="color:#00FF00">CactusTest</span>              Various Cactus testsuite thorns
+       CactusUtils
+       <span style="color:#00FF00">CactusWave</span>              Wavetoy example thorns
+
+</pre>
+
+        <pre>       ExternalLibraries       Interfaces to external libraries (<span style=
+        "color:#00FF00">new: OpenSSL, libjpeg</span>, several updates in other thorns)
+</pre>
+
+        <pre>       Carpet                  Adaptive mesh refinement
+</pre>
+
+        <pre>       EinsteinAnalysis        Einstein Toolkit
+       EinsteinBase
+       EinsteinEOS
+       EinsteinEvolve
+       EinsteinInitialData
+       EinsteinUtils
+</pre>
+
+        <pre>       McLachlan               BSSN implementation
+</pre>
+
+        <pre>       TAT/TATelliptic         Various thorns
+       AEIThorns/AEILocalInterp
+       LSUThorns/QuasiLocalMeasures
+       LSUThorns/SummationByParts
+
+</pre>
+
+        <pre>       Kranc                   Automated code generation
+</pre>
+
+        <pre>       GetComponents           Downloading tools and thorns
+</pre>
+
+        <pre>       SimFactory              Building code and running simulations
+</pre>
+
+        <p>All repositories participating in this release carry a branch ET_2010_11
+        marking this release. These release branches will be updated if severe errors are
+        found.</p>
+
+
+        <p>This release has been tested on the following systems and architectures:</p>
+
+
+        <ul>
+          <li>Workstations (AMD, Linux)</li>
+
+
+          <li>MacBook Pro notebook (Intel, Mac OS X)</li>
+
+
+          <li>Lenovo T61p notebook (Intel, Linux)</li>
+
+
+          <li>
+            <a href="http://www.ncsa.illinois.edu/BlueWaters/modeling.html">Blue Drop</a>, NCSA
+            (Power 7, Linux)
+          </li>
+
+
+          <li>
+            <a href=
+            "http://www.ncsa.illinois.edu/UserInfo/Resources/Hardware/Intel64Cluster/">Abe</a>,
+            NCSA (Intel cluster, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://supercomputers.aei.mpg.de/">Damiana</a>, AEI (AMD cluster, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://www.nics.tennessee.edu/computing-resources/kraken">Kraken</a>, NICS
+            (Cray XT5, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://www.hpc.lsu.edu/systems/system.php?system=Philip">Philip</a>, LSU
+            (Intel cluster, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://www.loni.org/systems/system.php?system=QueenBee">Queen Bee</a>, LONI
+            (Intel cluster, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://services.tacc.utexas.edu/index.php/ranger-user-guide">Ranger</a>, TACC
+            (AMD cluster, Linux)
+          </li>
+        </ul>
+
+
+        <p>The <a href="http://www.cct.lsu.edu/~eschnett/SimFactory/">Simulation Factory</a>
+        contains ready-to-use configuration details for more than 20 additional systems, including
+        most HPC systems at <a href="http://www.loni.org/">LONI</a>, <a href=
+        "http://www.nersc.gov/">NERSC</a>, <a href="http://www.rzg.mpg.de/">RZG</a>, and <a href=
+        "https://www.teragrid.org/">TeraGrid</a>.</p>
+
+
+        <p>The Einstein Toolkit thorns contain 132 regression test cases. While all test cases pass
+        on some systems, there are unfortunately also some systems where certain test cases fail.
+        We verified that this is because of accumulation of floating-point round-off error in most
+        cases, and we will discuss this issue in a broader context in the near future.</p>
+
+
+        <p>The Einstein Toolkit web site contains online documentation for its thorns, and pointers
+        for using it to build your own code. There is also a tutorial that explains how to
+        download, build, and run the code for a simple binary black hole evolution. We invite you
+        to join our mailing list &lt;<a href="../community">users@einsteintoolkit.org</a>&gt;.</p>
+        The changes between this and the previous release include (not complete):
+
+        <ul>
+          <li>Several Libraries can now be build in parallel-make mode, increasing compilation
+          speed on some machines a lot.</li>
+
+
+          <li>Several Libraries now clean up intermediate files, often using considerably less disk
+          space per configuration.</li>
+
+
+          <li>GRHydro includes (disabled, not yet finished) support for MHD. Don't try to use it
+          yet, and don't get confused about that code.</li>
+
+
+          <li>Several Libraries have been updated (ExternalLibraries)</li>
+
+
+          <li>Simfactory received several updates, and this will likely be the last release with
+          the Perl version.</li>
+
+
+          <li>The links in the Reference manual now work (again).</li>
+
+
+          <li>A lot of other bugs and testsuites were corrected.</li>
+        </ul>
+
+
+        <p>On behalf of the Einstein Toolkit Consortium: the "Chandrasekhar" Release Team</p>
+
+
+        <p>&nbsp;&nbsp;&nbsp;Gabrielle Allen<br>
+        &nbsp;&nbsp;&nbsp;Eloisa Bentivegna<br>
+        &nbsp;&nbsp;&nbsp;Tanja Bode<br>
+        &nbsp;&nbsp;&nbsp;Peter Diener<br>
+        &nbsp;&nbsp;&nbsp;Roland Haas<br>
+        &nbsp;&nbsp;&nbsp;Ian Hinder<br>
+        &nbsp;&nbsp;&nbsp;Frank L&ouml;ffler<br>
+        &nbsp;&nbsp;&nbsp;Bruno Mundim<br>
+        &nbsp;&nbsp;&nbsp;Christian D. Ott<br>
+        &nbsp;&nbsp;&nbsp;Erik Schnetter<br>
+        &nbsp;&nbsp;&nbsp;Eric Seidel<br>
+        &nbsp;&nbsp;&nbsp;Michael Thomas</p>
+
+
+        <p>November 23, 2010</p>
+        <script src="../footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

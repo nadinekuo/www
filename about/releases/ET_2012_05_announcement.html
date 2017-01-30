@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="../../head.js" type="text/javascript"></script>
+  <title>05-28-2012</title>
+</head>
+
+<body>
+  <header>
+    <script src="../../menu.js" type="text/javascript">
+    </script>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 section">
+        <h2>Release Announcement</h2>
+
+
+        <p>We are pleased to announce the fifth release (code name "<a href=
+        "http://en.wikipedia.org/wiki/Ada_Lovelace">Lovelace</a>") of the Einstein Toolkit, an
+        open, community developed software infrastructure for relativistic astrophysics. This
+        release includes beginning support for OpenCL (disabled by default). In addition, bug fixes
+        accumulated since the previous release in October 2011 have been included.</p>
+
+
+        <p>The Einstein Toolkit is a collection of software components and tools for simulating and
+        analyzing general relativistic astrophysical systems that builds on numerous software
+        efforts in the numerical relativity community including CactusEinstein, the Carpet AMR
+        infrastructure and the relativistic hydrodynamics code GRHydro (an updated and extended
+        version of the public release of the Whisky code). The Cactus Framework is used as the
+        underlying computational infrastructure providing large-scale parallelization, general
+        computational components, and a model for collaborative, portable code development. The
+        toolkit includes modules to build complete codes for simulating black hole spacetimes as
+        well as systems governed by relativistic hydrodynamics.</p>
+
+
+        <p>The Einstein Toolkit uses a distributed software model and its different modules are
+        developed, distributed, and supported either by the core team of Einstein Toolkit
+        Maintainers, or by individual groups. Where modules are provided by external groups, the
+        Einstein Toolkit Maintainers provide quality control for modules for inclusion in the
+        toolkit and help coordinate support. The Einstein Toolkit Maintainers currently involve
+        postdocs and faculty from five different institutions, and host weekly meetings that are
+        open for anyone to join in.</p>
+
+
+        <p>Guiding principles for the design and implementation of the toolkit include: open,
+        community-driven software development; well thought out and stable interfaces; separation
+        of physics software from computational science infrastructure; provision of complete
+        working production code; training and education for a new generation of researchers.</p>
+
+
+        <p>For more information about using or contributing to the Einstein Toolkit, or to join the
+        Einstein Toolkit Consortium, please visit our web pages at &lt;<a href=
+        "http://einsteintoolkit.org">http://einsteintoolkit.org</a>&gt;.</p>
+
+
+        <p>The Einstein Toolkit is primarily supported by NSF 0903973/0903782/0904015 (CIGR), and
+        also by NSF 0701566/0855892 (XiRel), 0721915 (Alpaca), 0905046/0941653 (PetaCactus), and
+        0710874 (LONI Grid).</p>
+
+
+        <p>The Einstein Toolkit contain over 170 regression test cases. On a large portion of the
+        tested machines, all of these testsuites <a href=
+        "http://einsteintoolkit.org/release-info/ET_2012_05/parse_testsuite_results.php">pass</a>,
+        using both MPI and OpenMP parallelisation.</p>
+
+
+        <h4>The changes between this and the previous release include:</h4>
+
+
+        <p>
+        </p>
+
+
+        <ul>
+          <li>Accelerator Support</li>
+        </ul>
+        <p></p>
+
+        <p>This release of the Einstein Toolkit adds support for GPUs and other accelerators. This
+        support comprises three levels of abstraction, ranging from merely building and running
+        both CUDA and OpenCL code, to automated code generation targeting GPUs instead of CPUs. As
+        with any other programming paradigm (such as MPI or OpenMP), the performance benefits
+        depend on the particular algorithms used and optimizations that are applied. In addition,
+        the Simulation Factory greatly aids portability to a wide range of computing systems.</p>
+
+
+        <p>At the lowest level, Cactus now supports compiling, building, and running with either
+        CUDA or OpenCL. CUDA is supported as new language in addition to C, C++, and Fortran;
+        OpenCL is supported as an external library, and builds and executes compute kernels via
+        run-time calls. Details are described in the user's guide (for CUDA) and in thorn
+        ExternalLibraries/OpenCL (for OpenCL).</p>
+
+
+        <p>Many accelerator platforms today separate between host memory and device memory, and
+        require explicit copy or map operations to transfer data. An intermediate level of
+        abstraction aids transferring grid variables between host and device, using schedule
+        declarations to keep track of which data are needed where, and minimizing expensive data
+        transfers. For OpenCL, there is a compact API to build and execute compute kernels at run
+        time. Details are described in thorns CactusUtils/Accelerator and CactusUtils/OpenCLRunTime
+        (with example parameter file).</p>
+
+
+        <p>Finally, the code generation system Kranc has been extended to be able to produce either
+        C++ or OpenCL code, based on the infrastructure described above. This allows writing GPU
+        code in a very high-level manner. However, it needs to be stated that the efficiency of the
+        generated code depends on many variables, including e.g. the finite differencing stencil
+        radius and the number of operations in the generated compute kernels. Non-trivial kernels
+        typically require system-dependent tuning to execute efficiently, as GPUs and other
+        accelerators generally show a rather unforgiving performance behavior. The thorns
+        McLachlan/ML_WaveToy and McLachlan/ML_WaveToy_CL are examples, generated from the same
+        Kranc script, showing the generated C++ and OpenCL code.</p>
+
+
+        <p>
+        </p>
+
+
+        <ul>
+          <li>SimFactory
+
+            <ul>
+              <li>Machine database and optionlists updated due to system changes on HPC
+              resources</li>
+
+
+              <li>Simfactory's capability of running the testsuites is properly tested on a lot of
+              systems.</li>
+            </ul>
+          </li>
+
+
+          <li>IOUtil: checkpoint_dir is now steerable</li>
+
+
+          <li>SphericalSurface: added functionality to name spherical surfaces</li>
+
+
+          <li>Formaline: Support a "local repository" that collects all machine-local
+          repositories</li>
+
+
+          <li>TimerReport: Allow different timers on different processes</li>
+
+
+          <li>WeylScal4: Enable use of LoopControl, and hence OpenMP</li>
+
+
+          <li>EOS_Omni: use C interface for HDF5 to avoid needing Fortran HDF5 bindings</li>
+
+
+          <li>EOSG_*: Support for the so-called 'general EOS interface' has been dropped from the
+          Einstein Toolkit</li>
+
+
+          <li>A new arrangement EinsteinExact has been added to the toolkit, providing a wide range
+          of exact initial data, which will eventually replace the 'Exact' thorn.</li>
+
+
+          <li>The *_O2 versions of McLachlan have been removed from the toolkit. This functionality
+          is already provided by the regular McLachlan thorns now.</li>
+
+
+          <li>A new thorn ADMMass has been added to the Einstein Toolkit, which can calculate
+          approximations of the ADM mass using a finite surface or volume integral.</li>
+
+
+          <li>The old library mechanism in Cactus (e.g. HDF5=yes) is now deprecated. Expect it to
+          be removed in one of the next releases.</li>
+
+
+          <li>The thorns ADM and LegoExcision are deprecated and will be removed in one of the next
+          releases.</li>
+
+
+          <li>GRHydro:
+
+            <ul>
+              <li>use atmosphere integer mask instead of bitmask</li>
+
+
+              <li>remove (now) unused old Tmunu interface</li>
+
+
+              <li>Implemented enhanced PPM scheme by Colella &lt;&amp;&gt; Sekora 2008,
+              McCorquodale &lt;&amp;&gt; Colella 2011. Can be activated by setting use_enhanced_ppm
+              = yes</li>
+            </ul>
+          </li>
+
+
+          <li>External Libraries: several updates and configuration improvements</li>
+
+
+          <li>Cactus
+
+            <ul>
+              <li>implement per-variable tolerances for Cactus testsuites, for long discussion, see
+              ET ticket <a href="https://trac.einsteintoolkit.org/ticket/114">#114</a>
+              </li>
+
+
+              <li>Allow arithmetic expression in ParameterSet: parameter files can now contain a
+              limited set of expressions</li>
+
+
+              <li>Handle requirements recursively</li>
+
+
+              <li>A lot of smaller bug fixes</li>
+            </ul>
+          </li>
+
+
+          <li>McLachlan: Implement CCZ4 formulation</li>
+
+
+          <li>CarpetMask: Keep track of the volume that is masked out</li>
+
+
+          <li>CarpetLib: Define MPI reduction operators for complex numbers</li>
+
+
+          <li>CarpetIOASCII: Add new "compact" output format</li>
+
+
+          <li>Csrpet: Support accelerator data transfer</li>
+
+
+          <li>CarpetRegrid2: Add periodic boundary conditions</li>
+
+
+          <li>Simfactory
+
+            <ul>
+              <li>Use OpenMP by default</li>
+
+
+              <li>Make running testsuites using Simfactory possible</li>
+
+
+              <li>Updated a lot of configurations</li>
+            </ul>
+          </li>
+        </ul>
+        <p></p>
+
+        <h4>How to upgrade from ET_2011_10 (Maxwell)</h4>
+
+
+        <p>To upgrade from the previous release, use GetComponents with the new thornlist to check
+        out the new version. GetComponents can also be used to update an existing checkout, but
+        since some components might have changed location or have been removed from the toolkit you
+        should try a new checkout whenever possible instead.</p>
+
+
+        <p>See the <a href="http://einsteintoolkit.org/download/">Download</a> page on the Einstein
+        Toolkit website for download instructions.</p>
+
+
+        <h4>Remaining issues with this release</h4>
+
+
+        <p>
+        </p>
+
+
+        <ul>
+          <li>Certain machines need to be configured specially in Simfactory because the remote
+          directories cannot be determined automatically just from the username. See the Machine
+          notes below.</li>
+
+
+          <li>CarpetIOHDF5: When the new parameter CarpetIOHDF5::output_symmetry_points is set to
+          "yes", then symmetry points are not actually output if CarpetIOHDF5::output_buffer_points
+          has been set to "no".</li>
+
+
+          <li>Recovering with Carpet: The maximum number of timelevels that can be recovered is
+          Carpet::prolongation_order_time+1. This is usually the case, but it is possible to write
+          parameter files e.g. with prolongation_order_time=1 that use 3 timelevels. This bug
+          manifests in an assert() failure when recovering from checkpoints. The work-around is to
+          either increase Carpet::prolongation_order_time or decrease the number of timelevels for
+          the grid function in question accordingly.</li>
+        </ul>
+        <p></p>
+
+        <h4>Machine notes</h4>
+
+
+        <p>
+        </p>
+
+
+        <ul>
+          <li>Kraken<br>
+          defs.local.ini needs to have sourcebasedir = $HOME configured for this machine. You need
+          to determine $HOME by logging in to the machine.</li>
+
+
+          <li>LoneStar and Ranger<br>
+          defs.local.ini needs to have sourcebasedir = $WORK and basedir = $SCRATCH/simulations
+          configured for this machine. You need to determine $WORK and $SCRATCH by logging in to
+          the machine.</li>
+
+
+          <li>Pandora<br>
+          The LSU system Pandora has at the time of writing not only severe problems of compiling
+          Cactus (can crash the filesystem), but in part due to this also outstanding are some
+          failing testsuite results. Please contact Peter Diener at CCT (LSU) before trying to use
+          this machine.</li>
+        </ul>
+        <p></p>
+
+        <p>All repositories participating in this release carry a branch ET_2012_05
+        marking this release. These release branches will be updated if severe errors are
+        found.</p>
+
+
+        <p>This release has been tested on about twenty systems and architectures, including the
+        following:</p>
+
+
+        <ul>
+          <li>Workstations (AMD, Linux)</li>
+
+
+          <li>MacBook Pro notebook (Intel, Mac OS X)</li>
+
+
+          <li>Lenovo T61p notebook (Intel, Linux)</li>
+
+
+          <li>
+            <a href="http://supercomputers.aei.mpg.de/">Datura</a>, AEI (cluster, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://www.nics.tennessee.edu/computing-resources/kraken">Kraken</a>, NICS
+            (Cray XT5, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://www.hpc.lsu.edu/systems/system.php?system=Philip">Philip</a>, LSU
+            (Intel cluster, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://www.loni.org/systems/system.php?system=QueenBee">Queen Bee</a>, LONI
+            (Intel cluster, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://services.tacc.utexas.edu/index.php/ranger-user-guide">Ranger</a>, TACC
+            (AMD cluster, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://services.tacc.utexas.edu/index.php/lonestar-user-guide">Lonestar</a>,
+            TACC (Intel cluster, Linux)
+          </li>
+
+
+          <li>
+            <a href="http://www.sdsc.edu/us/resources/trestles/">Trestles</a>, SDSC (AMD cluster,
+            Linux)
+          </li>
+
+
+          <li>
+            <a href="http://www.nersc.gov/users/getting-started/">Hopper</a>, NERSC (Cray XE6,
+            Linux)
+          </li>
+        </ul>
+
+
+        <p>The <a href="http://www.simfactory.org/">Simulation Factory</a> contains ready-to-use
+        configuration details for more than 40 additional systems, including most HPC systems at
+        <a href="http://www.loni.org/">LONI</a>, <a href="http://www.nersc.gov/">NERSC</a>,
+        <a href="http://www.rzg.mpg.de/">RZG</a>, and <a href="https://www.xsede.org/">XSEDE
+        (TeraGrid)</a>.</p>
+
+
+        <p>The Einstein Toolkit web site contains online documentation for its components, and
+        pointers for using it to build your own code. There is also a tutorial that explains how to
+        download, build, and run the code for a simple binary black hole evolution. We invite you
+        to join our mailing list &lt;<a href="../community">users@einsteintoolkit.org</a>&gt;.</p>
+
+
+        <p>On behalf of the Einstein Toolkit Consortium: the "Lovelace" Release Team</p>
+
+
+        <p>&nbsp;&nbsp;&nbsp;Eloisa Bentivegna<br>
+        &nbsp;&nbsp;&nbsp;Tanja Bode<br>
+        &nbsp;&nbsp;&nbsp;Peter Diener<br>
+        &nbsp;&nbsp;&nbsp;Roland Haas<br>
+        &nbsp;&nbsp;&nbsp;Ian Hinder<br>
+        &nbsp;&nbsp;&nbsp;Frank Löffler<br>
+        &nbsp;&nbsp;&nbsp;Bruno Mundim<br>
+        &nbsp;&nbsp;&nbsp;Christian D. Ott<br>
+        &nbsp;&nbsp;&nbsp;Erik Schnetter<br></p>
+
+
+        <p>May 28, 2012</p>
+        <script src="../footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
