@@ -24,15 +24,11 @@ if(isset($_GET['update']))
   echo '<h3>Updating the site...</h3>';
   echo '<p>'.exec('/var/www/einstein/update').'</p>';
   echo '<p>The site is now current.</p><br />';
-  echo '<p>&lang; <a href="/x/">back to updates interface</a></p>';
 }
-else
-{
   echo '<br /><br />
 <input class="button" type="button" value="Make Recent Changes Live" onclick="window.location.href=\'/x/?update\'" />
 <br /><br />This updates changes from all relevant repositories to the live site.
 </p>';
-}
 ?>
   </div>
   <div class="container">
