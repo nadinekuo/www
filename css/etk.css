@@ -55,9 +55,13 @@ h6{
 .bold{
   font-weight: bold;
 }
+
+.navbar-brand{
+  padding-top: 0;
+  padding-bottom: 0;
+}
 .logo {
-  height: 200%;
-  margin-top: -10px;
+  height: 100%;
 }
 
 
