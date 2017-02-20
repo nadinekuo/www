@@ -51,8 +51,7 @@ document.write(''+
 '    <span class="icon-bar"></span>'+
 '  </button>'+
 '      <a class="navbar-brand" href="' +root+'index.html"><img class="logo" src="'+root+'images/logo/einstein.png" alt="ETK"></a>'+
-'      <!--see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img -->'+
-'      <a class="navbar-brand" href="' +root+'index.html"><img class="logo" src="'+root+'images/logo/logo-white-133.png"  alt="ETK"></a>'+
+'      <a class="navbar-brand" href="' +root+'index.html"><img class="logo" src="'+root+'images/logo/logo-white-266.png"  alt="ETK"></a>'+
 '  </div>'+
 '  <div class="container collapse navbar-collapse" id="dropit">'+
 ''+
