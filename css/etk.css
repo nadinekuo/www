@@ -94,6 +94,11 @@ text-decoration: none;
   padding-right: 0.5em;
 }
 
+.nav > li > a.main-menu-active {
+  /* this should really be whatever :hover does */
+  color: white;
+}
+
 .dropdown-menu > .active > a {
   color     : white;
   font-size : smaller;

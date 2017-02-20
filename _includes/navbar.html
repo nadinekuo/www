@@ -14,12 +14,12 @@
   <div class="container collapse navbar-collapse" id="dropit">
 
     <ul class="nav navbar-nav">
-      <li ><a class="main-menu text" href="{{base}}/index.html">Home</a></li>
-      <li ><a class="main-menu text" href="{{base}}/about.html">About</a></li>
-      <li ><a  class="main-menu" href="{{base}}/download.html">Download</a></li>
-      <li ><a  class="main-menu" href="{{base}}/documentation.html">Documentation</a></li>
-      <li ><a  class="main-menu" href="{{base}}/contribute.html">Contribute</a></li>
-      <li ><a  class="main-menu" href="{{base}}/gallery.html">Gallery</a></li>
+      <li ><a class="main-menu" href="{{base}}/index.html">Home</a></li>
+      <li ><a class="main-menu {% if page.url contains '/about.html' %}main-menu-active{% endif %}" href="{{base}}/about.html">About</a></li>
+      <li ><a  class="main-menu {% if page.url contains '/download.html' %}main-menu-active{% endif %}" href="{{base}}/download.html">Download</a></li>
+      <li ><a  class="main-menu {% if page.url contains '/guides/' %}main-menu-active{% endif %}" href="{{base}}/documentation.html">Documentation</a></li>
+      <li ><a  class="main-menu {% if page.url contains '/contribute.html' %}main-menu-active{% endif %}" href="{{base}}/contribute.html">Contribute</a></li>
+      <li ><a  class="main-menu {% if page.url contains '/gallery/' %}main-menu-active{% endif %}" href="{{base}}/gallery.html">Gallery</a></li>
     </ul>
   </div>
   </div>
