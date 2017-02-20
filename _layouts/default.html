@@ -1,0 +1,46 @@
+{% include base.html %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="{{ base }}/styles/etk.css" rel="stylesheet" type="text/css">
+  <link href="{{ base }}/css/etk.css" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+</head>
+<body id="index">
+  {% include navbar.html %}
+  <div class="container">
+    <div class="row">
+{{ content }}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+          <div class="footer">
+          <hr class="separator" />
+          The Einstein Toolkit has been supported by NSF 
+           {% include NSF.html id='155055' %}/
+           {% include NSF.html id='155046' %}/
+           {% include NSF.html id='155043' %}/
+           {% include NSF.html id='155051' %}, NSF 
+           {% include NSF.html id='121240' %}/
+           {% include NSF.html id='121242' %}/
+           {% include NSF.html id='121243' %}/
+           {% include NSF.html id='121246' %}, NSF 
+           {% include NSF.html id='090397' %}/
+           {% include NSF.html id='090378' %}/
+           {% include NSF.html id='090401' %} (CIGR), 
+           {% include NSF.html id='070156' %}/
+           {% include NSF.html id='085589' %} (XiRel), 
+           {% include NSF.html id='072191' %} (Alpaca), 
+           {% include NSF.html id='090504' %}/
+           {% include NSF.html id='094165' %}(PetaCactus/PRAC).
+          Any opinions, findings, and conclusions or recommendations expressed in this material
+          are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+          </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
