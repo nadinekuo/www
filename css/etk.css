@@ -151,6 +151,12 @@ table tr td {
 table, td, th {
 
 }
+.hline {
+  border-top: solid;
+  border-width: thin;
+  padding-top: 10px;
+  padding: 0;
+}
 .htable {
   border-top: solid;
   border-width: thin;
