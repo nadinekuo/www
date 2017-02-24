@@ -1,0 +1,22 @@
+<div class="footer">
+<hr class="separator" />
+The Einstein Toolkit has been supported by NSF 
+ {% include NSF.html id='155055' %}/
+ {% include NSF.html id='155046' %}/
+ {% include NSF.html id='155043' %}/
+ {% include NSF.html id='155051' %}, NSF 
+ {% include NSF.html id='121240' %}/
+ {% include NSF.html id='121242' %}/
+ {% include NSF.html id='121243' %}/
+ {% include NSF.html id='121246' %}, NSF 
+ {% include NSF.html id='090397' %}/
+ {% include NSF.html id='090378' %}/
+ {% include NSF.html id='090401' %} (CIGR), 
+ {% include NSF.html id='070156' %}/
+ {% include NSF.html id='085589' %} (XiRel), 
+ {% include NSF.html id='072191' %} (Alpaca), 
+ {% include NSF.html id='090504' %}/
+ {% include NSF.html id='094165' %}(PetaCactus/PRAC).
+Any opinions, findings, and conclusions or recommendations expressed in this material
+are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+</div>
