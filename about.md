@@ -33,6 +33,7 @@ its
 
 <div class="col-xs-12" data-shorthand="About the ET" markdown="1">
 
+## What is the Einstein Toolkit
 __The Einstein Toolkit is a [community](members.html)-driven software platform
 of core computational tools to advance and support research in relativistic
 astrophysics and gravitational physics.__
