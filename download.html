@@ -18,25 +18,30 @@
         simplify downloading the toolkit. This page just describes how to download the toolkit - you may also be interested in the <a href=
         "https://docs.einsteintoolkit.org/et-docs/Tutorial_for_New_Users">Tutorial for New Users</a> which leads you through these steps and more on the Queen Bee supercomputer, or
         in a simpler <a href="https://docs.einsteintoolkit.org/et-docs/Simplified_Tutorial_for_New_Users">tutorial</a> for setup on a typical Linux box.</p>
-        <p>Enter the directory on your machine in which you would like to download the ET (for example, your home directory), and type the commands listed below. This will create a
-        directory called Cactus in which the components of the Einstein Toolkit are downloaded.</p>
-        <h2>Current release: Payne-Gaposchkin (released on December 16th, 2016)</h2>
+        <h2> Main Toolkit</h2>
+        <h3>Citations</h3>
+        <p>The development of production level scientific software, such as the components of the Einstein Toolkit, represents the academic output of researchers. These scientific contributions should be acknowledged and respected on par with those solely based in theory or experiment. Please review our <a href="citation.html">Citation Policy</a>.</p>
+        <h3>Current release: Payne-Gaposchkin (released on December 16th, 2016)</h3>
         <p>This is the recommended version of the toolkit for most users. See the <a href="about/releases/ET_2016_11_announcement.html">release notes</a> for more information.</p>
         <p>Note: OSX users cannot use the 'subversion' client shipped by Apple. In that case install subversion either from homebrew or macports.</p>
+        <p>Enter the directory on your machine in which you would like to download the ET (for example, your home directory), and type the commands listed below. This will create a
+        directory called Cactus in which the components of the Einstein Toolkit are downloaded.</p>
         <pre>
 curl -kLO https://raw.githubusercontent.com/gridaphobe/CRL/ET_2016_11/GetComponents
 chmod a+x GetComponents
 ./GetComponents --parallel https://bitbucket.org/einsteintoolkit/manifest/raw/ET_2016_11/einsteintoolkit.th</pre>A tarball of the release is also available <a href="/tarballs/">here</a>, but using GetComponents is
 the preferred method to obtain the code. Use the tarball only if there is no way to use GetComponents (which should
 almost never be the case).
-        <h2>Current development version</h2>
+        <h3>Current development version</h3>
         This version is under constant development and, while we try to make sure it
         remains bug-free, it has not been tested to the same standard as the released version.
         <pre>
 curl -kLO https://raw.githubusercontent.com/gridaphobe/CRL/master/GetComponents
 chmod a+x GetComponents
 ./GetComponents --parallel https://bitbucket.org/einsteintoolkit/manifest/raw/master/einsteintoolkit.th</pre>
-        <h2>Requirements</h2>
+        <h3>Past Releases</h3>
+        Sometimes, older releases can be useful, .e.g., if they have been used in a specific publication, and results are to be reproduced. This is why past releases of the Einstein Toolkit are being kept available. Past releases can be found <a href="past-releases.html">here</a>.
+        <h3>Requirements</h3>
         <p>The Einstein Toolkit has been tested on many different large-scale production resources and can be compiled and run on just about any laptop, workstation, cluster or
         supercomputer with standard HPC software installed. The main requirements are:</p>
         <ul>
@@ -59,42 +64,27 @@ chmod a+x GetComponents
   <div class="container section">
     <div class="row">
       <div class="col-sm-12">
-        <h1><b>Tools</b></h1>This page will contain details of visualization and other tools to use with the Einstein Toolkit. For now, we provide links to some initial tools:
+        <h2>Tools</h2>
+          The Einstein Toolkit provides more than the main toolkit. It comes with a variety of tools that might be used with the main toolkit, or also might be used stand-alone.
       </div>
       <div class="col-sm-6">
-        <h2>Simulation Factory</h2>
+        <h3>Simulation Factory</h3>
         The <a href="http://simfactory.org/">Simulation Factory</a> provides capabilities for compiling and deploying a Cactus application on machines and ging simulations.
       </div>
       <div class="col-sm-6">
-        <h2>Visualization</h2>
+        <h3>Visualization</h3>
         The <a href="http://cactuscode.org/documentation/visualization/">Cactus visualization page</a> describes different visualization packages that can be used to analyze Cactus output.
       </div>
       <div class="col-sm-6">
-        <h2>Kranc</h2>
+        <h3>Kranc</h3>
         The <a href="http://kranccode.org">Kranc package</a> provides a means to generate new codes for Einstein Equations and other systems. Kranc is used to generate the used in the McLachlan code.
       </div>
       <div class="col-sm-6">
-        <h2>Alpaca</h2>
+        <h3>Alpaca</h3>
         The <a href="http://www.cactuscode.org/community/projects/alpaca/">Alpaca project</a> provides high-level tools that help design and maintain large, complex applications. The Alpaca tools allow both developers and end-users to examine and validate the correctness of an application, and aid them in measuring and improving its performance in production environments.
       </div>
     </div>
   </div>
-  <br>
-  <div class="container section">
-    <div class="row">
-      <div class="col-sm-6">
-        <h1>Citation</h1>
-        The development of production level scientific software, such as the components of the Einstein Toolkit, represents the academic output of researchers. These scientific contributions should be acknowledged and respected on par with those solely based in theory or experiment.<br>
-        <a class="btn btn-info" href="citation.html" role="button">Citation</a>
-      </div>
-      <div class="col-sm-6">
-        <h1>Past Releases</h1>
-        Sometimes, older releases can be useful, .e.g., if they have been used in a specific publication, and results are to be reproduced. This is why past releases of the Einstein Toolkit are being kept available.<br>
-        <a class="btn btn-info" href="past-releases.html" role="button">Past Releases</a>
-      </div>
-    </div>
-  </div><br>
-  <br>
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-sm-12 col-xs-12 col-xs-12">

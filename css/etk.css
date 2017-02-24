@@ -18,31 +18,31 @@ body {
 
 h1 {
   font-weight: bold;
-  font-size: xx-large;
+  font-size: x-large;
 }
 
 h2 {
 	font-weight: bold;
-  font-size: x-large;
-}
-h3{
-	font-weight: bold;	
   font-size: large;
 }
-
-h4{
+h3{
 	font-weight: bold;	
   font-size: medium;
 }
 
+h4{
+	font-weight: bold;	
+  font-size: small;
+}
+
 h5{
 	font-weight: bold;
-  font-size: small;
+  font-size: x-small;
 }
 
 h6{
 	font-weight: bold;
-  font-size: x-small;
+  font-size: xx-small;
 }
 
 
@@ -62,6 +62,8 @@ h6{
 }
 .logo {
   height: 100%;
+#  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
 }
 
 
