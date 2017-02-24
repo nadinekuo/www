@@ -15,7 +15,7 @@
   <div class="container collapse navbar-collapse" id="dropit">
 
     <ul class="nav navbar-nav">
-      <li ><a class="main-menu" href="{{base}}/index.html">Home</a></li>
+      <li ><a class="main-menu {% if page.url == '/' %}main-menu-active{% endif %}" href="{{base}}/index.html">Home</a></li>
       <li ><a class="main-menu {% if page.url contains '/about.html' %}main-menu-active{% endif %}" href="{{base}}/about.html">About</a></li>
       <li ><a  class="main-menu {% if page.url contains '/download.html' %}main-menu-active{% endif %}" href="{{base}}/download.html">Download</a></li>
       <li ><a  class="main-menu {% if page.url contains '/guides/' %}main-menu-active{% endif %}" href="{{base}}/documentation.html">Documentation</a></li>
