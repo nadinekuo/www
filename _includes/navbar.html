@@ -2,18 +2,19 @@
 <header>
 <nav id="nav" class="navbar navbar-inverse navbar-fixed-top" data-nav-helper="true">
   <div id="menu" class="container">
-        <div  class="navbar-header">
-  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#dropit">
+  <div  class="navbar-header">
+      <a class="navbar-brand" href="{{base}}/index.html"><img class="logo" src="{{base}}/images/logo/einstein.png" alt="ETK"></a>
+      <!--see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img -->
+      <a class="navbar-brand" href="' +root+'index.html"><img class="logo" srcset="{{base}}/images/logo/logo-white.png 400w, {{base}}/images/logo/logo-white-300.png 300w, {{base}}/images/logo/logo-white-200.png 200w, {{base}}/images/logo/logo-white-100.png 100w, {{base}}/images/logo/logo-white-75.png 75w, {{base}}/images/logo/logo-white-50.png 50w" src="{{base}}/images/logo/logo-white-266.png"  alt="ETK"></a>
+  <label for="dropit" class="navbar-toggle">
     <span class ="sr-only"> Show and Hide the Navigation</span>
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
-  </button>
-      <a class="navbar-brand" href="{{base}}/index.html"><img class="logo" src="{{base}}/images/logo/einstein.png" alt="ETK"></a>
-      <!--see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img -->
-      <a class="navbar-brand" href="' +root+'index.html"><img class="logo" srcset="{{base}}/images/logo/logo-white.png 400w, {{base}}/images/logo/logo-white-300.png 300w, {{base}}/images/logo/logo-white-200.png 200w, {{base}}/images/logo/logo-white-100.png 100w, {{base}}/images/logo/logo-white-75.png 75w, {{base}}/images/logo/logo-white-50.png 50w" src="{{base}}/images/logo/logo-white-266.png"  alt="ETK"></a>
+  </label>
   </div>
-  <div class="container collapse navbar-collapse" id="dropit">
+  <input type="checkbox" id="dropit" />
+  <div class="container collapse navbar-collapse">
 
     <ul class="nav navbar-nav">
       <li ><a class="main-menu {% if page.url == '/' %}main-menu-active{% endif %}" href="{{base}}/index.html">Home</a></li>

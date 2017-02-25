@@ -96,6 +96,12 @@ text-decoration: none;
   color: white;
 }
 
+/* following: www.cssscript.com/pure-css-mobile-compatible-responsive-dropdown-menu/ */
+[id^=dropit] { display: none; }
+[id^=dropit]:checked + div { display: block; }
+.navbar-toggle + a,
+ .collapse { display: none; }
+
 .dropdown-menu > .active > a {
   color     : white;
   font-size : smaller;
