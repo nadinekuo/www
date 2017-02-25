@@ -17,6 +17,9 @@ body {
   max-width: none;
 }
 
+dl.col-grid > dd {
+    padding-left: 1ex;
+}
 
 h1 {
   font-weight: bold;

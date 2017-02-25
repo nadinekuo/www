@@ -158,7 +158,7 @@ unphysical.
 <a class='local_anchor' id="components">[back](#top)</a>
 ## Components of the Einstein Toolkit include
 
-<dl>
+<dl class="col-grid">
 <dt class="col-sm-3 col-md-2 hline">Cactus Framework</dt>
 <dd class="col-sm-9 col-md-10 hline" markdown="1">
 The [Cactus Framework and Computational Toolkit](http://www.cactuscode.org)
