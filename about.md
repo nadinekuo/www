@@ -246,7 +246,7 @@ concentrate on their areas of interest._
  * _**Separation of physics software from computational science infrastructure** so that new technologies for large scale computing, processor accelerators, or parallel
 I/O can be easily integrated with science codes._
 * _The provision of **complete working production codes** to provide: prototypes, standard benchmarks and testcases; codes that are available for and usable by the
-general astrophysics community; tools for new researchers and groups to enter this field; training and education for a new generation of researchers._</li>
+general astrophysics community; tools for new researchers and groups to enter this field; training and education for a new generation of researchers._
 
 The Toolkit includes a set of mix-and-match components (or Thorns) that support the development of codes for relativistic astrophysics. A number of full examples provide
 prototype, production examples of complete astrophysical codes including black hole spacetimes and relativistic hydrodynamical spacetimes.
