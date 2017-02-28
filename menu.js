@@ -61,6 +61,7 @@ document.write(''+
 '      <li ><a class="main-menu text" href="'+root+'about.html">About</a></li>'+
 '      <li ><a  class="main-menu" href="'+root+'download.html">Download</a></li>'+
 '      <li ><a  class="main-menu" href="'+root+'documentation.html">Documentation</a></li>'+
+'      <li ><a  class="main-menu" href="'+root+'support.html">Help!</a></li>'+
 '      <li ><a  class="main-menu" href="'+root+'contribute.html">Contribute</a></li>'+
 '      <li ><a  class="main-menu" href="'+root+'gallery.html">Gallery</a></li>'+
 '    </ul>'+
