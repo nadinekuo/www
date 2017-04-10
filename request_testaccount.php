@@ -54,9 +54,6 @@
    <label for="buechsenwursttest">Please enter 'Einstein' backwards here (to fight spam)</label>
    <input type="text" class="form-control" id="buechsenwursttest" name="buechsenwursttest" /></td>
  </div>
- <div class="checkbox">
-  <label><input type="checkbox" id="list" name="list" value="yes"/>Add me to the users email list</label>
- </div>
  <button type="submit" class="btn btn-default">Submit</button>
 </form>
 
