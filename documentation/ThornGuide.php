@@ -31,20 +31,32 @@ function dirContent($dir) {
 }
 
 $docdir = "../../documentation/ThornDoc/";
+$arrCount = 0;
+$colCount = array(
+  "xs" => 6,
+  "sm" => 4,
+  "md" => 3,
+  "lg" => 2, );
 foreach (dirContent($docdir) as $arrangement) {
-  $arrCount = 0;
+  $arrThornCount = 0;
   foreach (dirContent($docdir.$arrangement) as $thorn) {
     if (file_exists($docdir.$arrangement."/".$thorn."/documentation.html")) {
-      if ($arrCount == 0) {
+      if ($arrThornCount == 0) {
+        foreach ($colCount as $colName => $colNr) {
+          if ($arrCount % (12/$colNr) == 0) {
+            echo " <div class=\"clearfix visible-$colName\"></div>\n";
+          }
+        }
         echo " <div class=\"col-xs-6 col-sm-4 col-md-3 col-lg-2\">".$arrangement."<ul>\n";
+        $arrCount += 1;
       }
-      $arrCount += 1;
+      $arrThornCount += 1;
       echo " <li><a href=\"../thornguide/".$arrangement."/".$thorn."/documentation.html\">".
-           $thorn."</a>\n";
+           $thorn."</a></li>\n";
     }
   }
-  if ($arrCount > 0) {
-    echo " </div>\n";
+  if ($arrThornCount > 0) {
+    echo " </ul></div>\n";
   }
 }
 ?>
