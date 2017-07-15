@@ -119,8 +119,8 @@ MPI and OpenMP parallelization.</p>
   <li>
    Meudon_Bin_NS
   <ul>
-   <li>Now uses EOS_Omni</li>
-   <li>Now able to use more than 'gamma=2' EoS
+   <li>Now uses EOS_Omni, and with that is able to use more EoSs</li>
+   <li>Bugfix: earlier versions set a wrong atmosphere for EoS-Gamma!=2. However, depending on evolution settings those might have been overwritten with the (correct) values later.</li>
    <li>Generate binaries necessary to not only read, but also generate Lorene binary neutron star initial data</li>
    <li>Make this thorn work with older and current Lorene libraries (e.g., both Lorene thorns)</li>
   </ul></li>
