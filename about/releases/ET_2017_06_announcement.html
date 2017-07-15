@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="../../head.js" type="text/javascript"></script>
+  <title>07-14-2017</title>
+</head>
+
+<body>
+  <header>
+    <script src="../../menu.js" type="text/javascript">
+    </script>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 section">
+        <h1>Release Announcement</h1>
+
+<p>We are pleased to announce the fourteenth release (code name
+"<a href="https://en.wikipedia.org/wiki/Margherita_Hack">Hack</a>") of the
+Einstein Toolkit, an open, community developed software infrastructure for
+relativistic astrophysics. The highlights of this release are:</p>
+
+<ul>
+<li>The new Piraha parser now parses all CCL and parameter files. The only user-visible
+    change should be improved error messages.</li>
+<li>A much more general, piece-wise EoS for EOS_Omni and the corresponding
+    improvements for neutron star initial data using the Lorene library</li>
+<li>New addition: GiRaFFE: General Relativistic Force-Free Electrodynamics</li>
+</ul>
+
+<p>In addition, bug fixes accumulated since the previous release in December 2016
+have been included.</p>
+
+<p>The Einstein Toolkit is a collection of software components and tools for
+simulating and analyzing general relativistic astrophysical systems that builds
+on numerous software efforts in the numerical relativity community including
+CactusEinstein, the Carpet AMR infrastructure and the relativistic
+magneto-hydrodynamics code GRHydro. For parts of the toolkit, the Cactus
+Framework is used as the underlying computational infrastructure providing
+large-scale parallelization, general computational components, and a model for
+collaborative, portable code development. The toolkit includes modules to build
+complete codes for simulating black hole spacetimes as well as systems governed
+by relativistic magneto-hydrodynamics.</p>
+
+<p>The Einstein Toolkit uses a distributed software model and its different
+modules are developed, distributed, and supported either by the core team of
+Einstein Toolkit Maintainers, or by individual groups. Where modules are
+provided by external groups, the Einstein Toolkit Maintainers provide quality
+control for modules for inclusion in the toolkit and help coordinate support.
+The Einstein Toolkit Maintainers currently involve postdocs and faculty from
+six different institutions, and host weekly meetings that are open for anyone
+to join in.</p>
+
+<p>Guiding principles for the design and implementation of the toolkit include:
+open, community-driven software development; well thought out and stable
+interfaces; separation of physics software from computational science
+infrastructure; provision of complete working production code; training and
+education for a new generation of researchers.</p>
+
+<p>For more information about using or contributing to the Einstein Toolkit, or to
+join the Einstein Toolkit Consortium, please visit our web pages at
+<a href="http://einsteintoolkit.org">http://einsteintoolkit.org</a>.</p>
+
+<p>The Einstein Toolkit is primarily supported by NSF
+1550551/1550461/1550436/1550514 (Einstein Toolkit Community Integration and
+Data Exploration).</p>
+
+<p>The Einstein Toolkit contains about 200 regression test cases.  On a large
+portion of the tested machines, almost all of these test suites pass, using both
+MPI and OpenMP parallelization.</p>
+
+<h2>The changes between this and the previous release include:</h2>
+
+<h3>Larger changes since last release</h3>
+
+<ul>
+  <li>
+  Cactus Flesh
+  <ul>
+   <li>Add macros CCTK_VINFO, CCTK_VERROR, CCTK_VWARN</li>
+   <li>The flesh now provides capability CACTUS with the respective Cactus version string for thorns to possibly depend upon.</li>
+   <li>In verbose build mode, Cactus now outputs time stamps.</li>
+   <li>Fix building Cactus using new versions of Perl.</li>
+   <li>Piraha now parses all CCL files by default. The old parser is still present, but disabled by default. This includes new (more descriptive) error messages.</li>
+  </ul></li>
+  <li>
+  MoL
+  <ul>
+   <li>Support integrating grid scalars, and grid arrays with RK operators</li>
+  </ul></li>
+  <li>
+  Simfactory
+  <ul>
+   <li>Add ability to specify number of build jobs (sim build -j)</li>
+   <li>Updates to several machines (too many to list)</li>
+  </ul></li>
+  <li>
+  CarpetIOHDF5
+  <ul>
+   <li>add option to have one output file per process</li>
+  </ul></li>
+  <li>
+  GetComponents
+  <ul>
+   <li>Process git repositories in parallel (when requested)</li>
+  </ul></li>
+  <li>
+  EOSOmni
+  <ul>
+   <li>Support piece-wise polytropic EoS with up to 10 pieces</li>
+  </ul></li>
+  <li>
+  NewRad
+  <ul>
+   <li>Support for Llama outer boundary</li>
+  </ul></li>
+  <li>
+   Meudon_Bin_NS
+  <ul>
+   <li>Now uses EOS_Omni</li>
+   <li>Now able to use more than 'gamma=2' EoS
+   <li>Generate binaries necessary to not only read, but also generate Lorene binary neutron star initial data</li>
+   <li>Make this thorn work with older and current Lorene libraries (e.g., both Lorene thorns)</li>
+  </ul></li>
+  <li>
+   ML_ADMConstraints
+  <ul>
+   <li>Workaround for otherwise wrong results when using the Intel compiler version 15 and up.</li>
+  </ul></li>
+  <li>
+   PITTNullCode
+  <ul>
+   <li>Bug fix for calculating J.</li>
+  </ul></li>
+</ul>
+<h3>New thorns or tools</h3>
+<ul>
+  <li>
+   LORENE2
+   <ul>
+    <li>A current version of Lorene was packaged as LORENE2. Initial data files are not
+        comparible with those of the older LORENE thorn, and the API for codes using
+        LORENE also changed. Due to this, only one of these thorns can be compiled into
+        a Cactus executable, which for this release is still the older thorn LORENE.
+   </ul></li>
+  </li>
+  <li>
+   WVUThorns
+  <ul>
+   <li>Introducing GiRaFFE: General Relativistic Force-Free Electrodynamics</li>
+  </ul></li>
+</ul>
+
+<h3>Upcoming changes for the next releases</h3>
+
+<p>The Tmunu parameter <b>support_old_CalcTmunu_mechanism</b>, will be removed after this
+release. If you rely on this, your code is probably unnecessarily slow. Let us
+know if the removal would create a problem for you.</p>
+
+<p>Most of the Fortran code in GRHydro was already replaced by more modern, and
+much easier to maintain C++ code. Up to now, both versions are compiled, and
+can be chosen at start-time. For a few releases the C++ versions are the
+default. After this release, the Fortran versions will be removed. Let us know
+if the removal would create a problem for you.</p>
+
+<h3>How to upgrade from Payne-Gaposchkin (ET_2016_11)</h3>
+
+<p>To upgrade from the previous release, use GetComponents with the new thornlist
+to check out the new version.</p>
+
+<p>See the <a href="http://einsteintoolkit.org/download/">Download</a> page on the Einstein Toolkit website for download instructions.</p>
+
+<h3>Machine notes</h3>
+
+<p>Supported (tested) machines include:</p>
+
+<ul>
+ <li> Default Debian, Ubuntu, Fedora, CentOS, and MacOS installations</li>
+ <li> Bethe</li>
+ <li> Bluewaters</li>
+ <li> Comet (#)</li>
+ <li> Cori</li>
+ <li> Draco</li>
+ <li> Edison</li>
+ <li> Galileo</li>
+ <li> Gulob</li>
+ <li> Hydra</li>
+ <li> Marconi</li>
+ <li> Minerva</li>
+ <li> Queenbee 2</li>
+ <li> Supermike II</li>
+ <li> Wheeler</li>
+ <li> Zwicky</li>
+</ul>
+
+<ul>
+ <li>TACC machines: defs.local.ini needs to have sourcebasedir = $WORK and basedir =
+   $SCRATCH/simulations configured for this machine.  You need to determine
+   $WORK and $SCRATCH by logging in to the machine.
+   A new configuration for KNL nodes is being worked on, but not yet included
+   in the release (but compilation works and tests mostly pass).</li>
+  <li>(#) On Comet, using more than one MPI process might produce corrupt output files. This
+      is a known file system bug on this machine.</li>
+</ul>
+
+<p>All repositories participating in this release carry a branch ET_2017_06
+marking this release.  These release branches will be updated if severe
+errors are found.</p>
+
+<p>The "Hack" Release Team on behalf of the Einstein Toolkit Consortium
+(2017-07-14)</p>
+
+<p>
+&nbsp;&nbsp;&nbsp;Steven R. Brandt<br />
+&nbsp;&nbsp;&nbsp;Peter Diener<br />
+&nbsp;&nbsp;&nbsp;Roland Haas<br />
+&nbsp;&nbsp;&nbsp;Ian Hinder<br />
+&nbsp;&nbsp;&nbsp;Frank Löffler<br />
+&nbsp;&nbsp;&nbsp;Erik Schnetter<br />
+</p>
+
+<p>July 14th, 2017</p>
+
+        <script src="../footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
