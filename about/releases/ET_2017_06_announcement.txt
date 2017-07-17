@@ -146,12 +146,15 @@ The "Hack" Release Team on behalf of the Einstein Toolkit Consortium
 (2017-07-17)
 
 
+Eloisa Bentivegna
 Steven R. Brandt
 Peter Diener
 Roland Haas
 Ian Hinder
 Frank Löffler
+Roberto De Pietri
 Erik Schnetter
+Yosef Zlochower
 
 
 July 17th, 2017
