@@ -217,7 +217,7 @@ ActiveThorns = "
   GenericFD
   WeylScal4
   Multipole
-  WaveExtractCPM
+#  WaveExtractCPM
   ADMDerivatives
 "
 
@@ -454,28 +454,28 @@ Multipole::output_ascii = no
 # Gauge invariant perturbations of Schwarzschild (ZM-CPM variables)
 ################################################################################
 
-WaveExtractCPM::out_every                  = $wave_extract_every
-WaveExtractCPM::use_carpetinterp2          = no
-WaveExtractCPM::calc_when_necessary        = no
-WaveExtractCPM::verbose                    = 0
-WaveExtractCPM::maximum_detector_number    = 7
-WaveExtractCPM::switch_output_format       = 100
-WaveExtractCPM::rsch2_computation          = "average Schwarzschild metric"
-WaveExtractCPM::l_mode                     = 8
-WaveExtractCPM::m_mode                     = 8
-WaveExtractCPM::detector_radius        [0] = 100
-WaveExtractCPM::detector_radius        [1] = 115
-WaveExtractCPM::detector_radius        [2] = 136
-WaveExtractCPM::detector_radius        [3] = 167
-WaveExtractCPM::detector_radius        [4] = 214
-WaveExtractCPM::detector_radius        [5] = 300
-WaveExtractCPM::detector_radius        [6] = 500
-WaveExtractCPM::maxntheta                  = 120
-WaveExtractCPM::maxnphi                    = 240
-WaveExtractCPM::output_hdf5                = yes
-WaveExtractCPM::output_ascii               = no
-WaveExtractCPM::output_h                   = yes
-WaveExtractCPM::output_Psi                 = yes
+# WaveExtractCPM::out_every                  = $wave_extract_every
+# WaveExtractCPM::use_carpetinterp2          = no
+# WaveExtractCPM::calc_when_necessary        = no
+# WaveExtractCPM::verbose                    = 0
+# WaveExtractCPM::maximum_detector_number    = 7
+# WaveExtractCPM::switch_output_format       = 100
+# WaveExtractCPM::rsch2_computation          = "average Schwarzschild metric"
+# WaveExtractCPM::l_mode                     = 8
+# WaveExtractCPM::m_mode                     = 8
+# WaveExtractCPM::detector_radius        [0] = 100
+# WaveExtractCPM::detector_radius        [1] = 115
+# WaveExtractCPM::detector_radius        [2] = 136
+# WaveExtractCPM::detector_radius        [3] = 167
+# WaveExtractCPM::detector_radius        [4] = 214
+# WaveExtractCPM::detector_radius        [5] = 300
+# WaveExtractCPM::detector_radius        [6] = 500
+# WaveExtractCPM::maxntheta                  = 120
+# WaveExtractCPM::maxnphi                    = 240
+# WaveExtractCPM::output_hdf5                = yes
+# WaveExtractCPM::output_ascii               = no
+# WaveExtractCPM::output_h                   = yes
+# WaveExtractCPM::output_Psi                 = yes
 
 ################################################################################
 # Apparent Horizons
