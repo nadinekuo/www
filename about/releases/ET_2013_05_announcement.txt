@@ -1,0 +1,173 @@
+We are pleased to announce the seventh release (code name "Gauss") of the
+Einstein Toolkit, an open, community developed software infrastructure for
+relativistic astrophysics. This release includes various improvements to the
+MHD handling within GRHydro, and improvements to the Cactus flesh, especially
+treatment of external libraries. In addition, bug fixes accumulated since the
+previous release in November 2012 have been included.
+
+For more detailed information about the "Gauss" release please read
+the long release announcement on the Einstein Toolkit web pages:
+http://einsteintoolkit.org/about/releases/ET_2013_05_announcement.php.
+
+The Einstein Toolkit is a collection of software components and tools for
+simulating and analyzing general relativistic astrophysical systems that builds
+on numerous software efforts in the numerical relativity community including
+CactusEinstein, the Carpet AMR infrastructure and the relativistic
+magneto-hydrodynamics code GRHydro. The Cactus Framework is used as the underlying
+computational infrastructure providing large-scale parallelization, general
+computational components, and a model for collaborative, portable code
+development. The toolkit includes modules to build complete codes for
+simulating black hole spacetimes as well as systems governed by relativistic
+magneto-hydrodynamics.
+
+The Einstein Toolkit uses a distributed software model and its different
+modules are developed, distributed, and supported either by the core team of
+Einstein Toolkit Maintainers, or by individual groups. Where modules are
+provided by external groups, the Einstein Toolkit Maintainers provide quality
+control for modules for inclusion in the toolkit and help coordinate support.
+The Einstein Toolkit Maintainers currently involve postdocs and faculty from
+six different institutions, and host weekly meetings that are open for anyone
+to join in.
+
+Guiding principles for the design and implementation of the toolkit include:
+open, community-driven software development; well thought out and stable
+interfaces; separation of physics software from computational science
+infrastructure; provision of complete working production code; training and
+education for a new generation of researchers.
+
+For more information about using or contributing to the Einstein Toolkit, or to
+join the Einstein Toolkit Consortium, please visit our web pages at
+http://einsteintoolkit.org.
+
+The Einstein Toolkit is primarily supported by NSF
+1212401/1212426/1212433/1212460 (Einstein Toolkit), 0903973/0903782/0904015 (CIGR), and also by
+0905046/0941653 (PetaCactus) and 0710874 (LONI Grid).
+
+The Einstein Toolkit contains about 200 regression test cases.  On a large
+portion of the tested machines, almost all of these testsuites pass, using both
+MPI and OpenMP parallelization.
+
+The changes between this and the previous release include:
+
+=== Compatibility ===
+
+The following changes lead to potential different numerical results or the need to modify optionlists:
+
+* The MPI thorn, as well as several other external libraries, feature an improved
+  autodetection mechanism. Most typical installations don't have to set any options
+  to have installed libraries detected.
+* The parsing code of some ccl files got re-written. Most existing files should
+  work as they did before, but there are a few corner-cases, e.g. using double
+  quotes around keywords that contain mathematical symbols.
+
+=== Larger changes since last release ===
+
+* New components:
+** EinsteinAnalysis/Outflow
+** Carpet/CycleClock
+** LSUThorns/PeriodicCarpet
+** CactusTest/TestFortranCrayPointers
+** CactusDoc/CoreDoc
+* simfactory
+** updates of various machine configurations
+** remove existing default allocations; use local configuration to use these
+* Cactus flesh:
+** Do not buffer output from thorn configuration scripts
+** Introduce OPTIONAL_IFACTIVE for thorn dependencies
+** Automatically activate required thorns
+** Support IBM Blue Gene Q compilers
+** Change the parameter parser to Piraha
+** Implement CCTK_Error and friends (marked as non-returning for the compiler)
+** Replace Cactus complex number type with C/C++ complex numbers
+** Workaround for compiler-bug with Intel compiler and 'restrict'.
+       In particular, for the current and recent Intel compilers (version 13),
+       the 'restrict' keyword is disabled in Cactus code by default, because
+       the compiler tends to produce wrong code otherwise.
+* Carpet
+** Also here: too many interesting fixes to mention all, some:
+** CarpetIOHDF5: Sliced HDF5 output index file was not stored correctly
+** Carpet: Correct load-balancing algorithm to really prefer splitting in the z direction
+** CarpetRegrid2: Allow pseudo-2D domains
+* MoL: Allow skipping MoL's initial copy from past to current timelevel
+* RotatingSymmetry90: Correct index calculation for "DD" tensors
+* Formaline: add off-line tarball extraction utility
+* ADMConstraints: support "new" interface to TmunuBase
+* AHFinderDirect
+**Dont use recovered origin if AH was never found
+**Dont use initial guess origins from parameters when tracking from gridscalar
+* Hydro_Analysis
+** add option to average the location of multiple identical maxima 
+** add parameters to control which interpolator is used in GRHydro_Separation
+* HydroBase
+** Split temperature and entropy evolution methods
+** Add gridfunctions and boilerplate for vector potential
+* TmunuBase: change the default of "support_old_CalcTmunu_mechanism" to "no"
+* EOS_Omni
+** improve solution for density based on pressure, temperature, Y_e (but slow)
+** remove poly_gamma_ini
+** add support for cold tabulated EOS (P=P(rho)) that can be supplemented with a thermal gamma law
+** add possibility to stich on a polytrope to the lower end of a tabulated cold EOS
+** extrapolate to negative temperatures
+* GRHydro
+** remove poly_gamma_ini
+** make more paramters steerable
+** remove any traces of non-functional Fisheye support
+** Introduce variable atmopshere level / tolerance as function of radius. Off by default
+** Implemented WENO5
+** Added MP5 reconstruction method
+** implemented H viscosity for HLLE solver to eliminate the carbuncle instability
+** a lot of smaller fixes/extensions (too many to list here)
+* GRHydro_InitData
+** add "magnetized Bondi" to hydrobase::initial_bvec
+** As with GRHydro: a lot of smaller fixes, too many to list here
+* SetMask_SphericalSurface: fix setup of multiple spheres
+* HDF5: update to 1.8.10-patch1
+* MPI: improved auto-detection, update to OpenMPI 1.6.4
+* OpenSSL: update  to 1.0.1e
+* hwloc: library dealing with low-level hardware configurations, version 1.7
+* zlib: update to 1.2.8
+* Vectors: major update
+* EinsteinExact: Various, smaller updates (noteworthy, but too many)
+* Kranc: Various, smaller updates (noteworthy, but too many)
+* McLachlan
+** McLachlan_BSSN: fix the Hamiltonian constraint for CCZ4
+** Fix the sign for 2nd and 6th order dissipation operators
+
+=== How to upgrade from Ørsted (ET_2012_11) ===
+
+To upgrade from the previous release, use GetComponents with the new thornlist to check out the new version.
+
+See the [http://einsteintoolkit.org/download/ Download] page on the Einstein Toolkit website for download instructions.
+
+=== Remaining issues with this release ===
+
+* Certain machines need to be configured specially in Simfactory because the remote directories cannot be determined automatically just from the username.  See the Machine notes below.
+* Recovering with Carpet: The maximum number of timelevels that can be recovered is Carpet::prolongation_order_time+1. This is usually the case, but it is possible to write parameter files e.g. with prolongation_order_time=1 that use 3 timelevels. This bug manifests in an assert() failure when recovering from checkpoints. The work-around is to either increase Carpet::prolongation_order_time or decrease the number of timelevels for the grid function in question accordingly.
+
+=== Machine notes ===
+
+* Kraken:
+defs.local.ini needs to have sourcebasedir = $HOME configured for this machine.  You need to determine $HOME by logging in to the machine.
+* LoneStar and Stampede:
+defs.local.ini needs to have sourcebasedir = $WORK and basedir = $SCRATCH/simulations configured for this machine.  You need to determine $WORK and $SCRATCH by logging in to the machine.
+* Pandora:
+The LSU system pandora has at the time of writing not only severe problems of compiling Cactus (can crash the filesystem), but in part due to this also outstanding are some failing testsuite results. Please contact Peter Diener at CCT (LSU) before trying to use this machine.
+
+All repositories participating in this release carry a branch ET_2013_05
+marking this release.  These release branches will be updated if severe
+errors are found.
+
+The "Gauss" Release Team on behalf of the Einstein Toolkit Consortium (2013-05-22)
+
+Eloisa Bentivegna
+Tanja Bode
+Peter Diener
+Roland Haas
+Ian Hinder
+Frank Löffler
+Bruno Mundim
+Christian D. Ott
+Erik Schnetter
+
+May 22, 2013
+

@@ -1,0 +1,167 @@
+We are pleased to announce the fifth release (code name Lovelace
+(<http://en.wikipedia.org/wiki/Ada_Lovelace>) of the Einstein Toolkit,
+an open, community developed software infrastructure for relativistic
+astrophysics. This release includes beginning support for OpenCL
+(disabled by default). In addition, bug fixes accumulated since the
+previous release in October 2011 have been included.
+
+The Einstein Toolkit is a collection of software components and tools
+for simulating and analyzing general relativistic astrophysical systems
+that builds on numerous software efforts in the numerical relativity
+community including CactusEinstein, the Carpet AMR infrastructure and
+the relativistic hydrodynamics code GRHydro (an updated and extended
+version of the public release of the Whisky code). The Cactus Framework
+is used as the underlying computational infrastructure providing
+large-scale parallelization, general computational components, and a
+model for collaborative, portable code development. The toolkit includes
+modules to build complete codes for simulating black hole spacetimes as
+well as systems governed by relativistic hydrodynamics.
+
+The Einstein Toolkit uses a distributed software model and its different
+modules are developed, distributed, and supported either by the core
+team of Einstein Toolkit Maintainers, or by individual groups. Where
+modules are provided by external groups, the Einstein Toolkit
+Maintainers provide quality control for modules for inclusion in the
+toolkit and help coordinate support.  The Einstein Toolkit Maintainers
+currently involve postdocs and faculty from five different institutions,
+and host weekly meetings that are open for anyone to join in.
+
+Guiding principles for the design and implementation of the toolkit
+include: open, community-driven software development; well thought out
+and stable interfaces; separation of physics software from computational
+science infrastructure; provision of complete working production code;
+training and education for a new generation of researchers.
+
+For more information about using or contributing to the Einstein
+Toolkit, or to join the Einstein Toolkit Consortium, please visit our
+web pages at http://einsteintoolkit.org.
+
+The Einstein Toolkit is primarily supported by NSF
+0903973/0903782/0904015 (CIGR), and also by NSF 0701566/0855892 (XiRel),
+0721915 (Alpaca), 0905046/0941653 (PetaCactus), and 0710874 (LONI Grid).
+
+The Einstein Toolkit contain over 170 regression test cases.  On a large
+portion of the tested machines, all of these testsuites pass, using both
+MPI and OpenMP parallelization.
+
+The changes between this and the previous release include:
+
+- Accelerator Support
+
+This release of the Einstein Toolkit adds support for GPUs and other
+accelerators. This support comprises three levels of abstraction,
+ranging from merely building and running both CUDA and OpenCL code, to
+automated code generation targeting GPUs instead of CPUs. As with any
+other programming paradigm (such as MPI or OpenMP), the performance
+benefits depend on the particular algorithms used and optimizations that
+are applied. In addition, the Simulation Factory greatly aids
+portability to a wide range of computing systems.
+
+At the lowest level, Cactus now supports compiling, building, and
+running with either CUDA or OpenCL. CUDA is supported as new language in
+addition to C, C++, and Fortran; OpenCL is supported as an external
+library, and builds and executes compute kernels via run-time calls.
+Details are described in the user's guide (for CUDA) and in thorn
+ExternalLibraries/OpenCL (for OpenCL).
+
+Many accelerator platforms today separate between host memory and device
+memory, and require explicit copy or map operations to transfer data. An
+intermediate level of abstraction aids transferring grid variables
+between host and device, using schedule declarations to keep track of
+which data are needed where, and minimizing expensive data transfers.
+For OpenCL, there is a compact API to build and execute compute kernels
+at run time. Details are described in thorns CactusUtils/Accelerator and
+CactusUtils/OpenCLRunTime (with example parameter file).
+
+Finally, the code generation system Kranc has been extended to be able
+to produce either C++ or OpenCL code, based on the infrastructure
+described above.  This allows writing GPU code in a very high-level
+manner. However, it needs to be stated that the efficiency of the
+generated code depends on many variables, including e.g. the finite
+differencing stencil radius and the number of operations in the
+generated compute kernels. Non-trivial kernels typically require
+system-dependent tuning to execute efficiently, as GPUs and other
+accelerators generally show a rather unforgiving performance behavior.
+The thorns McLachlan/ML_WaveToy and McLachlan/ML_WaveToy_CL are
+examples, generated from the same Kranc script, showing the generated
+C++ and OpenCL code.
+
+- SimFactory
+  - Machine database and optionlists updated due to system changes on
+    HPC resources
+  - Simfactory's capability of running the testsuites is properly tested
+    on a lot of systems.
+- IOUtil: checkpoint_dir is now steerable
+- SphericalSurface: added functionality to name spherical surfaces
+- Formaline: Support a "local repository" that collects all
+  machine-local repositories
+- TimerReport: Allow different timers on different processes
+- WeylScal4: Enable use of LoopControl, and hence OpenMP
+- EOS_Omni: use C interface for HDF5 to avoid needing Fortran HDF5
+  bindings
+- EOSG_*: Support for the so-called 'general EOS interface' has been
+  dropped from the Einstein Toolkit
+- A new arrangement EinsteinExact has been added to the toolkit,
+  providing a wide range of exact initial data, which will eventually
+  replace the 'Exact' thorn.
+- The *_O2 versions of McLachlan have been removed from the toolkit.
+  This functionality is already provided by the regular McLachlan thorns
+  now.
+- A new thorn ADMMass has been added to the Einstein Toolkit, which can
+  calculate approximations of the ADM mass using a finite surface or
+  volume integral.
+- The old library mechanism in Cactus (e.g. HDF5=yes) is now deprecated.
+  Expect it to be removed in one of the next releases.
+- The thorns ADM and LegoExcision are deprecated and will be removed in
+  one of the next releases.
+- GRHydro:
+  - use atmosphere integer mask instead of bitmask
+  - remove (now) unused old Tmunu interface
+  - Implemented enhanced PPM scheme by Colella & Sekora 2008,
+    McCorquodale & Colella 2011. Can be activated by setting
+    use_enhanced_ppm = yes 
+- External Libraries: several updates and configuration improvements
+- Cactus
+  - implement per-variable tolerances for Cactus testsuites, for long
+    discussion, see ET ticket #114
+  - Allow arithmetic expression in ParameterSet: parameter files can now
+    contain a limited set of expressions
+  - Handles requirements recursively
+  - A lot of smaller bug fixes 
+- McLachlan: Implement CCZ4 formulation
+- CarpetMask: Keep track of the volume that is masked out
+- CarpetLib: Define MPI reduction operators for complex numbers
+- CarpetIOASCII: Add new "compact" output format
+- Csrpet: Support accelerator data transfer
+- CarpetRegrid2: Add periodic boundary conditions
+- Simfactory
+  - Use OpenMP by default
+  - Make running testsuites using Simfactory possible
+  - Updated a lot of configurations 
+
+All repositories participating in this release carry a branch ET_2012_05
+marking this release.  These release branches will be updated if severe
+errors are found.
+
+For more detailed information about the "Lovelace" release please read
+the long release announcement on the Einstein Toolkit web pages:
+http://einsteintoolkit.org/about/releases/ET_2012_05_announcement.php.
+
+
+On behalf of the Einstein Toolkit Consortium: the "Lovelace" Release
+Team
+
+
+Eloisa Bentivegna
+Tanja Bode
+Peter Diener
+Roland Haas
+Ian Hinder
+Frank Löffler
+Bruno Mundim
+Christian D. Ott
+Erik Schnetter
+
+
+May 28, 2012
+

@@ -1,0 +1,152 @@
+We are pleased to announce the eighth release (code name "Noether") of the
+Einstein Toolkit, an open, community developed software infrastructure for
+relativistic astrophysics. 
+
+This release includes various improvements to the Cactus flesh, Carpet and
+GRHydro. In addition, bug fixes accumulated since the previous release in May
+2013 have been included.
+
+For more detailed information about the "Noether" release please read
+the long release announcement on the Einstein Toolkit web pages:
+http://einsteintoolkit.org/about/releases/ET_2013_11_announcement.php.
+
+The Einstein Toolkit is a collection of software components and tools for
+simulating and analyzing general relativistic astrophysical systems that builds
+on numerous software efforts in the numerical relativity community including
+CactusEinstein, the Carpet AMR infrastructure and the relativistic
+magneto-hydrodynamics code GRHydro. The Cactus Framework is used as the underlying
+computational infrastructure providing large-scale parallelization, general
+computational components, and a model for collaborative, portable code
+development. The toolkit includes modules to build complete codes for
+simulating black hole spacetimes as well as systems governed by relativistic
+magneto-hydrodynamics.
+
+The Einstein Toolkit uses a distributed software model and its different
+modules are developed, distributed, and supported either by the core team of
+Einstein Toolkit Maintainers, or by individual groups. Where modules are
+provided by external groups, the Einstein Toolkit Maintainers provide quality
+control for modules for inclusion in the toolkit and help coordinate support.
+The Einstein Toolkit Maintainers currently involve postdocs and faculty from
+six different institutions, and host weekly meetings that are open for anyone
+to join in.
+
+Guiding principles for the design and implementation of the toolkit include:
+open, community-driven software development; well thought out and stable
+interfaces; separation of physics software from computational science
+infrastructure; provision of complete working production code; training and
+education for a new generation of researchers.
+
+For more information about using or contributing to the Einstein Toolkit, or to
+join the Einstein Toolkit Consortium, please visit our web pages at
+http://einsteintoolkit.org.
+
+The Einstein Toolkit is primarily supported by NSF
+1212401/1212426/1212433/1212460 (Einstein Toolkit), and also by 0905046/0941653
+(PetaCactus) and 0710874 (LONI Grid).
+
+The Einstein Toolkit contains about 200 regression test cases.  On a large
+portion of the tested machines, almost all of these testsuites pass, using both
+MPI and OpenMP parallelization.
+
+The changes between this and the previous release include:
+
+=== Larger changes since last release ===
+
+* New components:
+ - new thorn Timers, needed by Carpet (add Carpet/Timers to your thornlist to avoid compilation failure)
+* simfactory
+ - updates to many machines
+ - add support for Loewe (Frankfurt), raspberry pis, and tianhe1a
+ - add support for Raspberry Pi (although not officially tested and supported)
+ - support multi-core setup using setup-silent
+* Cactus flesh:
+ - support linux-gnueabi architecture (e.g. Raspberry Pi)
+ - Add more checks when checking for C99 features
+ - add PEG grammars for parfiles
+ - check that providing function name is different from aliased function name
+* IOUtil:
+ - add option "alias" to read datasets into different variables
+ - abort run when user tries to change a non-steerable parameter during recovery
+* MoL: add parameter to disable MoL_PostStep in Post_Recover_Variables
+* Carpet:
+ - new options of carpet-native electric_fence mechanism to detect memory problems
+ - new parameter max_timelevels to indicate the maximum number of timelevels
+ - Dependency on CycleClock is now optional
+ - add new group tag no_split_directions
+ - New class bboxset2, by default disabled
+* SystemStatistics: add information about swap usage in kb and bytes to existing mb
+* GRHydro:
+ - rewrite of some essential routines in C/C++, to allow for vectorization
+ - make MHD code compatible with multipatch
+ - introduce and use sqrt(detg) grid function
+ - add GRHydro_max_temp parameter to set temperature ceiling
+* TOVSolver:
+ - remove dependency on GRHydro, in particular remove atmosphere handling
+ - remove option to use different K and Gamma for different stars
+* PITTNull: fix bug in computing L which affects CCE runs, relative differences are of order 1e-4 in test runs that were verified
+* Kranc:
+ - Add unit and regression tests
+ - Support Mathematica 9
+ - Several minor bug fixes
+ - Support Jacobian inverse and determinant gridfunctions
+ - Work-in-progress for discontinuous Galerkin methods
+ - Improved optimisations for vectorisation
+ - Substantial internal code cleanup and modularisation
+* Multipole: various improvements, especially convergence testing
+* LocalInterp: add 0th order interpolation
+* TwoPunctures: implement UIUC's speed-up in "evaluation" of spectral solution
+
+=== How to upgrade from Gauss (ET_2013_05) ===
+
+To upgrade from the previous release, use GetComponents with the new thornlist to check out the new version.
+
+See the [http://einsteintoolkit.org/download/ Download] page on the Einstein Toolkit website for download instructions.
+
+=== Remaining issues with this release ===
+
+* Certain machines need to be configured specially in Simfactory because the remote directories cannot be determined automatically just from the username.  See the Machine notes below.
+* Recovering with Carpet: Carpet stores metadata (such as the simulation time) only for Carpet::max_timelevels time levels, although it is possible to allocate more time levels. These additional time levels then cannot be recovered; the symptom is an assertion failure during recovery. The solution is to either increase Carpet::max_timelevels, or to decrease the number of active time levels.
+* Some versions of the Intel compiler (so far, all past 20121010 that we have seen) produce wrong code for some valid constructs present in the toolkit. Disabling the 'restrict' keyword works around this issue, and is now used for these compilers until they are fixed, this potentially reduces performance. This bug has been reported to Intel.
+
+=== Machine notes ===
+
+Supported (tested) machines include:
+
+- Default Debian, Suse and Fedora installations
+- Bethe
+- Bluewaters
+- Datura
+- Kraken
+- Loewe
+- Lonestar
+- Supermike II
+- Nvidia
+- Philip
+- Queenbee
+- Stampede
+- Titan
+- Trestles
+- Zwicky
+
+* Kraken:
+defs.local.ini needs to have sourcebasedir = $HOME configured for this machine.  You need to determine $HOME by logging in to the machine.
+* LoneStar and Stampede:
+defs.local.ini needs to have sourcebasedir = $WORK and basedir = $SCRATCH/simulations configured for this machine.  You need to determine $WORK and $SCRATCH by logging in to the machine.
+
+All repositories participating in this release carry a branch ET_2013_11
+marking this release.  These release branches will be updated if severe
+errors are found.
+
+The "Noether" Release Team on behalf of the Einstein Toolkit Consortium (2013-11-26)
+
+Tanja Bode
+Peter Diener
+Roland Haas
+Ian Hinder
+Frank Löffler
+Bruno Mundim
+Christian D. Ott
+Erik Schnetter
+
+November 26, 2013
+

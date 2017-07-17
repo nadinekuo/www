@@ -1,0 +1,158 @@
+We are pleased to announce the eleventh release (code name "Hilbert")
+of the Einstein Toolkit, an open, community developed software infrastructure
+for relativistic astrophysics.
+
+This release includes, among other things, 
+various improvements in the handling of external libraries (and with that, 
+installations), discontinue the direct support for Fortran 77 (use Fortran 
+90 instead), and enable the C++ code in GRHydro by default.
+In addition, bug fixes accumulated since the previous release in November 
+2014 have been included.
+
+For more detailed information about the "Hilbert" release please read
+the long release announcement on the Einstein Toolkit web pages:
+http://einsteintoolkit.org/about/releases/ET_2015_05_announcement.php.
+
+The Einstein Toolkit is a collection of software components and tools for
+simulating and analyzing general relativistic astrophysical systems that builds
+on numerous software efforts in the numerical relativity community including
+CactusEinstein, the Carpet AMR infrastructure and the relativistic
+magneto-hydrodynamics code GRHydro. The Cactus Framework is used as the underlying
+computational infrastructure providing large-scale parallelization, general
+computational components, and a model for collaborative, portable code
+development. The toolkit includes modules to build complete codes for
+simulating black hole spacetimes as well as systems governed by relativistic
+magneto-hydrodynamics.
+
+The Einstein Toolkit uses a distributed software model and its different
+modules are developed, distributed, and supported either by the core team of
+Einstein Toolkit Maintainers, or by individual groups. Where modules are
+provided by external groups, the Einstein Toolkit Maintainers provide quality
+control for modules for inclusion in the toolkit and help coordinate support.
+The Einstein Toolkit Maintainers currently involve postdocs and faculty from
+six different institutions, and host weekly meetings that are open for anyone
+to join in.
+
+Guiding principles for the design and implementation of the toolkit include:
+open, community-driven software development; well thought out and stable
+interfaces; separation of physics software from computational science
+infrastructure; provision of complete working production code; training and
+education for a new generation of researchers.
+
+For more information about using or contributing to the Einstein Toolkit, or to
+join the Einstein Toolkit Consortium, please visit our web pages at
+http://einsteintoolkit.org.
+
+The Einstein Toolkit is primarily supported by NSF
+1212401/1212426/1212433/1212460 (Einstein Toolkit), and also by 0905046/0941653
+(PetaCactus) and 0710874 (LONI Grid).
+
+The Einstein Toolkit contains about 200 regression test cases.  On a large
+portion of the tested machines, almost all of these test suites pass, using both
+MPI and OpenMP parallelization.
+
+The changes between this and the previous release include:
+
+=== Larger changes since last release ===
+
+* Repositories
+ - New components:
+   - CactusExamples/Poisson
+   - CactusNumerical/LocalInterp2: a C++ drop-in replacement for LocalInterp
+   - CactusNumerical/TestLocalInterp2: containing tests for LocalInterp2
+   - CactusUtils/SystemTopology: Utility thorn
+ - Moved components:
+   - McLachlan moved to Bitbucket
+
+* Simfactory
+ - Updates to many machines and some new machines
+ - Mac OS: Optionlists have been updated and simplified.  There is now
+   osx-macports.cfg and osc-homebrew.cfg which should work on OS X
+   10.8, 10.9 and 10.10.  MacPorts updated to use GCC 4.9 to match
+   Homebrew. Both optionlists contain comments with the necessary
+   "port" and "brew" commands to install the expected packages.  For
+   MacPorts, you also need the osx-macports.run runscript.
+
+* External Libraries
+ - Delay build of external libraries so they can be 'made' in parallel.
+ - Several updates to accommodate changes in system library paths, and update
+   some built versions of libraries.
+
+* Cactus:
+ - Change default output filename format from implementation::groupname
+   to implementation-groupname (parameter IOUtil::out_group_separator).
+ - 'make' (without configuration name) works now, as long as there is only
+   one configuration present.
+ - Piraha replaced parts of the old Cactus parser (but that should not be
+   a user visible change).
+
+=== How to upgrade from Wheeler (ET_2014_11) ===
+
+To upgrade from the previous release, use GetComponents with the new thornlist
+to check out the new version. Switching to the new branch is not possible for
+most repositories due to the repository move.
+
+See the [http://einsteintoolkit.org/download Download] page on the Einstein
+Toolkit website for download instructions.
+
+=== Remaining issues with this release ===
+
+* Certain machines need to be configured specially in Simfactory because the
+  remote directories cannot be determined automatically just from the user
+  name. See the Machine notes below.
+
+* Recovering with Carpet: Carpet stores metadata (such as the simulation time)
+  only for Carpet::max_timelevels time levels, although it is possible to
+  allocate more time levels. These additional time levels then cannot be
+  recovered; the symptom is an assertion failure during recovery. The solution
+  is to either increase Carpet::max_timelevels, or to decrease the number of
+  active time levels.
+
+=== Machine notes ===
+
+Supported (tested) machines include:
+
+- Default Debian, Fedora and MacOS installations
+- Bluewaters *
+- Carver
+- Comet
+- Datura
+- Edison
+- Fermi
+- Galileo
+- Hopper
+- Loewe
+- Supermike II
+- Nvidia
+- Orca *
+- Philip
+- Queenbee 2
+- Shelob
+- Stampede (CPU)
+- Zwicky
+
+A * means that a small number of tests fail on that machine. Almost all tests
+pass on the other machines.
+
+* Stampede: defs.local.ini needs to have sourcebasedir = $WORK and basedir =
+  $SCRATCH/simulations configured for this machine.  You need to determine
+  $WORK and $SCRATCH by logging in to the machine.
+
+All repositories participating in this release carry a branch ET_2015_05
+marking this release.  These release branches will be updated if severe
+errors are found.
+
+The "Hilbert" Release Team on behalf of the Einstein Toolkit Consortium (2015-05-18)
+
+
+Steven R. Brandt
+Peter Diener
+Roland Haas
+Ian Hinder
+Frank Löffler
+Bruno C. Mundim
+Erik Schnetter
+Barry Wardell
+
+May 18, 2015
+
