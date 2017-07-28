@@ -1,3 +1,6 @@
+http://www.gujaratuniversity.ac.in
+ Abhigna Joshi
+
 http://www.aei.mpg.de/english Albert Einstein Institute
  Ian Hinder
 
@@ -34,6 +37,7 @@ http://www.uni-kiel.de/index-e.shtml Christian-Albrechts-Universität zu Kiel
 http://www.communityofphysics.org/ Community of Physics
  Ashiqul Islam Dip
  Mohammad Tomal Hossain
+ Shaher Azad
 
 http://du.ac.ir/ دانشگاه دامغان (Damghan University, Iran)
  Saeed Fakhry
@@ -63,6 +67,9 @@ http://www.cra.gatech.edu/ Georgia Institute of Technology
 http://www.hnue.edu.vn/ Trường Đại học Sư phạm Hà Nội (Hanoi National University of Education)
  Nguyễn Quỳnh Lan
 
+http://www.iitd.ac.in/ Indian Institute of Technology Delhi
+ Ujjwal Agarwal
+
 http://www.iitd.ac.in/ भारतीय प्रौद्योगिकी संस्थान दिल्ली (Indian Institute of Technology Delhi)
  Prachi Khatri
 
@@ -75,6 +82,9 @@ http://math.u-bourgogne.fr/ Institut de Mathématiques de Bourgogne
 http://www.physik.fu-berlin.de/en/ Institute for Theoretical Physics, Free University of Berlin
  Satish Kumar Saravanan
 
+http://english.itp.cas.cn/ Institute of Theoretical Physics Chinese Academy of Sciences
+ Li-Wei Ji
+
 https://tecnico.ulisboa.pt Instituto Superior Técnico, Lisbon
  http://www.seth-hopper.com/research Seth Hopper
 
@@ -86,6 +96,9 @@ http://www.itu.edu.tr/en/ İstanbul Teknik Üniversitesi (Istanbul Technical Uni
 
 http://www.kisti.re.kr/english/ Korea Institute of Science and Technology Information
  Jakob Hansen
+
+http://en.lzu.edu.cn/ Lanzhou University
+ Yong-Qiang Wang
 
 http://www.cct.lsu.edu/numerical/ Louisiana State University
  Frank Löffler
@@ -111,6 +124,7 @@ http://www.nasa.gov/centers/goddard/home/index.html NASA Goddard Space Flight Ce
  John Baker
 
 http://www.ncsa.illinois.edu National Center for Supercomputing Applications
+ Dan Johnson
  http://www.ncsa.illinois.edu/about/org/ed_seidel Edward Seidel
  http://eliuhe.wixsite.com/eliu/research Eliu Huerta
  http://www.ncsa.illinois.edu/assets/php/contact.php?id=gdallen Gabrielle Allen
@@ -154,6 +168,9 @@ http://www.pan.pl/ Polska Akademia Nauk (Polish Academy of Sciences)
 http://www.princeton.edu/ Princeton University
  Jie Ren
 
+http://www.qub.ac.uk/ Queen's University Belfast
+ Sinead Mannion
+
 http://www.ru.ac.za/ Rhodes University, South Africa
  Apratim Ganguly
  Denis Pollney
@@ -161,6 +178,7 @@ http://www.ru.ac.za/ Rhodes University, South Africa
 http://ccrg.rit.edu/ Rochester Institute of Technology
  Billy Vazquez
  Carlos Lousto
+ Jam Sadiq
  James Healy
  Joshua Faber
  Manuela Campanelli
@@ -208,6 +226,7 @@ http://www.unam.mx/ Universidad Nacional Autónoma de México
 
 http://unal.edu.co/ Universidad Nacional de Colombia
  Andres Mauricio Suarez Mantilla
+ Sergio Andrés Torres Suárez
 
 http://www.ufes.br/ Universidade Federal do Espírito Santo
  Carlos Lobo
@@ -217,6 +236,9 @@ http://www.uib.es/ Universitat de les Illes Balears
 
 http://www.ucd.ie/ University College Dublin
  Barry Wardell
+
+http://ua.edu University of Alabama
+ Nasir Eisty
 
 http://www.universityofcalifornia.edu/ University of California
  David Rideout
@@ -243,6 +265,9 @@ http://www.nottingham.ac.uk/ University of Nottingham
 
 http://www.ou.edu/web.html University of Oklahoma
  Brian Friesen
+
+http://www.physics.sc.edu University of South Carolina
+ Camilo Posada
 
 http://www.soton.ac.uk/ University of Southampton
  Charalampos Markakis
