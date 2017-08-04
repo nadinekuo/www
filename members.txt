@@ -160,6 +160,7 @@ http://www.perimeterinstitute.ca/ Perimeter Institute
  http://www.cct.lsu.edu/~eschnett/ Erik Schnetter
  Jonah Miller
  Joseph Bramante
+ Nestor Ortiz
 
 http://www.pan.pl/ Polska Akademia Nauk (Polish Academy of Sciences)
  Agnieszka Janiuk
@@ -253,6 +254,9 @@ http://www.unict.it/ Università degli Studi di Catania (University of Catania)
 
 http://www.unifi.it/mdswitch.html Università degli Studi di Firenze (University of Florence)
  Luca Franci
+
+https://www.uoguelph.ca/ University of Guelph
+ Dylan Podkowka
 
 http://prtl.uhcl.edu/portal/page/portal/HOMEPAGE University of Houston Clear Lake
  David Garrison
