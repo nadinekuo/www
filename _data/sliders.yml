@@ -1,13 +1,23 @@
 # example slider
-- selector: example_slider
+- selector: et_gallery
+  bullets: true
   captions: true
   images:
-    - src: /img/1.jpg
-      alt: image one
-    - src: /img/2.jpg
-      alt: image two
-    - src: /img/3.jpg
-      alt: image three
+    - src: gallery/bbh/RePsi4_sm_4x3.png
+      alt: BBH
+      title: Gravitational Waves
+      href: gallery/bbh
+    - src: gallery/bns/rho_4x3.png
+      alt: BNS
+      title: Binary neutron stars
+      href: gallery/bns
+    - src: gallery/multipatch/kerr_4x3.png
+      alt: Multipatch
+      title: Multiple Coordinate Patches
+      href: gallery/multipatch
+    - src: gallery/poisson/psi_4x3.png
+      alt: Poisson
+      title: Solving elliptic Equations
+      href: gallery/poisson
   settings:
-    height: "'auto'"
-    effect: "'fade'"
+    disableNav: false
