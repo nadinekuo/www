@@ -29,7 +29,7 @@ are shown as well.
 </div>
 
 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 section">
-<video width="100%" controls poster="rho.png">
+<video width="100%" controls preload="none" poster="rho.png">
   <source src="rho.mp4" type="video/mp4">
   <!--<source src="movie.ogg" type="video/ogg">-->
   Your browser does not support the video tag.
