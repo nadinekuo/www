@@ -1,3 +1,26 @@
 sass:
         sass_dir: _sass
 incremental: true
+grants:
+  - id: '155055'
+  - id: '155046'
+  - id: '155043'
+  - id: '155051'
+    name: ''
+  - id: '121240'
+  - id: '121242'
+  - id: '121243'
+  - id: '121246'
+    name: ''
+  - id: '090397'
+  - id: '090378'
+  - id: '090401'
+    name: '(CIGR)'
+  - id: '070156'
+  - id: '085589'
+    name: '(XiRel)'
+  - id: '072191'
+    name: '(Alpaca)'
+  - id: '090504'
+  - id: '094165'
+    name: '(PetaCactus/PRAC)'
