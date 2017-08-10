@@ -24,23 +24,14 @@ are shown as well.
 
 <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 section" markdown="1">
 
-![Psi_4^{2,2} at r=300M over time](mp_Psi4_l2_m2_r300.00.png)
+![Psi_4^{2,2} at r=300M over time](mp_Psi4_l2_m2_r300.00.png){:class="img-responsive"}
 
 </div>
 
-<div class="col-lg-12 col-md-8 col-sm-8 col-xs-12 section">
-  <div id="NsNsToHMNS_rho">
-    Loading the player...
-    Download movie: <a href="rho.mp4">rho.mp4</a> 
-    <br>
-    <script type="text/javascript">
-    jwplayer("NsNsToHMNS_rho").setup({
-      file: "rho.mp4",
-      image: "rho.png",
-      width: 640, height: 480
-    });
-    </script> 
-  </div>
-</div>
-
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 section">
+<video width="100%" controls poster="rho.png">
+  <source src="rho.mp4" type="video/mp4">
+  <!--<source src="movie.ogg" type="video/ogg">-->
+  Your browser does not support the video tag.
+</video>
 </div>
