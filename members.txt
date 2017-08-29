@@ -99,6 +99,7 @@ http://www.kisti.re.kr/english/ Korea Institute of Science and Technology Inform
 
 http://en.lzu.edu.cn/ Lanzhou University
  Yong-Qiang Wang
+ Yu-Peng Zhang
 
 http://www.cct.lsu.edu/numerical/ Louisiana State University
  Frank Löffler
@@ -315,3 +316,9 @@ https://wustl.edu/ Washington University in St. Louis
 
 http://wvu.edu West Virginia University
  Zachary Etienne
+
+http://www.d.umn.edu University of Minnesota Duluth
+  Eric West
+
+https://www.icts.res.in International Centre for Theoretical Sciences, TIFR
+  Sumit Kumar
