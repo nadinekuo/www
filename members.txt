@@ -67,7 +67,11 @@ http://www.cra.gatech.edu/ Georgia Institute of Technology
 http://www.hnue.edu.vn/ Trường Đại học Sư phạm Hà Nội (Hanoi National University of Education)
  Nguyễn Quỳnh Lan
 
+ihttp://www.universia.edu.ve/ Instituto Venezolano de Investigaciones Cientificas
+ Jovanna Moya
+
 http://www.iitd.ac.in/ Indian Institute of Technology Delhi
+ Riya Arora
  Ujjwal Agarwal
 
 http://www.iitd.ac.in/ भारतीय प्रौद्योगिकी संस्थान दिल्ली (Indian Institute of Technology Delhi)
@@ -90,6 +94,9 @@ https://tecnico.ulisboa.pt Instituto Superior Técnico, Lisbon
 
 http://www.iucaa.ernet.in/ The Inter-University Centre for Astronomy and Astrophysics, Pune, India
  Anshu Gupta Mujumdar
+
+https://www.icts.res.in International Centre for Theoretical Sciences, TIFR
+ Sumit Kumar
 
 http://www.itu.edu.tr/en/ İstanbul Teknik Üniversitesi (Istanbul Technical University)
  Armin Vahdat
@@ -206,6 +213,7 @@ http://www.su.se/ Stockholm University
  http://www.fysik.su.se/~ja/ Jan Åman
 
 http://trc.sysu.edu.cn/ TianQin Research Center for Gravitational Physics, Sun Yat-sen University
+ Xu Zekun
  http://trc.sysu.edu.cn/?p=1037 Xuefeng Zhang
 
 http://www.tribhuvan-university.edu.np/ त्रिभुवन विश्वविद्यालय (Tribhuvan University)
@@ -265,6 +273,9 @@ http://prtl.uhcl.edu/portal/page/portal/HOMEPAGE University of Houston Clear Lak
 http://illinois.edu/ University of Illinois Urbana-Champaign
  Daniel George
 
+http://www.d.umn.edu University of Minnesota Duluth
+ Eric West
+
 http://www.nottingham.ac.uk/ University of Nottingham
  Helvi Witek
 
@@ -316,9 +327,3 @@ https://wustl.edu/ Washington University in St. Louis
 
 http://wvu.edu West Virginia University
  Zachary Etienne
-
-http://www.d.umn.edu University of Minnesota Duluth
-  Eric West
-
-https://www.icts.res.in International Centre for Theoretical Sciences, TIFR
-  Sumit Kumar
