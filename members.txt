@@ -11,6 +11,9 @@ http://www.ua.pt Aveiro University
  Carlos Herdeiro
  Juan Carlos Degollado
 
+https://www.baylor.edu/ Baylor University
+ Xiang Zhao
+
 http://www.belmont.edu/ Belmont University
  Scott Hawley
 
@@ -19,6 +22,7 @@ http://www.tapir.caltech.edu/ California Institute of Technology
  http://www.tapir.caltech.edu/~cott/ Christian D. Ott
  Christian Reisswig
  David Radice
+ Ian Ocampo
  Peter Kalmus
  Philipp Mösta
 
