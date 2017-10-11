@@ -185,6 +185,9 @@ http://www.pan.pl/ Polska Akademia Nauk (Polish Academy of Sciences)
 http://www.princeton.edu/ Princeton University
  Jie Ren
 
+http://math.qau.edu.pk Quaid-i-Azam University
+ Nisa Amir
+
 http://www.qub.ac.uk/ Queen's University Belfast
  Sinead Mannion
 
