@@ -252,6 +252,12 @@ http://unal.edu.co/ Universidad Nacional de Colombia
 http://www.ufes.br/ Universidade Federal do Espírito Santo
  Carlos Lobo
 
+http://www.unict.it/ Universit&#224; degli Studi di Catania
+ Antonio Figura
+
+http://http://www.uni-heidelberg.de Universit&#228;t de Heidelberg
+ Nils Leif Fischer
+
 http://www.uib.es/ Universitat de les Illes Balears
  Sascha Husa
 
