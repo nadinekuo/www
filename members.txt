@@ -6,6 +6,7 @@ http://www.aei.mpg.de/english Albert Einstein Institute
 
 http://www.auth.gr/home/index_en.html Aristotle University of Thessaloniki
  Nick Stergioulas
+ Soultanis Theodoros
 
 http://www.ua.pt Aveiro University
  Carlos Herdeiro
@@ -13,6 +14,9 @@ http://www.ua.pt Aveiro University
 
 https://www.baylor.edu/ Baylor University
  Xiang Zhao
+
+http://www.bit.edu.cn/ Beijing Institute of Technology
+ Xiaobo Zou
 
 http://www.belmont.edu/ Belmont University
  Scott Hawley
@@ -67,6 +71,9 @@ http://www.cra.gatech.edu/ Georgia Institute of Technology
  Michael Clark
  http://www.cra.gatech.edu/people/laguna.shtml Pablo Laguna
  Rafael Aranha
+
+https://www.gsi.de GSI Helmholtzzentrum f&uuml;r Schwerionenforschung GmbH
+ Kevin Ebinger
 
 http://www.hnue.edu.vn/ Trường Đại học Sư phạm Hà Nội (Hanoi National University of Education)
  Nguyễn Quỳnh Lan
@@ -308,6 +315,9 @@ http://www.nottingham.ac.uk/ University of Nottingham
 
 http://www.ou.edu/web.html University of Oklahoma
  Brian Friesen
+
+https://web.uniroma2.it/home/newlang/english University of Rome, Tor Vergata
+ Jay Kalinani
 
 http://www.physics.sc.edu University of South Carolina
  Camilo Posada
