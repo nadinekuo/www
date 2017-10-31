@@ -81,9 +81,6 @@ http://www.hnue.edu.vn/ Trường Đại học Sư phạm Hà Nội (Hanoi Natio
 https://www.cfa.harvard.edu/ Harvard-Smithsonian Center for Astrophysics
  Raid M Suleiman
 
-http://www.universia.edu.ve/ Instituto Venezolano de Investigaciones Cientificas
- Jovanna Moya
-
 http://www.iitd.ac.in/ Indian Institute of Technology Delhi
  Riya Arora
  Ujjwal Agarwal
@@ -111,6 +108,9 @@ http://www.nuclecu.unam.mx/ Instituto de Ciencias Nucleares, UNAM
 
 https://tecnico.ulisboa.pt Instituto Superior Técnico, Lisbon
  http://www.seth-hopper.com/research Seth Hopper
+
+http://www.universia.edu.ve/ Instituto Venezolano de Investigaciones Cientificas
+ Jovanna Moya
 
 http://www.iucaa.ernet.in/ The Inter-University Centre for Astronomy and Astrophysics, Pune, India
  Anshu Gupta Mujumdar
@@ -308,6 +308,7 @@ http://prtl.uhcl.edu/portal/page/portal/HOMEPAGE University of Houston Clear Lak
 
 http://illinois.edu/ University of Illinois Urbana-Champaign
  Daniel George
+ Shawn Rosofsky
 
 http://www.d.umn.edu University of Minnesota Duluth
  Eric West
