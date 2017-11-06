@@ -50,6 +50,9 @@ http://www.communityofphysics.org/ Community of Physics
 http://du.ac.ir/ دانشگاه دامغان (Damghan University, Iran)
  Saeed Fakhry
 
+http://fisica.ugto.mx/ DCI Universidad de Guanajuato
+ Argelia Bernal
+
 http://www.enmu.edu/ Eastern New Mexico University
  William L. Andersen
 
@@ -69,6 +72,7 @@ http://www.cra.gatech.edu/ Georgia Institute of Technology
  Deirdre Shoemaker
  Matt Kinsey
  Michael Clark
+ Miguel Gracia
  http://www.cra.gatech.edu/people/laguna.shtml Pablo Laguna
  Rafael Aranha
 
@@ -260,6 +264,11 @@ http://www.uniandes.edu.co/ Universidad de Los Andes
 
 http://www.umich.mx/ Universidad Michoacana
  Francisco Guzmán
+
+http://www.umich.mx/ Universidad Michoacana de San Nicolás de Hidalgo
+ Geovanni Rangel
+ Manuel O'Henry
+ Reyes Manuel Garcia
 
 http://www.unam.mx/ Universidad Nacional Autónoma de México
  Jose Manuel Torres
