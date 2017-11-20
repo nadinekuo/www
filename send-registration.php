@@ -19,13 +19,21 @@
 /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
 $name = $_POST['name'];
 $email = $_POST['email'];
+$home = $_POST['home'];
 $institution = $_POST['institution'];
+$institution_url = $_POST['institution-url'];
 $list = $_POST['list'];
 $buechsenwursttest = $_POST['buechsenwursttest'];
 
 $frominstitution = "";
 if (!empty($institution)) {
   $frominstitution = "from $institution";
+}
+if (!empty($institution_url)) {
+  $institution_url = " (" . $institution_url . ")";
+}
+if (!empty($home)) {
+  $home = "Home Page: ".$home."\n";
 }
 
 if ($list=='yes') {
@@ -37,7 +45,7 @@ else {
 $addtolist = "This person's email address is ".$email."; however, this person does not wish to be added to the ET users mailing list.";
 }
 
-$message = "Einstein Toolkit maintainers: \n\n".$name." ".$frominstitution." has submitted a request to register with the Einstein Toolkit. ".$addtolist."\n\n Thanks,\n Einstein Toolkit Registration Bot\n";
+$message = "Einstein Toolkit maintainers: \n\n".$name." ".$frominstitution.$institution_url."has submitted a request to register with the Einstein Toolkit. ".$addtolist."\n".$home."\n Thanks,\n Einstein Toolkit Registration Bot\n";
 
 /* PHP form validation: the script checks that the Email field contains a valid email address and the Subject field isn't empty. preg_match performs a regular expression match. It's a very powerful PHP function to validate form fields and other strings - see PHP manual for details. */
 if (empty($name)) {
