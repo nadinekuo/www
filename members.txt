@@ -34,6 +34,7 @@ http://www20.csueastbay.edu/ California State University East Bay
  Ernest Schleicher
 
 http://english.cas.cn/ST/ Chinese Academy of Sciences
+ Di Lu
  Mew Bing Wan
 
 http://www.cuhk.edu.hk/index.html The Chinese University of Hong Kong
@@ -257,6 +258,9 @@ http://www.tribhuvan-university.edu.np/ त्रिभुवन विश्व
  Tulasi Prasad Subedi
  Udayaraj Khanal
 
+http://www.tsinghua.edu.cn Tsinghua University
+ Wei-Gang Zeng
+
 http://www.uv.es/ Univeristy of València
  Jens Mahlmann
  Toni Font
@@ -297,6 +301,9 @@ http://www.ucd.ie/ University College Dublin
 
 http://ua.edu University of Alabama
  Nasir Eisty
+
+http://www.uib.eu/ University of Balearic Islands
+ Antoni Ramos Buades
 
 http://www.universityofcalifornia.edu/ University of California
  David Rideout
