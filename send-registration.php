@@ -30,7 +30,7 @@ if (!empty($institution)) {
   $frominstitution = "from $institution";
 }
 if (!empty($institution_url)) {
-  $institution_url = " (" . $institution_url . ")";
+  $institution_url = " (" . $institution_url . ") ";
 }
 if (!empty($home)) {
   $home = "Home Page: ".$home."\n";
