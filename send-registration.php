@@ -58,6 +58,9 @@ if (empty($name)) {
 } elseif (!empty($institution) && ($name == $institution)) {
   echo '<h4>You provided the same for name and institution. Go away, spam bot, or </h4>';
   echo '<br /><a href="javascript:history.back(1);">try again</a>';
+} elseif (empty($institution_url)) {
+  echo '<h4>Please provide a URL for your institution.</h4>';
+  echo '<br /><a href="javascript:history.back(1);">try again</a>';
 } elseif (empty($buechsenwursttest) || ($buechsenwursttest != "nietsniE")) {
   echo '<h4>You did not spell \'Einstein\' backwards correctly. Go away, spam bot, or </h4>';
   echo '<br /><a href="javascript:history.back(1);">try again</a>';
