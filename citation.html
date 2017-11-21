@@ -4,9 +4,37 @@
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <script src="head.js" type="text/javascript">
   </script>
+  <!-- new stuff -->
+  <script src="js/BibTex.min.js" type="text/javascript">
+  </script>
+  <script src="js/latex-to-unicode-converter.min.js" type="text/javascript">
+  </script>
+  <script src="js/citations.js" type="text/javascript">
+  </script>
+  <style>
+  .citetable {
+    border-collapse: collapse;
+  }
+  .citetable tr {
+    border-bottom: thin solid black;
+  }
+  .citetable tr:last-child {
+    border-bottom: none;
+  }
+  .citetable td {
+    padding: 0.2em;
+    padding-right: 0.5em;
+  }
+  @media (max-width: 768px) {
+    .citetable td {
+      display: block;
+    }
+  }
+  </style>
+  <!-- end new stuff -->
   <title>Citation</title>
 </head>
-<body>
+<body onload="getCites()">
   <header>
     <script src="menu.js" type="text/javascript">
     </script>
@@ -40,256 +68,11 @@
         <p>Authors whose published work is derived from results obtained using the Einstein Toolkit are <b>requested</b> to individually cite publications for identified key software
         components used to obtain those results. These publications, that are listed below, include details of e.g. the equations, algorithm, and verification of components.
         Obviously, citations should only be given for components that were actually used.</p>
-        <h3>Requested</h3><br>
-        <div class="row htablec">
-          <div class="col-sm-2 schedule-small">
-            <b>Carpet/&#8203;Carpet</b>
-          </div>
-          <div class="col-sm-2 schedule-small">
-            <h5><i>Schnetter:2003rb</i></h5>
-          </div>
-          <div class="col-sm-8 schedule-large">
-            Erik Schnetter, Scott H. Hawley, and Ian Hawke. Evolutions in 3-D numerical relativity using fixed mesh refinement. <cite>Class. Quantum Grav.</cite>, 21:1465–1488, 2004. (
-            <a href="http://dx.doi.org/10.1088/0264-9381/21/6/014">doi:10.1088/0264-9381/21/6/014</a>)
-          </div>
-        </div><br>
-        <div class="row htablec">
-          <div class="col-sm-2 tabled">
-            <b>EinsteinAnalysis/&#8203;AHFinderDirect</b>
-          </div>
-          <div class="col-sm-2 schedule-small">
-            <h5><i>Thornburg:2003sf</i></h5>
-          </div>
-          <div class="col-sm-8 schedule-large">
-            Jonathan Thornburg. A Fast Apparent-Horizon Finder for 3-Dimensional Cartesian Grids in Numerical Relativity. <cite>Class. Quantum Grav.</cite>, 21:743–766, 2004. ( <a href=
-            "http://dx.doi.org/10.1088/0264-9381/21/2/026">doi:10.1088/0264-9381/21/2/026</a>)
-          </div>
-        </div><br>
-        <div class="row htablec">
-          <div class="col-sm-2 tabled">
-            <b>EinsteinAnalysis/&#8203;EHFinder</b>
-          </div>
-          <div class="col-sm-2 schedule-small">
-            <h5><i>Diener:2003jc</i></h5>
-          </div>
-          <div class="col-sm-8 schedule-large">
-            Peter Diener. A new general purpose event horizon finder for 3D numerical spacetimes. <cite>Class. Quantum Grav.</cite>, 20:4901–4918, 2003. ( <a href=
-            "http://dx.doi.org/10.1088/0264-9381/20/22/014">doi:10.1088/0264-9381/20/22/014</a>) <!-- Authors: Diener Peter and Dorband Ernst Nils and Schnetter Erik and Tiglio
-              Manuel -->
-          </div>
-        </div><br>
-        <div class="row htablec">
-          <div class="col-sm-2 tabled">
-            <b>EinsteinEvolve/&#8203;GRHydro</b>
-          </div>
-          <div class="col-sm-2 schedule-small">
-            <h5><i>Baiotti:2004wn</i></h5>
-          </div>
-          <div class="col-sm-8 schedule-large">
-            Luca Baiotti, Ian Hawke, Pedro J. Montero, Frank Löffler, Luciano Rezzolla, Nikolaos Stergioulas, Jose A. Font, and Ed Seidel. Three-dimensional relativistic simulations of
-            rotating neutron star collapse to a Kerr black hole. <cite>Phys. Rev. D</cite>, 71:024035, 2005. ( <a href=
-            "http://dx.doi.org/10.1103/PhysRevD.71.024035">doi:10.1103/PhysRevD.71.024035</a>) <!-- Authors: Bishop Nigel T and Gomez Roberto and Lehner Luis and Szilagyi
-            Bela and Winicour Jeffrey and Isaacson Richard A -->
-          </div>
-        </div><br>
-        <div class="row htablec">
-          <div class="col-sm-2 schedule-small" style="margin-top: 78px;">
-            <b>EinsteinInitial&#8203;Data/&#8203;Meudon_Bin_BH</b>
-          </div>
-          <div class="col-sm-10 schedule-large">
-            <h5><h5><i>Gourgoulhon:2001ec</i></h5></h5>Eric Gourgoulhon, Philippe Grandclement, and Silvano Bonazzola. Binary black holes in circular orbits. I. A global spacetime approach.
-            <cite>Phys. Rev. D</cite>, 65:044020, 2002. ( <a href="http://dx.doi.org/10.1103/PhysRevD.65.044020">doi:10.1103/PhysRevD.65.044020</a>) 
-            <!-- Authors: Grandclement Philippe and Gourgoulhon Eric and Bonazzola Silvano-->
-            <br>
-            <hr class="separator">
-            <h5><h5><i>Grandclement:2001ed</i></h5></h5>Philippe Grandclement, Eric Gourgoulhon, and Silvano Bonazzola. Binary black holes in circular orbits. II. Numerical methods and first
-            results. <cite>Phys. Rev. D</cite>, 65:044021, 2002. ( <a href="http://dx.doi.org/10.1103/PhysRevD.65.044021">doi:10.1103/PhysRevD.65.044021</a>) 
-            <!-- Authors: Noble Scott C and Gammie Charles F and McKinney Jonathan C and
-            Del Zanna Luca -->
-          </div>
-        </div><br>
-        <div class="row htablec">
-          <div class="col-sm-2 tabled">
-            <b>EinsteinInitial&#8203;Data/&#8203;Meudon_Bin_NS</b>
-          </div>
-          <div class="col-sm-2 schedule-small">
-            <h5><i>Gourgoulhon:2000nn</i></h5>
-          </div>
-          <div class="col-sm-8 schedule-large">
-            Eric Gourgoulhon, Philippe Grandclement, Keisuke Taniguchi, Jean-Alain Marck, and Silvano Bonazzola. Quasiequilibrium sequences of synchronized and irrotational binary
-            neutron stars in general relativity. I. Method and tests. <cite>Phys. Rev. D</cite>, 63:064029, 2001. ( <a href=
-            "http://dx.doi.org/10.1103/PhysRevD.63.064029">doi:10.1103/PhysRevD.63.064029</a>) <!-- Authors: Gourgoulhon Eric and Grandclement Philippe and Bonazzola Silvano-->
-          </div>
-        </div><br>
-        <div class="row htablec">
-          <div class="col-sm-2 tabled">
-            <b>EinsteinInitial&#8203;Data/&#8203;NoExcision</b>
-          </div>
-          <div class="col-sm-2 schedule-small">
-            <h5><i>Brown:2007pg</i></h5>
-          </div>
-          <div class="col-sm-8 schedule-large">
-            David Brown, Olivier Sarbach, Erik Schnetter, Manuel Tiglio, Peter Diener, Ian Hawke, and Denis Pollney. Excision without excision: the relativistic turducken. <cite>Phys.
-            Rev. D</cite>, 76:081503, 2007. ( <a href="http://dx.doi.org/10.1103/PhysRevD.76.081503">doi:10.1103/PhysRevD.76.081503</a>) <!-- Authors: Diener Peter -->
-          </div>
-        </div><br>
-        <div class="row htablec">
-          <div class="col-sm-2 tabled">
-            <b>EinsteinInitial&#8203;Data/&#8203;TwoPunctures</b>
-          </div>
-          <div class="col-sm-2 schedule-small">
-            <h5><i>Ansorg:2004ds</i></h5>
-          </div>
-          <div class="col-sm-8 schedule-large">
-            Marcus Ansorg, Bernd Brügmann, and Wolfgang Tichy. A single-domain spectral method for black hole puncture data. <cite>Phys. Rev. D</cite>, 70:064011, 2004. ( <a href=
-            "http://dx.doi.org/10.1103/PhysRevD.70.064011">doi:10.1103/PhysRevD.70.064011</a>) <!-- Authors: Babiuc MC and Szilagyi B and Winicour J and Zlochower Y -->
-          </div>
-        </div><br>
-        <div class="row htablec">
-          <div class="col-sm-2 tabled">
-            <b>LSUThorns/&#8203;QuasiLocalMeasures</b>
-          </div>
-          <div class="col-sm-2 schedule-small">
-            <h5><i>Dreyer:2002mx</i></h5>
-          </div>
-          <div class="col-sm-8 schedule-large">
-            Olaf Dreyer, Badri Krishnan, Deirdre Shoemaker, and Erik Schnetter. Introduction to isolated horizons in numerical relativity. <cite>Phys. Rev. D</cite>, 67:024018, 2003. (
-            <a href="http://dx.doi.org/10.1103/PhysRevD.67.024018">doi:10.1103/PhysRevD.67.024018</a>) <!-- Authors: Etienne Zachariah B and Paschalidis Vasileios and Haas Roland and
-            Mösta Philipp and Shapiro Stuart L -->
-          </div>
-        </div><br>
-        <div class="row htablec">
-          <div class="col-sm-2 tabled">
-            <b>LSUThorns/&#8203;SummationByParts</b>
-          </div>
-          <div class="col-sm-2 schedule-small">
-            <h5><i>Diener:2005tn</i></h5>
-          </div>
-          <div class="col-sm-8 schedule-large">
-            Peter Diener, Ernst Nils Dorband, Erik Schnetter, and Manuel Tiglio. New, efficient, and accurate high order derivative and dissipation operators satisfying summation by
-            parts, and applications in three-dimensional multi-block evolutions. <cite>J. Sci. Comput.</cite>, 32:109–145, 2007. ( <a href=
-            "http://dx.doi.org/10.1007/s10915-006-9123-7">doi:10.1007/s10915-006-9123-7</a>) <!-- Authors: Dreyer Olaf and Krishnan Badri and Shoemaker Deirdre and
-            Schnetter Erik -->
-          </div>
-        </div><br>
-        <div class="row htablec">
-          <div class="col-sm-2 schedule-small" style="margin-top: 77px;">
-            <b>PITTNullCode/*</b>
-          </div>
-          <div class="col-sm-10 schedule-large">
-            <h5><h5><i>Babiuc:2010ze</i></h5></h5>M.C. Babiuc, B. Szilagyi, J. Winicour, and Y. Zlochower. A Characteristic Extraction Tool for Gravitational Waveforms. <cite>Phys. Rev.
-            D</cite>, 84:044057, 2011. ( <a href="http://dx.doi.org/10.1103/PhysRevD.84.044057">doi:10.1103/PhysRevD.84.044057</a>) 
-            <!-- Authors: Luca Baiotti and Ian Hawke and Pedro J Montero and Frank Loffler
-              and Luciano Rezzolla and Nikolaos Stergioulas and Jose A Font and Ed Seidel
-              -->
-            <hr class="separator">
-            <h5><h5><i>Bishop:1998uk</i></h5></h5>Nigel T. Bishop, Roberto Gomez, Luis Lehner, Bela Szilagyi, Jeffrey Winicour, and Richard A. Isaacson. Cauchy characteristic matching. 1998. 
-            <!-- Authors: David Brown and Olivier Sarbach and Erik Schnetter and Manuel
-              Tiglio and Peter Diener and Ian Hawke and Denis Pollney -->
-          </div>
-        </div><br>
-        <div class="row htablec">
-          <div class="col-sm-2 schedule-small" style="margin-top: 78px;">
-            <b>WVUThorns/&#8203;IllinoisGRMHD</b>
-          </div>
-          <div class="col-sm-10 schedule-large">
-            <h5><h5><i>Etienne:2015cea</i></h5></h5>Zachariah B. Etienne, Vasileios Paschalidis, Roland Haas, Philipp Mösta, and Stuart L. Shapiro. IllinoisGRMHD: An Open-Source, User-Friendly
-            GRMHD Code for Dynamical Spacetimes. <cite>Class. Quant. Grav.</cite>, 32(17):175009, 2015. ( <a href=
-            "http://dx.doi.org/10.1088/0264-9381/32/17/175009">doi:10.1088/0264-9381/32/17/175009</a>) <!-- Authors: Gourgoulhon Eric and Grandclement Philippe and Taniguchi Keisuke
-            and Marck Jean Alain and Bonazzola Silvano -->
-            <hr class="separator">
-            <h5><h5><i>Noble:2005gf</i></h5></h5>Scott C. Noble, Charles F. Gammie, Jonathan C. McKinney, and Luca Del Zanna. Primitive variable solvers for conservative general relativistic
-            magnetohydrodynamics. <cite>Astrophys. J.</cite>, 641:626–637, 2006. ( <a href="http://dx.doi.org/10.1086/500349">doi:10.1086/500349</a>) 
-            <!-- Authors: Schnetter Erik and Hawley Scott H and Hawke Ian -->
-          </div>
-        </div><br>
-        <h2>Suggested</h2>
-        <div class="row" style="border-bottom:solid; border-top:solid; padding-bottom: 10px;">
-          <div class="col-sm-2 schedule-small" style="margin-top: 100px;">
-            <b>Cactus/Cactus</b>
-          </div>
-          <div class="col-sm-10 schedule-small">
-            <h5><h5><i>Cactuscode:web</i></h5></h5><a href="http://www.cactuscode.org/">Cactus Computational Toolkit</a>.
-            <hr class="separator">
-            <h5><h5><i>Cactusprize:web</i></h5></h5><a href="http://cactuscode.org/media/prizes/">Cactus Computational Toolkit Prizes</a>.
-            <hr class="separator">
-            <h5><h5><i>Goodale:2002a</i></h5></h5>Tom Goodale, Gabrielle Allen, Gerd Lanfermann, Joan Massó, Thomas Radke, Edward Seidel, and John Shalf. <a href="http://edoc.mpg.de/3341">The
-            Cactus framework and toolkit: Design and applications</a>. In <cite>Vector and Parallel Processing – VECPAR'2002, 5th International Conference, Lecture Notes in Computer
-            Science</cite>, Berlin, 2003. Springer. <!-- Authors: Hawke Ian and Loffler Frank and Nerozzi Andrea -->
-          </div>
-        </div><br>
-        <br>
-        <div class="row htablec">
-          <div class="col-sm-2 tabled">
-            <b>Carpet/Carpet</b>
-          </div>
-          <div class="col-sm-2 schedule-small">
-            <h5><i>CarpetCode:web</i></h5>
-          </div>
-          <div class="col-sm-8 schedule-large">
-            <a></a>Carpet: Adaptive Mesh Refinement for the Cactus Framework. <!-- Authors: Del Zanna Luca and Bucciantini Niccolo and Londrillo Pasquale -->
-          </div>
-        </div><br>
-        <div class="row htablec">
-          <div class="col-sm-2 tabled">
-            <b>EinsteinAnalysis/&#8203;AHFinderDirect</b>
-          </div>
-          <div class="col-sm-2 schedule-small">
-            <h5><i>Thornburg:1995cp</i></h5>
-          </div>
-          <div class="col-sm-8 schedule-large">
-            Jonathan Thornburg. Finding apparent horizons in numerical relativity. <cite>Phys. Rev. D</cite>, 54:4899–4918, 1996. ( <a href=
-            "http://dx.doi.org/10.1103/PhysRevD.54.4899">doi:10.1103/PhysRevD.54.4899</a>) <!-- END BIBLIOGRAPHY /tmp/ET-citations -->
-          </div>
-        </div>
-        <div class="row htablec">
-          <div class="col-sm-2 schedule-small" style="margin-top: 120px;">
-            <b>EinsteinEvolve/&#8203;GRHydro</b>
-          </div>
-          <div class="col-sm-10 schedule-large">
-            <h5><h5><i>Giacomazzo:2007ti</i></h5></h5>Bruno Giacomazzo and Luciano Rezzolla. WhiskyMHD: a new numerical code for general relativistic magnetohydrodynamics. <cite>Class. Quantum
-            Grav.</cite>, 24:S235–S258, 2007. ( <a href="http://dx.doi.org/10.1088/0264-9381/24/12/S16">doi:10.1088/0264-9381/24/12/S16</a>) 
-            <!-- Authors: Tom Goodale and Gabrielle Allen and Gerd Lanfermann and Joan
-            Masso and Thomas Radke and Edward Seidel and John Shalf -->
-            <hr class="separator">
-            <h5><h5><i>Hawke:2005zw</i></h5></h5>Ian Hawke, Frank Löffler, and Andrea Nerozzi. Excision methods for high resolution shock capturing schemes applied to general relativistic
-            hydrodynamics. <cite>Phys. Rev. D</cite>, 71:104006, 2005. ( <a href="http://dx.doi.org/10.1103/PhysRevD.71.104006">doi:10.1103/PhysRevD.71.104006</a>)
-            <hr class="separator">
-            <h5><h5><i>Moesta:2013dna</i></h5></h5>Philipp Mösta, Bruno C. Mundim, Joshua A. Faber, Roland Haas, Scott C. Noble, Tanja Bode, Frank Löffler, Christian D. Ott, Christian Reisswig,
-            and Erik Schnetter. GRHydro: A new open source general-relativistic magnetohydrodynamics code for the Einstein Toolkit. <cite>Classical and Quantum Gravity</cite>,
-            31(1):015005, 2014. ( <a href="http://dx.doi.org/10.1088/0264-9381/31/1/015005">doi:10.1088/0264-9381/31/1/015005</a>) <!-- Authors: Thornburg Jonathan -->
-          </div>
-        </div><br>
-        <div class="row htablec">
-          <div class="col-sm-2 schedule-small" style="margin-top: 120px;">
-            <b>McLachlan/&#8203;ML_BSSN</b>
-          </div>
-          <div class="col-sm-10 schedule-small">
-            <h5><h5><i>Brown:2008sb</i></h5></h5>J. David Brown, Peter Diener, Olivier Sarbach, Erik Schnetter, and Manuel Tiglio. Turduckening black holes: an analytical and computational
-            study. <cite>Phys. Rev. D</cite>, 79:044023, 2009. ( <a href="http://dx.doi.org/10.1103/PhysRevD.79.044023">doi:10.1103/PhysRevD.79.044023</a>)
-            <hr class="separator">
-            <h5><h5><i>Kranc:web</i></h5></h5><a href="http://kranccode.org/">Kranc: Kranc assembles numerical code</a>.
-            <hr class="separator">
-            <h5><h5><i>Moesta:2013dna</i></h5></h5><a href="http://www.cct.lsu.edu/~eschnett/McLachlan/">McLachlan, a public BSSN code</a>. 
-            <!-- Authors: Mosta Philipp and Mundim Bruno C and Faber Joshua A and Haas
-            Roland and Noble Scott C and Bode Tanja and Loffler Frank and Ott Christian D
-            and Reisswig Christian and Schnetter Erik -->
-          </div>
-        </div><br>
-        <div class="row htablec">
-          <div class="col-sm-2 tabled">
-            <b>WVUThorns/&#8203;IllinoisGRMHD</b>
-          </div>
-          <div class="col-sm-2 schedule-small">
-            <h5><i>DelZanna:2002rv</i></h5>
-          </div>
-          <div class="col-sm-8 schedule-large">
-            Luca Del Zanna, Niccoló Bucciantini, and Pasquale Londrillo. An efficient shock-capturing central-type scheme for multidimensional relativistic flows. 2.
-            Magnetohydrodynamics. <cite>Astron. Astrophys.</cite>, 400:397–414, 2003. ( <a href="http://dx.doi.org/10.1051/0004-6361:20021641">doi:10.1051/0004-6361:20021641</a>) 
-            <!-- Authors: Giacomazzo Bruno and Rezzolla Luciano -->
-          </div>
-        </div><br>
-        (bibtex <a href="https://bitbucket.org/einsteintoolkit/manifest/raw/master/einsteintoolkit.bib">file</a>)
+        <h3>Requested Citations</h3>
+        <div calss="table-responsive"><table id="requestedcites" class="citetable"></table></div>
+        <h3>Suggested Citations</h3>
+        <div calss="table-responsive"><table id="suggestedcites" class="citetable"></table></div>
+        <p>(bibtex <a href="https://bitbucket.org/einsteintoolkit/manifest/raw/master/einsteintoolkit.bib">file</a>)</p>
       </div><br>
       <br>
     </div>
