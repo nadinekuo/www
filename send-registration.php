@@ -18,7 +18,7 @@
 
 <?php
 /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
-$name = $_POST['name'];
+$name = htmlentities($_POST['name'], ENT_QUOTES, "UTF-8");
 $email = $_POST['email'];
 $home = $_POST['home'];
 $institution = $_POST['institution'];
