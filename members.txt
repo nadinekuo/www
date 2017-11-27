@@ -215,6 +215,9 @@ http://www.qub.ac.uk/ Queen's University Belfast
 http://astro.ru.nl Radboud University
  Patricia Schmidt
 
+http://www.rpi.edu/ Rensselaer Polytechnic Institute
+ http://homepages.rpi.edu/~giedtj/ Joel Giedt
+
 http://www.ru.ac.za/ Rhodes University, South Africa
  Apratim Ganguly
  Denis Pollney
@@ -267,6 +270,7 @@ http://www.uv.es/ Univeristy of València
  Vassilios Mewes
 
 http://www.udg.mx Universidad de Guadalajarahas
+ Kenya Millán
  Roberto Esparza
 
 http://www.uniandes.edu.co/ Universidad de Los Andes
