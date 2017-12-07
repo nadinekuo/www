@@ -30,8 +30,9 @@ $frominstitution = "";
 if (!empty($institution)) {
   $frominstitution = "from $institution";
 }
+$institution_url_paren = "";
 if (!empty($institution_url)) {
-  $institution_url = " (" . $institution_url . ") ";
+  $institution_url_paren = " (" . $institution_url . ") ";
 }
 $home_entry = "";
 if (!empty($home)) {
@@ -48,7 +49,7 @@ else {
 $addtolist = "This person's email address is ".$email."; however, this person does not wish to be added to the ET users mailing list.";
 }
 
-$message = "Einstein Toolkit maintainers: \n\n".$name." ".$frominstitution.$institution_url."has submitted a request to register with the Einstein Toolkit. ".$addtolist."\n".$homepg."\n Thanks,\n Einstein Toolkit Registration Bot\n";
+$message = "Einstein Toolkit maintainers: \n\n".$name." ".$frominstitution.$institution_url_paren."has submitted a request to register with the Einstein Toolkit. ".$addtolist."\n".$homepg."\n Thanks,\n Einstein Toolkit Registration Bot\n";
 
 $message .= "\n\nmembers.txt entry:\n\n".
   "$institution_url $institution\n".
