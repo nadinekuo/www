@@ -95,6 +95,7 @@ http://www.iitd.ac.in/ भारतीय प्रौद्योगिकी �
 
 Individuals without affiliation
  David N Bradley
+ Gary W Pearson
 
 http://math.u-bourgogne.fr/ Institut de Mathématiques de Bourgogne
  Shan BAI
@@ -348,6 +349,9 @@ http://illinois.edu/ University of Illinois Urbana-Champaign
 http://www.d.umn.edu University of Minnesota Duluth
  Eric West
  Sheyda Salehirad
+
+http://www.unina.it University of Naples
+ Mo Basurto
 
 http://www.nottingham.ac.uk/ University of Nottingham
  Helvi Witek
