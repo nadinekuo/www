@@ -5,6 +5,33 @@
   <script src="../head.js" type="text/javascript">
   </script>
   <title>Thorn Documentation</title>
+ <style TYPE="text/css">
+  <!--
+  .column {
+  /* the proper rules ready for future */
+  column-gap: 2em;
+  column-count: auto;
+  column-width: 15em;
+  /* Moz/Firefox rules */
+  -moz-column-gap: 2em;
+  -moz-column-count: auto;
+  -moz-column-width: 15em;
+  /* Safari & Chrome rules */
+  -webkit-column-gap: 2em;
+  -webkit-column-count: auto;
+  -webkit-column-width: 15em;
+  }
+  .nobreak {
+  /*display: table;*/
+  /*display: inline-block;*/
+  overflow: hidden; /* fix for Firefox */
+  page-break-inside: avoid; /* Firefox */
+  break-inside: avoid; /* IE 10+ */
+  break-inside: avoid-column;
+  -webkit-column-break-inside: avoid;
+  }
+  -->
+  </style>
 </head>
 <body>
   <header>
@@ -13,9 +40,8 @@
   </header>
   <div class="container">
    <div class="row">
-   <div class="col-xs-12">
     <h1> Einstein Toolkit Thorn Documentation</h1>
-   </div>
+   <div class="column">
 <?php
 function dirContent($dir) {
   $dd = opendir($dir);
@@ -42,13 +68,7 @@ foreach (dirContent($docdir) as $arrangement) {
   foreach (dirContent($docdir.$arrangement) as $thorn) {
     if (file_exists($docdir.$arrangement."/".$thorn."/documentation.html")) {
       if ($arrThornCount == 0) {
-        foreach ($colCount as $colName => $colNr) {
-          if ($arrCount % (12/$colNr) == 0) {
-            echo " <div class=\"clearfix visible-$colName\"></div>\n";
-          }
-        }
-        echo " <div class=\"col-xs-6 col-sm-4 col-md-3 col-lg-2\">".$arrangement."<ul>\n";
-        $arrCount += 1;
+        echo "<div class='nobreak'>".$arrangement."<ul>\n";
       }
       $arrThornCount += 1;
       echo " <li><a href=\"../thornguide/".$arrangement."/".$thorn."/documentation.html\">".
@@ -60,6 +80,7 @@ foreach (dirContent($docdir) as $arrangement) {
   }
 }
 ?>
+   </div> <!-- class=column -->
 
 </div></div>
   <div class="container">
