@@ -127,7 +127,7 @@ All repositories participating in this release carry a branch ET_2018_02
 marking this release.  These release branches will be updated if severe
 errors are found.
 
-The "Hack" Release Team on behalf of the Einstein Toolkit Consortium
+The "Tesla" Release Team on behalf of the Einstein Toolkit Consortium
 (2018-02-15)
 
 Eloisa Bentivegna
