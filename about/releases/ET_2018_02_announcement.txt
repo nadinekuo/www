@@ -103,35 +103,31 @@ See the Download page (http://einsteintoolkit.org/download/) on the Einstein Too
 Supported (tested) machines include:
 
 - Default Debian, Ubuntu, Fedora, CentOS, and MacOS installations
-- Bethe
 - Bluewaters
-- Comet (#)
+- Comet
 - Cori
 - Draco
 - Edison
-- Galileo
-- Gulob
+- Golub
 - Hydra
 - Marconi
 - Minerva
 - Queenbee 2
+- Stampede 2
 - Supermike II
 - Wheeler
-- Zwicky
 
  - TACC machines: defs.local.ini needs to have sourcebasedir = $WORK and basedir =
    $SCRATCH/simulations configured for this machine.  You need to determine
    $WORK and $SCRATCH by logging in to the machine.
    A new configuration for KNL nodes is being worked on, but not yet included
    in the release (but compilation works and tests mostly pass).
- -(#) On Comet, using more than one MPI process might produce corrupt output files. This
-   is a known file system bug on this machine.
 
 All repositories participating in this release carry a branch ET_2018_02
 marking this release.  These release branches will be updated if severe
 errors are found.
 
-The "Hack" Release Team on behalf of the Einstein Toolkit Consortium
+The "Tesla" Release Team on behalf of the Einstein Toolkit Consortium
 (2018-02-15)
 
 Eloisa Bentivegna
