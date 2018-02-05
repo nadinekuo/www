@@ -45,20 +45,23 @@ The Einstein Toolkit is primarily supported by NSF
 Data Exploration).
 
 The Einstein Toolkit contains about 200 regression test cases.  On a large
-portion of the tested machines, almost all of these test suites pass, using both
+portion of the tested machines, almost all of these tests pass, using both
 MPI and OpenMP parallelization.
 
-<The changes between this and the previous release include:
+The changes between this and the previous release include:
 
 === Larger changes since last release ===
 
 * The support for generic machines is more robust, and the ET should compile, run, and pass
-  the test suites out of the box on new machines.
+  the test suites out of the box on new Linux machines.
 
-* A Jupyter-based Tutorial is now available. It comes with a tool to help users install
-  packages required or helpful for the einsteintoolkit (et-pkg-installer.py).
+* A Jupyter-based Tutorial
+  (https://einsteintoolkit.org/documentation/new-user-tutorial) is now
+  available. It comes with a tool to help users install packages
+  required or helpful for the Einstein Toolkit (et-pkg-installer.py).
 
-* The KNL's AVX512 instruction set is now supported.
+* The AVX512 instruction set used on the Intel "Knight's Landing"
+  platform is now supported.
 
 * PITTNullCode now has test outputs
 
@@ -72,13 +75,13 @@ MPI and OpenMP parallelization.
 
 * New thorns:
 
-  *GiRaFFE, which models plasma flows in a dynamic spacetime
+  * GiRaFFE, which models plasma flows in a dynamic spacetime
 
 * Changes to WVUThorns_Diagnostics
 
-	* Seed_Magnetic_Fields-modified: Extended Seed_Magnetic_Fields
+    * Seed_Magnetic_Fields-modified: Extended Seed_Magnetic_Fields
       thorn for binary neutron stars. Supercedes Seed_Magnetic_Fields thorn.
-	* Meudon_Bin_NS-modified: Modifications to Meudon BNS initial data thorn to
+    * Meudon_Bin_NS-modified: Modifications to Meudon BNS initial data thorn to
       disable the overwriting of initial lapse/shift, which acts to significantly
       reduce coordinate eccentricity. Supercedes Meudon_Bin_NS thorn.
     * VolumeIntegrals_GRMHD-new: Performs volume integrals on arbitrary
@@ -96,13 +99,14 @@ MPI and OpenMP parallelization.
 To upgrade from the previous release, use GetComponents with the new thornlist
 to check out the new version.
 
-See the Download page (http://einsteintoolkit.org/download/) on the Einstein Toolkit website for download instructions.
+See the Download page (http://einsteintoolkit.org/download/) on the
+Einstein Toolkit website for download instructions.
 
 === Machine notes ===
 
 Supported (tested) machines include:
 
-- Default Debian, Ubuntu, Fedora, CentOS, and MacOS installations
+- Default Debian, Ubuntu, Fedora, CentOS, and MacOS (Homebrew and MacPorts) installations
 - Bluewaters
 - Comet
 - Cori
@@ -117,11 +121,13 @@ Supported (tested) machines include:
 - Supermike II
 - Wheeler
 
- - TACC machines: defs.local.ini needs to have sourcebasedir = $WORK and basedir =
-   $SCRATCH/simulations configured for this machine.  You need to determine
-   $WORK and $SCRATCH by logging in to the machine.
-   A new configuration for KNL nodes is being worked on, but not yet included
-   in the release (but compilation works and tests mostly pass).
+* TACC machines: defs.local.ini needs to have sourcebasedir = $WORK
+  and basedir = $SCRATCH/simulations configured for this machine.  You
+  need to determine $WORK and $SCRATCH by logging in to the machine.
+
+* A new configuration for KNL nodes is being worked on, but not yet
+  included in the release (but compilation works and tests mostly
+  pass).
 
 All repositories participating in this release carry a branch ET_2018_02
 marking this release.  These release branches will be updated if severe
@@ -130,15 +136,8 @@ errors are found.
 The "Tesla" Release Team on behalf of the Einstein Toolkit Consortium
 (2018-02-15)
 
-Eloisa Bentivegna
 Steven R. Brandt
-Peter Diener
 Roland Haas
 Ian Hinder
-Frank Löffler
-Roberto De Pietri
-Erik Schnetter
-Yosef Zlochower
-
 
 Feb 15, 2018
