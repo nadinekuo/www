@@ -135,6 +135,7 @@ GRHydro::GRHydro_stencil            = 3
 GRHydro::bound                     = "none"
 GRHydro::rho_abs_min               = 1.e-10
 GRHydro::GRHydro_atmo_tolerance    = 1.e-3
+GRHydro::sources_spatial_order     = 4
 
 # Curvature evolution parameters
 
