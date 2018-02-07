@@ -137,6 +137,7 @@ The "Tesla" Release Team on behalf of the Einstein Toolkit Consortium
 (2018-02-15)
 
 Steven R. Brandt
+Peter Diener
 Roland Haas
 Ian Hinder
 
