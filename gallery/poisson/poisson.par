@@ -139,7 +139,6 @@ CarpetRegrid2::radius_5[7]  = 0.8
 
 #################################
 ActiveThorns = "AEILocalInterp"
-ActiveThorns = "BLAS"
 ActiveThorns = "Fortran"
 ActiveThorns = "GenericFD"
 ActiveThorns = "HDF5"
