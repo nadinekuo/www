@@ -57,8 +57,7 @@ The changes between this and the previous release include:
 
 * A Jupyter-based Tutorial
   (https://einsteintoolkit.org/documentation/new-user-tutorial) is now
-  available. It comes with a tool to help users install packages
-  required or helpful for the Einstein Toolkit (et-pkg-installer.py).
+  available.
 
 * The AVX512 instruction set used on the Intel "Knight's Landing"
   platform is now supported.
