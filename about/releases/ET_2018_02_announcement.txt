@@ -105,7 +105,7 @@ Einstein Toolkit website for download instructions.
 
 Supported (tested) machines include:
 
-- Default Debian, Ubuntu, Fedora, CentOS, and MacOS (Homebrew and MacPorts) installations
+- Default Debian, Ubuntu, Fedora, CentOS, Mint, OpenSUSE and MacOS (Homebrew and MacPorts) installations
 - Bluewaters
 - Comet
 - Cori
@@ -140,4 +140,4 @@ Peter Diener
 Roland Haas
 Ian Hinder
 
-Feb 15, 2018
+Feb, 2018
