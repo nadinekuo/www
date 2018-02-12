@@ -239,6 +239,9 @@ http://ccrg.rit.edu/ Rochester Institute of Technology
  Yosef Zlochower
  Zachary Silberman
 
+http://www.astro.oma.be/en/ Royal Observatory of Belgium
+ https://jrekier.github.io/ Jeremy Rekier
+
 http://www.rutgers.edu/ Rutgers University
  Ashley Zebrowski
 
