@@ -1,0 +1,198 @@
+We are pleased to announce the ninth release (code name "Wheeler") of the
+Einstein Toolkit, an open, community developed software infrastructure for
+relativistic astrophysics.
+
+This release includes various improvements to the Cactus flesh, Carpet and
+GRHydro. In addition, bug fixes accumulated since the previous release in
+November 2013 have been included.
+
+For more detailed information about the "Wheeler" release please read
+the long release announcement on the Einstein Toolkit web pages:
+http://einsteintoolkit.org/about/releases/ET_2014_05_announcement.php.
+
+The Einstein Toolkit is a collection of software components and tools for
+simulating and analyzing general relativistic astrophysical systems that builds
+on numerous software efforts in the numerical relativity community including
+CactusEinstein, the Carpet AMR infrastructure and the relativistic
+magneto-hydrodynamics code GRHydro. The Cactus Framework is used as the underlying
+computational infrastructure providing large-scale parallelization, general
+computational components, and a model for collaborative, portable code
+development. The toolkit includes modules to build complete codes for
+simulating black hole spacetimes as well as systems governed by relativistic
+magneto-hydrodynamics.
+
+The Einstein Toolkit uses a distributed software model and its different
+modules are developed, distributed, and supported either by the core team of
+Einstein Toolkit Maintainers, or by individual groups. Where modules are
+provided by external groups, the Einstein Toolkit Maintainers provide quality
+control for modules for inclusion in the toolkit and help coordinate support.
+The Einstein Toolkit Maintainers currently involve postdocs and faculty from
+six different institutions, and host weekly meetings that are open for anyone
+to join in.
+
+Guiding principles for the design and implementation of the toolkit include:
+open, community-driven software development; well thought out and stable
+interfaces; separation of physics software from computational science
+infrastructure; provision of complete working production code; training and
+education for a new generation of researchers.
+
+For more information about using or contributing to the Einstein Toolkit, or to
+join the Einstein Toolkit Consortium, please visit our web pages at
+http://einsteintoolkit.org.
+
+The Einstein Toolkit is primarily supported by NSF
+1212401/1212426/1212433/1212460 (Einstein Toolkit), and also by 0905046/0941653
+(PetaCactus) and 0710874 (LONI Grid).
+
+The Einstein Toolkit contains about 200 regression test cases.  On a large
+portion of the tested machines, almost all of these test suites pass, using both
+MPI and OpenMP parallelization.
+
+The changes between this and the previous release include:
+
+=== Larger changes since last release ===
+
+* Removed components
+ - ADM
+ - LegoExcision
+
+* Deprecated components (still included, but don't use for new code)
+ - ADMConstraints (use ML_ADMConstraints instead)
+ - ADMCoupling
+ - ADMMacros
+ - DistortedBHIVP
+ - IDAxiBrillBH
+ - IDAxiOddBrillBH
+ - RotatingDBHIVP
+ 
+* New components:
+ - CactusExamples: 10 small example thorns
+ - TestMoL
+ - CarpetExtra: 10 test thorns
+ - IllinoisGRMHD (not enabled by default, proposed for the next release)
+ 
+* Simfactory: updates to many machines
+ 
+* Cactus flesh:
+ - Cactus complex number arithmetic functions are deprecated
+ - Drop explicit support for Fortran 77 in Cactus
+ - Prevent Cactus from choking on very large parameter files
+ - Update to work with Chemora. Not currently used by regular Cactus.
+ - The workaround CCTK_DISABLE_RESTRICT for bugs in the Intel compiler
+   is no longer necessary for version newer or equal 14, which is now
+   taken into account.
+ - Support for Clang on OSX
+ 
+* MoL: Automatically count number of evolved variables
+
+* ADMConstraints: remove support for conformal metrics
+
+* EOS_Omni: new c++ backend
+
+* GRHydro
+ - rewrite major parts of the code in c++, both versions are still included,
+   the c++ version is not enabled by default yet (see parameter use_cxx_code).
+   The default will change for the next release and the Fortran version will
+   be removed after that.
+ - Lots of smaller changes and bug fixes
+ 
+* Kranc: 
+ - Use a namespace to protect certain thorn functions; this means that
+   calculations can no longer be named the same as the thorn
+ - Add the ability to merge arbitrary files into the thorn at
+   Kranc time (e.g. for docs, tests)
+ - Add ability to tile loops over grids
+ - Add ability to count floating point operations in a calculation
+ - Display a function call backtrace when errors are detected
+   during running Kranc
+ - Correct accidental interchange of sinh and cosh in vectorised code
+ - Substantial internal code cleanup and reorganization; no
+   intentional changes affecting the user as a result
+ - Improvements to Chemora support (GPUs)
+ - Improvements to script language support
+ - Make GFOffset available to calculations
+ - Improve support for xTensor as an alternative to TensorTools
+ - Include some regression tests for Kranc
+ - Include some unit tests for Kranc
+ - Make internal code generation significantly more robust
+ - Remove old code, including obsolete Fortran code generation
+   which hasn't been used or worked for a long time
+ - Remove almost all dependence on GenericFD; required code is
+   now embedded in the generated thorn
+ - Many other small changes
+ 
+* McLachlan: optimizations
+
+* Carpet
+ - Changes to support accelerators (not used by default)
+ - CarpetRegrid2: support Parity Symmetry thorn
+ - Carpet: Apply boundary conditions during restricting
+ - Include string null terminator in HDF5 attributes (only important if you happen to read them in your own scripts)
+ 
+=== How to upgrade from Noether (ET_2013_11) ===
+
+To upgrade from the previous release, use GetComponents with the new thornlist
+to check out the new version.
+
+See the [http://einsteintoolkit.org/download Download] page on the Einstein
+Toolkit website for download instructions.
+
+=== Remaining issues with this release ===
+
+* Certain machines need to be configured specially in Simfactory because the
+  remote directories cannot be determined automatically just from the user
+  name.  See the Machine notes below.
+
+* Recovering with Carpet: Carpet stores metadata (such as the simulation time)
+  only for Carpet::max_timelevels time levels, although it is possible to
+  allocate more time levels. These additional time levels then cannot be
+  recovered; the symptom is an assertion failure during recovery. The solution
+  is to either increase Carpet::max_timelevels, or to decrease the number of
+  active time levels.
+
+=== Machine notes ===
+
+Supported (tested) machines include:
+
+- Default Debian, Suse and Fedora installations
+- Bethe
+- Bluewaters *
+- Carver
+- Datura
+- Gordon
+- Hopper
+- Loewe
+- Lonestar *
+- Supermike II
+- Nvidia *
+- Orca *
+- Philip
+- Queenbee
+- Shelob
+- Stampede (CPU)
+- Supermuc
+- Titan
+- Trestles
+- Zwicky
+
+A * means that a small number of tests still fail on that machine. All tests
+pass on the other machines.
+
+- LoneStar and Stampede: defs.local.ini needs to have sourcebasedir = $WORK and
+  basedir = $SCRATCH/simulations configured for this machine.  You need to
+  determine $WORK and $SCRATCH by logging in to the machine.
+
+All repositories participating in this release carry a branch ET_2014_05
+marking this release.  These release branches will be updated if severe
+errors are found.
+
+The "Wheeler" Release Team on behalf of the Einstein Toolkit Consortium (2014-05-21)
+
+Peter Diener
+Roland Haas
+Ian Hinder
+Frank Löffler
+Bruno C. Mundim
+Erik Schnetter
+
+May 21, 2014

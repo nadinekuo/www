@@ -353,9 +353,7 @@ ML_BSSN::ML_dtlapse_bound    = "none"
 ML_BSSN::ML_shift_bound      = "none"
 ML_BSSN::ML_dtshift_bound    = "none"
 
-# use this for ET releases starting with ET_2015_11 at which point "yes" is no longer accepted
-# ML_BSSN::UseSpatialBetaDriver = 1
-ML_BSSN::UseSpatialBetaDriver = "yes"
+ML_BSSN::UseSpatialBetaDriver = 1
 ML_BSSN::SpatialBetaDriverRadius = 50
 
 ML_BSSN::apply_dissipation   = "never"

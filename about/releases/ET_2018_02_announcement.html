@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="../../head.js" type="text/javascript"></script>
+  <title>07-17-2017</title>
+</head>
+
+<body>
+  <header>
+    <script src="../../menu.js" type="text/javascript">
+    </script>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 section">
+        <h1>Release Announcement</h1>
+<p>We are pleased to announce the sixteenth release (code name <a href="https://en.wikipedia.org/wiki/Nikola_Tesla">"Tesla"</a>) of the
+Einstein Toolkit, an open, community developed software infrastructure for
+relativistic astrophysics. The highlights of this release are:</p>
+
+<ul>
+<li>A new thorn, Hydro_RNSID which models a rotating neutron star.
+
+<li>Tutorials have been updated and the install process for new users
+  has been simplified.
+</ul>
+
+<p>In addition, bug fixes accumulated since the previous release in June 2017
+have been included.</p>
+
+<p>The Einstein Toolkit is a collection of software components and tools for
+simulating and analyzing general relativistic astrophysical systems that builds
+on numerous software efforts in the numerical relativity community including
+CactusEinstein, the Carpet AMR infrastructure and the relativistic
+magneto-hydrodynamics code GRHydro. For parts of the toolkit, the Cactus
+Framework is used as the underlying computational infrastructure providing
+large-scale parallelization, general computational components, and a model for
+collaborative, portable code development. The toolkit includes modules to build
+complete codes for simulating black hole spacetimes as well as systems governed
+by relativistic magneto-hydrodynamics.</p>
+
+<p>The Einstein Toolkit uses a distributed software model and its different
+modules are developed, distributed, and supported either by the core team of
+Einstein Toolkit Maintainers, or by individual groups. Where modules are
+provided by external groups, the Einstein Toolkit Maintainers provide quality
+control for modules for inclusion in the toolkit and help coordinate support.
+The Einstein Toolkit Maintainers currently involve postdocs and faculty from
+six different institutions, and host weekly meetings that are open for anyone
+to join in.</p>
+
+<p>Guiding principles for the design and implementation of the toolkit include:
+open, community-driven software development; well thought out and stable
+interfaces; separation of physics software from computational science
+infrastructure; provision of complete working production code; training and
+education for a new generation of researchers.</p>
+
+<p>For more information about using or contributing to the Einstein Toolkit, or to
+join the Einstein Toolkit Consortium, please visit our web pages at
+<a href="http://einsteintoolkit.org">http://einsteintoolkit.org</a>.</p>
+
+<p>The Einstein Toolkit is primarily supported by NSF
+1550551/1550461/1550436/1550514 (Einstein Toolkit Community Integration and
+Data Exploration).</p>
+
+<p>The Einstein Toolkit contains about 200 regression test cases.  On a large
+portion of the tested machines, almost all of these tests pass, using both
+MPI and OpenMP parallelization.</p>
+
+<h2>The changes between this and the previous release include:</h2>
+
+<h3> Larger changes since last release </h3>
+
+<ol>
+<li> The support for generic machines is more robust, and the ET should compile, run, and pass
+  the test suites out of the box on new Linux machines.
+
+<li> A Jupyter-based Tutorial
+  (<a href="https://einsteintoolkit.org/documentation/new-user-tutorial">https://einsteintoolkit.org/documentation/new-user-tutorial</a>) is now
+  available.
+
+<li> The AVX512 instruction set used on the Intel "Knight's Landing"
+  platform is now supported.
+
+<li> PITTNullCode now has test outputs
+
+<li> EOS_Omni polytrope supports hybrid equations of date with up to 10 pieces
+</ol>
+
+<h3> New thorns or tools </h3>
+
+* The Hydro_RNSID thorn which provides initial data for a rotating neutron star.
+
+=== Upcoming changes for the next releases ===
+
+<h3> New thorns </h3>
+
+<ul>
+  <li> GiRaFFE, which models plasma flows in a dynamic spacetime
+
+ <li> Changes to WVUThorns_Diagnostics
+   <ul>
+
+    <li> Seed_Magnetic_Fields-modified: Extended Seed_Magnetic_Fields
+      thorn for binary neutron stars. Supercedes Seed_Magnetic_Fields thorn.
+    <li> Meudon_Bin_NS-modified: Modifications to Meudon BNS initial data thorn to
+      disable the overwriting of initial lapse/shift, which acts to significantly
+      reduce coordinate eccentricity. Supercedes Meudon_Bin_NS thorn.
+    <li> VolumeIntegrals_GRMHD-new: Performs volume integrals on arbitrary
+      "Swiss-cheese"-like topologies, and even interoperates with Carpet to track
+      NS centers of mass.
+    <li> VolumeIntegrals_vacuum-new: Ensures that VI_vacuum can be used without
+      enabling a GRMHD code.
+    <li> particle_tracerET-new: Solves the ODE D_t xi = vi for typically thousands of tracer particles,
+       using an RK4 integration atop the current timestepping.
+    <li> smallbPoynET-new: Computes b^i, b^2, and three spatial components of Poynting flux.
+      It also computes (-1-u0), which is useful for tracking unbound matter
+  </ul>
+
+<h3> How to upgrade from Hack (ET_2017_06) </h3>
+
+<p>To upgrade from the previous release, use GetComponents with the new thornlist
+to check out the new version.</p>
+
+<p>See the <a href="http://einsteintoolkit.org/download/">Download</a> page on the Einstein Toolkit website for download instructions.</p>
+
+<h3>Machine notes</h3>
+
+<p>Supported (tested) machines include:</p>
+
+<ul>
+<li> Debian, Ubuntu, Fedora, CentOS, OpenSUSE, Mint, and MacOS (Homebrew and MacPorts) installations
+ <li> Bluewaters
+ <li> Comet
+ <li> Cori
+ <li> Draco
+ <li> Edison
+ <li> Golub
+ <li> Hydra
+ <li> Marconi
+ <li> Minerva
+ <li> Queenbee 2
+ <li> Stampede 2
+ <li> SuperMIC
+ <li> Wheeler
+
+<li> TACC machines: defs.local.ini needs to have sourcebasedir = $WORK
+  and basedir = $SCRATCH/simulations configured for this machine.  You
+  need to determine $WORK and $SCRATCH by logging in to the machine.
+
+<li> A new configuration for KNL nodes is being worked on, but not yet
+  included in the release (but compilation works and tests mostly
+  pass).
+</ul>
+
+<p>All repositories participating in this release carry a branch ET_2018_02
+marking this release.  These release branches will be updated if severe
+errors are found.</p>
+
+<p>The "Tesla" Release Team on behalf of the Einstein Toolkit Consortium
+(2018-02-15)</p>
+
+<p>
+&nbsp;&nbsp;&nbsp;Steven R. Brandt<br />
+&nbsp;&nbsp;&nbsp;Peter Diener<br />
+&nbsp;&nbsp;&nbsp;Roland Haas<br />
+&nbsp;&nbsp;&nbsp;Ian Hinder<br />
+</p>
+
+<p>Feb 2018</p>
+
+        <script src="../footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

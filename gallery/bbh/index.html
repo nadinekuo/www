@@ -151,25 +151,10 @@
 
 
           <div class="col-sm-8  schedule-small">
-            <a href="GW150914.rpar">GW150914.rpar</a>
+            <a href="https://bitbucket.org/einsteintoolkit/einsteinexamples/raw/master/par/GW150914/GW150914.rpar">GW150914.rpar</a>
           </div>
         </div>
         <br>
-
-
-        <div class="row bbh-titles">
-          <div class="col-sm-2 schedule-small">
-            <b>Thornlist</b>
-          </div>
-
-
-          <div class="col-sm-8  schedule-small">
-            <a href="GW150914.th">GW150914.th</a> (ET_2015_11 release thornlist with Llama
-            multi-block code added)
-          </div>
-        </div>
-        <br>
-
 
         <div class="row bbh-titles">
           <div class="col-sm-2 schedule-small">
@@ -178,8 +163,7 @@
 
 
           <div class="col-sm-8  schedule-small">
-            simfactory/bin/sim create-submit GW150914_28 --define N 28 --parfile
-            repos/GW150914/ParameterFiles/GW150914.rpar --procs 120 --walltime 24:00:00
+            simfactory/bin/sim create-submit GW150914_28 <span style="white-space: nowrap;">--define N 28</span> <span style="white-space: nowrap;">--parfile par/GW150914.rpar</span> <span style="white-space: nowrap;">--procs 128</span> <span style="white-space: nowrap;">--walltime 24:00:00</span>
           </div>
         </div>
         <br>
@@ -205,7 +189,7 @@
 
 
           <div class="col-sm-8  schedule-small">
-            5.6 days on 120 cores (Intel(R) Xeon(R) CPU X5650 @ 2.66GHz)
+            2.8 days on 128 cores (Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz)
           </div>
         </div>
         <br>
@@ -218,11 +202,12 @@
 
 
           <div class="col-sm-8  schedule-small">
-            16108 core hours
+            8700 core hours
           </div>
         </div>
-      </div>
+      <p>This example was last tested on 17-Jul-2017.</p>
 
+      </div>
 
       <div class=" col-xs-12 sections-separator">
         <h3><b>Tutorials</b>
@@ -301,14 +286,12 @@
 
 
       <div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 sections-separator">
-        <a class="thumbnail" href="hleft.jpg"><img alt="BH horizons" src="hleft.jpg" width=
-        "100%"></a>
+        <a href="horizons.png"><img class="img-rounded img-thumbnail" src="horizons.png" alt="BH horizons"/></a>
       </div>
 
 
       <div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 sections-separator">
-        <a class="thumbnail" href="hright.jpg"><img alt="Common BH horizon" src="hright.jpg"
-        srcset="horp4_sm_2x.png 2x" width="100%"></a>
+        <a href="horp4.png"><img class="img-rounded img-thumbnail" src="horp4_sm.png" srcset="horp4_sm_2x.png 2x" alt="Common BH horizon" width="319" height="300"/></a>
       </div>
 
 
@@ -328,8 +311,7 @@
 
 
       <div class="col-lg-4 col-md-5 col-sm-8 col-xs-8 sections-separator">
-        <a class="thumbnail" href="trajectories.png"><img alt="BH trajectories" src=
-        "trajectories.png" srcset="trajectories.png 2x" width="100%"></a>
+		  <a href="trajectories.png"><img class="img-thumbnail" src="trajectories_sm.png" srcset="trajectories.png 2x" alt="BH trajectories" width="242" height="236"/></a>
       </div>
       <br>
       <br>
@@ -341,9 +323,7 @@
 
         <p>The l=2, m=2 spherical harmonic mode of the gravitational wave strain. The strain is
         what is measured by LIGO.</p>
-        <a class="thumbnail" href="waveform.png"><img alt=
-        "h_+^{2,2} at r=500M as a function of retarded time" src="waveform.png" srcset=
-        "waveform.png 2x" width="100%"></a>
+        <a href="waveform.png"><img class="img-thumbnail" src="waveform_sm.png" srcset="waveform.png 2x" alt="h_+^{2,2} at r=500M as a function of retarded time" width="542" height="188"/></a>
       </div>
 
 
@@ -353,12 +333,12 @@
 
 
       <div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 sections-separator">
-        <a class="thumbnail" href="rel.png"><img alt="R_{abcd} R^{abcd}" src="rel.png"></a>
+        <a href="ReI.png"><img class="img-rounded img-thumbnail" src="ReI_sm.png" srcset="ReI_sm_2x.png 2x" alt="R_{abcd} R^{abcd}" width="357" height="300"/></a>
       </div>
 
 
       <div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 sections-separator">
-        <a class="thumbnail" href="imi.png"><img alt="R^*_{abcd} R^{abcd}" src="imi.png"></a>
+        <a href="ImI.png"><img class="img-rounded img-thumbnail" src="ImI_sm.png" srcset="ImI_sm_2x.png 2x" alt="R^*_{abcd} R^{abcd}" width="342" height="300"/></a>
       </div>
 
 
@@ -370,8 +350,7 @@
 
 
       <div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 sections-separator">
-        <a class="thumbnail" href="RePsi4_sm.png"><img alt="Re(Psi_4)" src="RePsi4_sm.png" width=
-        "100%"></a>
+        <a href="RePsi4.png"><img class="img-rounded img-thumbnail" src="RePsi4_sm.png" srcset="RePsi4_sm_2x.png 2x" alt="Re(Psi_4)" width="299" height="300"/></a>
       </div>
 
 
@@ -382,8 +361,7 @@
 
 
       <div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 sections-separator">
-        <a class="thumbnail" href="W0001_sm.png"><img alt="|Psi_4|" src="W0001_sm.png" width=
-        "100%"></a>
+        <a href="W0001.png"><img class="img-rounded img-thumbnail" src="W0001_sm.png" srcset="W0001_sm_2x.png 2x" alt="|Psi_4|" width="304" height="300"/></a>
       </div>
 
 
@@ -398,8 +376,7 @@
 
 
       <div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 sections-separator">
-        <a class="thumbnail" href="Strain_sm.png"><img alt="h_+ at t=700M" src="Strain_sm.png"
-        srcset="Strain_sm_2x.png 2x" width="100%"></a>
+        <a href="Strain.png"><img class="img-rounded img-thumbnail" src="Strain_sm.png" srcset="Strain_sm_2x.png 2x" alt="h_+ at t=700M" width="400" height="300"/></a>
       </div>
 
 
@@ -408,11 +385,9 @@
       </div>
 
 
-      <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 sections-separator">
+      <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12 sections-separator">
        <div class="videocontainer">
-        <iframe allowfullscreen class="video" src=
-        "https://www.youtube.com/embed/videoseries?list=PLy_i7YBcuUSgp3GMUkmVqiWuP-jE5Is3f&rel=0"
-        frameborder="0"></iframe>
+        <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLy_i7YBcuUSgp3GMUkmVqiWuP-jE5Is3f&rel=0" frameborder="0" allowfullscreen></iframe>
        </div>
       </div>
 

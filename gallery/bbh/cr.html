@@ -22,27 +22,20 @@
         <br/>
         <h1><b>Compile and run binary black hole GW150914</b></h1>
 
-
         <h3>Download</h3>
 
-
-        <p>Download the Cactus tree using the GW150914 thornlist:</p>
-
-        <pre>
-curl -O -L https://raw.githubusercontent.com/gridaphobe/CRL/ET_2016_05/GetComponents
-
-chmod a+x GetComponents
-
-./GetComponents --parallel http://einsteintoolkit.org/about/gallery/gw150914/GW150914.th
-
-cd GW150914
-</pre>
+        <p>If you don't already have the Einstein Toolkit downloaded,
+        you can download it as
+        described <a href="../../download.html">here</a>.  You can use
+        the current release version.  </p>
 
         <p>Download the parameter file:</p>
 
-        <pre>
-        curl -Lf http://einsteintoolkit.org/about/gallery/gw150914/GW150914.rpar -o par/GW150914.rpar</pre>
+<pre>
+cd Cactus
+curl -Lf http://einsteintoolkit.org/gallery/bbh/GW150914.rpar -o par/GW150914.rpar</pre>
 
+If you already have the Einstein Toolkit downloaded, configured and built, you can skip to <a href="#run">Run</a>.
         <h3>Compile</h3>
 
 
@@ -67,16 +60,16 @@ cd GW150914
 
         <p>Compile Cactus:</p>
 
-        <pre>simfactory/bin/sim build --thornlist=thornlists/GW150914.th</pre>
+        <pre>simfactory/bin/sim build --thornlist manifest/einsteintoolkit.th</pre>
 
-        <h3>Run</h3>
+        <h3 id="run">Run</h3>
 
 
         <p>Note that the simulation requires about 82 GB of RAM, so most likely you will need to
         use a cluster. Submit the simulation:</p>
 
         <pre class="wrap">
-        simfactory/bin/sim create-submit GW150914_28 --define N 28 --parfile par/GW150914.rpar --procs 128 --walltime 24:00:00</pre>
+simfactory/bin/sim create-submit GW150914_28 <span style="white-space: nowrap;">--define N 28</span> <span style="white-space: nowrap;">--parfile par/GW150914.rpar</span> <span style="white-space: nowrap;">--procs 128</span> <span style="white-space: nowrap;">--walltime 24:00:00</span></pre>
 
         <p>You can choose a different number of cores than 128; if it is too small, the simulation
         will run out of memory.</p>

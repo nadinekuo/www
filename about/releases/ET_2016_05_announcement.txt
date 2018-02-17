@@ -1,0 +1,139 @@
+We are pleased to announce the thirteenth release (code name "Brahe") of the
+Einstein Toolkit, an open, community developed software infrastructure for
+relativistic astrophysics. This release includes, among other things, updates
+to the IllinoisGRMHD code, updated requirements concerning C++, and updates
+examples in the gallery.
+
+In addition, bug fixes accumulated since the previous
+release in November 2015 have been included.
+
+The Einstein Toolkit is a collection of software components and tools for
+simulating and analyzing general relativistic astrophysical systems that builds
+on numerous software efforts in the numerical relativity community including
+CactusEinstein, the Carpet AMR infrastructure and the relativistic
+magneto-hydrodynamics code GRHydro. For parts of the toolkit, the Cactus
+Framework is used as the underlying computational infrastructure providing
+large-scale parallelization, general computational components, and a model for
+collaborative, portable code development. The toolkit includes modules to build
+complete codes for simulating black hole spacetimes as well as systems governed
+by relativistic magneto-hydrodynamics.
+
+The Einstein Toolkit uses a distributed software model and its different
+modules are developed, distributed, and supported either by the core team of
+Einstein Toolkit Maintainers, or by individual groups. Where modules are
+provided by external groups, the Einstein Toolkit Maintainers provide quality
+control for modules for inclusion in the toolkit and help coordinate support.
+The Einstein Toolkit Maintainers currently involve postdocs and faculty from
+six different institutions, and host weekly meetings that are open for anyone
+to join in.
+
+Guiding principles for the design and implementation of the toolkit include:
+open, community-driven software development; well thought out and stable
+interfaces; separation of physics software from computational science
+infrastructure; provision of complete working production code; training and
+education for a new generation of researchers.
+
+For more information about using or contributing to the Einstein Toolkit, or to
+join the Einstein Toolkit Consortium, please visit our web pages at
+http://einsteintoolkit.org.
+
+The Einstein Toolkit is primarily supported by NSF
+1212401/1212426/1212433/1212460 (Einstein Toolkit), and also by 0905046/0941653
+(PetaCactus) and 0710874 (LONI Grid).
+
+The Einstein Toolkit contains about 200 regression test cases.  On a large
+portion of the tested machines, almost all of these test suites pass, using both
+MPI and OpenMP parallelization.
+
+The changes between this and the previous release include:
+
+=== Larger changes since last release ===
+
+* Cactus Flesh
+  - Enable C++11 by default, and require it to be supported
+  - External libraries can specify additional paths (only)
+    added as include path for Fortran.
+  - The 'checkout' target of 'make' has been removed, as it only supported cvs,
+    was unused and untested for a long time.
+* IllinoisGRMHD/Convert_to_HydroBase: major update
+* SetMask_SphericalSurface: modify criterion for setting the mask to avoid
+  problems with intermittent apparent horizon finder failures More examples in
+  the Einstein Toolkit Gallery (http://einsteintoolkit.org/about/gallery/)
+* Simfactory
+  - New configurations: acrcluster, centos, cori, minerva, sunnyvale
+  - Updates to several machines (too many to list)
+  - stampede: fix core affinity settings
+
+
+* New thorns or tools
+  - New thorn WatchDog: a thorn that terminates jobs that do not make progress
+    over a user-defined time frame, defined as time in between ANALYSIS steps.
+
+=== How to upgrade from Somerville (ET_2015_11) ===
+
+To upgrade from the previous release, use GetComponents with the new thornlist
+to check out the new version. Switching to the new branch is not possible for
+most repositories due to repository moves.
+
+See the [http://einsteintoolkit.org/download Download] page on the Einstein
+Toolkit website for download instructions.
+
+=== Remaining issues with this release ===
+
+* Certain machines need to be configured specially in Simfactory because the
+  remote directories cannot be determined automatically just from the user
+  name. See the Machine notes below.
+
+* Recovering with Carpet: Carpet stores metadata (such as the simulation time)
+  only for Carpet::max_timelevels time levels, although it is possible to
+  allocate more time levels. These additional time levels then cannot be
+  recovered; the symptom is an assertion failure during recovery. The solution
+  is to either increase Carpet::max_timelevels, or to decrease the number of
+  active time levels.
+
+=== Machine notes ===
+
+Supported (tested) machines include:
+
+- Default Debian, Ubuntu, Fedora, CentOS, and MacOS installations
+- Bethe
+- Bluewaters
+- Comet
+- Datura
+- Fionn
+- Gordon
+- GPC
+- Gullimin
+- MP2
+- Nvidia
+- Queenbee 2
+- Shelob
+- Supermike II
+- Stampede (CPU)
+- Titan
+- Zwicky
+
+
+*  Stampede: defs.local.ini needs to have sourcebasedir = $WORK and basedir =
+   $SCRATCH/simulations configured for this machine.  You need to determine
+   $WORK and $SCRATCH by logging in to the machine.
+
+
+All repositories participating in this release carry a branch ET_2016_05
+marking this release.  These release branches will be updated if severe
+errors are found.
+
+The "Brahe" Release Team on behalf of the Einstein Toolkit Consortium
+(2016-06-15)
+
+Steven R. Brandt
+Peter Diener
+Roland Haas
+Ian Hinder
+Frank Löffler
+Bruno C. Mundim
+Erik Schnetter
+Barry Wardell
+
+June 16, 2016
+

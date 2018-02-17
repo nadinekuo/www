@@ -4,7 +4,7 @@
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <script src="../../head.js" type="text/javascript"></script>
-  <title>Binary Black Hole</title>
+  <title>Multipatch wave equation</title>
 </head>
 
 <body>
@@ -49,13 +49,15 @@ please <a href="../../../documentation/licenses/">cite</a> Llama, the
 Einstein Toolkit, the Carpet mesh-refinement driver and Cactus.</p>
 
 <h3>Simulation details</h3>
-  
+
   <h4>Computational details</h4>
   <table style="word-wrap: break-word;">
-   <tr ><th>Submission command</th><td >simfactory/bin/sim create-submit Kerr-Schild_Multipole&#8203;--parfile arrangements/Llama/&#8203;LlamaWaveToy/par/Kerr-Schild_Multipole.par</td></tr>
+   <tr ><th>Submission command</th><td>simfactory/bin/sim create-submit Kerr-Schild_Multipole
+<span style="white-space: nowrap;">--parfile</span> arrangements/Llama/LlamaWaveToy/par/Kerr-Schild_Multipole.par</td></tr>
    <tr ><th>Total memory</th><td >800 MB</td></tr>
    <tr><th>Run time</th><td>About 10 minutes on 2&#8203; laptop cores</td></tr>
   </table>
+<p>This example was last tested on 5-Feb-2018.</p>
 </div>
 
       <div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 sections-separator">
@@ -63,7 +65,7 @@ Einstein Toolkit, the Carpet mesh-refinement driver and Cactus.</p>
         <a class="thumbnail" href="kerr.png"><img alt="BH horizons" src="kerr.png"></a>
         <p class="caption">Projection into the xy plane of an l=2, m=2
         multipole evolved with the wave equation on a spherical grid made of 6
-        coordinate patches.</p>
+        coordinate patches. Image created using the <a href="https://wci.llnl.gov/simulation/computer-codes/visit/">VisIt</a> file <a href="Kerr-Schild_Multipole.session">Kerr-Schild_Multipole.session</a></p>
       </div>
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sections-separator">

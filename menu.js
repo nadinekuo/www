@@ -50,7 +50,7 @@ document.write(''+
 '    <span class="icon-bar"></span>'+
 '    <span class="icon-bar"></span>'+
 '  </button>'+
-'      <a class="navbar-brand" href="' +root+'index.html"><img class="logo" src="'+root+'images/logo/einstein.png" alt="ETK"></a>'+
+'      <a class="navbar-brand" href="' +root+'index.html"><img class="logo" src="'+root+'images/logo/einstein_right.svg" alt="ETK"></a>'+
 '      <!--see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img -->'+
 '      <a class="navbar-brand" href="' +root+'index.html"><img class="logo" srcset="'+root+'images/logo/logo-white.png 400w, '+root+'images/logo/logo-white-300.png 300w, '+root+'images/logo/logo-white-200.png 200w, '+root+'images/logo/logo-white-100.png 100w, '+root+'images/logo/logo-white-75.png 75w, '+root+'images/logo/logo-white-50.png 50w" src="'+root+'images/logo/logo-white-266.png"  alt="ETK"></a>'+
 '  </div>'+
@@ -61,6 +61,7 @@ document.write(''+
 '      <li ><a class="main-menu text" href="'+root+'about.html">About</a></li>'+
 '      <li ><a  class="main-menu" href="'+root+'download.html">Download</a></li>'+
 '      <li ><a  class="main-menu" href="'+root+'documentation.html">Documentation</a></li>'+
+'      <li ><a  class="main-menu" href="'+root+'support.html">Help!</a></li>'+
 '      <li ><a  class="main-menu" href="'+root+'contribute.html">Contribute</a></li>'+
 '      <li ><a  class="main-menu" href="'+root+'gallery.html">Gallery</a></li>'+
 '    </ul>'+

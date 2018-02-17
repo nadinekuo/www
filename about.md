@@ -58,7 +58,7 @@ support of software, tools, and documentation with partnerships with other
 developers who contribute open software and coordinate together on development.
 
 The tools and thorns comprising the Einstein Toolkit are provided in this
-[Component List](https://bitbucket.org/einsteintoolkit/manifest/raw/ET_2016_11/einsteintoolkit.th).
+[Component List](https://bitbucket.org/einsteintoolkit/manifest/raw/ET_2018_02/einsteintoolkit.th).
 A [tutorial](http://docs.einsteintoolkit.org/et-docs/Tutorial_for_New_Users)
 describes in easy steps how to download, compile, and run this resoluting code.
 
@@ -176,9 +176,9 @@ The Einstein Toolkit component list contains the locations of the source code
 and associated tools for simulations, including Cactus thorns. The component
 list is written using the Component Retrieval Language and can be checked out
 using the
-[GetComponents](https://github.com/gridaphobe/CRL/raw/ET_2016_11/GetComponents)
+[GetComponents](https://github.com/gridaphobe/CRL/raw/ET_2018_02/GetComponents)
 tools. Distribution:
-[https://github.com/gridaphobe/CRL/raw/ET_2016_11/GetComponents](https://github.com/gridaphobe/CRL/raw/ET_2016_11/GetComponents)
+[https://github.com/gridaphobe/CRL/raw/ET_2018_02/GetComponents](https://github.com/gridaphobe/CRL/raw/ET_2018_02/GetComponents)
 </dd>
 <dt class="col-sm-3 col-md-2 hline">Simulation Factory</dt>
 <dd class="col-sm-9 col-md-10 hline" markdown="1">
@@ -190,7 +190,7 @@ and remote use of machines. The Einstein Consortium have selected the
 simulation factory as the default mechanism for supporting the easy use of
 Cactus on heterogeneous resources.  Distribution: Bitbucket git repository:
 [https://bitbucket.org/simfactory/simfactory2](https://bitbucket.org/simfactory/simfactory2)
-(ET_2016_11 branch)
+(ET_2018_02 branch)
 </dd>
 <dt class="col-sm-3 col-md-2 hline">Cactus Thorns</dt>
 <dd class="col-sm-9 col-md-10 hline" markdown="1">
@@ -210,7 +210,7 @@ coalescence, and a static TOV star. See the documentation for information on
 how to run these on the QueenBee 2 machine. Distribution:
 [Cactuscode](https://bitbucket.org/cactuscode/cactusexamples) and
 [EinsteinToolkit](https://bitbucket.org/einsteintoolkit/einsteinexamples)
-(choose ET_2016_11 branch for both).
+(choose ET_2018_02 branch for both).
 </dd>
 </dl>
 

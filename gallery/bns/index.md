@@ -16,7 +16,7 @@ inspiral and due to the oscillations in the formed hypermassive neutron star
 are shown as well.
 
 | Parameter file        | [NsNsToHMNS.par](nsnstohmns.par) |
-| Thornlist             | [NsNsToHMNS.th](NsNsToHMNS.th) (Thorn NSTracker added to release) |
+| Thornlist             | [nsnstohmns.th](nsnstohmns.th) (Thorn NSTracker added to ET_2018_02 release) |
 | Initial data file     | [G2_I12vs12_D4R33T21_45km.resu.xz](G2_I12vs12_D4R33T21_45km.resu.xz) (uncompress using unxz) |
 | Support scripts       | [scripts.tar.gz](scripts.tar.gz) |
 | approx. memory        | 8.8 GB |
