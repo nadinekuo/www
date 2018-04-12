@@ -22,6 +22,8 @@
   var toInsert = "";
   var nMembers = 0;
   var nInst    = 0;
+  var nCountries = 0;
+  var countries = {};
   if (membersFile.status === 200) {
     lines = membersFile.responseText.split("\n");
     var pi=0;
@@ -55,6 +57,20 @@
             link = words[0];
             name = words.slice(1).join(" ");
             toInsert += "<a href='" + link + "'>" + name + "</a>";
+            hostName = words[0].split("/")[2];
+            countryCode = hostName.split(".").slice(-1)[0]
+            // the US uses more than just a simple country code so I am making some guesses.
+            // edu, gov and mil should be fine as always being US but the
+            // others are less clear
+            if (countryCode === "edu" || countryCode === "gov" || countryCode === "org" ||
+                countryCode === "mil" || countryCode === "net") {
+                countryCode = "us";
+            }
+            if (countries[countryCode]) {
+                countries[countryCode] += 1;
+            } else {
+                countries[countryCode] = 1;
+            }
           } else {
             toInsert += lines[i];
           }
@@ -64,8 +80,9 @@
         }
       }
     }
+    nCountries = Object.keys(countries).length;
     toInsert += "     </ul>\n    </div>\n   </div>\n   <br>\n";
-    toInsert += "<p>These add up to "+nMembers+" members from "+nInst+" different groups.</p>";
+    toInsert += "<p>These add up to "+nMembers+" members from "+nInst+" different groups and "+nCountries+" countries.</p>";
   } else {
     toInsert = "Error: could not get members data";
   }
