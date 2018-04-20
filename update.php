@@ -26,7 +26,7 @@ if(isset($_GET['update']))
   echo '<p>The site is now current.</p><br />';
 }
   echo '<br /><br />
-<input class="button" type="button" value="Make Recent Changes Live" onclick="window.location.href=\'/x/?update\'" />
+<input class="button" type="button" value="Make Recent Changes Live" onclick="window.location.href=\'/update.php/?update\'" />
 <br /><br />This updates changes from all relevant repositories to the live site.
 </p>';
 ?>
