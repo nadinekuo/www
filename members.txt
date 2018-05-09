@@ -1,6 +1,3 @@
-http://www.gujaratuniversity.ac.in
- Abhigna Joshi
-
 http://www.aei.mpg.de/english Albert Einstein Institute
  Ian Hinder
 
@@ -9,8 +6,8 @@ http://www.auth.gr/home/index_en.html Aristotle University of Thessaloniki
  Soultanis Theodoros
 
 http://www.ua.pt Aveiro University
- Carlos Herdeiro
  Juan Carlos Degollado
+ Carlos Herdeiro
 
 https://www.baylor.edu/ Baylor University
  Xiang Zhao
@@ -22,13 +19,13 @@ http://www.belmont.edu/ Belmont University
  Scott Hawley
 
 http://www.tapir.caltech.edu/ California Institute of Technology
- Béla Szilágyi
- http://www.tapir.caltech.edu/~cott/ Christian D. Ott
- Christian Reisswig
- David Radice
- Ian Ocampo
  Peter Kalmus
  Philipp Mösta
+ Ian Ocampo
+ http://www.tapir.caltech.edu/~cott/ Christian D. Ott
+ David Radice
+ Christian Reisswig
+ Béla Szilágyi
 
 http://www20.csueastbay.edu/ California State University East Bay
  Ernest Schleicher
@@ -40,6 +37,9 @@ http://english.cas.cn/ST/ Chinese Academy of Sciences
 http://www.cuhk.edu.hk/index.html The Chinese University of Hong Kong
  http://www.phy.cuhk.edu.hk/people/lin-lm.html Lap-Ming Lin
 
+http://www.cuhk.edu.hk/english/index.html The Chinese University of Hong Kong
+ Patrick C. K. Cheong
+
 http://www.uni-kiel.de/index-e.shtml Christian-Albrechts-Universität zu Kiel
  Stefan Rühe
 
@@ -47,12 +47,9 @@ http://physics.columbia.edu Columbia University
  Keng Lin
 
 http://www.communityofphysics.org/ Community of Physics
+ Shaher Azad
  Ashiqul Islam Dip
  Mohammad Tomal Hossain
- Shaher Azad
-
-http://du.ac.ir/ دانشگاه دامغان (Damghan University, Iran)
- Saeed Fakhry
 
 http://fisica.ugto.mx/ DCI Universidad de Guanajuato
  Argelia Bernal
@@ -64,37 +61,37 @@ http://www.emory.edu/home/index.html Emory University
  Andrew Vu
 
 http://www.fau.edu/ Florida Atlantic University
- Konstantin Yakunin
  Petr Tsatsin
+ Konstantin Yakunin
 
 http://astro.uni-frankfurt.de/ Frankfurt University
- Bruno Mundim
  Filippo Galeazzi
+ Bruno Mundim
  Luciano Rezzolla
-
-http://www.cra.gatech.edu/ Georgia Institute of Technology
- Deirdre Shoemaker
- Matt Kinsey
- Michael Clark
- Miguel Gracia
- http://www.cra.gatech.edu/people/laguna.shtml Pablo Laguna
- Rafael Aranha
 
 https://www.gsi.de GSI Helmholtzzentrum f&uuml;r Schwerionenforschung GmbH
  Kevin Ebinger
 
-http://www.hnue.edu.vn/ Trường Đại học Sư phạm Hà Nội (Hanoi National University of Education)
- Nguyễn Quỳnh Lan
+http://www.cra.gatech.edu/ Georgia Institute of Technology
+ Rafael Aranha
+ Michael Clark
+ Miguel Gracia
+ Matt Kinsey
+ http://www.cra.gatech.edu/people/laguna.shtml Pablo Laguna
+ Deirdre Shoemaker
+
+http://www.gujaratuniversity.ac.in Gujarat University
+ Abhigna Joshi
 
 https://www.cfa.harvard.edu/ Harvard-Smithsonian Center for Astrophysics
  Raid M Suleiman
 
-http://www.iitd.ac.in/ Indian Institute of Technology Delhi
- Riya Arora
- Ujjwal Agarwal
+https://www.iucaa.in/ IUCAA
+ Sudhagar Suyamprakasam
 
-http://www.iitd.ac.in/ भारतीय प्रौद्योगिकी संस्थान दिल्ली (Indian Institute of Technology Delhi)
- Prachi Khatri
+http://www.iitd.ac.in/ Indian Institute of Technology Delhi
+ Ujjwal Agarwal
+ Riya Arora
 
 Individuals without affiliation
  David N Bradley
@@ -115,26 +112,20 @@ http://english.itp.cas.cn/ Institute of Theoretical Physics Chinese Academy of S
 http://www.iar.unlp.edu.ar/ Instituto Argentino de Radioastronomia
  Federico G Lopez Armengol
 
-http://www.nuclecu.unam.mx/ Instituto de Ciencias Nucleares, UNAM
- Miguel Alcubierre
-
 https://tecnico.ulisboa.pt Instituto Superior Técnico, Lisbon
  http://www.seth-hopper.com/research Seth Hopper
 
 http://www.universia.edu.ve/ Instituto Venezolano de Investigaciones Cientificas
  Jovanna Moya
 
+http://www.nuclecu.unam.mx/ Instituto de Ciencias Nucleares, UNAM
+ Miguel Alcubierre
+
 http://www.iucaa.ernet.in/ The Inter-University Centre for Astronomy and Astrophysics, Pune, India
  Anshu Gupta Mujumdar
 
 https://www.icts.res.in International Centre for Theoretical Sciences, TIFR
  Sumit Kumar
-
-http://www.itu.edu.tr/en/ İstanbul Teknik Üniversitesi (Istanbul Technical University)
- Armin Vahdat
-
-https://www.iucaa.in/ IUCAA
- Sudhagar Suyamprakasam
 
 http://www.kisti.re.kr/english/ Korea Institute of Science and Technology Information
  Jakob Hansen
@@ -144,10 +135,10 @@ http://en.lzu.edu.cn/ Lanzhou University
  Yu-Peng Zhang
 
 http://www.cct.lsu.edu/numerical/ Louisiana State University
+ http://www.cct.lsu.edu/~sbrandt/ Steven Brandt
+ Peter Diener
  Frank Löffler
  Jian Tao
- Peter Diener
- http://www.cct.lsu.edu/~sbrandt/ Steven Brandt
 
 http://www.lmu.edu/ Loyola Marymount University
  Sergio Gaudio
@@ -162,35 +153,32 @@ http://www.monash.edu/ Monash University
  Hayley Macpherson
 
 http://www.nasa.gov/centers/goddard/home/index.html NASA Goddard Space Flight Center
+ John Baker
  Bernard Kelly
  Jennifer Seiler
- John Baker
 
 http://www.ncsa.illinois.edu National Center for Supercomputing Applications
+ http://www.ncsa.illinois.edu/assets/php/contact.php?id=gdallen Gabrielle Allen
+ http://www.ncsa.illinois.edu/People/rhaas Roland Haas
+ http://eliuhe.wixsite.com/eliu/research Eliu Huerta
  Dan Johnson
  Dhara Mehta
  http://www.ncsa.illinois.edu/about/org/ed_seidel Edward Seidel
- http://eliuhe.wixsite.com/eliu/research Eliu Huerta
- http://www.ncsa.illinois.edu/assets/php/contact.php?id=gdallen Gabrielle Allen
- http://www.ncsa.illinois.edu/People/rhaas Roland Haas
 
 http://en.ntnu.edu.tw/ National Taiwan Normal University
  http://phy.ntnu.edu.tw/~linfengli/ Feng-Li Lin
 
-http://www.uni.edu.pe/ Universidad Nacional de Ingeniería (National University of Engineering)
- Renato Tovar Landeo
+https://www.mandela.ac.za/ Nelson Mandela University
+ Azwinndini Muronga
 
 https://www.camk.edu.pl/en/ Nicolaus Copernicus Astronomical Center (NCAC)
  Antonios Manousakis
  Bhupendra Prakash Mishra
  Varadarajan Parthasarathy
 
-https://www.mandela.ac.za/ Nelson Mandela University
- Azwinndini Muronga
-
 http://www.ncsu.edu/ North Carolina State University
- Cody Simmons
  David Brown
+ Cody Simmons
 
 http://www.northwestern.edu/ Northwestern University
  Carl Rodriguez
@@ -204,10 +192,10 @@ http://en.unipr.it/ Parma University
  Roberto De Pietri
 
 http://www.perimeterinstitute.ca/ Perimeter Institute
- http://www.cct.lsu.edu/~eschnett/ Erik Schnetter
- Jonah Miller
  Joseph Bramante
+ Jonah Miller
  Nestor Ortiz
+ http://www.cct.lsu.edu/~eschnett/ Erik Schnetter
 
 http://www.pan.pl/ Polska Akademia Nauk (Polish Academy of Sciences)
  Agnieszka Janiuk
@@ -233,17 +221,17 @@ http://www.ru.ac.za/ Rhodes University, South Africa
  Denis Pollney
 
 http://ccrg.rit.edu/ Rochester Institute of Technology
- Billy Vazquez
- Carlos Lousto
- Jam Sadiq
- James Healy
- Joshua Faber
  Manuela Campanelli
- Marcelo Ponce
- Miguel Zilhão
+ Joshua Faber
+ James Healy
+ Carlos Lousto
  Scott Noble
- Yosef Zlochower
+ Marcelo Ponce
+ Jam Sadiq
  Zachary Silberman
+ Billy Vazquez
+ Miguel Zilhão
+ Yosef Zlochower
 
 http://www.astro.oma.be/en/ Royal Observatory of Belgium
  https://jrekier.github.io/ Jeremy Rekier
@@ -270,32 +258,24 @@ http://trc.sysu.edu.cn/ TianQin Research Center for Gravitational Physics, Sun Y
  Xu Zekun
  http://trc.sysu.edu.cn/?p=1037 Xuefeng Zhang
 
-http://www.tribhuvan-university.edu.np/ त्रिभुवन विश्वविद्यालय (Tribhuvan University)
- Tulasi Prasad Subedi
- Udayaraj Khanal
+http://www.hnue.edu.vn/ Trường Đại học Sư phạm Hà Nội (Hanoi National University of Education)
+ Nguyễn Quỳnh Lan
 
 http://www.tsinghua.edu.cn Tsinghua University
  Wei-Gang Zeng
 
 http://www.uv.es/ Univeristy of València
- Jens Mahlmann
  Toni Font
+ Jens Mahlmann
  Vassilios Mewes
-
-http://www.udg.mx Universidad de Guadalajarahas
- Kenia Millán
- Roberto Esparza
-
-http://www.uniandes.edu.co/ Universidad de Los Andes
- Willians Barreto
 
 http://www.umich.mx/ Universidad Michoacana
  Francisco Guzmán
 
 http://www.umich.mx/ Universidad Michoacana de San Nicolás de Hidalgo
- Geovanni Rangel
- Manuel O'Henry
  Reyes Manuel Garcia
+ Manuel O'Henry
+ Geovanni Rangel
 
 http://www.unam.mx/ Universidad Nacional Autónoma de México
  Jose Manuel Torres
@@ -303,6 +283,19 @@ http://www.unam.mx/ Universidad Nacional Autónoma de México
 http://unal.edu.co/ Universidad Nacional de Colombia
  Andres Mauricio Suarez Mantilla
  Sergio Andrés Torres Suárez
+
+http://www.uni.edu.pe/ Universidad Nacional de Ingeniería (National University of Engineering)
+ Renato Tovar Landeo
+
+http://www.udg.mx Universidad de Guadalajarahas
+ Roberto Esparza
+ Kenia Millán
+
+http://www.ugto.mx Universidad de Guanajuato
+ Guillermo Eaton
+
+http://www.uniandes.edu.co/ Universidad de Los Andes
+ Willians Barreto
 
 http://www.ufes.br/ Universidade Federal do Espírito Santo
  Carlos Lobo
@@ -316,11 +309,11 @@ http://www.uni-heidelberg.de Universit&#228;t de Heidelberg
 https://www.ub.edu/portal/web/dp-fquanticaastrofisica/ Universitat de Barcelona
  Raimon Luna
 
-http://www.uib.es/ Universitat de les Illes Balears
- Sascha Husa
-
 http://www.uv.es Universitat de Valencia
  Sergio Gimeno-Soler
+
+http://www.uib.es/ Universitat de les Illes Balears
+ Sascha Husa
 
 http://www.ucd.ie/ University College Dublin
  Barry Wardell
@@ -335,15 +328,8 @@ http://www.universityofcalifornia.edu/ University of California
  David Rideout
 
 http://www.cam.ac.uk/ University of Cambridge
- Helvi Witek
  Pau Figueras
-
-http://www.unict.it/ Università degli Studi di Catania (University of Catania)
- Antonio Figura
- Michele Grasso
-
-http://www.unifi.it/mdswitch.html Università degli Studi di Firenze (University of Florence)
- Luca Franci
+ Helvi Witek
 
 https://www.uoguelph.ca/ University of Guelph
  Dylan Podkowka
@@ -359,12 +345,12 @@ http://illinois.edu/ University of Illinois, Urbana Champaign
 
 http://illinois.edu/ University of Illinois, Urbana-Champaign
  Daniel George
- Johnny Tsao
  Shawn Rosofsky
+ Johnny Tsao
 
 http://www.d.umn.edu University of Minnesota Duluth
- Eric West
  Sheyda Salehirad
+ Eric West
 
 http://www.unina.it University of Naples
  Mo Basurto
@@ -382,30 +368,34 @@ http://www.physics.sc.edu University of South Carolina
  Camilo Posada
 
 http://www.soton.ac.uk/ University of Southampton
- Charalampos Markakis
- Ian Hawke
  Kyriaki Dionysopoulou
+ Ian Hawke
  Tim Lemon
-
-http://ut.ac.ir/en دانشگاه تهران (University of Tehran)
- Alireza Talebian
+ Charalampos Markakis
 
 http://www.unitn.it/en/dphys University of Trento
  Bruno Giacomazzo
  Wolfgang Kastaun
 
-http://www.units.it/ Università degli Studi di Trieste (University of Trieste)
- Francesco Maria Fabbri
-
 http://www.uni-tuebingen.de/ University of Tübingen
- Andreas Boden
  Tanja Bode
+ Andreas Boden
 
 https://uwaterloo.ca/ University of Waterloo
  Erickson Tjoa
 
 http://uwm.edu University of Wisconsin-Milwaukee
  Philip Chang
+
+http://www.unict.it/ Università degli Studi di Catania (University of Catania)
+ Antonio Figura
+ Michele Grasso
+
+http://www.unifi.it/mdswitch.html Università degli Studi di Firenze (University of Florence)
+ Luca Franci
+
+http://www.units.it/ Università degli Studi di Trieste (University of Trieste)
+ Francesco Maria Fabbri
 
 http://www.unict.it/en/ Università di Catania
  Eloisa Bentivegna
@@ -415,9 +405,6 @@ http://www.uni-bremen.de/ Universität Bremen
 
 https://as.vanderbilt.edu Vanderbuilt University
  William E. Gabella
-
-http://vidyasagar.ac.in/ বিদ্যাসাগর বিশ্ববিদ্যালয়  (Vidyasagar University)
- Partha Pratim Pradhan
 
 http://www.washburn.edu/main/index.html Washburn University
  Karen Camarda
@@ -431,5 +418,22 @@ https://wustl.edu/ Washington University in St. Louis
 http://wvu.edu West Virginia University
  Zachary Etienne
 
-www.ugto.mx Universidad de Guanajuato
- Guillermo Eaton
+http://www.itu.edu.tr/en/ İstanbul Teknik Üniversitesi (Istanbul Technical University)
+ Armin Vahdat
+
+http://ut.ac.ir/en دانشگاه تهران (University of Tehran)
+ Alireza Talebian
+
+http://du.ac.ir/ دانشگاه دامغان (Damghan University, Iran)
+ Saeed Fakhry
+
+http://www.tribhuvan-university.edu.np/ त्रिभुवन विश्वविद्यालय (Tribhuvan University)
+ Udayaraj Khanal
+ Tulasi Prasad Subedi
+
+http://www.iitd.ac.in/ भारतीय प्रौद्योगिकी संस्थान दिल्ली (Indian Institute of Technology Delhi)
+ Prachi Khatri
+
+http://vidyasagar.ac.in/ বিদ্যাসাগর বিশ্ববিদ্যালয়  (Vidyasagar University)
+ Partha Pratim Pradhan
+
