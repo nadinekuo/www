@@ -291,6 +291,7 @@ SphericalSurface::name        [4] = "waveextract surface at 250"
 HydroBase::evolution_method      = "GRHydro"
 
 ADMMacros::spatial_order = 4
+GRHydro::sources_spatial_order = 4
 
 GRHydro::riemann_solver            = "HLLE"   # Marquina is currently not supported by MP
 GRHydro::recon_method              = "ppm"
