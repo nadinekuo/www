@@ -4,6 +4,47 @@
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <script src="../head.js" type="text/javascript">
   </script>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script lang="text/javascript">
+  $(document).ready(function() {
+    var config = {
+      uptimerobot: {
+        api_keys: [
+          "m779922920-a9511a746fa49054968a15f3",
+        ],
+        logs: 1
+      },
+    };
+  
+    var status_text = {
+      'operational': 'operational',
+      'investigating': 'investigating',
+      'major outage': 'outage',
+      'degraded performance': 'degraded',
+    };
+  
+    var monitors = config.uptimerobot.api_keys;
+    for( var i in monitors ){
+      var api_key = monitors[i];
+      $.post('https://api.uptimerobot.com/v2/getMonitors', {
+              "api_key": api_key,
+              "format": "json",
+              "logs": config.uptimerobot.logs,
+      }, function(response) {
+        status( response );
+      }, 'json');
+    }
+  
+    function status(data) {
+      data.monitors.forEach(function(item) {
+        var status = item.status;
+        if(status !== 2) {
+          $('#status').append('<p class="alert alert-warning">The tutorial server is currently <em>unavailable</em>. Please use the <a href="https://nbviewer.jupyter.org/github/nds-org/jupyter-et/blob/master/CactusTutorial.ipynb">offline version</a> instead.</p>');
+        }
+      });
+  };
+  });
+  </script>
   <title>Tutorial for New Users</title>
 </head>
 <body id="documentation">
@@ -21,7 +62,7 @@
         on your own computer. If you find something that does not work, please
         email
         <a href="mailto:users@einsteintoolkit.org">users@einsteintoolkit.org</a>.
-        <h2>Advanced topic</h2>
+        <h2>Offline usage</h2>
         If, instead of using the web-based service, you would rather like to
         run the tutorial on your own laptop, then please use a read only
         version of the notebook
@@ -29,6 +70,7 @@
         instead. <em>This read only copy is currently experimental</em>
         </p>
         <h2>Getting an account (in 5 minutes of time) </h2>
+        <div id="status"></div> <!-- used to indicate NDS server status -->
         <p>Before you can get started you will require and account on the tutorial
         server, which is hosted by the <a href="http://www.nationaldataservice.org/">National Data Service</a>.
         Please go to
