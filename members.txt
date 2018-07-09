@@ -1,6 +1,9 @@
 http://www.aei.mpg.de/english Albert Einstein Institute
  Ian Hinder
 
+https://auaf.edu.af/ American University of Afghanistan
+ https://github.com/m-ahsan-nazer M. Ahsan Nazer
+
 http://www.auth.gr/home/index_en.html Aristotle University of Thessaloniki
  Nick Stergioulas
  Soultanis Theodoros
@@ -188,6 +191,9 @@ http://www.northwestern.edu/ Northwestern University
 
 http://www.osaka-u.ac.jp/en Osaka University
  Luca Baiotti
+
+http://fisica.ufpr.br/ Paraná State University
+ Edson Elias de Souza Filho
 
 http://en.unipr.it/ Parma University
  Alessandra Feo
