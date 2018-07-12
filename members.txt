@@ -37,11 +37,11 @@ http://english.cas.cn/ST/ Chinese Academy of Sciences
  Di Lu
  Mew Bing Wan
 
-http://www.cuhk.edu.hk/english/index.html The Chinese University of Hong Kong
- Patrick C. K. Cheong
-
 http://www.cuhk.edu.hk/index.html The Chinese University of Hong Kong
  http://www.phy.cuhk.edu.hk/people/lin-lm.html Lap-Ming Lin
+
+http://www.cuhk.edu.hk/english/index.html The Chinese University of Hong Kong
+ Patrick C. K. Cheong
 
 http://www.uni-kiel.de/index-e.shtml Christian-Albrechts-Universität zu Kiel
  Stefan Rühe
@@ -393,6 +393,9 @@ http://www.unitn.it/en/dphys University of Trento
 http://www.uni-tuebingen.de/ University of Tübingen
  Tanja Bode
  Andreas Boden
+
+http://webific.ific.uv.es/web/ University of Valencia, IFIC
+ Andrea Caputo
 
 https://uwaterloo.ca/ University of Waterloo
  Erickson Tjoa
