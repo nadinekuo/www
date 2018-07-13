@@ -56,6 +56,7 @@ http://www.communityofphysics.org/ Community of Physics
 
 http://fisica.ugto.mx/ DCI Universidad de Guanajuato
  Argelia Bernal
+ Guillermo Eaton
 
 http://www.enmu.edu/ Eastern New Mexico University
  William L. Andersen
@@ -320,6 +321,7 @@ https://www.ub.edu/portal/web/dp-fquanticaastrofisica/ Universitat de Barcelona
  Raimon Luna
 
 http://www.uv.es Universitat de Valencia
+ Andrea Caputo
  Sergio Gimeno-Soler
 
 http://www.uib.es/ Universitat de les Illes Balears
