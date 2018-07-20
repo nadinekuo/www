@@ -1,5 +1,6 @@
 http://www.aei.mpg.de/english Albert Einstein Institute
  Ian Hinder
+ https://aei-mpg.academia.edu/SayantanChoudhury Sayantan Choudhury
 
 https://auaf.edu.af/ American University of Afghanistan
  https://github.com/m-ahsan-nazer M. Ahsan Nazer
@@ -38,6 +39,7 @@ http://english.cas.cn/ST/ Chinese Academy of Sciences
  Mew Bing Wan
 
 http://www.cuhk.edu.hk/english/index.html The Chinese University of Hong Kong
+ Patrick C. K. Cheong
  http://www.phy.cuhk.edu.hk/people/lin-lm.html Lap-Ming Lin
  Patrick C. K. Cheong
 
