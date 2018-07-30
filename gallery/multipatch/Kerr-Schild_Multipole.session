@@ -7072,7 +7072,7 @@
                 <Field name="SOURCE00" type="string">localhost:./Kerr-Schild_Multipole/output-0000/Kerr-Schild_Multipole/u.h5</Field>
             </Object>
             <Object name="SourcePlugins">
-                <Field name="localhost:./Kerr-Schild_Gaussian/output-0000/Kerr-Schild_Gaussian/u.h5" type="string">CarpetHDF5_2.1</Field>
+                <Field name="localhost:./Kerr-Schild_Multipole/output-0000/Kerr-Schild_Multipole/u.h5" type="string">CarpetHDF5_2.1</Field>
                 <Field name="localhost:./Kerr-Schild_Multipole/output-0000/Kerr-Schild_Multipole/u.h5" type="string">CarpetHDF5_2.1</Field>
             </Object>
             <Object name="DatabaseCorrelationList">
@@ -7768,7 +7768,7 @@
                         </Object>
                         <Object name="ViewerPlotList">
                             <Object name="timeSliders">
-                                <Field name="localhost:./Kerr-Schild_Gaussian/output-0000/Kerr-Schild_Gaussian/u.h5" type="int">27</Field>
+                                <Field name="localhost:./Kerr-Schild_Multipole/output-0000/Kerr-Schild_Multipole/u.h5" type="int">27</Field>
                                 <Field name="SOURCE00" type="int">7</Field>
                             </Object>
                             <Field name="activeTimeSlider" type="string">SOURCE00</Field>
