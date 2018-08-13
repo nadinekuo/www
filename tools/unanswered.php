@@ -17,7 +17,8 @@ $hide_path=1;
 $category='internal';
 
 echo '<h3>Possible unanswered emails</h3>';
-echo system('unanswered.pl');
+passthru('pwd');
+passthru('./unanswered.pl');
 ?>
   </div>
   <div class="container">
