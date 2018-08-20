@@ -458,3 +458,5 @@ http://www.iitd.ac.in/ भारतीय प्रौद्योगिकी �
 http://vidyasagar.ac.in/ বিদ্যাসাগর বিশ্ববিদ্যালয়  (Vidyasagar University)
  Partha Pratim Pradhan
 
+http://english.nao.cas.cn/ National Astronomical Observatories, Chinese Academy of Sciences
+ Ke Wang
