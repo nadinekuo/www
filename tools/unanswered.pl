@@ -27,7 +27,7 @@ for (my $m = -1 ; $m <= 1 ; $m++) {
 # if there is an email thread with either only a single post or where the last
 # poster is the original poster then they are candidates for unanswered emails
 print "<ul>\n";
-foreach my $key (sort keys %emails) {
+foreach my $key (sort sort_by_date (keys %emails)) {
   my @authors = @${$emails{$key}->{senders}};
   my $num_authors = scalar @authors;
   if($num_authors == 1 or $authors[0] eq $authors[-1]) {
@@ -36,7 +36,9 @@ foreach my $key (sort keys %emails) {
        $key =~ m/\[Users\] meeting minutes for/) {
      next;
     }
-    print "<li>".sanitize("$key ($authors[0])").": <a href='".url(${$emails{$key}->{roots}})."'>root</a>";
+    my $id = "";
+    $id = $1 if(${$emails{$key}->{tails}} =~ m!/([^/]*)\.html!);
+    print "<li>".sanitize("<$id> $key ($authors[0])").": <a href='".url(${$emails{$key}->{roots}})."'>root</a>";
     print " <a href='".url(${$emails{$key}->{tails}})."'>tail</a>" if $num_authors > 1;
     print "</li>\n";
   }
@@ -85,6 +87,25 @@ sub url {
     warn "Invalid characcters in url $_[0]";
   }
   return $url;
+}
+
+sub sort_by_date($$) {
+  # reverse sort an email in the emails hash by email series number of its tail
+  my ($a, $b) = @_;
+  our (%emails);
+  my ($id_a, $id_b) = (undef, undef);
+  $id_a = $1 if(${$emails{$a}->{tails}} =~ m!/([^/]*)\.html!);
+  $id_b = $1 if(${$emails{$b}->{tails}} =~ m!/([^/]*)\.html!);
+  if($id_a and $id_b) {
+    return -($id_a cmp $id_b);
+  } elsif($id_a) {
+    return +1;
+  } elsif($id_b) {
+    return -1;
+  } else {
+    # I do not think I can really get here
+    return 0;
+  }
 }
 
 1;
