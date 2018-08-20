@@ -11,7 +11,7 @@ my @months = ("January", "February", "March", "April", "May", "June", "July", "A
 my $url_fmt = "http://lists.einsteintoolkit.org/pipermail/users/%04d-%s/date.html";
 
 # these hold the list of emails and the root of the conversations
-our (%emails, %roots, %tails);
+our (%emails);
 
 # get emails logs for the three months braketing the current one
 my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime();
@@ -28,7 +28,7 @@ for (my $m = -1 ; $m <= 1 ; $m++) {
 # poster is the original poster then they are candidates for unanswered emails
 print "<ul>\n";
 foreach my $key (sort keys %emails) {
-  my @authors = @{$emails{$key}};
+  my @authors = @${$emails{$key}->{senders}};
   my $num_authors = scalar @authors;
   if($num_authors == 1 or $authors[0] eq $authors[-1]) {
     if($num_authors == 1 and 
@@ -36,8 +36,8 @@ foreach my $key (sort keys %emails) {
        $key =~ m/\[Users\] meeting minutes for/) {
      next;
     }
-    print "<li>".sanitize("$key ($authors[0])").": <a href='".url($roots{$key})."'>root</a>";
-    print " <a href='".url($tails{$key})."'>tail</a>" if $num_authors > 1;
+    print "<li>".sanitize("$key ($authors[0])").": <a href='".url(${$emails{$key}->{roots}})."'>root</a>";
+    print " <a href='".url(${$emails{$key}->{tails}})."'>tail</a>" if $num_authors > 1;
     print "</li>\n";
   }
 }
@@ -45,7 +45,7 @@ print "</ul>\n";
 
 sub parse_content {
   my ($content, $monthurl) = @_;
-  our (%emails, $roots);
+  our (%emails);
 
   $monthurl =~ s!/[^/]*$!!;
 
@@ -58,13 +58,14 @@ sub parse_content {
       # apparently some subjects have random whitespace (maybe line breaking?)
       $subject =~ s/\s\s*/ /g;
       if(not exists $emails{$subject}) {
-        $emails{$subject} = [];
-        $roots{$subject} = $monthurl . "/" . $url;
+        $emails{$subject} = {};
+        ${$emails{$subject}->{senders}} = [];
+        ${$emails{$subject}->{roots}} = $monthurl . "/" . $url;
       }
-      $tails{$subject} = $monthurl . "/" . $url;
+      ${$emails{$subject}->{tails}} = $monthurl . "/" . $url;
     } elsif(/^<I>(.*)/) {
       my $sender = $1;
-      push @{$emails{$subject}}, ($sender);
+      push @${$emails{$subject}->{senders}}, ($sender);
     }
   }
 }
