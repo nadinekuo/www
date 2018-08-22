@@ -118,6 +118,9 @@ http://www.iar.unlp.edu.ar/ Instituto Argentino de Radioastronomia
 https://tecnico.ulisboa.pt Instituto Superior Técnico, Lisbon
  http://www.seth-hopper.com/research Seth Hopper
 
+http://www.ita.br/ Instituto Tecnológico de Aeronáutica
+ https://rvlobato.github.io/ Ronaldo Vieira Lobato
+
 http://www.universia.edu.ve/ Instituto Venezolano de Investigaciones Cientificas
  Jovanna Moya
 
@@ -296,12 +299,12 @@ http://www.umich.mx/ Universidad Michoacana de San Nicolás de Hidalgo
 http://www.unam.mx/ Universidad Nacional Autónoma de México
  Jose Manuel Torres
 
+http://www.unal.edu.co/ Universidad Nacional de Colombia
+ Juan Felipe Bravo
+
 http://unal.edu.co/ Universidad Nacional de Colombia
  Andres Mauricio Suarez Mantilla
  Sergio Andrés Torres Suárez
-
-http://www.unal.edu.co/ Universidad Nacional de Colombia
- Juan Felipe Bravo
 
 http://www.uni.edu.pe/ Universidad Nacional de Ingeniería (National University of Engineering)
  Renato Tovar Landeo
