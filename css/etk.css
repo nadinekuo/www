@@ -155,6 +155,11 @@ table, td, th {
   width: 100%;
   margin-top: 5px;
 }
+/* handle unequal height in grids */
+.row.fix {
+  display: flex;
+  flex-wrap: wrap;
+}
 .htablec {
   border-top: solid;
   border-width: thin;
