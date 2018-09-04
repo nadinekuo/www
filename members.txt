@@ -136,6 +136,9 @@ https://www.icts.res.in International Centre for Theoretical Sciences, TIFR
 http://global.itu.edu.tr/ Istanbul Technical University
  Sercan Sercan Çıkıntoğlu
 
+https://gwcenter.icrr.u-tokyo.ac.jp/en/ KAGRA, BNU
+ Wu Shichao
+
 http://www.kisti.re.kr/english/ Korea Institute of Science and Technology Information
  Jakob Hansen
 
