@@ -139,6 +139,9 @@ http://global.itu.edu.tr/ Istanbul Technical University
 https://gwcenter.icrr.u-tokyo.ac.jp/en/ KAGRA, BNU
  Wu Shichao
 
+https://www.kcl.ac.uk/ Kings College London
+ Helvi Witek
+
 http://www.kisti.re.kr/english/ Korea Institute of Science and Technology Information
  Jakob Hansen
 
@@ -359,7 +362,6 @@ http://www.universityofcalifornia.edu/ University of California
 
 http://www.cam.ac.uk/ University of Cambridge
  Pau Figueras
- Helvi Witek
 
 https://www.uoguelph.ca/ University of Guelph
  Dylan Podkowka
@@ -387,9 +389,6 @@ http://www.olemiss.edu University of Mississippi
 
 http://www.unina.it University of Naples
  Mo Basurto
-
-http://www.nottingham.ac.uk/ University of Nottingham
- Helvi Witek
 
 http://www.ou.edu/web.html University of Oklahoma
  Brian Friesen
