@@ -323,17 +323,11 @@ http://www.udg.mx Universidad de Guadalajarahas
  Claudia Guerra
  Kenia Millán
 
-http://www.ugto.mx Universidad de Guanajuato
- Guillermo Eaton
-
 http://www.uniandes.edu.co/ Universidad de Los Andes
  Willians Barreto
 
 http://www.ufes.br/ Universidade Federal do Espírito Santo
  Carlos Lobo
-
-http://www.unict.it/ Universit&#224; degli Studi di Catania
- Antonio Figura
 
 http://www.uni-heidelberg.de Universit&#228;t de Heidelberg
  Nils Leif Fischer
@@ -372,9 +366,6 @@ http://prtl.uhcl.edu/portal/page/portal/HOMEPAGE University of Houston Clear Lak
 https://phys.uic.edu/ University of Illinois at Chicago
  David Neto
 
-http://illinois.edu/ University of Illinois, Urbana Champaign
- Johnny Tsao
-
 http://illinois.edu/ University of Illinois, Urbana-Champaign
  Daniel George
  Shawn Rosofsky
@@ -412,9 +403,6 @@ http://www.unitn.it/en/dphys University of Trento
 http://www.uni-tuebingen.de/ University of Tübingen
  Tanja Bode
  Andreas Boden
-
-http://webific.ific.uv.es/web/ University of Valencia, IFIC
- Andrea Caputo
 
 https://uwaterloo.ca/ University of Waterloo
  Erickson Tjoa
