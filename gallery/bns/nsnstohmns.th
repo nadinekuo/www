@@ -3,14 +3,14 @@
 !CRL_VERSION = 1.0
 
 
-# Component list: ET_2018_02/thornlists/einsteintoolkit.th
+# Component list: ET_2018_09/thornlists/einsteintoolkit.th
 
 
 !DEFINE ROOT = Cactus
 !DEFINE ARR  = $ROOT/arrangements
 !DEFINE COMPONENTLIST_TARGET = $ROOT/thornlists/
 
-!DEFINE ET_RELEASE = ET_2018_02
+!DEFINE ET_RELEASE = ET_2018_09
 
 
 # A note on CUDA and OpenCL:
