@@ -4,7 +4,13 @@ We are pleased to announce the sixteenth release (code name "Tesla") of the
 Einstein Toolkit, an open, community developed software infrastructure for
 relativistic astrophysics. The highlights of this release are
 
-* Five new thorns have been added:
+Five new thorns have been added:
+
+* GiRaFFE
+* GiRaFFEfood
+* ShiftedKerrSchild
+* GiRaFFE_to_HydroBase
+* ID_converter_GiRaFFE
 
 In addition, bug fixes accumulated since the previous release in Feb 2018
 have been included.
@@ -61,13 +67,13 @@ The changes between this and the previous release include:
 
 ## New thorns or tools
 
-* GiRaFFE (~1,600 lines of code): Solves the GRFFE equations in the formalism of Paschalidis & Shapiro [2] using the same reconstruction (PPM) and staggered vector potential methods as IllinoisGRMHD.
+* GiRaFFE (~1,600 lines of code): Solves the GRFFE equations in the formalism of Paschalidis and Shapiro [2] using the same reconstruction (PPM) and staggered vector potential methods as IllinoisGRMHD.
 
 * GiRaFFEfood (~1,300 lines of code): Code validation initial data and basic diagnostics. Contains Five 1D tests in flat spacetime (fast wave, Alfvén wave, degenerate Alfvén wave, "three-wave", FFE breakdown), One 3D test in flat spacetime (aligned rotator), and Three 3D tests in curved spacetimes ("Exact Wald" solution, "Magnetospheric Wald" solution, and split monopole).
 
 * ShiftedKerrSchild (~230 lines of code): Sets up all 3+1 quantities for a Kerr-Schild spacetime with an arbitrary radial shift, to mitigate effects of extreme spacetime curvature near r_{KS}=0. See Appendix of code release paper for full discussion.
 
-* GiRaFFE_to_HydroBase & ID_converter_GiRaFFE (~230 lines of code): Acts as a translation layer to convert 3-velocities in HydroBase's Valencia formalism to/from the 3-velocity found in the induction equation (vi = ui/u0; native to GiRaFFE).
+* GiRaFFE_to_HydroBase and ID_converter_GiRaFFE (~230 lines of code): Acts as a translation layer to convert 3-velocities in HydroBase's Valencia formalism to/from the 3-velocity found in the induction equation (vi = ui/u0; native to GiRaFFE).
 
 ## Upcoming changes for the next releases
 
