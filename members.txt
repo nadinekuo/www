@@ -83,6 +83,9 @@ http://www.cra.gatech.edu/ Georgia Institute of Technology
  http://www.cra.gatech.edu/people/laguna.shtml Pablo Laguna
  Deirdre Shoemaker
 
+https://www.griffith.edu.au Griffith University
+ Moji Ghadimi
+
 http://www.gujaratuniversity.ac.in Gujarat University
  Abhigna Joshi
 
@@ -308,13 +311,10 @@ http://www.umich.mx/ Universidad Michoacana de San Nicolás de Hidalgo
 http://www.unam.mx/ Universidad Nacional Autónoma de México
  Jose Manuel Torres
 
-http://www.unal.edu.co/ Universidad Nacional de Colombia
- Juan Felipe Bravo
-
 http://unal.edu.co/ Universidad Nacional de Colombia
+ Juan Felipe Bravo
  Andres Mauricio Suarez Mantilla
  Sergio Andrés Torres Suárez
- Juan Felipe Bravo
 
 http://www.uni.edu.pe/ Universidad Nacional de Ingeniería (National University of Engineering)
  Renato Tovar Landeo
