@@ -1,6 +1,6 @@
 # Release Announcement
 
-We are pleased to announce the sixteenth release (code name "Tesla") of the
+We are pleased to announce the seventeenth release (code name "Chien-Shiung Wu") of the
 Einstein Toolkit, an open, community developed software infrastructure for
 relativistic astrophysics. The highlights of this release are
 
@@ -63,7 +63,10 @@ The changes between this and the previous release include:
 
    Note, we still recommend using the system MPI that is installed natively on your system.
 
-* And many bug fixes. Notably, a significant correctness problem for NewRad was addressed which caused many simulations with more than two ranks to fail https://trac.einsteintoolkit.org/ticket/2182
+* And many bug fixes. Notably:
+
+    - a significant correctness problem for NewRad was addressed which caused many simulations with more than two ranks to fail https://trac.einsteintoolkit.org/ticket/2182
+    - the wiki is now usable again (users can create logins). The wiki docker image is available here: https://github.com/stevenrbrandt/et-websites.git
 
 ## New thorns or tools
 
@@ -120,12 +123,9 @@ Supported (tested) machines include:
 - Bluewaters
 - Comet
 - Cori
-- Draco
 - Edison
 - Golub
-- Hydra
 - Marconi
-- Minerva
 - Queenbee 2
 - Stampede 2
 - SuperMIC
@@ -135,11 +135,7 @@ Supported (tested) machines include:
   and basedir = $SCRATCH/simulations configured for this machine.  You
   need to determine $WORK and $SCRATCH by logging in to the machine.
 
-* A new configuration for KNL nodes is being worked on, but not yet
-  included in the release (but compilation works and tests mostly
-  pass).
-
-All repositories participating in this release carry a branch ET_2018_02
+All repositories participating in this release carry a branch ET_2018_09
 marking this release.  These release branches will be updated if severe
 errors are found.
 
