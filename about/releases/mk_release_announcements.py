@@ -13,6 +13,8 @@ def mktext(tag,fd):
     elif tag.name == "h1":
         print("===",tag.get_text().strip(),"===",file=fd)
     elif tag.name == "h2":
+        print(file=fd)
+        print(file=fd)
         print("==",tag.get_text().strip(),"==",file=fd)
     elif tag.name == "li":
         print(" *",tag.get_text().strip(),file=fd)

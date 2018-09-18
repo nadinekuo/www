@@ -54,6 +54,8 @@ portion of the tested machines, almost all of these tests pass, using both
 MPI and OpenMP parallelization.
 
 The changes between this and the previous release include:
+
+
 == Larger changes since last release ==
 
  * Support has been added for GCC8.
@@ -65,13 +67,19 @@ Note, we still recommend using the system MPI that is installed natively on your
 
 a significant correctness problem for NewRad was addressed which caused many simulations with more than two ranks to fail https://trac.einsteintoolkit.org/ticket/2182
 the wiki is now usable again (users can create logins). The wiki docker image is available here: https://github.com/stevenrbrandt/et-websites.git
+
+
 == New thorns or tools ==
 
  * GiRaFFE (~1,600 lines of code): Solves the GRFFE equations in the formalism of Paschalidis and Shapiro [2] using the same reconstruction (PPM) and staggered vector potential methods as IllinoisGRMHD.
  * GiRaFFEfood (~1,300 lines of code): Code validation initial data and basic diagnostics. Contains Five 1D tests in flat spacetime (fast wave, Alfvén wave, degenerate Alfvén wave, "three-wave", FFE breakdown), One 3D test in flat spacetime (aligned rotator), and Three 3D tests in curved spacetimes ("Exact Wald" solution, "Magnetospheric Wald" solution, and split monopole).
  * ShiftedKerrSchild (~230 lines of code): Sets up all 3+1 quantities for a Kerr-Schild spacetime with an arbitrary radial shift, to mitigate effects of extreme spacetime curvature near r_{KS}=0. See Appendix of code release paper for full discussion.
  * GiRaFFE_to_HydroBase and ID_converter_GiRaFFE (~230 lines of code): Acts as a translation layer to convert 3-velocities in HydroBase's Valencia formalism to/from the 3-velocity found in the induction equation (vi = ui/u0; native to GiRaFFE).
+
+
 == Upcoming changes for the next releases ==
+
+
 == New thorns planned for the next relases ==
 
  * Seed_Magnetic_Fields-modified Extended Seed_Magnetic_Fields thorn for binary neutron stars. Supercedes Seed_Magnetic_Fields thorn.
@@ -91,6 +99,8 @@ evolutions of higher dimensional BHs, see:
     https://arxiv.org/abs/1512.04532
  * Proca arrangement:
   This repository (https://bitbucket.org/canuda/proca/src) provides the tools to evolve the Einstein-Proca system as first described in https://arxiv.org/abs/1505.00797
+
+
 == How to upgrade from Tesla (ET_2018_02) ==
 
 To upgrade from the previous release, use GetComponents with the new thornlist
@@ -98,6 +108,8 @@ to check out the new version.
 
 See the Download page (http://einsteintoolkit.org/download/) on the
 Einstein Toolkit website for download instructions.
+
+
 == Machine notes ==
 
 Supported (tested) machines include:
