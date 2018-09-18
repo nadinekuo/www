@@ -65,6 +65,7 @@ The changes between this and the previous release include:
 
 * And many bug fixes. Notably:
 
+    - Fixed bug in calculation of conserved S vector in MHD Prim2Con https://trac.einsteintoolkit.org/ticket/2155
     - a significant correctness problem for NewRad was addressed which caused many simulations with more than two ranks to fail https://trac.einsteintoolkit.org/ticket/2182
     - the wiki is now usable again (users can create logins). The wiki docker image is available here: https://github.com/stevenrbrandt/et-websites.git
 
