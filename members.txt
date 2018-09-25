@@ -51,8 +51,8 @@ http://physics.columbia.edu Columbia University
 http://www.communityofphysics.org/ Community of Physics
  Shaher Azad
  Ashiqul Islam Dip
- https://www.researchgate.net/profile/Md_Mohiuddin8 Md Mohiuddin
  Mohammad Tomal Hossain
+ https://www.researchgate.net/profile/Md_Mohiuddin8 Md Mohiuddin
 
 http://fisica.ugto.mx/ DCI Universidad de Guanajuato
  Argelia Bernal
@@ -83,6 +83,7 @@ http://www.cra.gatech.edu/ Georgia Institute of Technology
  Matt Kinsey
  http://www.cra.gatech.edu/people/laguna.shtml Pablo Laguna
  Deirdre Shoemaker
+ Michael Weaver
 
 https://www.griffith.edu.au Griffith University
  Moji Ghadimi
