@@ -84,6 +84,7 @@ http://www.cra.gatech.edu/ Georgia Institute of Technology
  http://www.cra.gatech.edu/people/laguna.shtml Pablo Laguna
  Deirdre Shoemaker
  Michael Weaver
+ Zack Vogel
 
 https://www.griffith.edu.au Griffith University
  Moji Ghadimi
