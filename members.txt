@@ -83,8 +83,8 @@ http://www.cra.gatech.edu/ Georgia Institute of Technology
  Matt Kinsey
  http://www.cra.gatech.edu/people/laguna.shtml Pablo Laguna
  Deirdre Shoemaker
- Michael Weaver
  Zack Vogel
+ Michael Weaver
 
 https://www.griffith.edu.au Griffith University
  Moji Ghadimi
@@ -146,6 +146,7 @@ https://gwcenter.icrr.u-tokyo.ac.jp/en/ KAGRA, BNU
  Wu Shichao
 
 https://www.kcl.ac.uk/ Kings College London
+ Matthew Elley
  Helvi Witek
 
 http://www.kisti.re.kr/english/ Korea Institute of Science and Technology Information
