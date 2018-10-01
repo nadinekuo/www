@@ -80,6 +80,7 @@ http://www.cra.gatech.edu/ Georgia Institute of Technology
  Rafael Aranha
  Michael Clark
  Miguel Gracia
+ Chad Henshaw
  Matt Kinsey
  http://www.cra.gatech.edu/people/laguna.shtml Pablo Laguna
  Deirdre Shoemaker
