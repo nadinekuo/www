@@ -36,9 +36,12 @@ foreach my $key (sort sort_by_date (keys %emails)) {
        $key =~ m/\[Users\] meeting minutes for/) {
      next;
     }
-    my $id = "";
-    $id = $1 if(${$emails{$key}->{tails}} =~ m!/([^/]*)\.html!);
-    print "<li>".sanitize("<$id> $key ($authors[0])").": <a href='".url(${$emails{$key}->{roots}})."'>root</a>";
+    my $content = get(${$emails{$key}->{tails}});
+    my $date = "unknown";
+    if ($content and $content =~ m!<I>\w\w\w (\w\w\w (\d|\s)\d (\d|\s)\d:\d\d:\d\d \w\w\w \d\d\d\d)</I>!) {
+      $date = $1;
+    }
+    print "<li><tt style='white-space:pre;'>".sanitize($date)."</tt>".sanitize(" $key ($authors[0])").": <a href='".url(${$emails{$key}->{roots}})."'>root</a>";
     print " <a href='".url(${$emails{$key}->{tails}})."'>tail</a>" if $num_authors > 1;
     print "</li>\n";
   }
