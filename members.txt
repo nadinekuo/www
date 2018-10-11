@@ -255,6 +255,7 @@ http://www.rpi.edu/ Rensselaer Polytechnic Institute
 http://www.ru.ac.za/ Rhodes University, South Africa
  Apratim Ganguly
  Denis Pollney
+ http://www.chrisdoesmaths.com/ Chris Stevens
 
 http://ccrg.rit.edu/ Rochester Institute of Technology
  Manuela Campanelli
