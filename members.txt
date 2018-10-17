@@ -239,6 +239,9 @@ http://www.pan.pl/ Polska Akademia Nauk (Polish Academy of Sciences)
  Agnieszka Janiuk
  Petra Sukova
 
+https://www.pdx.edu/ Portland State University
+ Adam Handwerger
+
 http://www.princeton.edu/ Princeton University
  Jie Ren
 
