@@ -412,8 +412,9 @@ https://web.uniroma2.it/home/newlang/english University of Rome, Tor Vergata
 http://www.physics.sc.edu University of South Carolina
  Camilo Posada
 
-http://www.soton.ac.uk/ University of Southampton
+https://www.southampton.ac.uk/ University of Southampton
  Kyriaki Dionysopoulou
+ Peter Hammond
  Ian Hawke
  Tim Lemon
  Charalampos Markakis
