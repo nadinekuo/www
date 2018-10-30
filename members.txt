@@ -341,6 +341,9 @@ http://unal.edu.co/ Universidad Nacional de Colombia
 http://www.uni.edu.pe/ Universidad Nacional de Ingeniería (National University of Engineering)
  Renato Tovar Landeo
 
+http://pino2.mdp.edu.ar/exactas/ Universidad Nacional de Mar del Plata
+ Juan Ignacio Musmarra
+
 http://www.udg.mx Universidad de Guadalajarahas
  Roberto Esparza
  Claudia Guerra
