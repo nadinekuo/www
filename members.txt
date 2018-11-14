@@ -59,6 +59,9 @@ http://fisica.ugto.mx/ DCI Universidad de Guanajuato
  Argelia Bernal
  Guillermo Eaton
 
+http://ice.dartmouth.edu/ Dartmouth College
+ Damian Sowinski
+
 http://www.enmu.edu/ Eastern New Mexico University
  William L. Andersen
 
