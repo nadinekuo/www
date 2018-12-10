@@ -5,7 +5,8 @@ http://www.aei.mpg.de/english Albert Einstein Institute
 https://auaf.edu.af/ American University of Afghanistan
  https://github.com/m-ahsan-nazer M. Ahsan Nazer
 
-http://www.auth.gr/home/index_en.html Aristotle University of Thessaloniki
+http://www.auth.gr/ Aristotle University of Thessaloniki
+ Ilias Chatzichidiroglou
  Nick Stergioulas
  Soultanis Theodoros
 
