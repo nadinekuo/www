@@ -227,6 +227,9 @@ http://www.ncsu.edu/ North Carolina State University
 http://www.northwestern.edu/ Northwestern University
  Carl Rodriguez
 
+http://lima.osu.edu/ The Ohio State University at Lima
+ Anthony Shoup
+
 http://www.osaka-u.ac.jp/en Osaka University
  Luca Baiotti
 
