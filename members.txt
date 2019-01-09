@@ -501,3 +501,5 @@ http://www.iitd.ac.in/ भारतीय प्रौद्योगिकी �
 http://vidyasagar.ac.in/ বিদ্যাসাগর বিশ্ববিদ্যালয়  (Vidyasagar University)
  Partha Pratim Pradhan
 
+https://www.bits-pilani.ac.in/ BITS Pilani, K.K Birla Goa Campus
+ Raghav Arora
