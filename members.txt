@@ -35,6 +35,9 @@ http://www.tapir.caltech.edu/ California Institute of Technology
  Christian Reisswig
  Béla Szilágyi
 
+https://www.cpp.edu/ California State Polytechnic University, Pomona
+ David H. Bae
+
 http://www20.csueastbay.edu/ California State University East Bay
  Ernest Schleicher
 
