@@ -1,3 +1,3 @@
 <?php
-header("Location: https://einsteintoolkit.org/documentation/new-user-tutorial")
+header("Location: https://einsteintoolkit.org/request_testacount.html")
 ?>
