@@ -45,10 +45,10 @@ if (empty($name)) {
 } elseif (empty($buechsenwursttest) || ($buechsenwursttest != "nietsniE")) {
   echo '<h4>You did not spell \'Einstein\' backwards correctly. Go away, spam bot, or </h4>';
   echo '<br /><a href="javascript:history.back(1);">try again</a>';
-}
-
+} elseif (mail('maintainers@einsteintoolkit.org',
+	       'New Einstein Toolkit tutorial account request received',
+	       $message,'From: RegistrationBot@einsteintoolkit.org')) {
 /* Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
-elseif (mail('maintainers@einsteintoolkit.org','New Einstein Toolkit tutorial account request received',$message,'From: RegistrationBot@einsteintoolkit.org')) {
   echo '<h4>Your account request has been successfully submitted.</h4>';
   echo '<br />Thank you for trying out the Einstein Toolkit.';
   echo '<br />Please allow for one business day for your account to be created.';
