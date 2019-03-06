@@ -30,7 +30,7 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
     case "issue:created":
       $subject = sprintf("#%s: %s", $data['issue']['id'], $data['issue']['title']);
       $msg .= sprintf("#%s: %s\n", $data['issue']['id'], $data['issue']['title']);
-      $msg .= "<table style='border-spacing: 1ex; '>\n";
+      $msg .= "<table style='border-spacing: 1ex 0pt; '>\n";
       $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", " Reporter", $data['issue']['reporter']['display_name']);
       $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "   Status", $data['issue']['state']);
       $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "Milestone", $data['issue']['milestone']);
@@ -42,7 +42,7 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
       $msg .= "\n";
       $msg .= $data['issue']['content']['html'] . "\n";
       $msg .= "--<br/>\n";
-      $url = $data['issue']['links']['self']['href'];
+      $url = $data['issue']['links']['html']['href'];
       $msg .= sprintf("Ticket URL: <a href='%s'>%s</a>\n", $url, $url);
     break;
   }
