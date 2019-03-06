@@ -1,0 +1,69 @@
+<?php header("Content-Type: text/html; charset=utf-8"); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <title>Issue webhook received</title>
+</head>
+<body>
+<pre>
+<?php
+// from https://lornajane.net/posts/2017/handling-incoming-webhooks-in-php
+// webhook syntax for bitbucket is here: https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Issueevents
+$hook_uuid = $_SERVER['HTTP_X_HOOK_UUID'];
+// the UUID is shown by bitbucket on the requst information page:
+// https://bitbucket.org/einsteintoolkit/tickets/admin/addon/admin/bitbucket-webhooks/bb-webhooks-repo-admin
+// and hopefully unique and secret enough for our purpose of serving as a "secret" token
+if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
+  echo ("Invalid hook\n");
+  http_response_code(403);
+} elseif($json = json_decode(file_get_contents("php://input"), true)) {
+  $data = $json;
+  $event_key = $_SERVER['HTTP_X_EVENT_KEY'];
+  echo ("Event:".$event_key.":\n");
+
+  $subject = "";
+  // alternatively, use text/plain and the 'raw' content for the actual
+  // markdown and plain ASCII emails
+  $msg = "<html>";
+  switch ($event_key) {
+    case "issue:created":
+      $subject = sprintf("#%s: %s", $data['issue']['id'], $data['issue']['title']);
+      $msg .= sprintf("#%s: %s\n", $data['issue']['id'], $data['issue']['title']);
+      $msg .= "<table style='border-spacing: 1ex; '>\n";
+      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", " Reporter", $data['issue']['reporter']['display_name']);
+      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "   Status", $data['issue']['state']);
+      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "Milestone", $data['issue']['milestone']);
+      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "  Version", $data['issue']['version']);
+      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "     Type", $data['issue']['kind']);
+      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", " Priority", $data['issue']['priority']);
+      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "Component", $data['issue']['component']);
+      $msg .= "</table>\n";
+      $msg .= "\n";
+      $msg .= $data['issue']['content']['html'] . "\n";
+      $msg .= "--<br/>\n";
+      $url = $data['issue']['links']['self']['href'];
+      $msg .= sprintf("Ticket URL: <a href='%s'>%s</a>\n", $url, $url);
+    break;
+  }
+  $msg .= "</html>";
+
+  if ($subject != "") {
+    $headers  = "From: trac@einsteintoolkit.org";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+    $rc = mail('maintainers@einsteintoolkit.org', $subject, $msg, $headers);
+    echo ("mail sent successfully:".$rc);
+  } else {
+    echo ("unknown event type, nomail sent");
+  }
+} else {
+  echo ("Invalid request\n");
+  http_response_code(400);
+}
+?>
+</pre>
+
+</body>
+</html>
+
