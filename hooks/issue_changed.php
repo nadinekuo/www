@@ -28,16 +28,25 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
   $msg = "<html>";
   #switch ($event_key) {
     #case "issue:created":
+      if(isset($data['issue']['milestone']['name']))
+        $milestone = $data['issue']['milestone']['name'];
+      else
+        $milestone = "";
+      if(isset($data['issue']['component']['name']))
+        $component = $data['issue']['component']['name'];
+      else
+        $component = "";
+
       $subject = sprintf("#%s: %s", $data['issue']['id'], $data['issue']['title']);
       $msg .= sprintf("#%s: %s\n", $data['issue']['id'], $data['issue']['title']);
       $msg .= "<table style='border-spacing: 1ex 0pt; '>\n";
       $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", " Reporter", $data['issue']['reporter']['display_name']);
       $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "   Status", $data['issue']['state']);
-      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "Milestone", $data['issue']['milestone']);
+      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "Milestone", $milestone);
       $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "  Version", $data['issue']['version']);
       $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "     Type", $data['issue']['kind']);
       $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", " Priority", $data['issue']['priority']);
-      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "Component", $data['issue']['component']);
+      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "Component", $component);
       $msg .= "</table>\n";
       $msg .= "\n";
       switch($event_key) {
