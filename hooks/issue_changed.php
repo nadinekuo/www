@@ -26,8 +26,8 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
   // alternatively, use text/plain and the 'raw' content for the actual
   // markdown and plain ASCII emails
   $msg = "<html>";
-  switch ($event_key) {
-    case "issue:created":
+  #switch ($event_key) {
+    #case "issue:created":
       $subject = sprintf("#%s: %s", $data['issue']['id'], $data['issue']['title']);
       $msg .= sprintf("#%s: %s\n", $data['issue']['id'], $data['issue']['title']);
       $msg .= "<table style='border-spacing: 1ex 0pt; '>\n";
@@ -44,8 +44,8 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
       $msg .= "--<br/>\n";
       $url = $data['issue']['links']['html']['href'];
       $msg .= sprintf("Ticket URL: <a href='%s'>%s</a>\n", $url, $url);
-    break;
-  }
+    #break;
+  #}
   $msg .= "</html>";
 
   if ($subject != "") {
