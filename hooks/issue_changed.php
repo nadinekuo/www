@@ -40,7 +40,14 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
       $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "Component", $data['issue']['component']);
       $msg .= "</table>\n";
       $msg .= "\n";
-      $msg .= $data['issue']['content']['html'] . "\n";
+      switch($event_key) {
+      case "issue:created":
+        $msg .= $data['issue']['content']['html'] . "\n";
+        break;
+      case "issue:comment_created":
+        $msg .= $data['comment']['content']['html'] . "\n";
+        break
+      }
       $msg .= "--<br/>\n";
       $url = $data['issue']['links']['html']['href'];
       $msg .= sprintf("Ticket URL: <a href='%s'>%s</a>\n", $url, $url);
