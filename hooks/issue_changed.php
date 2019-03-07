@@ -46,7 +46,7 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
         break;
       case "issue:comment_created":
         $msg .= $data['comment']['content']['html'] . "\n";
-        break
+        break;
       }
       $msg .= "--<br/>\n";
       $url = $data['issue']['links']['html']['href'];
