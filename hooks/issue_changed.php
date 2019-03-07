@@ -26,49 +26,45 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
   // alternatively, use text/plain and the 'raw' content for the actual
   // markdown and plain ASCII emails
   $msg = "<html>";
-  #switch ($event_key) {
-    #case "issue:created":
-      if(isset($data['issue']['milestone']['name']))
-        $milestone = $data['issue']['milestone']['name'];
-      else
-        $milestone = "";
-      if(isset($data['issue']['component']['name']))
-        $component = $data['issue']['component']['name'];
-      else
-        $component = "";
+  if(isset($data['issue']['milestone']['name']))
+    $milestone = $data['issue']['milestone']['name'];
+  else
+    $milestone = "";
+  if(isset($data['issue']['component']['name']))
+    $component = $data['issue']['component']['name'];
+  else
+    $component = "";
 
-      $subject = sprintf("#%s: %s", $data['issue']['id'], $data['issue']['title']);
-      $msg .= sprintf("#%s: %s\n", $data['issue']['id'], $data['issue']['title']);
-      $msg .= "<table style='border-spacing: 1ex 0pt; '>\n";
-      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", " Reporter", $data['issue']['reporter']['display_name']);
-      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "   Status", $data['issue']['state']);
-      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "Milestone", $milestone);
-      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "  Version", $data['issue']['version']);
-      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "     Type", $data['issue']['kind']);
-      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", " Priority", $data['issue']['priority']);
-      $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "Component", $component);
-      $msg .= "</table>\n";
-      $msg .= "\n";
-      switch($event_key) {
-      case "issue:created":
-        $msg .= $data['issue']['content']['html'] . "\n";
-        break;
-      case "issue:comment_created":
-        $msg .= $data['comment']['content']['html'] . "\n";
-        break;
-      }
-      $msg .= "--<br/>\n";
-      $url = $data['issue']['links']['html']['href'];
-      $msg .= sprintf("Ticket URL: <a href='%s'>%s</a>\n", $url, $url);
-    #break;
-  #}
+  $subject = sprintf("#%s: %s", $data['issue']['id'], $data['issue']['title']);
+  $msg .= sprintf("#%s: %s\n", $data['issue']['id'], $data['issue']['title']);
+  $msg .= "<table style='border-spacing: 1ex 0pt; '>\n";
+  $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", " Reporter", $data['issue']['reporter']['display_name']);
+  $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "   Status", $data['issue']['state']);
+  $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "Milestone", $milestone);
+  $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "  Version", $data['issue']['version']);
+  $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "     Type", $data['issue']['kind']);
+  $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", " Priority", $data['issue']['priority']);
+  $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "Component", $component);
+  $msg .= "</table>\n";
+  $msg .= "\n";
+  switch($event_key) {
+  case "issue:created":
+    $msg .= $data['issue']['content']['html'] . "\n";
+    break;
+  case "issue:comment_created":
+    $msg .= $data['comment']['content']['html'] . "\n";
+    break;
+  }
+  $msg .= "--<br/>\n";
+  $url = $data['issue']['links']['html']['href'];
+  $msg .= sprintf("Ticket URL: <a href='%s'>%s</a>\n", $url, $url);
   $msg .= "</html>";
 
   if ($subject != "") {
     $headers  = "From: trac@einsteintoolkit.org\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-    $rc = mail('maintainers@einsteintoolkit.org', $subject, $msg, $headers);
+    $rc = mail('trac@einsteintoolkit.org', $subject, $msg, $headers);
     echo ("mail sent successfully:".$rc);
   } else {
     echo ("unknown event type, nomail sent");
