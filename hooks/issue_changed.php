@@ -65,7 +65,7 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-    $email = 'trac@einsteintoolkit.org';
+    $email = 'trac-noreply@einsteintoolkit.org';
     $rc = mail($email, $subject, $msg, $headers);
     echo ("mail sent successfully:".$rc);
 
