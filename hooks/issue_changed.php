@@ -69,9 +69,11 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
     $rc = mail($email, $subject, $msg, $headers);
     echo ("mail sent successfully:".$rc);
 
+    /*
     $email = 'maintainers@einsteintoolkit.org';
     $rc = mail($email, $subject, $msg, $headers);
     echo ("mail sent successfully:".$rc);
+    */
 
   } else {
     echo ("unknown event type, nomail sent");
