@@ -34,6 +34,10 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
     $component = $data['issue']['component']['name'];
   else
     $component = "";
+  if(isset($data['issue']['version']['name']))
+    $version = $data['issue']['version']['name'];
+  else
+    $version = "";
 
   $subject = sprintf("#%s: %s", $data['issue']['id'], $data['issue']['title']);
   $msg .= sprintf("#%s: %s\n", $data['issue']['id'], $data['issue']['title']);
@@ -41,7 +45,7 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
   $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", " Reporter", $data['issue']['reporter']['display_name']);
   $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "   Status", $data['issue']['state']);
   $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "Milestone", $milestone);
-  $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "  Version", $data['issue']['version']);
+  $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "  Version", $version);
   $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "     Type", $data['issue']['kind']);
   $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", " Priority", $data['issue']['priority']);
   $msg .= sprintf("<tr><td style='text-align:right'>%s:</td><td>%s</td></tr>\n", "Component", $component);
