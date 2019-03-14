@@ -63,9 +63,9 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
     $msg .= $data['comment']['content']['html'] . "\n";
     break;
   }
-  $msg .= "--<br/>\n";
+  $msg .= "<p>--<br/>\n";
   $url = $data['issue']['links']['html']['href'];
-  $msg .= sprintf("Ticket URL: <a href='%s'>%s</a>\n", $url, $url);
+  $msg .= sprintf("Ticket URL: <a href='%s'>%s</a></p>\n", $url, $url);
   $msg .= "</html>";
 
   if ($subject != "") {
