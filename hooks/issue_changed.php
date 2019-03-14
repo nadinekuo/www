@@ -72,6 +72,12 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
     if(isset($data['changes']['content'])) {
       $msg .= $data['issue']['content']['html'] . "\n";
     }
+    # a comment block exists all the time even when no comment was made,
+    # "raw" is null and "html" is the empty string in that case
+    if($data['comment']['content']['html'] != "") {
+      $msg .= sprintf("<p>Comment (by %s):</p>\n", $data['actor']['display_name']);
+      $msg .= $data['comment']['content']['html'] . "\n";
+    }
     break;
   case "issue:created":
     $msg .= $data['issue']['content']['html'] . "\n";
