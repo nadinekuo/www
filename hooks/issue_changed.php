@@ -69,7 +69,10 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
     if($have_changes) {
       $msg .= "</table></p>\n";
     }
-    // passthrough
+    if(isset($data['changes']['content'])) {
+      $msg .= $data['issue']['content']['html'] . "\n";
+    }
+    break;
   case "issue:created":
     $msg .= $data['issue']['content']['html'] . "\n";
     break;
