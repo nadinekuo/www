@@ -54,6 +54,21 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
   switch($event_key) {
   case "issue:updated":
     $msg .= sprintf("<p>Changes (by %s):</p>\n", $data['actor']['display_name']);
+    # report all changes other than a change in "content" as a nice table
+    $have_changes = false;
+      foreach ($data['changes'] as $change => $diff) {
+      if($change != "content") {
+        if(!$have_changes) {
+          $msg .= "<p><table>\n";
+          $have_changes = true;
+        }
+        $msg .= sprintf("<tr><td>%s:</td><td>%s (was %s)</td></tr>\n", $change,
+                        $diff['new'], $diff['old']);
+      }
+      }
+    if($have_changes) {
+      $msg .= "</table></p>\n";
+    }
     // passthrough
   case "issue:created":
     $msg .= $data['issue']['content']['html'] . "\n";
