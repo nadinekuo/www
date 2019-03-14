@@ -53,13 +53,13 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
   $msg .= "\n";
   switch($event_key) {
   case "issue:updated":
-    $msg .= sprintf("<p>Changes (by %s):</p>\n" % $data['actor']['display_name']);
+    $msg .= sprintf("<p>Changes (by %s):</p>\n", $data['actor']['display_name']);
     // passthrough
   case "issue:created":
     $msg .= $data['issue']['content']['html'] . "\n";
     break;
   case "issue:comment_created":
-    $msg .= sprintf("<p>Comment (by %s):</p>\n" % $data['actor']['display_name']);
+    $msg .= sprintf("<p>Comment (by %s):</p>\n", $data['actor']['display_name']);
     $msg .= $data['comment']['content']['html'] . "\n";
     break;
   }
