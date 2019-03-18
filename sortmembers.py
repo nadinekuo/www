@@ -1,5 +1,5 @@
-#/usr/bin/python3
-import re
+#!/usr/bin/python3
+import re, os
 members = {}
 with open("members.txt","r") as fd:
     for line in fd.readlines():
@@ -18,7 +18,7 @@ def memkey(k):
         return k
     g = re.match('https?:\S+\s+(?:The\s+|)(\S.*\S)',k)
     if not g:
-        print('k=',k)
+        raise Exception('Bad key:'+k)
     return g.group(1)
 
 def pkey(k):
@@ -27,9 +27,12 @@ def pkey(k):
     return g.group(2)+' '+g.group(1)
 
 univ = sorted(members.keys(), key=memkey)
-for k in univ:
-    people = sorted(members[k].keys(),key=pkey)
-    print(k)
-    for p in people:
-        print(p)
-    print()
+with open(".members.txt","w") as fd:
+    for k in univ:
+        people = sorted(members[k].keys(),key=pkey)
+        print(k,file=fd)
+        for p in people:
+            print(p,file=fd)
+        print('',file=fd)
+os.remove("members.txt")
+os.rename(".members.txt","members.txt")
