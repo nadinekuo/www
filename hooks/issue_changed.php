@@ -22,7 +22,7 @@ function pr($x) {
         }
     } else if($t == "array") {
         # Avoid messy output
-        if(isset($x["display_name"])) {
+        if(array_key_exists("display_name",$x)) {
             return $x["display_name"];
         }
 
