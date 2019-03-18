@@ -21,25 +21,11 @@ function pr($x) {
             return "false";
         }
     } else if($t == "array") {
-        if(count($x) == 1) {
-            foreach($x as $key => $elem) {
-                return pr($elem);
-            }
-        } else if(count($x) == 0) {
-            return "";
-        }
-        # Avoid printing out all the gnarly user info
-        # if this is a user data structure
-        if(isset($x[5]) and pr($x[5]) == "user") {
-            return $x[1];
-        }
         $out = "[";
         $tween = "";
         foreach($x as $key => $elem) {
             $out .= $tween;
-            if(gettype($key) == "string") {
-                pr("$key: ");
-            }
+            pr("$key: ");
             $out .= pr($elem);
             $tween = ",";
         }
@@ -145,7 +131,8 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-    $email = 'trac@einsteintoolkit.org';
+    #$email = 'trac@einsteintoolkit.org';
+    $email = 'sbrandt@cct.lsu.edu";
     $rc = mail($email, $subject, $msg, $headers);
     echo ("mail sent successfully:".$rc);
   } else {
