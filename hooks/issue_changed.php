@@ -25,7 +25,7 @@ function pr($x) {
         $tween = "";
         foreach($x as $key => $elem) {
             $out .= $tween;
-            pr("$key: ");
+            $out .= pr("$key: ");
             $out .= pr($elem);
             $tween = ",";
         }
