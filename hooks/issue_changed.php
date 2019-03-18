@@ -21,6 +21,11 @@ function pr($x) {
             return "false";
         }
     } else if($t == "array") {
+        # Avoid messy output
+        if(isset($x["display_name"])) {
+            return $x["display_name"];
+        }
+
         $out = "[";
         $tween = "";
         foreach($x as $key => $elem) {
