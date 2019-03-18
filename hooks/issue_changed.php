@@ -28,6 +28,11 @@ function pr($x) {
         } else if(count($x) == 0) {
             return "";
         }
+        # Avoid printing out all the gnarly user info
+        # if this is a user data structure
+        if(isset($x[5]) and $x[5] == "user") {
+            return $x[1];
+        }
         $out = "[";
         $tween = "";
         foreach($x as $key => $elem) {
