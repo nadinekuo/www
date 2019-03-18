@@ -132,7 +132,7 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
     #$email = 'trac@einsteintoolkit.org';
-    $email = 'sbrandt@cct.lsu.edu";
+    $email = "sbrandt@cct.lsu.edu";
     $rc = mail($email, $subject, $msg, $headers);
     echo ("mail sent successfully:".$rc);
   } else {
