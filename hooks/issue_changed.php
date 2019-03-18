@@ -30,7 +30,7 @@ function pr($x) {
         }
         # Avoid printing out all the gnarly user info
         # if this is a user data structure
-        if(isset($x[5]) and $x[5] == "user") {
+        if(isset($x[5]) and pr($x[5]) == "user") {
             return $x[1];
         }
         $out = "[";
