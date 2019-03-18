@@ -8,6 +8,45 @@
 <body>
 <pre>
 <?php
+
+// format a php data structure
+function pr($x) {
+    $t = gettype($x);
+    if($t == "string" or $t == "integer" or $t == "double") {
+        return htmlentities($x);
+    } else if($t == "boolean") {
+        if($x) {
+            return "true";
+        } else {
+            return "false";
+        }
+    } else if($t == "array") {
+        if(count($x) == 1) {
+            foreach($x as $key => $elem) {
+                return pr($elem);
+            }
+        } else if(count($x) == 0) {
+            return "";
+        }
+        $out = "[";
+        $tween = "";
+        foreach($x as $key => $elem) {
+            $out .= $tween;
+            if(gettype($key) == "string") {
+                pr("$key: ");
+            }
+            $out .= pr($elem);
+            $tween = ",";
+        }
+        $out .= "]";
+        return $out;
+    } else if($t == "NULL") {
+        return "";
+    } else {
+        return "(type=$t)";
+    }
+}
+
 // from https://lornajane.net/posts/2017/handling-incoming-webhooks-in-php
 // webhook syntax for bitbucket is here: https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Issueevents
 $hook_uuid = $_SERVER['HTTP_X_HOOK_UUID'];
@@ -63,7 +102,7 @@ if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
           $have_changes = true;
         }
         $msg .= sprintf("<tr><td>%s:</td><td>%s (was %s)</td></tr>\n", $change,
-                        $diff['new'], $diff['old']);
+                        pr($diff['new']), pr($diff['old']));
       }
       }
     if($have_changes) {
