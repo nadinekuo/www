@@ -42,8 +42,8 @@ if (empty($name)) {
 } elseif (empty($email)) {
   echo '<h4>Please provide a valid email address.</h4>';
   echo '<br /><a href="javascript:history.back(1);">Try again</a>';
-} elseif (empty($buechsenwursttest) || ($buechsenwursttest != "nietsniE")) {
-  echo '<h4>You did not spell \'Einstein\' backwards correctly. Go away, spam bot, or </h4>';
+} elseif (empty($buechsenwursttest) || ($buechsenwursttest != "Einstein")) {
+  echo '<h4>You did not spell \'Einstein\' correctly. Go away, spam bot, or </h4>';
   echo '<br /><a href="javascript:history.back(1);">try again</a>';
 } elseif (mail('maintainers@einsteintoolkit.org',
 	       'New Einstein Toolkit tutorial account request received',
