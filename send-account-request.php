@@ -26,8 +26,8 @@ $buechsenwursttest = $_POST['buechsenwursttest'];
 $message  = "Einstein Toolkit maintainers\n";
 $message .= "\n";
 $message .= "$name has submitted a request for a tutorial server account.\n";
-$message .= "github user name: $github\n";
 $message .= "email: $email\n";
+$message .= "github user name: $github\n";
 
 /* PHP form validation: the script checks that the Email field contains a valid
 email address and the Subject field isn't empty. preg_match performs a regular
@@ -39,8 +39,8 @@ if (empty($name)) {
 } elseif (!preg_match("/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/", $email)) {
   echo '<h4>Please provide a valid email address.</h4>';
   echo '<br />Please <a href="javascript:history.back(1);">try again</a>';
-} elseif (empty($github)) {
-  echo '<h4>Please provide a github user name.</h4>';
+} elseif (empty($email)) {
+  echo '<h4>Please provide a valid email address.</h4>';
   echo '<br /><a href="javascript:history.back(1);">Try again</a>';
 } elseif (empty($buechsenwursttest) || ($buechsenwursttest != "nietsniE")) {
   echo '<h4>You did not spell \'Einstein\' backwards correctly. Go away, spam bot, or </h4>';
