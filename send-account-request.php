@@ -56,7 +56,7 @@ if (empty($name)) {
 /* Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
   echo '<h4>Your account request has been successfully submitted.</h4>';
   echo '<br />Thank you for trying out the Einstein Toolkit.';
-  echo '<br />Please allow for one business day for your account to be created.';
+  echo '<br />Please allow for 2 business days for your account to be created.';
   echo '<br /><a href="/">Home</a>';
 } else {
   echo '<h4>Unfortunately, there was a problem registering.</h4>';
