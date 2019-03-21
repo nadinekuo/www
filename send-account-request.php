@@ -20,6 +20,7 @@
 /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
 $name = htmlentities($_POST['name'], ENT_QUOTES, "UTF-8");
 $email = $_POST['email'];
+$institution = $_POST['institution'];
 $github = $_POST['github'];
 $buechsenwursttest = $_POST['buechsenwursttest'];
 
@@ -27,6 +28,7 @@ $message  = "Einstein Toolkit maintainers\n";
 $message .= "\n";
 $message .= "$name has submitted a request for a tutorial server account.\n";
 $message .= "email: $email\n";
+$message .= "Institution: $institution\n";
 $message .= "github user name: $github\n";
 
 /* PHP form validation: the script checks that the Email field contains a valid
@@ -41,6 +43,9 @@ if (empty($name)) {
   echo '<br />Please <a href="javascript:history.back(1);">try again</a>';
 } elseif (empty($email)) {
   echo '<h4>Please provide a valid email address.</h4>';
+  echo '<br /><a href="javascript:history.back(1);">Try again</a>';
+} elseif (empty($github) and empty($institution)) {
+  echo '<h4>You must provide at least one of (1) a name of your institution or (2) a github account name.</h4>';
   echo '<br /><a href="javascript:history.back(1);">Try again</a>';
 } elseif (empty($buechsenwursttest) || ($buechsenwursttest != "Einstein")) {
   echo '<h4>You did not spell \'Einstein\' correctly. Go away, spam bot, or </h4>';
