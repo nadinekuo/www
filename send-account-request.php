@@ -31,6 +31,9 @@ $message .= "email: $email\n";
 $message .= "Institution: $institution\n";
 $message .= "github user name: $github\n";
 
+$headers['From'] = 'RegistrationBot@einsteintoolkit.org';
+$headers['Reply-To'] = $email;
+
 /* PHP form validation: the script checks that the Email field contains a valid
 email address and the Subject field isn't empty. preg_match performs a regular
 expression match. It's a very powerful PHP function to validate form fields and
@@ -52,7 +55,7 @@ if (empty($name)) {
   echo '<br /><a href="javascript:history.back(1);">try again</a>';
 } elseif (mail('maintainers@einsteintoolkit.org',
 	       'New Einstein Toolkit tutorial account request received',
-	       $message,'From: RegistrationBot@einsteintoolkit.org')) {
+	       $message,$headers)) {
 /* Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
   echo '<h4>Your account request has been successfully submitted.</h4>';
   echo '<br />Thank you for trying out the Einstein Toolkit.';
