@@ -26,6 +26,9 @@ http://www.bit.edu.cn/ Beijing Institute of Technology
 http://www.belmont.edu/ Belmont University
  Scott Hawley
 
+http://cnu.ac.kr/ CNU
+ Uicheol
+
 http://www.tapir.caltech.edu/ California Institute of Technology
  Peter Kalmus
  Philipp Mösta
