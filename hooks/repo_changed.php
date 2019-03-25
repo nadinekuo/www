@@ -65,22 +65,22 @@ if ($secret != "24324473106b803349a8b0d71e960129") {
     $push = $data['push'];
     foreach($push['changes'] as $change) {
       if($change['new']) {
-        $date = $change['new']['target']['date'];
-        $branch = $change['new']['name'];
+        $date = pr($change['new']['target']['date']);
+        $branch = pr($change['new']['name']);
       } elseif($change['old']) {
-        $date = $change['old']['target']['date'];
-        $branch = $change['old']['name'];
+        $date = pr($change['old']['target']['date']);
+        $branch = pr($change['old']['name']);
       } else {
         $date = "unknown";
         $branch = "unknown";
       }
       foreach($change['commits'] as $commit) {
         $msg .= $commit['links']['html']['href'] . "\n";
-        $msg .= sprintf("% 12s: %s\n", "Changeset", $commit['hash']);
-        $msg .= sprintf("% 12s: %s\n", "Branch", $branch);
-        $msg .= sprintf("% 12s: %s\n", "User", $commit['author']);
-        $msg .= sprintf("% 12s: %s\n", "Date", $date);
-        $msg .= sprintf("% 12s: %s\n", "Summary", $commit['message']);
+        $msg .= sprintf("% 12s: %s\n", "Changeset", pr($commit['hash']);
+        $msg .= sprintf("% 12s: %s\n", "Branch", ptr($branch));
+        $msg .= sprintf("% 12s: %s\n", "User", pr($commit['author']);
+        $msg .= sprintf("% 12s: %s\n", "Date", pr($date));
+        $msg .= sprintf("% 12s: %s\n", "Summary", pr($commit['message']));
       }
       if($change['truncated']) {
         $mag .= "[further commits truncated]\n";
