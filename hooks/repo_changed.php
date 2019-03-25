@@ -76,11 +76,11 @@ if ($secret != "24324473106b803349a8b0d71e960129") {
       }
       foreach($change['commits'] as $commit) {
         $msg .= $commit['links']['html']['href'] . "\n";
-        $msg .= sprintf("% 12s: %s\n", "Changeset", pr($commit['hash']);
-        $msg .= sprintf("% 12s: %s\n", "Branch", ptr($branch));
-        $msg .= sprintf("% 12s: %s\n", "User", pr($commit['author']);
-        $msg .= sprintf("% 12s: %s\n", "Date", pr($date));
-        $msg .= sprintf("% 12s: %s\n", "Summary", pr($commit['message']));
+        $msg .= sprintf("%-12s %s\n", "Changeset:", pr($commit['hash']);
+        $msg .= sprintf("%-12s %s\n", "Branch:", ptr($branch));
+        $msg .= sprintf("%-12s %s\n", "User:", pr($commit['author']);
+        $msg .= sprintf("%-12s %s\n", "Date:", pr($date));
+        $msg .= sprintf("%-12s %s\n", "Summary:", pr($commit['message']));
       }
       if($change['truncated']) {
         $mag .= "[further commits truncated]\n";
