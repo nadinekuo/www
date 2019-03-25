@@ -95,9 +95,9 @@ if ($secret != "24324473106b803349a8b0d71e960129") {
 
   if ($subject != "") {
     if(isset($data['actor'])) {
-      $headers  = sprintf("From: \"%s\" <trac-noreply@einsteintoolkit.org>\r\n", $data['actor']['display_name']);
+      $headers  = sprintf("From: \"%s\" <commits-noreply@bitbucket.org>\r\n", $data['actor']['display_name']);
     } else {
-      $headers  = "From: trac-noreply@einsteintoolkit.org\r\n";
+      $headers  = "From: commits-noreply@bitbucket.org\r\n";
     }
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
