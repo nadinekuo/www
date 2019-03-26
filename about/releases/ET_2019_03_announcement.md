@@ -22,7 +22,7 @@ New arrangements and thorns have been added:
     - VolumeIntegrals_GRMHD
     - VolumeIntegrals_vacuum
 
-In addition, bug fixes accumulated since the previous release in Nov 2018
+In addition, bug fixes accumulated since the previous release in September 2018
 have been included.
 
 The Einstein Toolkit is a collection of software components and tools for
