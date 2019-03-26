@@ -2,7 +2,7 @@
 
 We are pleased to announce the eighteenth release (code name ["Proca"](https://en.wikipedia.org/wiki/Alexandru_Proca)) of the
 Einstein Toolkit, an open, community developed software infrastructure for
-relativistic astrophysics. The highlights of this release are
+relativistic astrophysics. The highlights of this release are:
 
 New arrangements and thorns have been added:
 
