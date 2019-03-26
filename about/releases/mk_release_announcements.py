@@ -62,6 +62,6 @@ with open(sys.argv[1],"r") as fd:
 </body>
 </html>
         """,file=fw)
-    bs = BeautifulSoup(html)
+    bs = BeautifulSoup(html,features="html.parser")
     with open(base_name+".txt","w") as fw:
         mktext(bs,fw)
