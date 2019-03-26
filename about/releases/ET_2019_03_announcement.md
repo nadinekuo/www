@@ -30,12 +30,11 @@ simulating and analyzing general relativistic astrophysical systems that builds
 on numerous software efforts in the numerical relativity community including
 CactusEinstein, the Carpet AMR infrastructure and the relativistic
 magneto-hydrodynamics codes GRHydro and IllinoisGRMHD. For parts of the
-toolkit, the Cactus
-Framework is used as the underlying computational infrastructure providing
-large-scale parallelization, general computational components, and a model for
-collaborative, portable code development. The toolkit includes modules to build
-complete codes for simulating black hole spacetimes as well as systems governed
-by relativistic magneto-hydrodynamics.
+toolkit, the Cactus Framework is used as the underlying computational
+infrastructure providing large-scale parallelization, general computational
+components, and a model for collaborative, portable code development. The
+toolkit includes modules to build complete codes for simulating black hole
+spacetimes as well as systems governed by relativistic magneto-hydrodynamics.
 
 The Einstein Toolkit uses a distributed software model and its different
 modules are developed, distributed, and supported either by the core team of
