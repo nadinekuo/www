@@ -7,20 +7,20 @@ relativistic astrophysics. The highlights of this release are
 New arrangements and thorns have been added:
 
 * Proca
- * NPScalars_Proca
- * ProcaBase
- * ProcaEvolve
- * Proca_simpleID
- * TwoPunctures_KerrProca
+    - NPScalars_Proca
+    - ProcaBase
+    - ProcaEvolve
+    - Proca_simpleID
+    - TwoPunctures_KerrProca
 * lean_public
- * LeanBSSNMoL
- * NPScalars
+    - LeanBSSNMoL
+    - NPScalars
 * wvuthorns_diagnostics
- * particle_tracerET
- * Seed_Magnetic_Fields_BNS
- * smallbPoynET
- * VolumeIntegrals_GRMHD
- * VolumeIntegrals_vacuum
+    - particle_tracerET
+    - Seed_Magnetic_Fields_BNS
+    - smallbPoynET
+    - VolumeIntegrals_GRMHD
+    - VolumeIntegrals_vacuum
 
 In addition, bug fixes accumulated since the previous release in Nov 2018
 have been included.
@@ -66,6 +66,18 @@ MPI and OpenMP parallelization.
 The changes between this and the previous release include:
 
 ## Larger changes since last release
+
+* Ticket tracking system moved to bitbucket: https://bitbucket.org/einsteintoolkit/tickets/
+* Subversion infrastucture for thorns is no longer maintained at LSU. Instead, the svn checkout mechanism supported by github.com is used.
+* Llama supports tensorweights other than 1.0 or 0.0
+* Added EinsteinAnalysis/Hydro_Analysis/Hydro_Analysis_Masses.F90 in order to compute the total baryonic mass and baryonic mass within user defined radii. 
+* A summary of changes:
+    - add support for very large grids where 64bit integer are needed for grid indices and sizes of transfer buffers
+    - fix how how physical_time_per_hour is computed
+    - add functionality to align interior of grid functions to cache boundaries. This requires changes to Cactus and PUGH as well.
+    - add a parameter "granularity" to make sure the interior of components is a multiple of N points in each direction
+* The version of MPI bundled with the ET is now OpenMPI 1.10.7
+* The SystemTopology thorn now supports hwloc 2.0 
 
 ## How to upgrade from Chien-Shiung Wu (ET_2018_09) 
 
