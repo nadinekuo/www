@@ -119,7 +119,7 @@ Supported (tested) machines include:
   and basedir = $SCRATCH/simulations configured for this machine.  You
   need to determine $WORK and $SCRATCH by logging in to the machine.
 
-All repositories participating in this release carry a branch ET_2018_09
+All repositories participating in this release carry a branch ET_2019_03
 marking this release.  These release branches will be updated if severe
 errors are found.
 
