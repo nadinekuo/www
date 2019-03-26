@@ -29,7 +29,8 @@ The Einstein Toolkit is a collection of software components and tools for
 simulating and analyzing general relativistic astrophysical systems that builds
 on numerous software efforts in the numerical relativity community including
 CactusEinstein, the Carpet AMR infrastructure and the relativistic
-magneto-hydrodynamics code GRHydro. For parts of the toolkit, the Cactus
+magneto-hydrodynamics codes GRHydro and IllinoisGRMHD. For parts of the
+toolkit, the Cactus
 Framework is used as the underlying computational infrastructure providing
 large-scale parallelization, general computational components, and a model for
 collaborative, portable code development. The toolkit includes modules to build
