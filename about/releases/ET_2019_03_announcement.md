@@ -129,8 +129,8 @@ The "Proca" Release Team on behalf of the Einstein Toolkit Consortium
 * Steven R. Brandt
 * Samuel D. Cupp
 * Peter Diener
+* Zachariah Etienne
 * Roland Haas
-* Roberto De Pietri
 * Helvi Witek
 
 Mar, 2019
