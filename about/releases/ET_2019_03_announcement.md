@@ -130,8 +130,8 @@ Supported (tested) machines include:
 - SuperMike
 - Wheeler
 
-* TACC machines: defs.local.ini needs to have sourcebasedir = $WORK
-  and basedir = $SCRATCH/simulations configured for this machine.  You
+* TACC machines: defs.local.ini needs to have sourcebasedir = $WORK
+  and basedir = $SCRATCH/simulations configured for this machine.  You
   need to determine $WORK and $SCRATCH by logging in to the machine.
 
 All repositories participating in this release carry a branch ET_2019_03
