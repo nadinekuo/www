@@ -123,11 +123,8 @@ Supported (tested) machines include:
 - Bluewaters
 - Comet
 - Golub
-- Marconi
-- Queenbee 2
 - Stampede 2
-- SuperMIC
-- SuperMike
+- Shelob
 - Wheeler
 
 * TACC machines: defs.local.ini needs to have sourcebasedir = $WORK
