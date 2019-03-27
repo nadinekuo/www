@@ -1,15 +1,43 @@
 #!/usr/bin/python3
 import sys, re, os, markdown
 from bs4 import BeautifulSoup
+import bs4
 from datetime import datetime
 
+def iter(tag,fd):
+    if type(tag) == bs4.element.Tag:
+       for t in tag:
+           mktext(t,fd)
+    elif type(tag) == bs4.BeautifulSoup:
+       for t in tag:
+         mktext(t,fd)
+    elif type(tag) == bs4.element.NavigableString:
+       print(reform(tag.strip()),sep='',end='',file=fd)
+    else:
+        assert False,'type='+str(type(tag))
+
+del_indent = 2
+indent = -del_indent
+
+def reform(txt):
+    if indent < 0:
+        return txt
+    txt = re.sub(r'\s+',' ',txt)
+    pat = r'.{1,%d}\s*' % (80-indent)
+    pstr = ''
+    for p in re.findall(pat,txt):
+        if indent > 0 and len(pstr) > 0:
+            pstr += '\n'+(' '*indent)+'  '
+        pstr += p
+    return pstr
+
 def mktext(tag,fd):
-    if type(tag) == str:
-        print(tag.strip(),end='',file=fd)
-    elif tag.name == "ul":
+    global indent
+    if tag.name == "ul":
         print(file=fd)
-        for t in tag:
-            mktext(t,fd)
+        indent += del_indent
+        iter(tag,fd)
+        indent -= del_indent
     elif tag.name == "h1":
         print("===",tag.get_text().strip(),"===",file=fd)
     elif tag.name == "h2":
@@ -17,13 +45,15 @@ def mktext(tag,fd):
         print(file=fd)
         print("==",tag.get_text().strip(),"==",file=fd)
     elif tag.name == "li":
-        print(" *",tag.get_text().strip(),file=fd)
-    elif tag.name == "p":
+        print(" "*indent+"* ",end='',file=fd)
+        iter(tag,fd)
         print(file=fd)
-        print(tag.get_text().strip(),file=fd)
+    elif tag.name == "p":
+        iter(tag,fd)
+        print(file=fd)
+        print(file=fd)
     else:
-        for t in tag:
-            mktext(t,fd)
+        iter(tag,fd)
 
 g = re.match(r'^(.*)\.md',sys.argv[1])
 assert g
