@@ -139,7 +139,7 @@ marking this release.  These release branches will be updated if severe
 errors are found.
 
 The "Proca" Release Team on behalf of the Einstein Toolkit Consortium
-(2019-03-31)
+(2019‐03‐31)
 
 * Steven R. Brandt
 * Samuel D. Cupp
