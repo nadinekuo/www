@@ -65,7 +65,7 @@ and OpenMP parallelization.
 
 The changes between this and the previous release include:
 
-## Larger changes since last release
+== Larger changes since last release ==
 
 * The Proca arrangement has been added: This repository provides the tools to
 * evolve the Einstein-Proca system as first described in
@@ -121,7 +121,7 @@ The changes between this and the previous release include:
 * The version of MPI bundled with the ET is now OpenMPI 1.10.7 The
 * SystemTopology thorn now supports hwloc 2.0 
 
-## How to upgrade from Chien-Shiung Wu (ET_2018_09) 
+== How to upgrade from Chien-Shiung Wu (ET_2018_09) ==
 
 To upgrade from the previous release, use GetComponents with the new thornlist
 to check out the new version.
@@ -129,7 +129,7 @@ to check out the new version.
 See the Download page (http://einsteintoolkit.org/download/) on the
 Einstein Toolkit website for download instructions.
 
-## Machine notes
+== Machine notes ==
 
 Supported (tested) machines include:
 
