@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="../../head.js" type="text/javascript"></script>
+  <title>March 29, 2019</title>
+</head>
+
+<body>
+  <header>
+    <script src="../../menu.js" type="text/javascript">
+    </script>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 section">
+<p>﻿# Release Announcement</p>
+<p>We are pleased to announce the eighteenth release (code name
+<a href="https://en.wikipedia.org/wiki/Alexandru_Proca">"Proca"</a>) of the Einstein
+Toolkit, an open, community developed software infrastructure for relativistic
+astrophysics. The highlights of this release are:</p>
+<p>New arrangements and thorns have been added:</p>
+<ul>
+<li>Proca<ul>
+<li>NPScalars_Proca</li>
+<li>ProcaBase</li>
+<li>ProcaEvolve</li>
+<li>Proca_simpleID</li>
+<li>TwoPunctures_KerrProca</li>
+</ul>
+</li>
+<li>lean_public<ul>
+<li>LeanBSSNMoL</li>
+<li>NPScalars</li>
+</ul>
+</li>
+<li>wvuthorns_diagnostics<ul>
+<li>particle_tracerET</li>
+<li>Seed_Magnetic_Fields_BNS</li>
+<li>smallbPoynET</li>
+<li>VolumeIntegrals_GRMHD</li>
+<li>VolumeIntegrals_vacuum</li>
+</ul>
+</li>
+</ul>
+<p>In addition, bug fixes accumulated since the previous release in September 2018
+have been included.</p>
+<p>The Einstein Toolkit is a collection of software components and tools for
+simulating and analyzing general relativistic astrophysical systems that builds
+on numerous software efforts in the numerical relativity community including
+CactusEinstein, the Carpet AMR infrastructure and the relativistic
+magneto-hydrodynamics codes GRHydro and IllinoisGRMHD. For parts of the
+toolkit, the Cactus Framework is used as the underlying computational
+infrastructure providing large-scale parallelization, general computational
+components, and a model for collaborative, portable code development. The
+toolkit includes modules to build complete codes for simulating black hole
+spacetimes as well as systems governed by relativistic magneto-hydrodynamics.</p>
+<p>The Einstein Toolkit uses a distributed software model and its different
+modules are developed, distributed, and supported either by the core team of
+Einstein Toolkit Maintainers, or by individual groups. Where modules are
+provided by external groups, the Einstein Toolkit Maintainers provide quality
+control for modules for inclusion in the toolkit and help coordinate support.
+The Einstein Toolkit Maintainers currently involve postdocs and faculty from
+six different institutions, and host weekly meetings that are open for anyone
+to join in.</p>
+<p>Guiding principles for the design and implementation of the toolkit include:
+open, community-driven software development; well thought out and stable
+interfaces; separation of physics software from computational science
+infrastructure; provision of complete working production code; training and
+education for a new generation of researchers.</p>
+<p>For more information about using or contributing to the Einstein Toolkit, or to
+join the Einstein Toolkit Consortium, please visit our web pages at
+http://einsteintoolkit.org.</p>
+<p>The Einstein Toolkit is primarily supported by NSF
+1550551/1550461/1550436/1550514 (Einstein Toolkit Community Integration and
+Data Exploration).</p>
+<p>The Einstein Toolkit contains about 400 regression test cases.  On a large
+portion of the tested machines, almost all of these tests pass, using both MPI
+and OpenMP parallelization.</p>
+<p>The changes between this and the previous release include:</p>
+<h2>Larger changes since last release</h2>
+<ul>
+<li>The Proca arrangement has been added: This repository provides the tools to</li>
+<li>evolve the Einstein-Proca system as first described in</li>
+<li>https://arxiv.org/abs/1505.00797.<ul>
+<li>NPScalars_Proca: Implementation of the spin-1 (electromagnetic) and spin-2 (gravitational) Newman-Penrose scalars</li>
+<li>Proca_simpleID: Create analytic initial data for a non-rotating black hole surrounded by a
+  Proca field with mass mu. </li>
+<li>TwoPunctures_KerrProca: A modified TwoPunctures thorn to construct
+  initial data for a single rotating black hole coupled to a massive vector
+  field. </li>
+</ul>
+</li>
+<li>The Lean arrangement has been added: <ul>
+<li>LeanBSSNMoL: Implementation to evolve Einstein's Equations using the W-version of the BSSN formulation 
+    together with the puncture gauge. Also available, in the "new_gauge" branch, is a modified "Gamma-driver" 
+    that stabilizes highly rotating black hole spacetimes (adapted from Figueras et al; see: https://arxiv.org/abs/1512.04532).</li>
+<li>NPScalars: Implementation of the spin-2 Newman-Penrose scalars</li>
+</ul>
+</li>
+<li>The WVU Diagnostics arrangement has been added: These thorns are designed primarily to add useful diagnostics for</li>
+<li>binary neutron star simulations performed with IllinoisGRMHD.<ul>
+<li>NSNS_parameter_files Contains parameter files for magnetized and unmagnetized BNS evolutions.</li>
+<li>Seed_Magnetic_Fields_BNS Extended Seed_Magnetic_Fields thorn for binary neutron stars.</li>
+<li>VolumeIntegrals_GRMHD: GRMHD volume integration thorn, currently depends on IllinoisGRMHD and Carpet. Performs volume integrals on arbitrary "Swiss-cheese"-like topologies, and even interoperates with Carpet to track NS centers of mass.</li>
+<li>VolumeIntegrals_vacuum: Same functionality as VolumeIntegrals_GRMHD, but designed for integration of spacetime quantities. Depends on ML_BSSN and ADMBase for integrands.</li>
+<li>particle_tracerET Solves the ODE \partial_t x^i = v^i for typically thousands of tracer particles, using an RK4 integration atop the current time stepping.</li>
+<li>smallbPoynET Computes b^i, b^2, and three spatial components of Poynting flux. It also computes (-1-u_0), which is useful for tracking unbound matter.</li>
+</ul>
+</li>
+<li>Ticket tracking system moved to bitbucket:</li>
+<li>https://bitbucket.org/einsteintoolkit/tickets/ Subversion infrastructure for</li>
+<li>thorns is no longer maintained at LSU. Instead, the svn checkout mechanism</li>
+<li>supported by github.com is used. Llama supports tensorweights other than 1.0</li>
+<li>or 0.0 Added EinsteinAnalysis/Hydro_Analysis/Hydro_Analysis_Masses.F90 in</li>
+<li>order to compute the total baryonic mass and baryonic mass within user</li>
+<li>defined radii. A summary of changes Carpet:<ul>
+<li>add support for very large grids where 64bit integer are needed for grid
+  indices and sizes of transfer buffers</li>
+<li>fix how physical_time_per_hour is computed</li>
+<li>add functionality to align interior of grid functions to cache
+  boundaries. This requires changes to Cactus and PUGH as well.</li>
+<li>add a parameter "granularity" to make sure the interior of components is
+  a multiple of N points in each direction</li>
+</ul>
+</li>
+<li>The version of MPI bundled with the ET is now OpenMPI 1.10.7 The</li>
+<li>SystemTopology thorn now supports hwloc 2.0 </li>
+</ul>
+<h2>How to upgrade from Chien-Shiung Wu (ET_2018_09)</h2>
+<p>To upgrade from the previous release, use GetComponents with the new thornlist
+to check out the new version.</p>
+<p>See the Download page (http://einsteintoolkit.org/download/) on the
+Einstein Toolkit website for download instructions.</p>
+<h2>Machine notes</h2>
+<p>Supported (tested) machines include:</p>
+<ul>
+<li>Default Debian, Ubuntu, Fedora, CentOS, Mint, OpenSUSE and MacOS (MacPorts) installations</li>
+<li>Bluewaters</li>
+<li>Comet</li>
+<li>Golub</li>
+<li>Stampede 2</li>
+<li>Shelob</li>
+<li>
+<p>Wheeler</p>
+</li>
+<li>
+<p>TACC machines: defs.local.ini needs to have sourcebasedir = $WORK
+  and basedir = $SCRATCH/simulations configured for this machine.  You
+  need to determine $WORK and $SCRATCH by logging in to the machine.</p>
+</li>
+</ul>
+<p>All repositories participating in this release carry a branch ET_2019_03
+marking this release.  These release branches will be updated if severe
+errors are found.</p>
+<p>The "Proca" Release Team on behalf of the Einstein Toolkit Consortium
+(2019‐03‐31)</p>
+<ul>
+<li>Steven R. Brandt</li>
+<li>Samuel D. Cupp</li>
+<li>Peter Diener</li>
+<li>Zachariah Etienne</li>
+<li>Roland Haas</li>
+<li>Helvi Witek</li>
+</ul>
+<p>Mar, 2019</p>
+
+        <script src="../../footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+        
