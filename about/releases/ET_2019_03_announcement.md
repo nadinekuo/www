@@ -1,4 +1,4 @@
-﻿# Release Announcement
+# Release Announcement
 
 We are pleased to announce the eighteenth release (code name
 ["Proca"](https://en.wikipedia.org/wiki/Alexandru_Proca)) of the Einstein
