@@ -43,7 +43,10 @@ with open(sys.argv[1],"r") as fd:
         """,file=fw)
     bs = BeautifulSoup(html,features="html.parser")
     # install via: apt-get install html2text
-    with os.popen("html2text -width 72 -utf8 -style pretty -rcfile "+os.path.join(os.path.dirname(base_name),"html2textrc")+" -o "+base_name+".txt") as fw:
+    cmd = "html2text -width 72 -utf8 -style pretty -rcfile {html2textrc} -o {base_name}.txt". \
+        format(html2textrc = os.path.join(os.path.dirname(base_name),"html2textrc"),
+               base_name = base_name)
+    with os.popen(cmd, "w") as fw:
         # the python package html2text is unfortunately not an equivalent to
         # the html2text script since it does not handle wrapping of list items
         # (or at least only does so in the newest version it seems)
