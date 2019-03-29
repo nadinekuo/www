@@ -69,8 +69,8 @@ The changes between this and the previous release include:
 ## Larger changes since last release
 
 * The Proca arrangement has been added: This repository provides the tools to
-* evolve the Einstein-Proca system as first described in
-* https://arxiv.org/abs/1505.00797.
+  evolve the Einstein-Proca system as first described in
+  https://arxiv.org/abs/1505.00797.
     - NPScalars_Proca: Implementation of the spin-1 (electromagnetic) and
       spin-2 (gravitational) Newman-Penrose scalars
     - Proca_simpleID: Create analytic initial data for a non-rotating black
@@ -86,8 +86,8 @@ The changes between this and the previous release include:
       et al; see: https://arxiv.org/abs/1512.04532).
     - NPScalars: Implementation of the spin-2 Newman-Penrose scalars
 * The WVU Diagnostics arrangement has been added: These thorns are designed
-* primarily to add useful diagnostics for binary neutron star simulations
-* performed with IllinoisGRMHD.
+  primarily to add useful diagnostics for binary neutron star simulations
+  performed with IllinoisGRMHD.
     - NSNS_parameter_files Contains parameter files for magnetized and
       unmagnetized BNS evolutions.
     - Seed_Magnetic_Fields_BNS Extended Seed_Magnetic_Fields thorn for binary
@@ -106,12 +106,13 @@ The changes between this and the previous release include:
       flux. It also computes (-1-u_0), which is useful for tracking unbound
       matter.
 * Ticket tracking system moved to bitbucket:
-* https://bitbucket.org/einsteintoolkit/tickets/ Subversion infrastructure for
-* thorns is no longer maintained at LSU. Instead, the svn checkout mechanism
-* supported by github.com is used. Llama supports tensorweights other than 1.0
-* or 0.0 Added EinsteinAnalysis/Hydro_Analysis/Hydro_Analysis_Masses.F90 in
-* order to compute the total baryonic mass and baryonic mass within user
-* defined radii. A summary of changes Carpet:
+  https://bitbucket.org/einsteintoolkit/tickets/
+* Subversion infrastructure for thorns is no longer maintained at LSU. Instead,
+  the svn checkout mechanism supported by github.com is used.
+* Llama supports tensorweights other than 1.0 or 0.0
+* Added EinsteinAnalysis/Hydro_Analysis/Hydro_Analysis_Masses.F90 in order to
+  compute the total baryonic mass and baryonic mass within user defined radii.
+* A summary of changes Carpet:
     - add support for very large grids where 64bit integer are needed for grid
       indices and sizes of transfer buffers
     - fix how physical_time_per_hour is computed
@@ -119,8 +120,8 @@ The changes between this and the previous release include:
       boundaries. This requires changes to Cactus and PUGH as well.
     - add a parameter "granularity" to make sure the interior of components is
       a multiple of N points in each direction
-* The version of MPI bundled with the ET is now OpenMPI 1.10.7 The
-* SystemTopology thorn now supports hwloc 2.0 
+* The version of MPI bundled with the ET is now OpenMPI 1.10.7
+* The SystemTopology thorn now supports hwloc 2.0
 
 ## How to upgrade from Chien-Shiung Wu (ET_2018_09) 
 
