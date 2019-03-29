@@ -81,8 +81,8 @@ Larger changes since last release
 
 
 * The Proca arrangement has been added: This repository provides the
-  tools to evolve the Einstein-Proca system as first described in https:
-  //arxiv.org/abs/1505.00797.
+  tools to evolve the Einstein-Proca system as first described in
+  https://arxiv.org/abs/1505.00797.
 
   o NPScalars_Proca: Implementation of the spin-1 (electromagnetic) and
     spin-2 (gravitational) Newman-Penrose scalars
@@ -98,8 +98,8 @@ Larger changes since last release
     W-version of the BSSN formulation together with the puncture gauge.
     Also available, in the "new_gauge" branch, is a modified "Gamma-
     driver" that stabilizes highly rotating black hole spacetimes
-    (adapted from Figueras et al; see: https://arxiv.org/abs/
-    1512.04532).
+    (adapted from Figueras et al; see:
+    https://arxiv.org/abs/1512.04532).
   o NPScalars: Implementation of the spin-2 Newman-Penrose scalars
 
 * The WVU Diagnostics arrangement has been added: These thorns are
@@ -124,8 +124,8 @@ Larger changes since last release
     Poynting flux. It also computes (-1-u_0), which is useful for
     tracking unbound matter.
 
-* Ticket tracking system moved to bitbucket: https://bitbucket.org/
-  einsteintoolkit/tickets/
+* Ticket tracking system moved to bitbucket:
+  https://bitbucket.org/einsteintoolkit/tickets/
 * Subversion infrastructure for thorns is no longer maintained at LSU.
   Instead, the svn checkout mechanism supported by github.com is used.
 * Llama supports tensorweights other than 1.0 or 0.0
