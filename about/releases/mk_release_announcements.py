@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import sys, os, re, markdown
-from bs4 import BeautifulSoup
 from datetime import datetime
 
 
@@ -41,7 +40,6 @@ with open(sys.argv[1],"r") as fd:
 </body>
 </html>
         """,file=fw)
-    bs = BeautifulSoup(html,features="html.parser")
     # install via: apt-get install html2text
     cmd = "html2text -width 72 -utf8 -style pretty -rcfile {html2textrc} -o {base_name}.txt". \
         format(html2textrc = os.path.join(os.path.dirname(base_name),"html2textrc"),
