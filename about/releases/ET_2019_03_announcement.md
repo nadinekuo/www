@@ -71,25 +71,40 @@ The changes between this and the previous release include:
 * The Proca arrangement has been added: This repository provides the tools to
 * evolve the Einstein-Proca system as first described in
 * https://arxiv.org/abs/1505.00797.
-    - NPScalars_Proca: Implementation of the spin-1 (electromagnetic) and spin-2 (gravitational) Newman-Penrose scalars
-    - Proca_simpleID: Create analytic initial data for a non-rotating black hole surrounded by a
-      Proca field with mass mu. 
+    - NPScalars_Proca: Implementation of the spin-1 (electromagnetic) and
+      spin-2 (gravitational) Newman-Penrose scalars
+    - Proca_simpleID: Create analytic initial data for a non-rotating black
+      hole surrounded by a Proca field with mass mu. 
     - TwoPunctures_KerrProca: A modified TwoPunctures thorn to construct
       initial data for a single rotating black hole coupled to a massive vector
       field. 
 * The Lean arrangement has been added: 
-    - LeanBSSNMoL: Implementation to evolve Einstein's Equations using the W-version of the BSSN formulation 
-        together with the puncture gauge. Also available, in the "new_gauge" branch, is a modified "Gamma-driver" 
-        that stabilizes highly rotating black hole spacetimes (adapted from Figueras et al; see: https://arxiv.org/abs/1512.04532).
+    - LeanBSSNMoL: Implementation to evolve Einstein's Equations using the
+      W-version of the BSSN formulation together with the puncture gauge. Also
+      available, in the "new_gauge" branch, is a modified "Gamma-driver" that
+      stabilizes highly rotating black hole spacetimes (adapted from Figueras
+      et al; see: https://arxiv.org/abs/1512.04532).
     - NPScalars: Implementation of the spin-2 Newman-Penrose scalars
-* The WVU Diagnostics arrangement has been added: These thorns are designed primarily to add useful diagnostics for
-* binary neutron star simulations performed with IllinoisGRMHD.
-    - NSNS_parameter_files Contains parameter files for magnetized and unmagnetized BNS evolutions.
-    - Seed_Magnetic_Fields_BNS Extended Seed_Magnetic_Fields thorn for binary neutron stars.
-    - VolumeIntegrals_GRMHD: GRMHD volume integration thorn, currently depends on IllinoisGRMHD and Carpet. Performs volume integrals on arbitrary "Swiss-cheese"-like topologies, and even interoperates with Carpet to track NS centers of mass.
-    - VolumeIntegrals_vacuum: Same functionality as VolumeIntegrals_GRMHD, but designed for integration of spacetime quantities. Depends on ML_BSSN and ADMBase for integrands.
-    - particle_tracerET Solves the ODE \partial_t x^i = v^i for typically thousands of tracer particles, using an RK4 integration atop the current time stepping.
-    - smallbPoynET Computes b^i, b^2, and three spatial components of Poynting flux. It also computes (-1-u_0), which is useful for tracking unbound matter.
+* The WVU Diagnostics arrangement has been added: These thorns are designed
+* primarily to add useful diagnostics for binary neutron star simulations
+* performed with IllinoisGRMHD.
+    - NSNS_parameter_files Contains parameter files for magnetized and
+      unmagnetized BNS evolutions.
+    - Seed_Magnetic_Fields_BNS Extended Seed_Magnetic_Fields thorn for binary
+      neutron stars.
+    - VolumeIntegrals_GRMHD: GRMHD volume integration thorn, currently depends
+      on IllinoisGRMHD and Carpet. Performs volume integrals on arbitrary
+      "Swiss-cheese"-like topologies, and even interoperates with Carpet to
+      track NS centers of mass.
+    - VolumeIntegrals_vacuum: Same functionality as VolumeIntegrals_GRMHD, but
+      designed for integration of spacetime quantities. Depends on ML_BSSN and
+      ADMBase for integrands.
+    - particle_tracerET Solves the ODE \partial_t x^i = v^i for typically
+      thousands of tracer particles, using an RK4 integration atop the current
+      time stepping.
+    - smallbPoynET Computes b^i, b^2, and three spatial components of Poynting
+      flux. It also computes (-1-u_0), which is useful for tracking unbound
+      matter.
 * Ticket tracking system moved to bitbucket:
 * https://bitbucket.org/einsteintoolkit/tickets/ Subversion infrastructure for
 * thorns is no longer maintained at LSU. Instead, the svn checkout mechanism
