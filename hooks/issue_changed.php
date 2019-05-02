@@ -45,11 +45,9 @@ function pr($x) {
 
 // from https://lornajane.net/posts/2017/handling-incoming-webhooks-in-php
 // webhook syntax for bitbucket is here: https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Issueevents
-$hook_uuid = $_SERVER['HTTP_X_HOOK_UUID'];
-// the UUID is shown by bitbucket on the requst information page:
-// https://bitbucket.org/einsteintoolkit/tickets/admin/addon/admin/bitbucket-webhooks/bb-webhooks-repo-admin
-// and hopefully unique and secret enough for our purpose of serving as a "secret" token
-if ($hook_uuid != "b1beef0a-aab4-4384-be6e-c635fee232a7") {
+$secret = $_GET['secret'];
+// a random number to ensure that not everyone can use the hook
+if ($secret != "ee472624c1534255ef7b3637d04aea680bf57601d1dd320faef52a75f458c281") {
   echo ("Invalid hook\n");
   http_response_code(403);
 } elseif($json = json_decode(file_get_contents("php://input"), true)) {
