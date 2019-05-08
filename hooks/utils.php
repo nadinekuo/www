@@ -35,15 +35,19 @@ function pr($x) {
 }
 
 function call_REST($url) {
-  // lifted from various places on the net, eg:
-  // https://stackoverflow.com/questions/9802788/call-a-rest-api-in-php
-  $curl = curl_init($url);
-  curl_setopt($curl,CURLOPT_HTTPHEADER,['Accept:application/json, Content-Type:application/json']);
-  curl_setopt($curl,CURLOPT_CUSTOMREQUEST,'GET');
-  curl_setopt($curl,CURLOPT_RETURNTRANSFER ,TRUE);
-  $result = curl_exec($curl);
-  curl_close($curl);
-  return json_decode($result,true);
+  if(function_exists('curl_version')) {
+    // lifted from various places on the net, eg:
+    // https://stackoverflow.com/questions/9802788/call-a-rest-api-in-php
+    $curl = curl_init($url);
+    curl_setopt($curl,CURLOPT_HTTPHEADER,['Accept:application/json, Content-Type:application/json']);
+    curl_setopt($curl,CURLOPT_CUSTOMREQUEST,'GET');
+    curl_setopt($curl,CURLOPT_RETURNTRANSFER ,TRUE);
+    $result = curl_exec($curl);
+    curl_close($curl);
+    return json_decode($result,true);
+  } else {
+    return array();
+  }
 }
 
 ?>
