@@ -58,14 +58,23 @@ if ($secret != "ee472624c1534255ef7b3637d04aea680bf57601d1dd320faef52a75f458c281
     # report all changes other than a change in "content" as a nice table
     $have_changes = false;
       foreach ($data['changes'] as $change => $diff) {
-      if($change != "content") {
-        if(!$have_changes) {
-          $msg .= "<p><table>\n";
-          $have_changes = true;
+        if($change != "content") {
+          if(!$have_changes) {
+            $msg .= "<p><table>\n";
+            $have_changes = true;
+          }
+          if ($change == "attachment") {
+            # attachements have not "new" and "old" fields
+            # href is a list but seems to only ever contain a single entry
+            # BUG: right now there seems a bug in the API so that even if multiple
+            # files are attached, only one is listed in the json payload
+            $msg .= sprintf("<tr><td>%s:</td><td><a href=\"%s\">%s</a></td></tr>\n", $change,
+                            pr($diff['name']), $diff['links']['self']['href'][0]);
+          } else {
+            $msg .= sprintf("<tr><td>%s:</td><td>%s (was %s)</td></tr>\n", $change,
+                            pr($diff['new']), pr($diff['old']));
+          }
         }
-        $msg .= sprintf("<tr><td>%s:</td><td>%s (was %s)</td></tr>\n", $change,
-                        pr($diff['new']), pr($diff['old']));
-      }
       }
     if($have_changes) {
       $msg .= "</table></p>\n";
@@ -84,6 +93,7 @@ if ($secret != "ee472624c1534255ef7b3637d04aea680bf57601d1dd320faef52a75f458c281
     $msg .= $data['issue']['content']['html'] . "\n";
     break;
   case "issue:comment_created":
+    # BUG: attachments do not show up in the comment created json payload
     $msg .= sprintf("<p>Comment (by %s):</p>\n", $data['actor']['display_name']);
     $msg .= $data['comment']['content']['html'] . "\n";
     break;
