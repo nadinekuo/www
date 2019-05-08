@@ -91,6 +91,15 @@ if ($secret != "ee472624c1534255ef7b3637d04aea680bf57601d1dd320faef52a75f458c281
     break;
   case "issue:created":
     $msg .= $data['issue']['content']['html'] . "\n";
+    $attachments = call_REST($data['issue']['links']['attachments']['href']);
+    if($attachments['size'] > 0) {
+      $msg .= "<p><table>";
+      foreach ($attachments['values'] as $attachment) {
+        $msg .= sprintf("<tr><td>%s:</td><td><a href=\"%s\">%s</a></td></tr>\n", 'attachment',
+                        pr($attachment['name']), $attachment['links']['self']['href'][0]);
+      }
+      $msg .= "</table></p>\n";
+    }
     break;
   case "issue:comment_created":
     # BUG: attachments do not show up in the comment created json payload
