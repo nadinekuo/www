@@ -1,3 +1,5 @@
+// from https://www.npmjs.com/package/latex-to-unicode-converter MIT license
+// version 0.5.1
 var l2u = window["latex-to-unicode-converter"]
 
 // joins strings a and b using separator sep or returns a or b if only one of
@@ -284,6 +286,7 @@ function makeTable(cites, tableNode)
 
 function makeTables(content)
 {
+  // from https://sourceforge.net/projects/jsbibtex/ GPL license
   var bibtex = new BibTex();
   bibtex.content = content; // the bibtex content as a string
   bibtex.parse();
