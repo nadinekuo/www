@@ -122,6 +122,22 @@ function makeCitation(cite)
       anchorNode.appendChild(document.createTextNode("doi:"+doiString.replace(/^doi:/,"")));
       retval.appendChild(document.createTextNode(")"));
     }
+    // this returns the INSPIRE bibtex entry for this DOI which is almost but
+    // not exactly the ET einsteintoolkit.bib entry. The latter would have to
+    // be stored in the cite[] entry in BibTeX.js then made available using
+    // something like the download function in
+    // https://github.com/rndme/download and something like:
+    // <a onclick="download(cite[i]['raw'], cite[i]['key']+'.bib', 'text/plain')">BibTeX</a>
+    // but one has to figure out how to actually pass the cite[i] data to the
+    // browser at that point
+    if(typeof cite['doi'] !== 'undefined') {
+      retval.appendChild(document.createTextNode(" ("));
+      var anchorNode = document.createElement("a");
+      retval.appendChild(anchorNode);
+      anchorNode.href = "https://inspirehep.net/search?p=find+"+encodeURIComponent(cite['doi'])+"&of=hx";
+      anchorNode.appendChild(document.createTextNode("BibteX"));
+      retval.appendChild(document.createTextNode(")"));
+    }
   } else if(entryType == "inproceedings") {
     retval.appendChild(document.createTextNode(authorString + ". "));
     if(urlString) {
@@ -156,6 +172,14 @@ function makeCitation(cite)
       retval.appendChild(anchorNode);
       anchorNode.href = "http://dx.doi.org/" + doiString.replace(/^doi:/,"");
       anchorNode.appendChild(document.createTextNode("doi:"+doiString.replace(/^doi:/,"")));
+      retval.appendChild(document.createTextNode(")"));
+    }
+    if(typeof cite['doi'] !== 'undefined') {
+      retval.appendChild(document.createTextNode(" ("));
+      var anchorNode = document.createElement("a");
+      retval.appendChild(anchorNode);
+      anchorNode.href = "https://inspirehep.net/search?p=find+"+encodeURIComponent(cite['doi'])+"&of=hx";
+      anchorNode.appendChild(document.createTextNode("BibteX"));
       retval.appendChild(document.createTextNode(")"));
     }
   } else if(entryType == "misc") {
