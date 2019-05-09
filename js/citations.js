@@ -1,6 +1,16 @@
 // from https://www.npmjs.com/package/latex-to-unicode-converter MIT license
 // version 0.5.1
 var l2u = window["latex-to-unicode-converter"]
+// from https://github.com/rndme/download MIT license
+// version 09d6492f47ef18feca39c3d748960dce44f93a89
+var download = window['download']
+
+// downloads the stored bibtex information
+function download_bibtex(key)
+{
+  download(window.bibtex_downloads[key], key+'.bib', 'text/plain');
+  return false;
+}
 
 // joins strings a and b using separator sep or returns a or b if only one of
 // them is non-empty
@@ -122,22 +132,6 @@ function makeCitation(cite)
       anchorNode.appendChild(document.createTextNode("doi:"+doiString.replace(/^doi:/,"")));
       retval.appendChild(document.createTextNode(")"));
     }
-    // this returns the INSPIRE bibtex entry for this DOI which is almost but
-    // not exactly the ET einsteintoolkit.bib entry. The latter would have to
-    // be stored in the cite[] entry in BibTeX.js then made available using
-    // something like the download function in
-    // https://github.com/rndme/download and something like:
-    // <a onclick="download(cite[i]['raw'], cite[i]['key']+'.bib', 'text/plain')">BibTeX</a>
-    // but one has to figure out how to actually pass the cite[i] data to the
-    // browser at that point
-    if(typeof cite['doi'] !== 'undefined') {
-      retval.appendChild(document.createTextNode(" ("));
-      var anchorNode = document.createElement("a");
-      retval.appendChild(anchorNode);
-      anchorNode.href = "https://inspirehep.net/search?p=find+"+encodeURIComponent(cite['doi'])+"&of=hx";
-      anchorNode.appendChild(document.createTextNode("BibTeX"));
-      retval.appendChild(document.createTextNode(")"));
-    }
   } else if(entryType == "inproceedings" || entryType == "incollection") {
     retval.appendChild(document.createTextNode(authorString + ". "));
     if(urlString) {
@@ -172,14 +166,6 @@ function makeCitation(cite)
       retval.appendChild(anchorNode);
       anchorNode.href = "http://dx.doi.org/" + doiString.replace(/^doi:/,"");
       anchorNode.appendChild(document.createTextNode("doi:"+doiString.replace(/^doi:/,"")));
-      retval.appendChild(document.createTextNode(")"));
-    }
-    if(typeof cite['doi'] !== 'undefined') {
-      retval.appendChild(document.createTextNode(" ("));
-      var anchorNode = document.createElement("a");
-      retval.appendChild(anchorNode);
-      anchorNode.href = "https://inspirehep.net/search?p=find+"+encodeURIComponent(cite['doi'])+"&of=hx";
-      anchorNode.appendChild(document.createTextNode("BibTeX"));
       retval.appendChild(document.createTextNode(")"));
     }
   } else if(entryType == "misc") {
@@ -269,6 +255,20 @@ function makeCitation(cite)
     }
   } else {
     retval.appendChild(document.createTextNode(cite['cite']));
+  }
+  if(typeof cite['raw'] !== 'undefined') {
+    retval.appendChild(document.createTextNode(" ("));
+    var anchorNode = document.createElement("a");
+    retval.appendChild(anchorNode);
+    // using this this returns the INSPIRE bibtex entry for this DOI which is
+    // almost but not exactly the ET einsteintoolkit.bib entry.
+    //anchorNode.href = "https://inspirehep.net/search?p=find+"+encodeURIComponent(cite['doi'])+"&of=hx";
+    anchorNode.href = "javascript:void(0)";
+    // since download_bibtex returns false it *should* not follow the link
+    // but somehow still does unless I makre the href void
+    anchorNode.addEventListener("click", function(){download(cite['raw'], cite['cite']+".bib", 'text/plain')});
+    anchorNode.appendChild(document.createTextNode("BibTeX"));
+    retval.appendChild(document.createTextNode(")"));
   }
 
   return retval;

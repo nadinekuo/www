@@ -1055,10 +1055,7 @@ BibTex.prototype = {
      */
     '_parseEntry': function(entry)
     {
-        var entrycopy = '';
-        if (this._options['validate']) {
-            entrycopy = entry; //We need a copy for printing the warnings
-        }
+        var entrycopy = entry; //We need a copy for printing the warnings
         var ret = {};
         if ('@string' ==  strtolower(substr(entry, 0, 7))) {
             //String are not yet supported!
@@ -1119,6 +1116,7 @@ BibTex.prototype = {
             }
             //Parsing cite and entry type
             var arr = split('{', entry);
+            ret['raw'] = entrycopy + "}\n";
             ret['cite'] = trim(arr[1]);
             ret['entryType'] = strtolower(trim(arr[0]));
             //alert(array_keys(ret));
