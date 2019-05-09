@@ -135,7 +135,7 @@ function makeCitation(cite)
       var anchorNode = document.createElement("a");
       retval.appendChild(anchorNode);
       anchorNode.href = "https://inspirehep.net/search?p=find+"+encodeURIComponent(cite['doi'])+"&of=hx";
-      anchorNode.appendChild(document.createTextNode("BibteX"));
+      anchorNode.appendChild(document.createTextNode("BibTeX"));
       retval.appendChild(document.createTextNode(")"));
     }
   } else if(entryType == "inproceedings" || entryType == "incollection") {
@@ -179,7 +179,7 @@ function makeCitation(cite)
       var anchorNode = document.createElement("a");
       retval.appendChild(anchorNode);
       anchorNode.href = "https://inspirehep.net/search?p=find+"+encodeURIComponent(cite['doi'])+"&of=hx";
-      anchorNode.appendChild(document.createTextNode("BibteX"));
+      anchorNode.appendChild(document.createTextNode("BibTeX"));
       retval.appendChild(document.createTextNode(")"));
     }
   } else if(entryType == "misc") {
