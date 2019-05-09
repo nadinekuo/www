@@ -138,7 +138,7 @@ function makeCitation(cite)
       anchorNode.appendChild(document.createTextNode("BibteX"));
       retval.appendChild(document.createTextNode(")"));
     }
-  } else if(entryType == "inproceedings") {
+  } else if(entryType == "inproceedings" || entryType == "incollection") {
     retval.appendChild(document.createTextNode(authorString + ". "));
     if(urlString) {
       var anchorNode = document.createElement("a");
