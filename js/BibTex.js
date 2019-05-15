@@ -1297,7 +1297,7 @@ BibTex.prototype = {
      */
     '_unwrap': function(entry)
     {
-        entry = entry.replace(/\s+/, ' ');
+        entry = entry.replace(/\n+/, ' ').replace(/\s+/, ' ');
         return trim(entry);
     },
 
