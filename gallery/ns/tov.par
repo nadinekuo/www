@@ -210,7 +210,7 @@ IO::out_dir             = ${parfile}
 # Write one file overall per output (variable/group)
 # In production runs, comment this or set to "proc" to get one file
 # per MPI process
-# RH: 2018-02-10 disable until ticket is addressed: https://trac.einsteintoolkit.org/ticket/2117
+# RH: 2018-02-10 disable until ticket is addressed: https://bitbucket.org/einsteintoolkit/tickets/issues/
 #IO::out_mode            = "onefile"
 
 # Some screen output
