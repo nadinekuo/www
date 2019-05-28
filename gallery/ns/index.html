@@ -22,23 +22,22 @@
               </h2>
 
 
-              <p>This simulation shows how to evolve a stable, single neutron star. It uses a TOV
-              solution as initial data and follows the initial (numerical) perturbations, writing the
-              maximum density to disk. What can be seen is that the star oscillates for a few cycles
-              (only very slightly because the solution is stationary and the induced numerical
-              perturbation is small), before numerical errors due to the lack of resolution spoil the
-              results. The size of this simulation is intentionally kept as small as possible, thus the
-              resolution is about as low possible without loosing any confidence in at least
-              quantitatively correct results. It is intended to be used as quick example in lectures,
-              workshops or summer schools where both time and computational power are typically
-              scarce.</p>
+              <p>This simulation shows how to evolve a stable, single neutron star, and is a low resolution example of the case presented on our release paper; 
+                 see Fig. 15 of <a href="https://arxiv.org/abs/1111.3344">https://arxiv.org/abs/1111.3344</a>.
+                 It uses a TOV solution as initial data and follows the initial (numerical) perturbations, writing the maximum density to disk. 
+                 For the test described here, we set up a self-gravitating fluid sphere described by a polytropic equation of state 
+                 $P = K \rho^\Gamma$ with K = 100 and $\Gamma = 2$, and an initial central density of $\rho = 1.28 \times 10^{-3}$. 
+                 This model can be taken to represent a non-rotating NS with a mass of $M = 1.4 M_\odot$. 
+                 The initial spike is due to the perturbation of the solution resulting from the interpolation onto the evolution grid. 
+                 The remaining oscillations are mainly due to the interaction
+                 of the star and the artificial atmosphere and are present during the whole evolution. </p>
 
 
               <table >
                 <tr>
                   <th>Parameter file</th>
                   <td>
-                    <a href="tov.par">tov.par</a>
+                    <a href="tov_gallery_polytrop_14May2019.par">tov_gallery_polytrop_14May2019.par</a>
                   </td>
                 </tr>
 
@@ -48,32 +47,32 @@
 
                   <td>
                     <a href=
-                    "https://bitbucket.org/einsteintoolkit/manifest/raw/ET_2018_09/einsteintoolkit.th">ET
+                    "https://bitbucket.org/einsteintoolkit/manifest/raw/ET_2019_03/einsteintoolkit.th">ET
                     Proca release (ET_2019_03)</a>
                   </td>
                 </tr>
 
 
                 <tr>
-                  <th>approx. memory</th>
+                  <th>Setup</th>
 
-                  <td>0.25 GB</td>
+                  <td>10 cores; 2 threads</td>
                 </tr>
 
 
                 <tr>
                   <th>approx. runtime</th>
 
-                  <td>2.5 hrs using 1 CPU</td>
+                  <td>45 minutes</td>
                 </tr>
                 <tr>
-                  <th>Results (38MB)</th>
+                  <th>Results (50MB)</th>
 
-                  <td><a href="https://bitbucket.org/einsteintoolkit/www/downloads/tov-20180731.tar.gz">tov-20180731.tar.gz</a>
+                  <td><a href="https://bitbucket.org/einsteintoolkit/www/downloads/tov-20190511.tar.gz">tov-20190511.tar.gz</a>
                   </td>
                 </tr>
               </table>
-              This example was last tested on 31-Jul-2018.
+              This example was last tested on 14-May-2019.
               <br/>
               <br/>
               <br/>
