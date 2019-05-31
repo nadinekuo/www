@@ -15,31 +15,31 @@ body {
 
 h1 {
   font-weight: bold;
-  font-size: x-large;
+  font-size: initial;
 }
 
 h2 {
   font-weight: bold;
-  font-size: large;
+  font-size: initial;
 }
 h3{
   font-weight: bold;	
-  font-size: medium;
+  font-size: initial;
 }
 
 h4{
   font-weight: bold;	
-  font-size: small;
+  font-size: initial;
 }
 
 h5{
   font-weight: bold;
-  font-size: x-small;
+  font-size: initial;
 }
 
 h6{
   font-weight: bold;
-  font-size: xx-small;
+  font-size: initial;
 }
 
 
