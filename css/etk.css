@@ -1,5 +1,9 @@
+html {
+  font-size: initial;
+}
 body {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: initial;
   padding-top: 50px;
 }
 
