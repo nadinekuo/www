@@ -4,7 +4,6 @@ body {
 }
 
 .carousel img {
-
   min-width: 100%;
   max-width: none;
 }
@@ -16,26 +15,26 @@ h1 {
 }
 
 h2 {
-	font-weight: bold;
+  font-weight: bold;
   font-size: large;
 }
 h3{
-	font-weight: bold;	
+  font-weight: bold;	
   font-size: medium;
 }
 
 h4{
-	font-weight: bold;	
+  font-weight: bold;	
   font-size: small;
 }
 
 h5{
-	font-weight: bold;
+  font-weight: bold;
   font-size: x-small;
 }
 
 h6{
-	font-weight: bold;
+  font-weight: bold;
   font-size: xx-small;
 }
 
@@ -44,7 +43,6 @@ h6{
 
 .navbar{
   border-radius: 7px;
-
 }
 .bold{
   font-weight: bold;
@@ -62,11 +60,10 @@ h6{
 
 
 a:hover {
-text-decoration: none;
+  text-decoration: none;
 }
 
 .location {
-
   font-size: 8pt;
 }
 
@@ -140,7 +137,6 @@ table tr td {
 }
 
 table, td, th {
-
 }
 .htable {
   border-top: solid;
@@ -201,7 +197,7 @@ table, td, th {
 
 
 .carousel-inner > .item > img{
-  }
+}
 
 hr.members {
   border-color: #AAAAAA;
@@ -250,6 +246,3 @@ table.news tr td:nth-child(1) {
 table.news tr td:nth-child(2) {
     white-space: nowrap;
 }
-
-
-
