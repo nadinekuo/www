@@ -65,7 +65,7 @@ if (empty($name)) {
   echo '<h4>Unfortunately, there was a problem registering.</h4>';
   echo 'Go back to <a href="javascript:history.back(1);">try again</a>?';
   echo 'Or contact the <a href="mailto:maintainers@einsteintoolkit.org">maintainers</a>';
-  error_log('Failed to send email: ' . implode(',' error_get_last()));
+  error_log('Failed to send email: ' . implode(',', error_get_last()));
 }
 ?>
 
