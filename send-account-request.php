@@ -31,8 +31,8 @@ $message .= "email: $email\n";
 $message .= "Institution: $institution\n";
 $message .= "github user name: $github\n";
 
-$headers['From'] = 'RegistrationBot@einsteintoolkit.org';
-$headers['Reply-To'] = $email;
+$headers = "From: RegistrationBot@einsteintoolkit.org\r\n".
+           "Reply-To: $email";
 
 /* PHP form validation: the script checks that the Email field contains a valid
 email address and the Subject field isn't empty. preg_match performs a regular
