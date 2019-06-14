@@ -27,9 +27,6 @@ http://www.bit.edu.cn/ Beijing Institute of Technology
 http://www.belmont.edu/ Belmont University
  Scott Hawley
 
-http://cnu.ac.kr/ CNU
- Uicheol Jang
-
 http://www.tapir.caltech.edu/ California Institute of Technology
  Peter Kalmus
  Philipp Mösta
@@ -161,6 +158,9 @@ http://www.ita.br/ Instituto Tecnológico de Aeronáutica
 http://www.universia.edu.ve/ Instituto Venezolano de Investigaciones Cientificas
  Jovanna Moya
 
+https://www.nucleares.unam.mx/ Instituto de Ciencias Nucleares
+ Erik Jimenez
+
 http://www.nuclecu.unam.mx/ Instituto de Ciencias Nucleares, UNAM
  Miguel Alcubierre
 
@@ -256,6 +256,9 @@ http://lima.osu.edu/ The Ohio State University at Lima
 http://www.osaka-u.ac.jp/en Osaka University
  Luca Baiotti
 
+https://www.pku.edu.cn/ PKU
+ BenjaminDbb
+
 http://fisica.ufpr.br/ Paraná State University
  Edson Elias de Souza Filho
 
@@ -293,6 +296,9 @@ http://astro.ru.nl Radboud University
 
 http://www.rpi.edu/ Rensselaer Polytechnic Institute
  http://homepages.rpi.edu/~giedtj/ Joel Giedt
+
+https://www.hochschule-rhein-waal.de/en Rhine Waal University
+ Ramraj Shankar
 
 http://www.ru.ac.za/ Rhodes University, South Africa
  Apratim Ganguly
@@ -465,12 +471,16 @@ https://www.southampton.ac.uk/ University of Southampton
  Charalampos Markakis
 
 http://www.unitn.it/en/dphys University of Trento
+ Federico Cipolletta
  Bruno Giacomazzo
  Wolfgang Kastaun
 
 http://www.uni-tuebingen.de/ University of Tübingen
  Tanja Bode
  Andreas Boden
+
+https://www.utah.edu University of Utah
+ Sage Yeager
 
 https://uwaterloo.ca/ University of Waterloo
  Erickson Tjoa
@@ -535,5 +545,5 @@ http://vidyasagar.ac.in/ বিদ্যাসাগর বিশ্ববিদ
  Partha Pratim Pradhan
 
 http://cnu.ac.kr 충남대학교 (Chungnam National University)
- Uicheol
+ Uicheol Jang
 
