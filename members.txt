@@ -143,6 +143,9 @@ http://www.physik.fu-berlin.de/en/ Institute for Theoretical Physics, Free Unive
 http://english.ihep.cas.cn/ Institute of High Energy Physics, Chinese Academy of Sciences
  ZhiChao Zhao
 
+https://www.mn.uio.no/astro/english/ Institute of Theoretical Astrophysics, University of Oslo
+ Øyvind Christiansen
+
 http://english.itp.cas.cn/ Institute of Theoretical Physics Chinese Academy of Sciences
  Li-Wei Ji
 
