@@ -161,6 +161,9 @@ http://www.ita.br/ Instituto Tecnológico de Aeronáutica
 http://www.universia.edu.ve/ Instituto Venezolano de Investigaciones Cientificas
  Jovanna Moya
 
+http://www.astroscu.unam.mx Instituto de AstronomÃ­a, UNAM
+ Alejandro Aguayo-Ortiz
+
 https://www.nucleares.unam.mx/ Instituto de Ciencias Nucleares
  Erik Jimenez
 
