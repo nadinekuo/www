@@ -380,10 +380,11 @@ http://www.umich.mx/ Universidad Michoacana de San Nicolás de Hidalgo
 http://www.unam.mx/ Universidad Nacional Autónoma de México
  Jose Manuel Torres
 
-http://unal.edu.co/ Universidad Nacional de Colombia
+http://www.unal.edu.co/ Universidad Nacional de Colombia
  Juan Felipe Bravo
  Andres Mauricio Suarez Mantilla
  Sergio Andrés Torres Suárez
+ Asdruval Zacipa
 
 http://www.uni.edu.pe/ Universidad Nacional de Ingeniería (National University of Engineering)
  Renato Tovar Landeo
