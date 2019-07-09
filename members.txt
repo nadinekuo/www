@@ -1,6 +1,5 @@
 http://www.aei.mpg.de/english Albert Einstein Institute
  https://aei-mpg.academia.edu/SayantanChoudhury Sayantan Choudhury
- Ian Hinder
 
 https://auaf.edu.af/ American University of Afghanistan
  https://github.com/m-ahsan-nazer M. Ahsan Nazer
@@ -453,6 +452,9 @@ http://illinois.edu/ University of Illinois, Urbana-Champaign
  Daniel George
  Shawn Rosofsky
  Johnny Tsao
+
+https://www.manchester.ac.uk University of Manchester
+ Ian Hinder
 
 http://www.d.umn.edu University of Minnesota Duluth
  Sheyda Salehirad
