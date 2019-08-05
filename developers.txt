@@ -1,0 +1,47 @@
+Name: Contribution: Employed By: ORCID
+Joan Masso: Flesh:Universitat de les Illes Balears:0000-0001-5816-4874
+Luca Baiotti: GRHydro
+Barry Wardell: CCZ4, EinsteinExact, HTML documentation
+Bela Szilagyi: PITTNullCode
+Bruno Mundim: ExternalLibs, GHydro (MHD):University of Trento:
+Burkhard Zink: Llama, multiple smaller additions to Carpet
+Carsten Gundlach: Exact
+Christian Ott: GRHydro, EOS_Omni, EOSG framework
+Christian Reisswig: Llama, PITTNull generic reader, VisIt reader
+Daniela Alic: Implement CCZ4 formulation.
+David Radice: Watchdog, LocalInter2, Refluxing, 
+David Rideout: Flesh, lots of work on base Cactus thorns
+Denis Pollney: Llama, AHFinder
+Roberto DeDietri: hybrid EOS (maybe only Frank)
+Eloisa Bentivegna: CT_MultiLevel, VTK Output in QuasiLocalMeasures:Università degli Studi di Catania:0000-0003-1229-1653
+Eric Seidel: CRL (GetComponents)
+Erik Schnetter: Carpet, QuasiLocalMeasures, AHFinderDirect:Perimeter Institute:0000-0002-4518-9017
+Accelerator, Flesh, Vectors, ExternalLibraries
+Frank Loeffler: GRHydro, Flesh, ADMMass, HydroBase, EOS_Omni:University Jena:0000-0001-6643-6323
+Gabrielle Allen: Flesh, Base Cactus thorns, ADMConstraints, ADMMacros, PUGH:University of Illinois
+Gerd Lanferman: Boundary, AHFinder, Flesh, Elliptic thorns
+Ian Hawke: MoL, GRHydro 
+Helvi Witek: Lean, Proca, Carpet
+Ian Hinder: Kranc, Carpet Timers, Jenkins server, Multipole:University of Manchester:0000-0003-3548-9101
+SystemStatistics, WeylScal4, 
+Jonathan Thornburg: AHFinderDirect, AELocalInterp, LocalInterp, Flesh, docs, Carpet docs, Exact
+Lars Menger: AHFinder parallelization
+Michael Koppitz: PunctureTracker
+Mark Miller: EOS_IdalFluid
+Michael Thomas: simfactory
+Miguel Alcubierre: MoL, ADMConstraints, AHFinder 
+Miguel Zilhao: Lean, Proca
+Nils Dorband: Llama
+Peter Diener: EHFinder, SummationByParts, AHFinder, McLachlan, NoExcision:Louisiana State University:0000-0002-3877-0487
+Philipp Moesta: GRHydro MHD code
+Joshua Faber:  ???
+Roland Haas: Flesh, Cactus, Carpet, Outflow, GRHydro, ExternalLibraries, simfactory
+Sascha Husa: 
+Steve Brandt: Flesh, Piraha: Louisiana State University: 0000-0002-7979-2906
+Scott Hawley: AHFinder, Flesh, driver
+Tanja Bode: WeylScal4, GRHydro, Outflow
+Thomas Radke: Flesh, Carpet, Boundary, Formaline, 
+Tom Goodale: Flesh, Cactus, base thorns, HTTPD
+Yaakoub El Khamra: LocalReduce, PUGHReduce, 
+Yosef Zlochower: PITTNullCode, 
+Zachariah Etienne: IllinoisGRMHD, Giraffe:West Virginia University:0000-0002-6838-9185
