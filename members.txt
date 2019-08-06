@@ -202,9 +202,8 @@ https://www.lanl.gov/ Los Alamos National Lab
 
 http://www.cct.lsu.edu/numerical/ Louisiana State University
  http://www.cct.lsu.edu/~sbrandt/ Steven Brandt
+ Samuel Cupp
  Peter Diener
- Frank Löffler
- Jian Tao
 
 http://www.lmu.edu/ Loyola Marymount University
  Sergio Gaudio
