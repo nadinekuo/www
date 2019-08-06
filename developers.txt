@@ -11,10 +11,10 @@ Christian Reisswig: Llama, PITTNull generic reader, VisIt reader
 Daniela Alic: Implement CCZ4 formulation.
 David Radice: Watchdog, LocalInter2, Refluxing:Princeton:
 David Rideout: Flesh, lots of work on base Cactus thorns
-Denis Pollney: Llama, AHFinder
+Denis Pollney: Llama, AHFinder:Rhodes University:
 Roberto DeDietri: hybrid EOS (maybe only Frank)
 Eloisa Bentivegna: CT_MultiLevel, VTK Output in QuasiLocalMeasures:Università degli Studi di Catania:0000-0003-1229-1653
-Eric Seidel: CRL (GetComponents)
+Eric Seidel: CRL (GetComponents):Bloomberg LP:
 Erik Schnetter: Carpet, QuasiLocalMeasures, AHFinderDirect:Perimeter Institute for Theoretical Physics:0000-0002-4518-9017
 Accelerator, Flesh, Vectors, ExternalLibraries
 Frank Loeffler: GRHydro, Flesh, ADMMass, HydroBase, EOS_Omni:University Jena:0000-0001-6643-6323
