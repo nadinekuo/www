@@ -503,7 +503,6 @@ https://www.southampton.ac.uk/ University of Southampton
 
 http://www.unitn.it/en/dphys University of Trento
  Federico Cipolletta
- Bruno Giacomazzo
 
 http://www.uni-tuebingen.de/ University of Tübingen
  Tanja Bode
@@ -533,6 +532,7 @@ http://www.unict.it/en/ Università di Catania
 
 https://www.unimib.it Università di Milano-Bicocca
  Giulia Crotti
+ Bruno Giacomazzo
 
 https://as.vanderbilt.edu Vanderbuilt University
  William E. Gabella
