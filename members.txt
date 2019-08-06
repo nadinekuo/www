@@ -41,6 +41,9 @@ https://www.cpp.edu/ California State Polytechnic University, Pomona
 http://www20.csueastbay.edu/ California State University East Bay
  Ernest Schleicher
 
+http://cft.edu.pl Center for Theoretical Physics of the Polish Academy of Sciences
+ Michele Grasso
+
 http://english.cas.cn/ST/ Chinese Academy of Sciences
  Di Lu
  Mew Bing Wan
@@ -91,15 +94,13 @@ https://www.gsi.de GSI Helmholtzzentrum f&uuml;r Schwerionenforschung GmbH
  Kevin Ebinger
 
 http://www.cra.gatech.edu/ Georgia Institute of Technology
- Rafael Aranha
- Michael Clark
+ Christopher Evans
+ Deborah Ferguson
+ Matthew Golden
  Miguel Gracia
- Chad Henshaw
- Matt Kinsey
+ Bhavesh Khamesra
  http://www.cra.gatech.edu/people/laguna.shtml Pablo Laguna
  Deirdre Shoemaker
- Zack Vogel
- Michael Weaver
 
 https://www.griffith.edu.au Griffith University
  Moji Ghadimi
@@ -519,9 +520,6 @@ http://uwm.edu University of Wisconsin-Milwaukee
 
 http://www.unict.it/ Università degli Studi di Catania (University of Catania)
  Antonio Figura
-
-http://cft.edu.pl Center for Theoretical Physics of the Polish Academy of Sciences
- Michele Grasso
 
 http://www.unifi.it/mdswitch.html Università degli Studi di Firenze (University of Florence)
  Luca Franci
