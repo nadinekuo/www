@@ -1,8 +1,8 @@
 Name: Contribution: Employed By: ORCID
 Joan Masso: Flesh:Universitat de les Illes Balears:0000-0001-5816-4874
 Luca Baiotti: GRHydro
-Barry Wardell: CCZ4, EinsteinExact, HTML documentation
-Bela Szilagyi: PITTNullCode
+Barry Wardell: CCZ4, EinsteinExact, HTML documentation: University College Dublin:
+Bela Szilagyi: PITTNullCode:University of Pittsburgh
 Bruno Mundim: ExternalLibs, GHydro (MHD):University of Trento:
 Burkhard Zink: Llama, multiple smaller additions to Carpet
 Carsten Gundlach: Exact
@@ -29,7 +29,7 @@ Lars Menger: AHFinder parallelization
 Michael Koppitz: PunctureTracker
 Mark Miller: EOS_IdalFluid
 Michael Thomas: simfactory
-Miguel Alcubierre: MoL, ADMConstraints, AHFinder 
+Miguel Alcubierre: MoL, ADMConstraints, AHFinder:National Autonomous University of Mexico:0000-0003-3367-9868
 Miguel Zilhao: Lean, Proca
 Nils Dorband: Llama
 Peter Diener: EHFinder, SummationByParts, AHFinder, McLachlan, NoExcision:Louisiana State University:0000-0002-3877-0487
