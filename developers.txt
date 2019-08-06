@@ -34,15 +34,15 @@ Miguel Zilhao: Lean, Proca
 Nils Dorband: Llama
 Peter Diener: EHFinder, SummationByParts, AHFinder, McLachlan, NoExcision:Louisiana State University:0000-0002-3877-0487
 Philipp Moesta: GRHydro MHD code
-Joshua Faber:  ???
+Joshua Faber:
 Roland Haas: Flesh, Cactus, Carpet, Outflow, GRHydro, ExternalLibraries, simfactory:University of Illinois:0000-0003-1424-6178
-Sascha Husa: 
-Steve Brandt: Flesh, Piraha: Louisiana State University: 0000-0002-7979-2906
+Sascha Husa:
+Steven R. Brandt:Flesh, Piraha: Louisiana State University: 0000-0002-7979-2906
 Scott Hawley: AHFinder, Flesh, driver
 Tanja Bode: WeylScal4, GRHydro, Outflow:University of Tübingen:0000-0003-1509-8453
-Thomas Radke: Flesh, Carpet, Boundary, Formaline, 
-Tom Goodale: Flesh, Cactus, base thorns, HTTPD
-Yaakoub El Khamra: LocalReduce, PUGHReduce, 
-Yosef Zlochower: PITTNullCode, 
+Thomas Radke: Flesh, Carpet, Boundary, Formaline:
+Tom Goodale: Flesh, Cactus, base thorns, HTTPD:Society for Storytelling:
+Yaakoub El Khamra: LocalReduce, PUGHReduce:Shell:0000-0001-8775-0055
+Yosef Zlochower: PITTNullCode:Rochester Institute of Technology:
 Zachariah Etienne: IllinoisGRMHD, Giraffe:West Virginia University:0000-0002-6838-9185
 Paul Walker:Flesh and many thorns:Motive Partners:
