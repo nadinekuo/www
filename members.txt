@@ -154,6 +154,7 @@ http://www.iar.unlp.edu.ar/ Instituto Argentino de Radioastronomia
 
 https://tecnico.ulisboa.pt Instituto Superior Técnico, Lisbon
  http://www.seth-hopper.com/research Seth Hopper
+ Miguel Zilhão
 
 http://www.ita.br/ Instituto Tecnológico de Aeronáutica
  https://rvlobato.github.io/ Ronaldo Vieira Lobato
@@ -332,7 +333,6 @@ http://ccrg.rit.edu/ Rochester Institute of Technology
  Jam Sadiq
  Zachary Silberman
  Billy Vazquez
- Miguel Zilhão
  Yosef Zlochower
 
 http://www.astro.oma.be/en/ Royal Observatory of Belgium
