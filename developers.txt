@@ -2,7 +2,7 @@ Name: Contribution: Employed By: ORCID
 Joan Masso: Flesh:Universitat de les Illes Balears:0000-0001-5816-4874
 Luca Baiotti: GRHydro: Osaka University
 Barry Wardell: CCZ4, EinsteinExact, HTML documentation: University College Dublin:
-Bela Szilagyi: PITTNullCode:University of PittsburghThe 
+Bela Szilagyi: PITTNullCode:University of Pittsburgh
 Bruno Mundim: ExternalLibs, GHydro (MHD):University of Trento:
 Burkhard Zink: Llama, multiple smaller additions to Carpet:University of Tuebingen
 Carsten Gundlach: Exact:University of Southampton
