@@ -40,6 +40,18 @@ def namekey(name):
     g = re.match(r'^\s*(\w+)\s*(.*)',name)
     return g.group(2)+", "+g.group(1)
 with open('developers.html','w') as fd:
+    print("""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="head.js" type="text/javascript">
+  </script>
+  <title>Developers of the ETK</title>
+</head>
+<body id="developers">
+    <h1>Developers of the ETK</h1>""",file=fd)
     print("<table cellpadding=5 cellspacing=0 border=1>",file=fd)
     devlist = sorted(devs.keys(),key=namekey)
     for dev in devlist:
@@ -47,3 +59,14 @@ with open('developers.html','w') as fd:
         print("</td><td>".join(devs[dev]),end='',file=fd)
         print("</td></tr>",file=fd)
     print("</table>",file=fd)
+    print("""
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <script src="footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>""",file=fd)
