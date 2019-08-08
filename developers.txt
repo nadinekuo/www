@@ -2,22 +2,22 @@ Name: Contribution: Employed By: ORCID
 Joan Masso: Flesh:Universitat de les Illes Balears:0000-0001-5816-4874
 Luca Baiotti: GRHydro: Osaka University
 Barry Wardell: CCZ4, EinsteinExact, HTML documentation: University College Dublin:
-Bela Szilagyi: PITTNullCode:University of Pittsburgh
-Bruno Mundim: ExternalLibs, GHydro (MHD):University of Trento:
+Bela Szilagyi: PITTNullCode:Jet Propulsion Laboratory:
+Bruno Mundim: ExternalLibs, GHydro (MHD):SciNet High Performance Computing Consortium:
 Burkhard Zink: Llama, multiple smaller additions to Carpet:University of Tuebingen
 Carsten Gundlach: Exact:University of Southampton
-Christian Ott: GRHydro, EOS_Omni, EOSG framework:None:
-Christian Reisswig: Llama, PITTNull generic reader, VisIt reader
+Christian Ott: GRHydro, EOS_Omni, EOSG framework:None:0000-0003-4993-2055
+Christian Reisswig: Llama, PITTNull generic reader, VisIt reader:SAP:0000-0001-6855-9351
 Daniela Alic: Implement CCZ4 formulation.
-David Radice: Watchdog, LocalInter2, Refluxing:Princeton:
-David Rideout: Flesh, lots of work on base Cactus thorns
+David Radice: Watchdog, LocalInter2, Refluxing:Penn State University:
+David Rideout: Flesh, lots of work on base Cactus thorns:University of California, San Diego:0000-0001-8896-3925
 Denis Pollney: Llama, AHFinder:Rhodes University:
 Roberto DeDietri: hybrid EOS (maybe only Frank):Parma University
-Eloisa Bentivegna: CT_MultiLevel, VTK Output in QuasiLocalMeasures:Università degli Studi di Catania:0000-0003-1229-1653
+Eloisa Bentivegna: CT_MultiLevel, VTK Output in QuasiLocalMeasures:IBMa:0000-0003-1229-1653
 Eric Seidel: CRL (GetComponents):Bloomberg LP:
 Erik Schnetter: Carpet, QuasiLocalMeasures, AHFinderDirect, Accelerator, Flesh, Vectors, ExternalLibraries :Perimeter Institute for Theoretical Physics:0000-0002-4518-9017
 Frank Loeffler: GRHydro, Flesh, ADMMass, HydroBase, EOS_Omni:University Jena:0000-0001-6643-6323
-Gabrielle Allen: Flesh, Base Cactus thorns, ADMConstraints, ADMMacros, PUGH:University of Illinois
+Gabrielle Allen: Flesh, Base Cactus thorns, ADMConstraints, ADMMacros, PUGH:University of Illinois:0000-0003-3106-5360
 Gerd Lanferman: Boundary, AHFinder, Flesh, Elliptic thorns
 Ian Hawke: MoL, GRHydro :University of Southampton
 Helvi Witek: Lean, Proca, Carpet:King's College, London:0000-0003-3043-163X
