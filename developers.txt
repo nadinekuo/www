@@ -38,7 +38,7 @@ Sascha Husa::Universitat de les Illes Balears
 Steven R. Brandt:Flesh, Piraha: Louisiana State University: 0000-0002-7979-2906
 Scott Hawley: AHFinder, Flesh, driver:Belmont University
 Tanja Bode: WeylScal4, GRHydro, Outflow:University of Tübingen:0000-0003-1509-8453
-Thomas Radke: Flesh, Carpet, Boundary, Formaline:
+Thomas Radke: Flesh, Carpet, Boundary, Formaline:Max Planck Institute for Gravitational Physics
 Tom Goodale: Flesh, Cactus, base thorns, HTTPD:Society for Storytelling:
 Yaakoub El Khamra: LocalReduce, PUGHReduce:Shell Global Solutions:0000-0001-8775-0055
 Yosef Zlochower: PITTNullCode:Rochester Institute of Technology:
