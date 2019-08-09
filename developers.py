@@ -15,6 +15,8 @@ with open("developers.txt","r") as fd:
             entry += [cols[3]]
         while 3 > len(entry):
             entry += ["&nbsp;"]
+        if cols[0] in devs:
+            raise Exception("Duplicate:",cols[0])
         devs[cols[0]] = entry
 
         if headers == None:
@@ -34,6 +36,30 @@ with open("developers.txt","r") as fd:
                         missing[h] = 0
                     print("Missing %s for user %s" % (headers[i], cols[0]))
                     missing[h] += 1
+
+def dist(a,b):
+    d = (len(a)+len(b))/2
+    h = {}
+    for c in a:
+        if c not in h:
+            h[c]=0
+        h[c] += 1
+    for c in b:
+        if c not in h:
+            h[c]=0
+        h[c] -= 1
+    sum = 0
+    for v in h.values():
+        sum += abs(v)
+    return sum/d
+
+devlist = [k for k in devs.keys()]
+for i in range(len(devlist)):
+    for j in range(i+1,len(devlist)):
+        d = dist(devlist[i],devlist[j])
+        if d < .3:
+            print("Possible dup:",devlist[i],"and",devlist[j])
+
 print("Items missing:",missing)
 
 def namekey(name):

@@ -28,7 +28,7 @@ Michael Koppitz: PunctureTracker
 Mark Miller: EOS_IdalFluid
 Michael Thomas: simfactory
 Miguel Alcubierre: MoL, ADMConstraints, AHFinder:National Autonomous University of Mexico:0000-0003-3367-9868
-Miguel Zilhao: Lean, Proca: Instituto Superior Técnico, Lisbon
+Miguel Zilhão: Lean, Proca: Instituto Superior Técnico, Lisbon
 Nils Dorband: Llama
 Peter Diener: EHFinder, SummationByParts, AHFinder, McLachlan, NoExcision:Louisiana State University:0000-0002-3877-0487
 Philipp Moesta: GRHydro MHD code
@@ -44,3 +44,29 @@ Yaakoub El Khamra: LocalReduce, PUGHReduce:Shell Global Solutions:0000-0001-8775
 Yosef Zlochower: PITTNullCode:Rochester Institute of Technology:
 Zachariah Etienne: IllinoisGRMHD, Giraffe:West Virginia University:0000-0002-6838-9185
 Paul Walker:Flesh and many thorns:Motive Partners:
+Aaryn Tonita
+Andrea Nerozzi
+Andrew Knapp
+Bruno Giacomazzo
+Ed Seidel
+Giovanni Corvino
+Harry Dimmelmeier
+Joachim Frieben
+John Shalf::Lawrence Berkeley National Laboratory
+Luciano Rezzolla
+Malcolm Tobias
+Marcus Ansorg
+Maria Babiuc-Hamilton
+Matei Ripeanu
+Mew-Bing Wan
+Nikolaos Stergioulas
+Pedro Montero
+Ravi Paruchuri
+Rion Dooley::Clemson University
+Ryoji Takahashi 
+Sai Iyer
+Sebastiano Bernuzzi
+Thorsten Kellermann
+Toni Font
+Ulrich Sperhake
+Werner Benger
