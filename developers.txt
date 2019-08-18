@@ -8,7 +8,7 @@ Burkhard Zink: Llama, multiple smaller additions to Carpet:University of Tuebing
 Carsten Gundlach: Exact:University of Southampton
 Christian Ott: GRHydro, EOS_Omni, EOSG framework:None:0000-0003-4993-2055
 Christian Reisswig: Llama, PITTNull generic reader, VisIt reader:SAP:0000-0001-6855-9351
-Daniela Alic: Implement CCZ4 formulation.
+Daniela Alic: Implement CCZ4 formulation.:Max Planck Institute for Gravitational Physics
 David Radice: Watchdog, LocalInter2, Refluxing:Penn State University:
 David Rideout: Flesh, lots of work on base Cactus thorns:University of California, San Diego:0000-0001-8896-3925
 Denis Pollney: Llama, AHFinder:Rhodes University:
@@ -56,17 +56,17 @@ John Shalf::Lawrence Berkeley National Laboratory
 Luciano Rezzolla
 Malcolm Tobias
 Marcus Ansorg
-Maria Babiuc-Hamilton
-Matei Ripeanu
-Mew-Bing Wan
-Nikolaos Stergioulas
-Pedro Montero
-Ravi Paruchuri
+Maria Babiuc-Hamilton::Marshall University
+Matei Ripeanu::University of Chicago
+Mew-Bing Wan::Washington University
+Nikolaos Stergioulas::University of Thessaloniki
+Pedro Montero::
+Ravi Paruchuri::
 Rion Dooley::Clemson University
-Ryoji Takahashi 
-Sai Iyer
-Sebastiano Bernuzzi
-Thorsten Kellermann
-Toni Font
-Ulrich Sperhake
-Werner Benger
+Ryoji Takahashi::Sant Cugat Del Valles
+Sai Iyer::University of St. Louis
+Sebastiano Bernuzzi::University of Parma
+Thorsten Kellermann::Intel
+Toni Font::Potsdam, Max Planck Inst.
+Ulrich Sperhake::Cambridge
+Werner Benger::AirborneHydroMapping Software GmbH
