@@ -63,7 +63,7 @@ for i in range(len(devlist)):
 print("Items missing:",missing)
 
 def namekey(name):
-    g = re.match(r'^\s*(\w+)\s*(.*)',name)
+    g = re.match(r'^\s*([\w\'-]+)\s*(.*)',name)
     return g.group(2)+", "+g.group(1)
 with open('developers.html','w') as fd:
     print("""
