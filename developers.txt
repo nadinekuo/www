@@ -12,11 +12,11 @@ Daniela Alic: Implement CCZ4 formulation.:Max Planck Institute for Gravitational
 David Radice: Watchdog, LocalInter2, Refluxing:Penn State University:
 David Rideout: Flesh, lots of work on base Cactus thorns:University of California, San Diego:0000-0001-8896-3925
 Denis Pollney: Llama, AHFinder:Rhodes University:
-Roberto DeDietri: hybrid EOS (maybe only Frank):Parma University
+Roberto De Dietri: hybrid EOS:Parma University
 Eloisa Bentivegna: CT_MultiLevel, VTK Output in QuasiLocalMeasures:IBMa:0000-0003-1229-1653
 Eric Seidel: CRL (GetComponents):Bloomberg LP:
 Erik Schnetter: Carpet, QuasiLocalMeasures, AHFinderDirect, Accelerator, Flesh, Vectors, ExternalLibraries :Perimeter Institute for Theoretical Physics:0000-0002-4518-9017
-Frank Loeffler: GRHydro, Flesh, ADMMass, HydroBase, EOS_Omni:University Jena:0000-0001-6643-6323
+Frank Löffler: GRHydro, Flesh, ADMMass, HydroBase, EOS_Omni:Friedrich Schiller University Jena:0000-0001-6643-6323
 Gabrielle Allen: Flesh, Base Cactus thorns, ADMConstraints, ADMMacros, PUGH:University of Illinois:0000-0003-3106-5360
 Gerd Lanferman: Boundary, AHFinder, Flesh, Elliptic thorns
 Ian Hawke: MoL, GRHydro :University of Southampton
