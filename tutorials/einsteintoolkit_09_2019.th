@@ -291,7 +291,7 @@ Numerical/AEILocalInterp
 !URL      = https://bitbucket.org/cactuscode/cactusexamples.git
 !REPO_PATH= $2
 !REPO_BRANCH = $ET_RELEASE
-!CHECKOUT = CactusExamples/HelloWorldCUDA CactusExamples/HelloWorldOpenCL CactusExamples/WaveToyOpenCL
+!CHECKOUT = 
 CactusExamples/HelloWorld
 
 
