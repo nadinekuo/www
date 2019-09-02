@@ -18,20 +18,20 @@ Eric Seidel: CRL (GetComponents):Bloomberg LP:
 Erik Schnetter: Carpet, QuasiLocalMeasures, AHFinderDirect, Accelerator, Flesh, Vectors, ExternalLibraries :Perimeter Institute for Theoretical Physics:0000-0002-4518-9017
 Frank Löffler: GRHydro, Flesh, ADMMass, HydroBase, EOS_Omni:Friedrich Schiller University Jena:0000-0001-6643-6323
 Gabrielle Allen: Flesh, Base Cactus thorns, ADMConstraints, ADMMacros, PUGH:University of Illinois:0000-0003-3106-5360
-Gerd Lanferman: Boundary, AHFinder, Flesh, Elliptic thorns
+Gerd Lanferman: Boundary, AHFinder, Flesh, Elliptic thorns:Unknown:
 Ian Hawke: MoL, GRHydro :University of Southampton
 Helvi Witek: Lean, Proca, Carpet:King's College, London:0000-0003-3043-163X
 Ian Hinder: Kranc, Carpet Timers, Jenkins server, Multipole, SystemStatistics, WeylScal4:University of Manchester:0000-0003-3548-9101
 Jonathan Thornburg: AHFinderDirect, AELocalInterp, LocalInterp, Flesh, docs, Carpet docs, Exact: Indiana University:
-Lars Menger: AHFinder parallelization
-Michael Koppitz: PunctureTracker
-Mark Miller: EOS_IdalFluid
-Michael Thomas: simfactory
+Lars Menger: AHFinder parallelization:Unknown:
+Michael Koppitz: PunctureTracker:Unknown:
+Mark Miller: EOS_IdalFluid:Unknown:
+Michael Thomas: simfactory: Unknown:
 Miguel Alcubierre: MoL, ADMConstraints, AHFinder:National Autonomous University of Mexico:0000-0003-3367-9868
 Miguel Zilhão: Lean, Proca: Instituto Superior Técnico, Lisbon
-Nils Dorband: Llama
+Nils Dorband: Llama:Citadel LLC:
 Peter Diener: EHFinder, SummationByParts, AHFinder, McLachlan, NoExcision:Louisiana State University:0000-0002-3877-0487
-Philipp Moesta: GRHydro MHD code
+Philipp Moesta: GRHydro MHD code:UC Berkeley
 Joshua Faber::Rochester Institute of Technology
 Roland Haas: Flesh, Cactus, Carpet, Outflow, GRHydro, ExternalLibraries, simfactory:University of Illinois:0000-0003-1424-6178
 Sascha Husa::Universitat de les Illes Balears
@@ -44,24 +44,24 @@ Yaakoub El Khamra: LocalReduce, PUGHReduce:Shell Global Solutions:0000-0001-8775
 Yosef Zlochower: PITTNullCode:Rochester Institute of Technology:
 Zachariah Etienne: IllinoisGRMHD, Giraffe:West Virginia University:0000-0002-6838-9185
 Paul Walker:Flesh and many thorns:Motive Partners:
-Aaryn Tonita
-Andrea Nerozzi
-Andrew Knapp
-Bruno Giacomazzo
-Ed Seidel
-Giovanni Corvino
-Harry Dimmelmeier
-Joachim Frieben
+Aaryn Tonita::Univeristy of British Columbia:
+Andrea Nerozzi::Technical University of Lisbon:
+Andrew Knapp::Penn State University:
+Bruno Giacomazzo::Max Planck Institute for Gravitational Physics:
+Ed Seidel::University of Illinois:
+Giovanni Corvino::Unknown:
+Harry Dimmelmeier::Unknown
+Joachim Frieben::Max Planck Institute for Gravitational Physics:
 John Shalf::Lawrence Berkeley National Laboratory
-Luciano Rezzolla
-Malcolm Tobias
-Marcus Ansorg
+Luciano Rezzolla::Goethe University:
+Malcolm Tobias::Washington University:
+Marcus Ansorg::Penn State University:
 Maria Babiuc-Hamilton::Marshall University
 Matei Ripeanu::University of Chicago
 Mew-Bing Wan::Washington University
 Nikolaos Stergioulas::University of Thessaloniki
-Pedro Montero::
-Ravi Paruchuri::
+Pedro Montero::Harvard University:
+Ravi Paruchuri::Unknown:
 Rion Dooley::Clemson University
 Ryoji Takahashi::Sant Cugat Del Valles
 Sai Iyer::University of St. Louis
