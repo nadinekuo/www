@@ -6,9 +6,9 @@ Bela Szilagyi: PITTNullCode:Jet Propulsion Laboratory:
 Bruno Mundim: ExternalLibs, GHydro (MHD):SciNet High Performance Computing Consortium:
 Burkhard Zink: Llama, multiple smaller additions to Carpet:University of Tuebingen
 Carsten Gundlach: Exact:University of Southampton
-Christian Ott: GRHydro, EOS_Omni, EOSG framework:None:0000-0003-4993-2055
+Christian Ott: GRHydro, EOS_Omni, EOSG framework:Self Employed:0000-0003-4993-2055
 Christian Reisswig: Llama, PITTNull generic reader, VisIt reader:SAP:0000-0001-6855-9351
-Daniela Alic: Implement CCZ4 formulation.:Max Planck Institute for Gravitational Physics
+Daniela Alic: Implement CCZ4 formulation:Max Planck Institute for Gravitational Physics
 David Radice: Watchdog, LocalInter2, Refluxing:Penn State University:
 David Rideout: Flesh, lots of work on base Cactus thorns:University of California, San Diego:0000-0001-8896-3925
 Denis Pollney: Llama, AHFinder:Rhodes University:
@@ -50,7 +50,7 @@ Andrew Knapp::Penn State University:
 Bruno Giacomazzo::Max Planck Institute for Gravitational Physics:
 Ed Seidel::University of Illinois:
 Giovanni Corvino::Unknown:
-Harry Dimmelmeier::Unknown
+Harry Dimmelmeier::OSRAM Opto Seminconductors
 Joachim Frieben::Max Planck Institute for Gravitational Physics:
 John Shalf::Lawrence Berkeley National Laboratory
 Luciano Rezzolla::Goethe University:
