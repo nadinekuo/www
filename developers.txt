@@ -8,7 +8,7 @@ Burkhard Zink: Llama, multiple smaller additions to Carpet:University of Tuebing
 Carsten Gundlach: Exact:University of Southampton
 Christian Ott: GRHydro, EOS_Omni, EOSG framework:Self Employed:0000-0003-4993-2055
 Christian Reisswig: Llama, PITTNull generic reader, VisIt reader:SAP:0000-0001-6855-9351
-Daniela Alic: Implement CCZ4 formulation:Max Planck Institute for Gravitational Physics
+Daniela Alic: Implement CCZ4 formulation:Unknown:
 David Radice: Watchdog, LocalInter2, Refluxing:Penn State University:
 David Rideout: Flesh, lots of work on base Cactus thorns:University of California, San Diego:0000-0001-8896-3925
 Denis Pollney: Llama, AHFinder:Rhodes University:
@@ -28,7 +28,7 @@ Michael Koppitz: PunctureTracker:Unknown:
 Mark Miller: EOS_IdalFluid:Unknown:
 Michael Thomas: simfactory: Unknown:
 Miguel Alcubierre: MoL, ADMConstraints, AHFinder:National Autonomous University of Mexico:0000-0003-3367-9868
-Miguel Zilhão: Lean, Proca: Instituto Superior Técnico, Lisbon
+Miguel Zilhão: Lean, Proca: Instituto Superior Técnico, Lisbon:0000-0002-7089-5570
 Nils Dorband: Llama:Citadel LLC:
 Peter Diener: EHFinder, SummationByParts, AHFinder, McLachlan, NoExcision:Louisiana State University:0000-0002-3877-0487
 Philipp Moesta: GRHydro MHD code:UC Berkeley
@@ -47,7 +47,7 @@ Paul Walker:Flesh and many thorns:Motive Partners:
 Aaryn Tonita::Univeristy of British Columbia:
 Andrea Nerozzi::Technical University of Lisbon:
 Andrew Knapp::Penn State University:
-Bruno Giacomazzo::Max Planck Institute for Gravitational Physics:
+Bruno Giacomazzo::University of Milano-Bicocca:0000-0002-6947-4023
 Ed Seidel::University of Illinois:
 Giovanni Corvino::Unknown:
 Harry Dimmelmeier::OSRAM Opto Seminconductors
@@ -55,7 +55,7 @@ Joachim Frieben::Max Planck Institute for Gravitational Physics:
 John Shalf::Lawrence Berkeley National Laboratory
 Luciano Rezzolla::Goethe University:
 Malcolm Tobias::Washington University:
-Marcus Ansorg::Penn State University:
+Marcus Ansorg::University of Jena:
 Maria Babiuc-Hamilton::Marshall University
 Matei Ripeanu::University of Chicago
 Mew-Bing Wan::Washington University
@@ -65,8 +65,8 @@ Ravi Paruchuri::Unknown:
 Rion Dooley::Clemson University
 Ryoji Takahashi::Sant Cugat Del Valles
 Sai Iyer::University of St. Louis
-Sebastiano Bernuzzi::University of Parma
+Sebastiano Bernuzzi::University of Jena:0000-0002-7089-5570
 Thorsten Kellermann::Intel
-Toni Font::Potsdam, Max Planck Inst.
+Toni Font::University of Valencia:0000-0002-7089-5570
 Ulrich Sperhake::Cambridge
 Werner Benger::AirborneHydroMapping Software GmbH
