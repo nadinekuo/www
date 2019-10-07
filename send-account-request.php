@@ -50,6 +50,9 @@ if (empty($name)) {
 } elseif (empty($github) and empty($institution)) {
   echo '<h4>You must provide at least one of (1) a name of your institution or (2) a github account name.</h4>';
   echo '<br /><a href="javascript:history.back(1);">Try again</a>';
+} elseif (!empty($github) and (strpos($github, "@") !== false)) {
+  echo '<h4>Please provide your github account name, not your email address. See you <a href="https://github.com/settings/admin">account page</a> for it.</h4>';
+  echo '<br /><a href="javascript:history.back(1);">Try again</a>';
 } elseif (empty($buechsenwursttest) || ($buechsenwursttest != "Einstein")) {
   echo '<h4>You did not spell \'Einstein\' correctly. Go away, spam bot, or </h4>';
   echo '<br /><a href="javascript:history.back(1);">try again</a>';
