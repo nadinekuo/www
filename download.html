@@ -36,6 +36,12 @@
 curl -kLO https://raw.githubusercontent.com/gridaphobe/CRL/ET_2019_03/GetComponents
 chmod a+x GetComponents
 ./GetComponents --parallel https://bitbucket.org/einsteintoolkit/manifest/raw/ET_2019_03/einsteintoolkit.th</pre>
+        <p>Your download may fail if the version of OpenSSL used by subversion
+        and git is
+        <a href="https://github.blog/2018-02-01-crypto-removal-notice/">too old</a>
+        (older than version
+        <a href="https://stackoverflow.com/questions/48178052/when-was-tls-1-2-support-added-to-openssl">1.0.1 from 2012</a>).
+        In this case you should update your software stack.</p>
         <h3>Current development version</h3>
         This version is under constant development and, while we try to make sure it
         remains bug-free, it has not been tested to the same standard as the released version.
