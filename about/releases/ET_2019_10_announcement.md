@@ -36,7 +36,11 @@ The changes between this and the previous release include:
   {ZACH INCLUDE TEXT}
 * The inclusion of the SelfForce-1D code in the Einstein Toolkit as the
   first non-Cactus code in the toolkit.
-  {PETER INCLUDE TEXT}
+    - Evolves the sourced scalar wave equation on a Schwarzschild spacetime
+      using the effective source approach to point particles.
+    - The wave equation is decomposed into spherical harmonics and the
+      resulting 1+1 dimensional equations are discretized in the radial
+      direction using the discontinuous Galerkin method.
 * Update hwloc to 1.11.12
 * Groups of vectors of vectors are now handled properly by RotatingSymmetry90 and RotatingSymmetry180
 * Compilation of PAPI is faster and produces fewer warnings
