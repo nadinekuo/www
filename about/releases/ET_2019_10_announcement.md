@@ -37,7 +37,10 @@ The changes between this and the previous release include:
 * The inclusion of the SelfForce-1D code in the Einstein Toolkit as the
   first non-Cactus code in the toolkit.
   {PETER INCLUDE TEXT}
-* {TICKETS: TO BE FILLED IN}
+* Update hwloc to 1.11.12
+* Groups of vectors of vectors are now handled properly by RotatingSymmetry90 and RotatingSymmetry180
+* Compilation of PAPI is faster and produces fewer warnings
+
 
 ## How to upgrade from Proca (ET_2019_03) 
 
