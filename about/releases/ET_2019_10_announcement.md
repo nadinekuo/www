@@ -4,12 +4,11 @@ We are pleased to announce the nineteenth release (code name ["Mayer"](https://e
 
 A new thorn has been added:
 
-* wvuthorns
-    - FishboneMoncriefID
+* FishboneMoncriefID
 
 Also, for the first time, a new code has been added.
 
-* "SelfForce-1D"(https://bitbucket.org/peterdiener/selfforce-1d.git)
+* [SelfForce-1D](https://bitbucket.org/peterdiener/selfforce-1d.git)
 
 The ETK is embracing a new model of assigning credit:
 
