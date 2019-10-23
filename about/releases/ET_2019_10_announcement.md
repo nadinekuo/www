@@ -75,7 +75,7 @@ All repositories participating in this release carry a branch ET_2019_10 marking
 The "Mayer" Release Team on behalf of the Einstein Toolkit Consortium (2019‐10‐25)
 
 * Steven R. Brandt
-* Samuel D. Cupp
+* Maria Babiuc-Hamilton
 * Peter Diener
 * Zachariah Etienne
 * Roland Haas
