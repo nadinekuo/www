@@ -34,16 +34,10 @@ The changes between this and the previous release include:
 
 ## Larger changes since last release
 
-* The Fishbone Moncrief Initial Data thorn (FishboneMoncriefID) thorn
-  has been added to the wvuthorns arrangement.
-  {ZACH INCLUDE TEXT}
-* The inclusion of the SelfForce-1D code in the Einstein Toolkit as the
-  first non-Cactus code in the toolkit.
-    - Evolves the sourced scalar wave equation on a Schwarzschild spacetime
-      using the effective source approach to point particles.
-    - The wave equation is decomposed into spherical harmonics and the
-      resulting 1+1 dimensional equations are discretized in the radial
-      direction using the discontinuous Galerkin method.
+* The Fishbone Moncrief Initial Data thorn (FishboneMoncriefID) thorn has been added to the wvuthorns arrangement: The new FishboneMoncriefID black hole accretion disk thorn solves the equations originally posed by Fishbone & Moncrief (https://ui.adsabs.harvard.edu/abs/1976ApJ...207..962F/abstract), describing a non-self-gravitating equilibrium disk of matter orbiting a spinning black hole in standard (spherical) Kerr-Schild coordinates. When the disk is seeded with initially dynamically unimportant poloidal magnetic fields, dramatic magnetic instabilities occur during the subsequent evolution, launching ultrarelativistic jets. Thus the Fishbone-Moncrief solution provides a standard testbed for GRMHD accretion disk codes. In fact this thorn was recently used for IllinoisGRMHD's contribution to the Event Horizon Telescope GRMHD code comparison project (https://ui.adsabs.harvard.edu/abs/2019ApJS..243...26P/abstract).
+* The inclusion of the SelfForce-1D code in the Einstein Toolkit as the first non-Cactus code in the toolkit.
+    - Evolves the sourced scalar wave equation on a Schwarzschild spacetime using the effective source approach to point particles.
+    - The wave equation is decomposed into spherical harmonics and the resulting 1+1 dimensional equations are discretized in the radial direction using the discontinuous Galerkin method.
 * Update hwloc to 1.11.12
 * Groups of vectors of vectors are now handled properly by RotatingSymmetry90 and RotatingSymmetry180
 * Compilation of PAPI is faster and produces fewer warnings
