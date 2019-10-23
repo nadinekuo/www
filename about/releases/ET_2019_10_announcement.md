@@ -62,10 +62,9 @@ Supported (tested) machines include:
 - Default Debian, Ubuntu, Fedora, CentOS 7, Mint, OpenSUSE and MacOS (MacPorts) installations
 - Bluewaters
 - Comet
-- Golub
+- Cori
 - Stampede 2
-- Shelob
-- Wheeler
+- Mike
 
 * TACC machines: defs.local.ini needs to have sourcebasedir = $WORK
   and basedir = $SCRATCH/simulations configured for this machine.  You
