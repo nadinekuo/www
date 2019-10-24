@@ -28,15 +28,15 @@ For more information about using or contributing to the Einstein Toolkit, or to 
 
 The Einstein Toolkit is primarily supported by NSF 1550551/1550461/1550436/1550514 (Einstein Toolkit Community Integration and Data Exploration).
 
-The Einstein Toolkit contains about 400 regression test cases.  On a large portion of the tested machines, almost all of these tests pass, using both MPI and OpenMP parallelization.
+The Einstein Toolkit contains about 400 regression test cases. On a large portion of the tested machines, almost all of these tests pass, using both MPI and OpenMP parallelization.
 
 The changes between this and the previous release include:
 
 ## Larger changes since last release
 
-* The Fishbone Moncrief Initial Data thorn (FishboneMoncriefID) thorn has been added to the `WVUThorns` arrangement 
-    - This thorn solves the equations originally posed by Fishbone & Moncrief (https://ui.adsabs.harvard.edu/abs/1976ApJ...207..962F/abstract), describing a non-self-gravitating equilibrium disk of matter orbiting a spinning black hole in standard (spherical) Kerr-Schild coordinates. When the disk is seeded with initially dynamically unimportant poloidal magnetic fields, dramatic magnetic instabilities occur during the subsequent evolution, launching ultrarelativistic jets. Thus the Fishbone-Moncrief solution provides a standard testbed for GRMHD accretion disk codes. In fact this thorn was recently used for IllinoisGRMHD's contribution to the Event Horizon Telescope GRMHD code comparison project (https://ui.adsabs.harvard.edu/abs/2019ApJS..243...26P/abstract).
-    - From a code perspective, FishboneMoncriefID is notable in that it is the first ETK thorn entirely written and documented within pedagogical Jupyter notebooks. In these notebooks, the Fishbone-Moncrief equations are converted from Einstein-like notation into optimized C code using NRPy+ (https://github.com/zachetienne/nrpytutorial), a Kranc analogue depending only on Python and its open-source SymPy (https://sympy.org) computer algebra software.
+* The Fishbone Moncrief Initial Data thorn (FishboneMoncriefID) thorn has been added to the wvuthorns arrangement: The new FishboneMoncriefID black hole accretion disk thorn solves the equations originally posed by Fishbone & Moncrief (https://ui.adsabs.harvard.edu/abs/1976ApJ...207..962F/abstract), describing a non-self-gravitating equilibrium disk of matter orbiting a spinning black hole in standard (spherical) Kerr-Schild coordinates. When the disk is seeded with initially dynamically unimportant poloidal magnetic fields, dramatic magnetic instabilities occur during the subsequent evolution, launching ultrarelativistic jets. Thus the Fishbone-Moncrief solution provides a standard testbed for GRMHD accretion disk codes. In fact this thorn was recently used for IllinoisGRMHD's contribution to the Event Horizon Telescope GRMHD code comparison project (https://ui.adsabs.harvard.edu/abs/2019ApJS..243...26P/abstract).
+
+ From a code perspective, FishboneMoncriefID is notable in that it is the first ETK thorn entirely written and documented within pedagogical Jupyter notebooks. In these notebooks, the Fishbone-Moncrief equations are converted from Einstein-like notation into optimized C code using NRPy+ (https://github.com/zachetienne/nrpytutorial), a Kranc analogue depending only on Python and its open-source SymPy (https://sympy.org) computer algebra software.
 * The inclusion of the SelfForce-1D code in the Einstein Toolkit as the first non-Cactus code in the toolkit.
     - Evolves the sourced scalar wave equation on a Schwarzschild spacetime using the effective source approach to point particles.
     - The wave equation is decomposed into spherical harmonics and the resulting 1+1 dimensional equations are discretized in the radial direction using the discontinuous Galerkin method.
@@ -62,11 +62,9 @@ Supported (tested) machines include:
 - Stampede 2
 - Mike
 
-* TACC machines: defs.local.ini needs to have sourcebasedir = $WORK
-  and basedir = $SCRATCH/simulations configured for this machine.  You
-  need to determine $WORK and $SCRATCH by logging in to the machine.
+* TACC machines: defs.local.ini needs to have sourcebasedir = $WORK and basedir = $SCRATCH/simulations configured for this machine. You need to determine $WORK and $SCRATCH by logging in to the machine.
 
-All repositories participating in this release carry a branch ET_2019_10 marking this release.  These release branches will be updated if severe errors are found.
+All repositories participating in this release carry a branch ET_2019_10 marking this release. These release branches will be updated if severe errors are found.
 
 The "Mayer" Release Team on behalf of the Einstein Toolkit Consortium (2019‐10‐25)
 
@@ -76,6 +74,7 @@ The "Mayer" Release Team on behalf of the Einstein Toolkit Consortium (2019‐10
 * Zachariah Etienne
 * Roland Haas
 * Helvi Witek
-* {Helvi's Students}
+* Giuseppe Ficarra
+* Matthew Elley
 
 Oct, 2019
