@@ -51,6 +51,8 @@ To upgrade from the previous release, use GetComponents with the new thornlist t
 
 See the Download page (http://einsteintoolkit.org/download/) on the Einstein Toolkit website for download instructions.
 
+As the SelfForce-1D code was not present in the previous release, there is no need to upgrade. Just follow the download instructions.
+
 ## Machine notes
 
 Supported (tested) machines include:
