@@ -57,7 +57,7 @@ As the SelfForce-1D code was not present in the previous release, there is no ne
 
 Supported (tested) machines include:
 
-- Default Debian, Ubuntu, Fedora, CentOS 7, Mint, OpenSUSE and MacOS (MacPorts) installations
+- Default Debian, Ubuntu, Fedora, CentOS 7, Mint, OpenSUSE and MacOS Mojave (MacPorts) installations
 - Bluewaters
 - Comet
 - Cori
