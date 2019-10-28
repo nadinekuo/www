@@ -73,10 +73,10 @@ The "Mayer" Release Team on behalf of the Einstein Toolkit Consortium (2019‐10
 * Steven R. Brandt
 * Maria Babiuc-Hamilton
 * Peter Diener
+* Matthew Elley
 * Zachariah Etienne
+* Giuseppe Ficarra
 * Roland Haas
 * Helvi Witek
-* Giuseppe Ficarra
-* Matthew Elley
 
 Oct, 2019
