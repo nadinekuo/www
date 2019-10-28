@@ -47,7 +47,7 @@ The changes between this and the previous release include:
 
 To upgrade from the previous release, use GetComponents with the new thornlist to check out the new version.
 
-See the Download page ([http://einsteintoolkit.org/download/](http://einsteintoolkit.org/download/)) on the Einstein Toolkit website for download instructions.
+See the Download page ([http://einsteintoolkit.org/download.html](http://einsteintoolkit.org/download.html)) on the Einstein Toolkit website for download instructions.
 
 As the SelfForce-1D code was not present in the previous release, there is no need to upgrade. Just follow the download instructions.
 
