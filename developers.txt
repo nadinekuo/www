@@ -70,3 +70,5 @@ Thorsten Kellermann::Intel
 Toni Font::University of Valencia:0000-0002-7089-5570
 Ulrich Sperhake::Cambridge
 Werner Benger::AirborneHydroMapping Software GmbH
+Giuseppe Ficara:Mayer Release Team:King's College London:0000-0003-4668-8587
+Matthew Elley:Mayer Release Team:King's College London:0000-0003-3167-5601
