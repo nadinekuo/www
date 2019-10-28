@@ -12,7 +12,7 @@ Daniela Alic: Implement CCZ4 formulation:Unknown:
 David Radice: Watchdog, LocalInter2, Refluxing:Penn State University:
 David Rideout: Flesh, lots of work on base Cactus thorns:University of California, San Diego:0000-0001-8896-3925
 Denis Pollney: Llama, AHFinder:Rhodes University:
-Roberto De Dietri: hybrid EOS:Parma University
+Roberto De~Pietri: hybrid EOS:Parma University
 Eloisa Bentivegna: CT_MultiLevel, VTK Output in QuasiLocalMeasures:IBM:0000-0003-1229-1653
 Eric Seidel: CRL (GetComponents):Bloomberg LP:
 Erik Schnetter: Carpet, QuasiLocalMeasures, AHFinderDirect, Accelerator, Flesh, Vectors, ExternalLibraries :Perimeter Institute for Theoretical Physics:0000-0002-4518-9017
@@ -40,7 +40,7 @@ Scott Hawley: AHFinder, Flesh, driver:Belmont University
 Tanja Bode: WeylScal4, GRHydro, Outflow:University of Tübingen:0000-0003-1509-8453
 Thomas Radke: Flesh, Carpet, Boundary, Formaline:Max Planck Institute for Gravitational Physics
 Tom Goodale: Flesh, Cactus, base thorns, HTTPD:Society for Storytelling:
-Yaakoub El Khamra: LocalReduce, PUGHReduce:Shell Global Solutions:0000-0001-8775-0055
+Yaakoub El~Khamra: LocalReduce, PUGHReduce:Shell Global Solutions:0000-0001-8775-0055
 Yosef Zlochower: PITTNullCode:Rochester Institute of Technology:
 Zachariah Etienne: IllinoisGRMHD, Giraffe:West Virginia University:0000-0002-6838-9185
 Paul Walker:Flesh and many thorns:Motive Partners:
