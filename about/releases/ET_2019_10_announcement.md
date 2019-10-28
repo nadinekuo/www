@@ -22,7 +22,7 @@ The Einstein Toolkit uses a distributed software model and its different modules
 
 Guiding principles for the design and implementation of the toolkit include: open, community-driven software development; well thought-out and stable interfaces; separation of physics software from computational science infrastructure; provision of complete working production code; training and education for a new generation of researchers.
 
-For more information about using or contributing to the Einstein Toolkit, or to join the Einstein Toolkit Consortium, please visit our web pages at http://einsteintoolkit.org.
+For more information about using or contributing to the Einstein Toolkit, or to join the Einstein Toolkit Consortium, please visit our web pages at [http://einsteintoolkit.org](http://einsteintoolkit.org).
 
 The Einstein Toolkit is primarily supported by NSF 1550551/1550461/1550436/1550514 (Einstein Toolkit Community Integration and Data Exploration).
 
@@ -33,7 +33,7 @@ The changes between this and the previous release include:
 ## Larger changes since last release
 
 * The Fishbone Moncrief Initial Data thorn (FishboneMoncriefID) thorn has been added to the `WVUThorns` arrangement 
-    - This thorn solves the equations originally posed by Fishbone & Moncrief (https://ui.adsabs.harvard.edu/abs/1976ApJ...207..962F/abstract), describing a non-self-gravitating equilibrium disk of matter orbiting a spinning black hole in standard (spherical) Kerr-Schild coordinates. When the disk is seeded with initially dynamically unimportant poloidal magnetic fields, dramatic magnetic instabilities occur during the subsequent evolution, launching ultrarelativistic jets. Thus the Fishbone-Moncrief solution provides a standard testbed for GRMHD accretion disk codes.
+    - This thorn solves the equations originally posed by [Fishbone & Moncrief](https://ui.adsabs.harvard.edu/abs/1976ApJ...207..962F/abstract), describing a non-self-gravitating equilibrium disk of matter orbiting a spinning black hole in standard (spherical) Kerr-Schild coordinates. When the disk is seeded with initially dynamically unimportant poloidal magnetic fields, dramatic magnetic instabilities occur during the subsequent evolution, launching ultrarelativistic jets. Thus the Fishbone-Moncrief solution provides a standard testbed for GRMHD accretion disk codes.
     - From a code perspective, FishboneMoncriefID is notable in that it is the first ETK thorn entirely written and documented within pedagogical Jupyter notebooks. In these notebooks, the Fishbone-Moncrief equations are converted from Einstein-like notation into optimized C code using NRPy+ (https://github.com/zachetienne/nrpytutorial), a Kranc analogue depending only on Python and its open-source SymPy (https://sympy.org) computer algebra software.
 * The inclusion of the SelfForce-1D code in the Einstein Toolkit as the first non-Cactus code in the toolkit.
     - Evolves the sourced scalar wave equation on a Schwarzschild spacetime using the effective source approach to point particles.
@@ -47,7 +47,7 @@ The changes between this and the previous release include:
 
 To upgrade from the previous release, use GetComponents with the new thornlist to check out the new version.
 
-See the Download page (http://einsteintoolkit.org/download/) on the Einstein Toolkit website for download instructions.
+See the Download page ([http://einsteintoolkit.org/download/](http://einsteintoolkit.org/download/)) on the Einstein Toolkit website for download instructions.
 
 As the SelfForce-1D code was not present in the previous release, there is no need to upgrade. Just follow the download instructions.
 
