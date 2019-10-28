@@ -10,9 +10,7 @@ Also, for the first time, a new code has been added.
 
 * [SelfForce-1D](https://bitbucket.org/peterdiener/selfforce-1d.git)
 
-The ETK is embracing a new model of assigning credit:
-
- * Until now, the 2012 Einstein Toolkit paper was the common way to cite the Einstein Toolkit (though we suggested citing the website itself). In this release, however, we will begin using a DOI to recognize the many contributers that have worked on the toolkit since that time.
+The ETK is embracing a new model of assigning credit: Until now, the 2012 Einstein Toolkit paper was the common way to cite the Einstein Toolkit (though we suggested citing the website itself). In this release, however, we will begin using a DOI to recognize the many contributers that have worked on the toolkit since that time.
 
 In principle, the Einstein Toolkit was always intended to be a collection of codes for exploring numerical relativity, not simply a collection of arrangements and thorns for the Cactus Framework. Going forward, SelfForce-1D will have regular releases using the same release tags as the Cactus-based codes, and will have a similar setup for the running of test-suites. While the new code will not download at the same time as the Cactus-based code, download instructions will appear in the same places.
 
