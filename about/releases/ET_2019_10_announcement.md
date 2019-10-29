@@ -10,7 +10,7 @@ Also, for the first time, a new code has been added.
 
 * [SelfForce-1D](https://bitbucket.org/peterdiener/selfforce-1d.git)
 
-The ETK is embracing a new model of assigning credit: Until now, the 2012 Einstein Toolkit paper was the common way to cite the Einstein Toolkit (though we suggested citing the website itself). In this release, however, we will begin using a ["DOI"](https://doi.org/10.5281/zenodo.3522086) to recognize the many contributers that have worked on the toolkit since that time.
+The ETK is embracing a new model of assigning credit: Until now, the 2012 Einstein Toolkit paper was the common way to cite the Einstein Toolkit (though we suggested citing the website itself). In this release, however, we will begin using [https://doi.org/10.5281/zenodo.3522086](https://doi.org/10.5281/zenodo.3522086) to recognize the many contributers that have worked on the toolkit since that time.
 
 In principle, the Einstein Toolkit was always intended to be a collection of codes for exploring numerical relativity, not simply a collection of arrangements and thorns for the Cactus Framework. Going forward, SelfForce-1D will have regular releases using the same release tags as the Cactus-based codes, and will have a similar setup for the running of test-suites. While the new code will not download at the same time as the Cactus-based code, download instructions will appear in the same places.
 
@@ -62,11 +62,11 @@ Supported (tested) machines include:
 - Stampede 2
 - Mike
 
-* TACC machines: defs.local.ini needs to have sourcebasedir = $WORK and basedir = $SCRATCH/simulations configured for this machine. You need to determine $WORK and $SCRATCH by logging in to the machine.
+* TACC machines: defs.local.ini needs to have sourcebasedir = $WORK and basedir = $SCRATCH/simulations configured for this machine. You need to determine $WORK and $SCRATCH by logging in to the machine.
 
 All repositories participating in this release carry a branch ET_2019_10 marking this release. These release branches will be updated if severe errors are found.
 
-The "Mayer" Release Team on behalf of the Einstein Toolkit Consortium (2019‐10‐25)
+The "Mayer" Release Team on behalf of the Einstein Toolkit Consortium (2019-10-25)
 
 * Steven R. Brandt
 * Maria Babiuc-Hamilton
