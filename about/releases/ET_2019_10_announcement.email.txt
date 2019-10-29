@@ -72,7 +72,7 @@ The changes between this and the previous release include:
 Larger changes since last release
 
  * The Fishbone Moncrief Initial Data thorn (FishboneMoncriefID) thorn has 
-   been added to the `WVUThorns` arrangement
+   been added to the WVUThorns arrangement
    - This thorn solves the equations originally posed by Fishbone & Moncrief, 
      describing a non-self-gravitating equilibrium disk of matter orbiting a 
      spinning black hole in standard (spherical) Kerr-Schild coordinates. When 

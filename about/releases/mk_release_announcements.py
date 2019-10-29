@@ -63,6 +63,7 @@ def make_text(manual_breaks, fw):
 
           line = re.sub(r'\[([^\]]*)\]\(([^\)]*)\)',r'\1',line)
           line = re.sub(r'^#+\s+','',line)
+          line = re.sub(r'`([^`\s]*)`',r'\1',line)
 
           sp = ' '*(2*indent-1)
 
