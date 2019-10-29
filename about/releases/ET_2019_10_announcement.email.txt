@@ -73,26 +73,27 @@ Larger changes since last release
 
  * The Fishbone Moncrief Initial Data thorn (FishboneMoncriefID) thorn has 
    been added to the WVUThorns arrangement
-   - This thorn solves the equations originally posed by Fishbone & Moncrief, 
-     describing a non-self-gravitating equilibrium disk of matter orbiting a 
-     spinning black hole in standard (spherical) Kerr-Schild coordinates. When 
-     the disk is seeded with initially dynamically unimportant poloidal magnetic 
-     fields, dramatic magnetic instabilities occur during the subsequent 
-     evolution, launching ultrarelativistic jets. Thus the Fishbone-Moncrief 
-     solution provides a standard testbed for GRMHD accretion disk codes.
-   - From a code perspective, FishboneMoncriefID is notable in that it is the 
-     first ETK thorn entirely written and documented within pedagogical Jupyter 
-     notebooks. In these notebooks, the Fishbone-Moncrief equations are converted 
-     from Einstein-like notation into optimized C code using NRPy+, a Kranc 
-     analogue depending only on Python and its open-source SymPy computer algebra 
-     software.
+   - This thorn solves the equations originally posed by Fishbone & 
+     Moncrief, describing a non-self-gravitating equilibrium disk of matter 
+     orbiting a spinning black hole in standard (spherical) Kerr-Schild 
+     coordinates. When the disk is seeded with initially dynamically 
+     unimportant poloidal magnetic fields, dramatic magnetic instabilities 
+     occur during the subsequent evolution, launching ultrarelativistic 
+     jets. Thus the Fishbone-Moncrief solution provides a standard testbed 
+     for GRMHD accretion disk codes.
+   - From a code perspective, FishboneMoncriefID is notable in that it is 
+     the first ETK thorn entirely written and documented within pedagogical 
+     Jupyter notebooks. In these notebooks, the Fishbone-Moncrief equations 
+     are converted from Einstein-like notation into optimized C code using 
+     NRPy+, a Kranc analogue depending only on Python and its open-source 
+     SymPy computer algebra software.
  * The inclusion of the SelfForce-1D code in the Einstein Toolkit as the 
    first non-Cactus code in the toolkit.
    - Evolves the sourced scalar wave equation on a Schwarzschild spacetime 
      using the effective source approach to point particles.
-   - The wave equation is decomposed into spherical harmonics and the resulting 
-     1+1 dimensional equations are discretized in the radial direction using the 
-     discontinuous Galerkin method.
+   - The wave equation is decomposed into spherical harmonics and the 
+     resulting 1+1 dimensional equations are discretized in the radial 
+     direction using the discontinuous Galerkin method.
  * Update hwloc to 1.11.12
  * Groups of vectors of vectors are now handled properly by 
    RotatingSymmetry90 and RotatingSymmetry180

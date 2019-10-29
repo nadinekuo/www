@@ -72,8 +72,12 @@ def make_text(manual_breaks, fw):
               continue
           # The regular expression {0,N} greedily looks
           # for matches of at most N characters.
-          for g in re.finditer(r'.{0,76}(\s+|$)',line):
+          while True:
+              g = re.match(r'(.{1,%d})(\s+|$)' % (76-len(sp)), line)
+              if not g:
+                  break
               segment = g.group(0)
+              line = line[g.end(0):]
 
               # Don't generate an extra newline for
               # the last blank pattern match.
