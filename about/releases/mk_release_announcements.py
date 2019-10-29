@@ -64,11 +64,11 @@ def make_text(manual_breaks, fw):
           line = re.sub(r'\[([^\]]*)\]\(([^\)]*)\)',r'\1',line)
           line = re.sub(r'^#+\s+','',line)
 
-          if line == '' or not manual_breaks:
-              print(line,file=fw)
-              continue
-
           sp = ' '*(2*indent-1)
+
+          if line == '' or not manual_breaks:
+              print(sp,line,sep='',file=fw)
+              continue
           # The regular expression {0,N} greedily looks
           # for matches of at most N characters.
           for g in re.finditer(r'.{0,76}(\s+|$)',line):
