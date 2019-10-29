@@ -55,12 +55,12 @@ As the SelfForce-1D code was not present in the previous release, there is no ne
 
 Supported (tested) machines include:
 
-- Default Debian, Ubuntu, Fedora, CentOS 7, Mint, OpenSUSE and MacOS Mojave (MacPorts) installations
-- Bluewaters
-- Comet
-- Cori
-- Stampede 2
-- Mike
+* Default Debian, Ubuntu, Fedora, CentOS 7, Mint, OpenSUSE and MacOS Mojave (MacPorts) installations
+* Bluewaters
+* Comet
+* Cori
+* Stampede 2
+* Mike
 
 * TACC machines: defs.local.ini needs to have sourcebasedir = $WORK and basedir = $SCRATCH/simulations configured for this machine. You need to determine $WORK and $SCRATCH by logging in to the machine.
 

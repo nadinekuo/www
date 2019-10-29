@@ -1,1 +1,3 @@
 P.vspace.after = 1
+LI.circle_bullet = -
+LI.disc_bullet = *

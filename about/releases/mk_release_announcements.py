@@ -69,10 +69,19 @@ def make_text(manual_breaks, fw):
               continue
 
           sp = ' '*(2*indent-1)
-          for g in re.finditer(r'.{0,80}(\s+|$)',line):
+          # The regular expression {0,N} greedily looks
+          # for matches of at most N characters.
+          for g in re.finditer(r'.{0,76}(\s+|$)',line):
               segment = g.group(0)
+
+              # Don't generate an extra newline for
+              # the last blank pattern match.
               if segment == '':
                   break
+
+              # A list gets a different indentation
+              # on the continuation line because we
+              # want to indent past the bullet.
               print(sp, segment, sep='', file=fw)
               if indent > 0:
                   sp = ' '*(2*indent+1)
