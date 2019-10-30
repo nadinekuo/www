@@ -8,7 +8,7 @@ with open("developers.txt","r") as fd:
     for line in fd.readlines():
         cols = line.strip().split(":")
 
-        entry = [cols[0]]
+        entry = [re.sub(r'~',' ',cols[0])]
         if 2 < len(cols):
             entry += [cols[2]]
         if 3 < len(cols):

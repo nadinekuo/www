@@ -1,1 +1,16 @@
 P.vspace.after = 1
+
+# hyperspace frowns in using o for bullets
+LI.disc_bullet = *
+LI.square_bullet = -
+LI.circle_bullet = -
+LI.custom1_bullet = -
+LI.custom2_bullet = -
+LI.custom3_bullet = -
+
+# no underlining
+U.attributes = NONE
+
+# no links
+A.attributes.internal_link = NONE
+A.attributes.external_link = NONE

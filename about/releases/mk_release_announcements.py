@@ -40,12 +40,59 @@ with open(sys.argv[1],"r") as fd:
 </body>
 </html>
         """,file=fw)
-    # install via: apt-get install html2text
-    cmd = "html2text -width 72 -utf8 -style pretty -rcfile {html2textrc} -o {base_name}.txt". \
-        format(html2textrc = os.path.join(os.path.dirname(base_name),"html2textrc"),
-               base_name = base_name)
-    with os.popen(cmd, "w") as fw:
-        # the python package html2text is unfortunately not an equivalent to
-        # the html2text script since it does not handle wrapping of list items
-        # (or at least only does so in the newest version it seems)
-        print(html,file=fw)
+
+def make_text(manual_breaks, fw):
+  with open(sys.argv[1], "r", encoding='ascii') as fd:
+      for line in fd.readlines():
+          line = line.strip()
+
+          # Ensure there are no weird characters
+          n = 0
+          for ch in line:
+              assert re.match(r'^[=$\+\&`\[\]\(\);,?\./" \t\w:\*\#-]+$',ch), line[0:n]+"<"+ch+":"+str(ord(ch))+">"+line[n+1:]
+              n += 1
+
+          if len(line) == 0:
+              indent = 0
+          elif line[0] == '-':
+              indent = 2
+          elif line[0] == '*':
+              indent = 1
+          else:
+              indent = 0
+
+          line = re.sub(r'\[([^\]]*)\]\(([^\)]*)\)',r'\1',line)
+          line = re.sub(r'^#+\s+','',line)
+          line = re.sub(r'`([^`\s]*)`',r'\1',line)
+
+          sp = ' '*(2*indent-1)
+
+          if line == '' or not manual_breaks:
+              print(sp,line,sep='',file=fw)
+              continue
+          # The regular expression {0,N} greedily looks
+          # for matches of at most N characters.
+          while True:
+              g = re.match(r'(.{1,%d})(\s+|$)' % (76-len(sp)), line)
+              if not g:
+                  break
+              segment = g.group(0)
+              line = line[g.end(0):]
+
+              # Don't generate an extra newline for
+              # the last blank pattern match.
+              if segment == '':
+                  break
+
+              # A list gets a different indentation
+              # on the continuation line because we
+              # want to indent past the bullet.
+              print(sp, segment, sep='', file=fw)
+              if indent > 0:
+                  sp = ' '*(2*indent+1)
+
+with open(base_name+".txt","w") as fw:
+    make_text(manual_breaks=False, fw=fw)
+
+with open(base_name+".email.txt","w") as fw:
+    make_text(manual_breaks=True, fw=fw)
