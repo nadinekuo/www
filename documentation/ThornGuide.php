@@ -56,19 +56,27 @@ function dirContent($dir) {
   return $content;
 }
 
-$docdir = "../../documentation/ThornDoc/";
+$thdocdir = "../../documentation/ThornDoc/";
+$ardocdir = "../../documentation/ArrangementDoc/";
 $arrCount = 0;
 $colCount = array(
   "xs" => 6,
   "sm" => 4,
   "md" => 3,
   "lg" => 2, );
-foreach (dirContent($docdir) as $arrangement) {
+foreach (dirContent($thdocdir) as $arrangement) {
   $arrThornCount = 0;
-  foreach (dirContent($docdir.$arrangement) as $thorn) {
-    if (file_exists($docdir.$arrangement."/".$thorn."/documentation.html")) {
+  foreach (dirContent($thdocdir.$arrangement) as $thorn) {
+    if (file_exists($thdocdir.$arrangement."/".$thorn."/documentation.html")) {
       if ($arrThornCount == 0) {
-        echo "<div class='nobreak'>".$arrangement."<ul>\n";
+        echo "<div class='nobreak'>";
+        if (file_exists($ardocdir.$arrangement."/documentation.html")) {
+          echo "<a href=\"../arrangementguide/".$arrangement."/documentation.html\">".
+               $arrangement."</a>";
+        } else {
+          echo $arrangement;
+        }
+        echo "<ul>\n";
       }
       $arrThornCount += 1;
       echo " <li><a href=\"../thornguide/".$arrangement."/".$thorn."/documentation.html\">".
