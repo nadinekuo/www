@@ -1,16 +1,15 @@
-# This file was automatically generated using the GetComponents script.
+# Component list for the Einstein Toolkit <http://einsteintoolkit.org/>
+# $Revision$
+# $Date$
+# $HeadURL$
 
 !CRL_VERSION = 1.0
-
-
-# Component list: ET_2018_09/thornlists/einsteintoolkit.th
-
 
 !DEFINE ROOT = Cactus
 !DEFINE ARR  = $ROOT/arrangements
 !DEFINE COMPONENTLIST_TARGET = $ROOT/thornlists/
 
-!DEFINE ET_RELEASE = ET_2019_03
+!DEFINE ET_RELEASE = ET_2019_10
 
 
 # A note on CUDA and OpenCL:
@@ -52,6 +51,7 @@
 !REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = ./manifest
 
+
 # Cactus Flesh
 !TARGET   = $ROOT
 !TYPE     = git
@@ -59,6 +59,7 @@
 !NAME     = flesh
 !REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = .clang-format CONTRIBUTORS COPYRIGHT doc lib Makefile src
+
 
 # Simulation Factory
 !TARGET   = $ROOT
@@ -69,12 +70,14 @@
 !REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = ./simfactory
 
+
 # Example parameter files
 !TARGET   = $ROOT
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/einsteinexamples.git
 !REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = par
+
 
 # Various Cactus utilities
 !TARGET   = $ROOT
@@ -85,6 +88,7 @@
 !REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = ./utils
 
+
 # The GetComponents script
 !TARGET   = $ROOT/bin
 !TYPE     = git
@@ -92,6 +96,15 @@
 !REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = GetComponents
 
+
+# CactusDoc thorns
+!TARGET   = $ARR/CactusDoc
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/coredoc.git
+!NAME     = CoreDoc
+!REPO_PATH= $1
+!REPO_BRANCH = $ET_RELEASE
+!CHECKOUT = ./CoreDoc
 
 
 # CactusBase thorns
@@ -122,15 +135,6 @@ CactusBase/Time
 CactusConnect/HTTPD
 CactusConnect/HTTPDExtra
 CactusConnect/Socket
-
-# CactusDoc thorns
-!TARGET   = $ARR/CactusDoc
-!TYPE     = git
-!URL      = https://bitbucket.org/cactuscode/coredoc.git
-!NAME     = CoreDoc
-!REPO_PATH= $1
-!REPO_BRANCH = $ET_RELEASE
-!CHECKOUT = ./CoreDoc
 
 # CactusElliptic thorns
 !TARGET   = $ARR
@@ -222,6 +226,7 @@ CactusPUGH/PUGHSlab
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactuspughio.git
 !REPO_PATH= $2
+!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 CactusPUGHIO/IOHDF5
 CactusPUGHIO/IOHDF5Util
@@ -299,6 +304,54 @@ CactusWave/WaveToyF90
 CactusWave/WaveToyFreeF90
 
 
+# Carpet, the AMR driver
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/eschnett/carpet.git
+!REPO_PATH= $2
+!REPO_BRANCH = $ET_RELEASE
+!CHECKOUT = Carpet/doc
+Carpet/Carpet
+Carpet/CarpetEvolutionMask
+Carpet/CarpetIOASCII
+Carpet/CarpetIOBasic
+Carpet/CarpetIOHDF5
+Carpet/CarpetIOScalar
+Carpet/CarpetIntegrateTest
+Carpet/CarpetInterp
+Carpet/CarpetInterp2
+Carpet/CarpetLib
+Carpet/CarpetMask
+Carpet/CarpetProlongateTest
+Carpet/CarpetReduce
+Carpet/CarpetRegrid
+Carpet/CarpetRegrid2
+Carpet/CarpetRegridTest
+Carpet/CarpetSlab
+Carpet/CarpetTracker
+Carpet/CycleClock
+Carpet/HighOrderWaveTest
+Carpet/LoopControl
+Carpet/PeriodicCarpet
+Carpet/ReductionTest
+Carpet/ReductionTest2
+Carpet/ReductionTest3
+Carpet/RegridSyncTest
+Carpet/TestCarpetGridInfo
+Carpet/TestLoopControl
+Carpet/Timers
+
+
+# Thorns developed at the University of Catania
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/eloisa/ctthorns.git
+!REPO_PATH= $2
+!REPO_BRANCH = $ET_RELEASE
+!CHECKOUT =
+CTThorns/CT_Analytic
+CTThorns/CT_MultiLevel
+
 
 # EinsteinAnalysis
 !TARGET   = $ARR
@@ -343,6 +396,7 @@ EinsteinBase/TmunuBase
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/einsteineos.git
 !REPO_PATH= $2
+!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 EinsteinEOS/EOS_Hybrid
 EinsteinEOS/EOS_IdealFluid
@@ -360,6 +414,22 @@ EinsteinEvolve/GRHydro
 EinsteinEvolve/GRHydro_InitData
 EinsteinEvolve/NewRad
 
+# EinsteinExact
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://github.com/barrywardell/EinsteinExact.git
+!REPO_PATH= $2
+!REPO_BRANCH = $ET_RELEASE
+!CHECKOUT = EinsteinExact/doc EinsteinExact/m EinsteinExact/tests
+EinsteinExact/EinsteinExact_Test
+EinsteinExact/GaugeWave
+EinsteinExact/KerrSchild
+EinsteinExact/Minkowski
+EinsteinExact/ModifiedSchwarzschildBL
+EinsteinExact/ShiftedGaugeWave
+EinsteinExact/Vaidya2
+
+
 # EinsteinInitialData
 !TARGET   = $ARR
 !TYPE     = git
@@ -370,6 +440,7 @@ EinsteinEvolve/NewRad
 EinsteinInitialData/DistortedBHIVP
 EinsteinInitialData/Exact
 EinsteinInitialData/Hydro_InitExcision
+EinsteinInitialData/Hydro_RNSID
 EinsteinInitialData/IDAnalyticBH
 EinsteinInitialData/IDAxiBrillBH
 EinsteinInitialData/IDAxiOddBrillBH
@@ -396,78 +467,10 @@ EinsteinUtils/SetMask_SphericalSurface
 EinsteinUtils/TGRtensor
 
 
-
-# Carpet, the AMR driver
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://bitbucket.org/eschnett/carpet.git
-!REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
-!CHECKOUT = Carpet/doc
-Carpet/Carpet
-Carpet/CarpetEvolutionMask
-Carpet/CarpetIOASCII
-Carpet/CarpetIOBasic
-Carpet/CarpetIOHDF5
-Carpet/CarpetIOScalar
-Carpet/CarpetIntegrateTest
-Carpet/CarpetInterp
-Carpet/CarpetInterp2
-Carpet/CarpetLib
-Carpet/CarpetMask
-Carpet/CarpetProlongateTest
-Carpet/CarpetReduce
-Carpet/CarpetRegrid
-Carpet/CarpetRegrid2
-Carpet/CarpetRegridTest
-Carpet/CarpetSlab
-Carpet/CarpetTracker
-Carpet/CycleClock
-Carpet/HighOrderWaveTest
-Carpet/LoopControl
-Carpet/PeriodicCarpet
-Carpet/ReductionTest
-Carpet/ReductionTest2
-Carpet/ReductionTest3
-Carpet/RegridSyncTest
-Carpet/TestCarpetGridInfo
-Carpet/TestLoopControl
-Carpet/Timers
-
-
-
-# Thorns developed at the University of Catania
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://bitbucket.org/eloisa/ctthorns.git
-!REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
-!CHECKOUT =
-CTThorns/CT_Analytic
-CTThorns/CT_MultiLevel
-
-
-
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://github.com/barrywardell/EinsteinExact.git
-!REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
-!CHECKOUT = EinsteinExact/doc EinsteinExact/m EinsteinExact/tests
-EinsteinExact/EinsteinExact_Test
-EinsteinExact/GaugeWave
-EinsteinExact/KerrSchild
-EinsteinExact/Minkowski
-EinsteinExact/ModifiedSchwarzschildBL
-EinsteinExact/ShiftedGaugeWave
-EinsteinExact/Vaidya2
-
-
-
 # Additional Cactus thorns
 !TARGET   = $ARR
 !TYPE     = svn
-!URL      = https://svn.cactuscode.org/projects/$1/$2/branches/$ET_RELEASE
+!URL      = https://github.com/EinsteinToolkit/$1-$2.git/branches/$ET_RELEASE
 !CHECKOUT = ExternalLibraries/OpenBLAS ExternalLibraries/OpenCL ExternalLibraries/pciutils ExternalLibraries/PETSc
 ExternalLibraries/BLAS
 ExternalLibraries/FFTW3
@@ -487,17 +490,6 @@ ExternalLibraries/PAPI
 ExternalLibraries/pthreads
 ExternalLibraries/zlib
 
-# A newer version of Lorene, by default disabled
-!TARGET   = $ARR/ExternalLibraries
-!TYPE     = git
-!URL      = https://bitbucket.org/einsteintoolkit/lorene.git
-!NAME     = LORENE2
-!REPO_BRANCH = $ET_RELEASE
-!REPO_PATH= ../
-!CHECKOUT = LORENE2
-#DISABLED LORENE2
-
-
 # From Kranc (required e.g. by McLachlan)
 !TARGET   = $ARR
 !TYPE     = git
@@ -507,6 +499,46 @@ ExternalLibraries/zlib
 !CHECKOUT =
 KrancNumericalTools/GenericFD
 
+
+# Canuda thorns
+#===============
+# Canuda -- Lean
+!TARGET    = $ARR
+!TYPE      = git
+!URL       = https://bitbucket.org/canuda/lean_public.git
+!REPO_PATH = $2
+!REPO_BRANCH = $ET_RELEASE
+!CHECKOUT =
+Lean/LeanBSSNMoL
+Lean/NPScalars
+
+
+# Llama
+!TARGET   = $ARR
+!TYPE     = git
+!AUTH_URL = https://bitbucket.org/llamacode/llama.git
+!URL      = https://bitbucket.org/llamacode/llama.git
+!REPO_PATH= $2
+!REPO_BRANCH = $ET_RELEASE
+!CHECKOUT =
+Llama/ADMDerivatives
+Llama/Coordinates
+Llama/CoordinatesSymmetry
+Llama/GlobalDerivative
+Llama/Interpolate2
+Llama/LlamaWaveToy
+Llama/WaveExtractL
+
+
+# A newer version of Lorene, by default disabled
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/einsteintoolkit/lorene.git
+!NAME     = LORENE2
+!REPO_PATH= ../$2
+!REPO_BRANCH = $ET_RELEASE
+!CHECKOUT = ExternalLibraries/LORENE2
+#DISABLED ExternalLibraries/LORENE2
 
 
 # McLachlan, the spacetime code
@@ -529,7 +561,6 @@ McLachlan/ML_WaveToy
 McLachlan/ML_WaveToy_Test
 
 
-
 # Numerical
 !TARGET   = $ARR
 !TYPE     = git
@@ -538,7 +569,6 @@ McLachlan/ML_WaveToy_Test
 !REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 Numerical/AEILocalInterp
-
 
 
 # PITTNullCode
@@ -563,8 +593,21 @@ PITTNullCode/SphericalHarmonicRecon
 PITTNullCode/SphericalHarmonicReconGen
 
 
+# Canuda -- Proca
+!TARGET    = $ARR
+!TYPE      = git
+!URL       = https://bitbucket.org/canuda/Proca.git
+!REPO_PATH = $2
+!REPO_BRANCH = $ET_RELEASE
+!CHECKOUT =
+Proca/NPScalars_Proca
+Proca/ProcaBase
+Proca/ProcaEvolve
+Proca/Proca_simpleID
+Proca/TwoPunctures_KerrProca
 
-# Various thorns from WVU
+
+# Various thorns from WVU: IllinoisGRMHD, GiRaFFE, ShiftedKerrSchild, and FishboneMoncriefID
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/zach_etienne/wvuthorns.git
@@ -575,30 +618,42 @@ WVUThorns/IllinoisGRMHD
 WVUThorns/Convert_to_HydroBase
 WVUThorns/ID_converter_ILGRMHD
 WVUThorns/Seed_Magnetic_Fields
+WVUThorns/GiRaFFE
+WVUThorns/GiRaFFE_to_HydroBase
+WVUThorns/GiRaFFEfood
+WVUThorns/ID_converter_GiRaFFE
+WVUThorns/ShiftedKerrSchild
+WVUThorns/FishboneMoncriefID
 
-# Llama
+
+# Various "diagnostic" thorns from WVU:
+#    particle_tracerET
+#    smallbPoynET
+#    VolumeIntegrals_GRMHD
+#    VolumeIntegrals_vacuum
+# ... and a thorn for seeding binary neutron stars with
+#     magnetic fields:
+#    Seed_Magnetic_Fields_BNS
 !TARGET   = $ARR
 !TYPE     = git
-!AUTH_URL = https://bitbucket.org/llamacode/llama.git
-!URL      = https://bitbucket.org/llamacode/llama.git
+!URL      = https://bitbucket.org/zach_etienne/wvuthorns_diagnostics.git
 !REPO_PATH= $2
 !REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
-Llama/ADMDerivatives
-Llama/Coordinates
-Llama/CoordinatesSymmetry
-Llama/GlobalDerivative
-Llama/Interpolate2
-Llama/LlamaWaveToy
-Llama/WaveExtractL
+WVUThorns_Diagnostics/Seed_Magnetic_Fields_BNS
+WVUThorns_Diagnostics/particle_tracerET
+WVUThorns_Diagnostics/smallbPoynET
+WVUThorns_Diagnostics/VolumeIntegrals_GRMHD
+WVUThorns_Diagnostics/VolumeIntegrals_vacuum
+
+
+# Private thorns
+!TARGET   = $ARR
+!TYPE     = ignore
+!CHECKOUT =
 
 !TARGET   = $ARR
 !TYPE     = svn
 !URL      = https://svn.cct.lsu.edu/repos/numrel/$1/$2/trunk
 !CHECKOUT =
 LSUThorns/NSTracker
-
-# Private thorns
-!TARGET   = $ARR
-!TYPE     = ignore
-!CHECKOUT =
