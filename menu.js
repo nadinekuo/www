@@ -44,7 +44,7 @@ document.write(''+
 '<nav id="nav" class="navbar navbar-inverse navbar-fixed-top" data-nav-helper="true">'+
 '  <div id="menu" class="container">'+
 '        <div  class="navbar-header">'+
-'  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#dropit">'+
+'  <button type="button" class="navbar-toggle navbar-left" data-toggle="collapse" data-target="#dropit">'+
 '    <span class ="sr-only"> Show and Hide the Navigation</span>'+
 '    <span class="icon-bar"></span>'+
 '    <span class="icon-bar"></span>'+
