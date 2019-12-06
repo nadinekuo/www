@@ -559,6 +559,9 @@ http://uwm.edu University of Wisconsin-Milwaukee
 https://www.uniurb.it/ UniversitÃ di Urbino "Carlo Bo"
  Mattia Villani
 
+http://www.univ-tlse3.fr/ UniversitÃ© Toulouse 3 Paul Sabatier
+ Pierre Bonnet
+
 http://www.unict.it/ Università degli Studi di Catania (University of Catania)
  Antonio Figura
 
