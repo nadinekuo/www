@@ -7,6 +7,11 @@ body {
   padding-top: 50px;
 }
 
+.logo img {
+    float: left;
+    margin: 5px;
+}
+
 .carousel img {
   min-width: 100%;
   max-width: none;
