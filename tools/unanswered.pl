@@ -32,7 +32,6 @@ foreach my $key (sort sort_by_date (keys %emails)) {
   my $num_authors = scalar @authors;
   if($num_authors == 1 or $authors[0] eq $authors[-1]) {
     if($num_authors == 1 and 
-       $authors[0] eq "Roland Haas" and
        $key =~ m/\[Users\] meeting minutes for/) {
      next;
     }
