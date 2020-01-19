@@ -39,18 +39,23 @@ print "<ul>\n";
 foreach my $key (sort sort_by_date (keys %emails)) {
   my @authors = @${$emails{$key}->{senders}};
   my $num_authors = scalar @authors;
+  my @segments = @${$emails{$key}->{segments}};
+  my $num_segments = scalar @segments;
   if($num_authors == 1 or $authors[0] eq $authors[-1]) {
     if($num_authors == 1 and 
        $key =~ m/\[Users\] meeting minutes /i) {
      next;
     }
-    my $content = get(${$emails{$key}->{tails}});
+    my $content = get($segments[-1]);
     my $date = "unknown";
     if ($content and $content =~ m!<I>\w\w\w (\w\w\w (\d|\s)\d (\d|\s)\d:\d\d:\d\d \w\w\w \d\d\d\d)</I>!) {
       $date = $1;
     }
-    print "<li><tt style='white-space:pre;'>".sanitize($date)."</tt>".sanitize(" $key ($authors[0])").": <a href='".url(${$emails{$key}->{roots}})."'>root</a>";
-    print " <a href='".url(${$emails{$key}->{tails}})."'>tail</a>" if $num_authors > 1;
+    print "<li><tt style='white-space:pre;'>".sanitize($date)."</tt>".sanitize(" $key ($authors[0])").": <a href='".url(${$emails{$key}->{root}})."'>root</a>";
+    for (my $i = 1 ; $i < $num_segments-1 ; $i++) {
+      print " <a href='".url($segments[$i])."'>[$i]</a>";
+    }
+    print " <a href='".url($segments[-1])."'>tail</a>" if $num_authors > 1;
     print "</li>\n";
   }
 }
@@ -75,10 +80,11 @@ sub parse_content {
       if(not exists $emails{$subject} and not $only_existing) {
         $emails{$subject} = {};
         ${$emails{$subject}->{senders}} = [];
-        ${$emails{$subject}->{roots}} = $monthurl . "/" . $url;
+        ${$emails{$subject}->{segments}} = [];
+        ${$emails{$subject}->{root}} = $monthurl . "/" . $url;
       }
       if(exists $emails{$subject}) {
-        ${$emails{$subject}->{tails}} = $monthurl . "/" . $url;
+        push @${$emails{$subject}->{segments}}, ($monthurl . "/" . $url);
         $num_found += 1;
       }
     } elsif(/^<I>(.*)/) {
@@ -113,9 +119,11 @@ sub sort_by_date($$) {
   # reverse sort an email in the emails hash by email series number of its tail
   my ($a, $b) = @_;
   our (%emails);
+  my (@segments_a) = @${$emails{$a}->{segments}};
+  my (@segments_b) = @${$emails{$b}->{segments}};
   my ($id_a, $id_b) = (undef, undef);
-  $id_a = $1 if(${$emails{$a}->{tails}} =~ m!/([^/]*)\.html!);
-  $id_b = $1 if(${$emails{$b}->{tails}} =~ m!/([^/]*)\.html!);
+  $id_a = $1 if($segments_a[-1] =~ m!/([^/]*)\.html!);
+  $id_b = $1 if($segments_b[-1] =~ m!/([^/]*)\.html!);
   if($id_a and $id_b) {
     return -($id_a cmp $id_b);
   } elsif($id_a) {
