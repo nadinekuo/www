@@ -15,13 +15,22 @@ our (%emails);
 
 # get emails logs for the three months braketing the current one
 my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime();
-for (my $m = -1 ; $m <= 1 ; $m++) {
+my $m = +1;
+while(1) {
   my $monthyear = $year * 12 + $mon + $m;
   my $monthname = $months[$monthyear % 12];
   my $fullyear = 1900 + int($monthyear / 12);
   my $url = sprintf($url_fmt, $fullyear, $monthname);
   my $content = get($url);
-  parse_content($content, $url) if $content;
+  my $only_existing = ($m < -1);
+  my $num_found = parse_content($content, $url, $only_existing) if $content;
+  # continue to earlier months until we have braked the current month and no
+  # more emails with known subjects are found
+  if($m > -1 or $num_found > 0) {
+    $m -= 1;
+  } else {
+    last;
+  }
 } 
 
 # if there is an email thread with either only a single post or where the last
@@ -48,30 +57,39 @@ foreach my $key (sort sort_by_date (keys %emails)) {
 print "</ul>\n";
 
 sub parse_content {
-  my ($content, $monthurl) = @_;
+  my ($content, $monthurl, $only_existing) = @_;
   our (%emails);
+  die "Incorrect number of arguments ".scalar @_.". Expected 3." unless scalar @_ == 3;
 
   $monthurl =~ s!/[^/]*$!!;
 
   my @lines = split /\n/,$content;
-  my $subject;
+  my $subject = undef;
+  my $num_found = 0;
   foreach (@lines) {
     if(/^<LI><A HREF="(\d*\.html)">(.*)/) {
       my $url = $1;
       $subject = $2;
       # apparently some subjects have random whitespace (maybe line breaking?)
       $subject =~ s/\s\s*/ /g;
-      if(not exists $emails{$subject}) {
+      if(not exists $emails{$subject} and not $only_existing) {
         $emails{$subject} = {};
         ${$emails{$subject}->{senders}} = [];
         ${$emails{$subject}->{roots}} = $monthurl . "/" . $url;
       }
-      ${$emails{$subject}->{tails}} = $monthurl . "/" . $url;
+      if(exists $emails{$subject}) {
+        ${$emails{$subject}->{tails}} = $monthurl . "/" . $url;
+        $num_found += 1;
+      }
     } elsif(/^<I>(.*)/) {
       my $sender = $1;
-      push @${$emails{$subject}->{senders}}, ($sender);
+      if(exists $emails{$subject}) {
+        push @${$emails{$subject}->{senders}}, ($sender);
+      }
     }
   }
+
+  return $num_found;
 }
 
 sub sanitize {
