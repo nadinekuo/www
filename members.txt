@@ -521,6 +521,9 @@ http://illinois.edu/ University of Illinois, Urbana-Champaign
 https://www.manchester.ac.uk University of Manchester
  https://ianhinder.net Ian Hinder
 
+https://www.unimib.it University of Milano-Bicocca
+ http://ulyanadupletsa.github.io/ Ulyana Dupletsa
+
 http://www.d.umn.edu University of Minnesota Duluth
  Sheyda Salehirad
  Eric West
