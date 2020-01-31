@@ -200,6 +200,9 @@ http://global.itu.edu.tr/ Istanbul Technical University
 https://gwcenter.icrr.u-tokyo.ac.jp/en/ KAGRA, BNU
  Wu Shichao
 
+http://fh-kiel.de/ Kiel University of Applied Sciences
+ Alois Peter Schaffarczyk
+
 https://www.kcl.ac.uk/ Kings College London
  Matthew Elley
  Giuseppe Ficarra
