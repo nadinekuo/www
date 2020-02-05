@@ -26,6 +26,9 @@ http://www.bit.edu.cn/ Beijing Institute of Technology
 http://www.belmont.edu/ Belmont University
  Scott Hawley
 
+https://www.bits-pilani.ac.in/ Birla Institute of Technology and Science, Pilani - Pilani Campus
+ Aryan Sharma
+
 http://www.tapir.caltech.edu/ California Institute of Technology
  Peter Kalmus
  Philipp Mösta
