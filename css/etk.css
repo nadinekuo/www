@@ -1,9 +1,9 @@
 html {
-  font-size: initial;
+  font-size: medium;
 }
 body {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: initial;
+  font-size: medium;
   padding-top: 50px;
 }
 
@@ -20,31 +20,31 @@ body {
 
 h1 {
   font-weight: bold;
-  font-size: initial;
+  font-size: x-large;
 }
 
 h2 {
   font-weight: bold;
-  font-size: initial;
+  font-size: large;
 }
 h3{
   font-weight: bold;	
-  font-size: initial;
+  font-size: medium;
 }
 
 h4{
   font-weight: bold;	
-  font-size: initial;
+  font-size: medium;
 }
 
 h5{
   font-weight: bold;
-  font-size: initial;
+  font-size: medium;
 }
 
 h6{
   font-weight: bold;
-  font-size: initial;
+  font-size: medium;
 }
 
 
