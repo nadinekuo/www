@@ -582,10 +582,10 @@ https://uwaterloo.ca/ University of Waterloo
 http://uwm.edu University of Wisconsin-Milwaukee
  Philip Chang
 
-https://www.uniurb.it/ UniversitÃ di Urbino "Carlo Bo"
+https://www.uniurb.it/ Università di Urbino "Carlo Bo"
  Mattia Villani
 
-http://www.univ-tlse3.fr/ UniversitÃ© Toulouse 3 Paul Sabatier
+http://www.univ-tlse3.fr/ Université Toulouse 3 Paul Sabatier
  Pierre Bonnet
 
 http://www.unict.it/ Università degli Studi di Catania (University of Catania)
