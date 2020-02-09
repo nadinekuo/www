@@ -30,13 +30,7 @@ https://www.bits-pilani.ac.in/ Birla Institute of Technology and Science, Pilani
  Aryan Sharma
 
 http://www.tapir.caltech.edu/ California Institute of Technology
- Peter Kalmus
- Philipp Mösta
  Ian Ocampo
- http://www.tapir.caltech.edu/~cott/ Christian D. Ott
- David Radice
- Christian Reisswig
- Béla Szilágyi
 
 https://www.cpp.edu/ California State Polytechnic University, Pomona
  David H. Bae
@@ -146,6 +140,7 @@ http://www.iitd.ac.in/ Indian Institute of Technology Delhi
 
 Individuals without affiliation
  David N Bradley
+ Christian D. Ott
  Gary W Pearson
 
 http://www.spacescience.ro/ Insitute of Space Science, Romania
@@ -199,6 +194,9 @@ http://www.isquareit.edu.in/ International Institute of Information Technology, 
 
 http://global.itu.edu.tr/ Istanbul Technical University
  Sercan Çıkıntoğlu
+
+https://www.jpl.nasa.gov/ Jet Propulsion Laboratory
+ https://peterkalmus.net/ Peter Kalmus
 
 https://gwcenter.icrr.u-tokyo.ac.jp/en/ KAGRA, BNU
  Wu Shichao
@@ -317,6 +315,9 @@ http://en.unipr.it/ Parma University
 http://www.gravity.psu.edu/ Penn State University
  Surendra Padamata
 
+https://www.psu.edu/ PennState University
+ http://personal.psu.edu/dur566/ David Radice
+
 http://www.perimeterinstitute.ca/ Perimeter Institute for Theoretical Physics
  Joseph Bramante
  Jonah Miller
@@ -379,6 +380,9 @@ http://www.astro.oma.be/en/ Royal Observatory of Belgium
 
 http://www.rutgers.edu/ Rutgers University
  Ashley Zebrowski
+
+https://icn.sap.com/ SAP Innovation Center Network
+ http://www.nullinfinity.net/ Christian Reisswig
 
 http://www.shctpt.edu/ Sacred Heart College Autonomous
  Deepan
@@ -492,6 +496,9 @@ http://www.ucd.ie/ University College Dublin
 http://ua.edu University of Alabama
  Nasir Eisty
 
+https://www.uva.nl University of Amsterdam
+ Philipp Mösta
+
 http://www.uib.eu/ University of Balearic Islands
  Antoni Ramos Buades
 
@@ -599,6 +606,9 @@ https://www.unimib.it Università di Milano-Bicocca
 
 https://vit.ac.in/ VIT
  Narendra S
+
+https://vntana.com/ VNTANA
+ Béla Szilágyi
 
 https://as.vanderbilt.edu Vanderbuilt University
  William E. Gabella
