@@ -43,6 +43,7 @@ while($content =~ m!(http://lists\.einsteintoolkit\.org/pipermail/users/\d\d\d\d
 # if there is an email thread with either only a single post or where the last
 # poster is the original poster then they are candidates for unanswered emails
 print "<ul>\n";
+my $found_unanswered = 0;
 foreach my $key (sort sort_by_date (keys %emails)) {
   my @authors = @{$emails{$key}->{senders}};
   my $num_authors = scalar @authors;
@@ -65,9 +66,14 @@ foreach my $key (sort sort_by_date (keys %emails)) {
     }
     print " <a href='".url($segments[-1])."'>tail</a>" if $num_authors > 1;
     print "</li>\n";
+    $found_unanswered = 1;
   }
 }
 print "</ul>\n";
+
+if(not $found_unanswered) {
+  print "<p>No unanswered emails found</p>\n";
+}
 
 sub parse_content {
   my ($content, $monthurl, $only_existing, $emails) = @_;

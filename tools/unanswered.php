@@ -11,14 +11,11 @@
     <script src="menu.js" type="text/javascript"></script>
   </header>
   <div class="container">
-<?php
-$title='Possible unaswered emails on users mailing list';
-$hide_path=1;
-$category='internal';
-
-echo '<h3>Possible unanswered emails</h3>';
-passthru('/usr/bin/perl 2>&1 ./unanswered.pl');
-?>
+  <h3>Possible unanswered emails</h3>
+  <?php passthru('/usr/bin/perl 2>&1 ./unanswered.pl'); ?>
+  <p>Threads already marked as
+  <a href="https://docs.einsteintoolkit.org/et-docs/Answered_emails">answered</a>
+  in the wiki are not shown.</p>
   </div>
   <div class="container">
     <div class="row">
