@@ -53,7 +53,7 @@ foreach my $key (sort sort_by_date (keys %emails)) {
        $key =~ m/\[Users\] (ETK )?meeting minutes /i) {
      next;
     }
-    next if(exists $answered{$emails{$key}->{root}});
+    next if(exists $answered{$segments[-1]});
     my $content = get($segments[-1]);
     my $date = "unknown";
     if ($content and $content =~ m!<I>\w\w\w (\w\w\w (\d|\s)\d (\d|\s)\d:\d\d:\d\d \w\w\w \d\d\d\d)</I>!) {
