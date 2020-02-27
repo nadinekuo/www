@@ -11,7 +11,7 @@ my @months = ("January", "February", "March", "April", "May", "June", "July", "A
 my $url_fmt = "http://lists.einsteintoolkit.org/pipermail/users/%04d-%s/date.html";
 
 # these hold the list of emails and the root of the conversations
-our (%emails);
+my (%emails);
 
 # get emails logs for the three months braketing the current one
 my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime();
@@ -23,8 +23,8 @@ while(1) {
   my $url = sprintf($url_fmt, $fullyear, $monthname);
   my $content = get($url);
   my $only_existing = ($m < -1);
-  my $num_found = parse_content($content, $url, $only_existing) if $content;
-  # continue to earlier months until we have braked the current month and no
+  my $num_found = parse_content($content, $url, $only_existing, \%emails) if $content;
+  # continue to earlier months until we have bracketed the current month and no
   # more emails with known subjects are found
   if($m > -1 or $num_found > 0) {
     $m -= 1;
@@ -62,9 +62,8 @@ foreach my $key (sort sort_by_date (keys %emails)) {
 print "</ul>\n";
 
 sub parse_content {
-  my ($content, $monthurl, $only_existing) = @_;
-  our (%emails);
-  die "Incorrect number of arguments ".scalar @_.". Expected 3." unless scalar @_ == 3;
+  my ($content, $monthurl, $only_existing, $emails) = @_;
+  die "Incorrect number of arguments ".scalar @_.". Expected 4." unless scalar @_ == 4;
 
   $monthurl =~ s!/[^/]*$!!;
 
@@ -78,19 +77,19 @@ sub parse_content {
       # apparently some subjects have random whitespace (maybe line breaking?)
       $subject =~ s/\s\s*/ /g;
       if(not exists $emails{$subject} and not $only_existing) {
-        $emails{$subject} = {};
-        ${$emails{$subject}->{senders}} = [];
-        ${$emails{$subject}->{segments}} = [];
-        ${$emails{$subject}->{root}} = $monthurl . "/" . $url;
+        $emails->{$subject} = {};
+        ${$emails->{$subject}->{senders}} = [];
+        ${$emails->{$subject}->{segments}} = [];
+        ${$emails->{$subject}->{root}} = $monthurl . "/" . $url;
       }
-      if(exists $emails{$subject}) {
-        push @${$emails{$subject}->{segments}}, ($monthurl . "/" . $url);
+      if(exists $emails->{$subject}) {
+        push @${$emails->{$subject}->{segments}}, ($monthurl . "/" . $url);
         $num_found += 1;
       }
     } elsif(/^<I>(.*)/) {
       my $sender = $1;
-      if(exists $emails{$subject}) {
-        push @${$emails{$subject}->{senders}}, ($sender);
+      if(exists $emails->{$subject}) {
+        push @${$emails->{$subject}->{senders}}, ($sender);
       }
     }
   }
@@ -118,7 +117,6 @@ sub url {
 sub sort_by_date($$) {
   # reverse sort an email in the emails hash by email series number of its tail
   my ($a, $b) = @_;
-  our (%emails);
   my (@segments_a) = @${$emails{$a}->{segments}};
   my (@segments_b) = @${$emails{$b}->{segments}};
   my ($id_a, $id_b) = (undef, undef);
