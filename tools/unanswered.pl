@@ -43,7 +43,7 @@ foreach my $key (sort sort_by_date (keys %emails)) {
   my $num_segments = scalar @segments;
   if($num_authors == 1 or $authors[0] eq $authors[-1]) {
     if($num_authors == 1 and 
-       $key =~ m/\[Users\] meeting minutes /i) {
+       $key =~ m/\[Users\] (ETK )?meeting minutes /i) {
      next;
     }
     my $content = get($segments[-1]);
