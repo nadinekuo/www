@@ -33,6 +33,13 @@ while(1) {
   }
 } 
 
+# get list of thread marked as "done" from wiki
+my $content = get("https://docs.einsteintoolkit.org/et-docs/Answered_emails");
+my %answered;
+while($content =~ m!(http://lists\.einsteintoolkit\.org/pipermail/users/\d\d\d\d-\w+/\d+\.html)!g) {
+  $answered{$1} = 1;
+}
+
 # if there is an email thread with either only a single post or where the last
 # poster is the original poster then they are candidates for unanswered emails
 print "<ul>\n";
@@ -46,6 +53,7 @@ foreach my $key (sort sort_by_date (keys %emails)) {
        $key =~ m/\[Users\] (ETK )?meeting minutes /i) {
      next;
     }
+    next if(exists $answered{${$emails{$key}->{root}}});
     my $content = get($segments[-1]);
     my $date = "unknown";
     if ($content and $content =~ m!<I>\w\w\w (\w\w\w (\d|\s)\d (\d|\s)\d:\d\d:\d\d \w\w\w \d\d\d\d)</I>!) {
