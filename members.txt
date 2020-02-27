@@ -73,6 +73,7 @@ http://www.enmu.edu/ Eastern New Mexico University
  William L. Andersen
 
 https://ege.edu.tr/eng-0/Homepage.html Ege University
+ Beyhan Karakas
  Kutay ArÄ±n&ccedil; &Ccedil;okluk
 
 http://www.emory.edu/home/index.html Emory University
@@ -583,12 +584,6 @@ https://uwaterloo.ca/ University of Waterloo
 http://uwm.edu University of Wisconsin-Milwaukee
  Philip Chang
 
-https://www.uniurb.it/ Università di Urbino "Carlo Bo"
- Mattia Villani
-
-http://www.univ-tlse3.fr/ Université Toulouse 3 Paul Sabatier
- Pierre Bonnet
-
 http://www.unict.it/ Università degli Studi di Catania (University of Catania)
  Antonio Figura
 
@@ -604,6 +599,12 @@ http://www.unict.it/en/ Università di Catania
 https://www.unimib.it Università di Milano-Bicocca
  Giulia Crotti
  Bruno Giacomazzo
+
+https://www.uniurb.it/ Università di Urbino "Carlo Bo"
+ Mattia Villani
+
+http://www.univ-tlse3.fr/ Université Toulouse 3 Paul Sabatier
+ Pierre Bonnet
 
 https://vit.ac.in/ VIT
  Narendra S
