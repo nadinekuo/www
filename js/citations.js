@@ -285,10 +285,8 @@ function makeTable(cites, tableNode)
         var cell1Node = document.createElement("td");
         cell1Node.rowSpan = cites[thorn].length;
         rowNode.appendChild(cell1Node);
-        var boldNode = document.createElement("b");
-        cell1Node.appendChild(boldNode);
         var textNode = document.createTextNode(thorn);
-        boldNode.appendChild(textNode);
+        cell1Node.appendChild(textNode);
       }
 
       var cell2Node = document.createElement("td");
