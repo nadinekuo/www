@@ -202,6 +202,9 @@ https://www.jpl.nasa.gov/ Jet Propulsion Laboratory
 https://gwcenter.icrr.u-tokyo.ac.jp/en/ KAGRA, BNU
  Wu Shichao
 
+http://kiaa.pku.edu.cn/ Kavli Institute for Astronomy and Astrophysics, Peking University
+ https://friendshao.github.io/about/ Lijing Shao
+
 http://fh-kiel.de/ Kiel University of Applied Sciences
  Alois Peter Schaffarczyk
 
