@@ -135,6 +135,9 @@ https://www.iucaa.in/ IUCAA
 http://csp.res.in/ Indian Centre for Space Physics, Kolkata
  Abhrajit Bhattacharjee
 
+http://www.iiserkol.ac.in/ Indian Institute of Science Education and Research Kolkata
+ Praveer K. Gollapudi
+
 http://www.iitd.ac.in/ Indian Institute of Technology Delhi
  Ujjwal Agarwal
  Riya Arora
