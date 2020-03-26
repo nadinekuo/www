@@ -50,7 +50,7 @@ if (empty($name)) {
 } elseif (empty($github) and empty($institution)) {
   echo '<h4>You must name an identity provider.</h4>';
   echo '<br /><a href="javascript:history.back(1);">Try again</a>';
-} elseif (empty($github) and strcasecmp($institution, "GitHub")) {
+} elseif (empty($github) and strcasecmp($institution, "GitHub") == 0) {
   echo '<h4>When using GitHub as the identity provider, please provide your GitHub user name.</h4>';
   echo '<br /><a href="javascript:history.back(1);">Try again</a>';
 } elseif (!empty($github) and (strpos($github, "@") !== false)) {
