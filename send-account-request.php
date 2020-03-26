@@ -48,10 +48,16 @@ if (empty($name)) {
   echo '<h4>Please provide a valid email address.</h4>';
   echo '<br /><a href="javascript:history.back(1);">Try again</a>';
 } elseif (empty($github) and empty($institution)) {
-  echo '<h4>You must provide at least one of (1) a name of your institution or (2) a github account name.</h4>';
+  echo '<h4>You must name an identity provider.</h4>';
+  echo '<br /><a href="javascript:history.back(1);">Try again</a>';
+} elseif (empty($github) and strcasecmp($institution, "GitHub")) {
+  echo '<h4>When using GitHub as the identity provider, please provide your GitHub user name.</h4>';
   echo '<br /><a href="javascript:history.back(1);">Try again</a>';
 } elseif (!empty($github) and (strpos($github, "@") !== false)) {
-  echo '<h4>Please provide your github account name, not your email address. See you <a href="https://github.com/settings/admin">account page</a> for it.</h4>';
+  echo '<h4>Please provide your GitHub account name, not your email address. See you <a href="https://github.com/settings/admin">account page</a> for it.</h4>';
+  echo '<br /><a href="javascript:history.back(1);">Try again</a>';
+} elseif (!empty($github) and !verify_GitHub_Profile($github)) {
+  echo '<h4>The GitHub user account that you provided does not exist.</h4>';
   echo '<br /><a href="javascript:history.back(1);">Try again</a>';
 } elseif (empty($buechsenwursttest) || ($buechsenwursttest != "Einstein")) {
   echo '<h4>You did not spell \'Einstein\' correctly. Go away, spam bot, or </h4>';
@@ -70,6 +76,23 @@ if (empty($name)) {
   echo 'Or contact the <a href="mailto:maintainers@einsteintoolkit.org">maintainers</a>';
   error_log('Failed to send email: ' . implode(',', error_get_last()));
 }
+
+function verify_GitHub_Profile($github) {
+  if(function_exists('curl_version')) {
+    // lifted from various places on the net, eg:
+    // https://stackoverflow.com/questions/9802788/call-a-rest-api-in-php
+    $url = "https://github.com/" . $github;
+    $curl = curl_init($url);
+    curl_setopt($curl,CURLOPT_CUSTOMREQUEST,'GET');
+    curl_setopt($curl,CURLOPT_RETURNTRANSFER ,TRUE);
+    $result = curl_exec($curl);
+    curl_close($curl);
+    return $result != "Not Found";
+  } else {
+    return 1;
+  }
+}
+
 ?>
 
 </div></div>
