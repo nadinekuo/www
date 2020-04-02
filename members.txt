@@ -373,6 +373,7 @@ http://www.ru.ac.za/ Rhodes University, South Africa
 
 http://ccrg.rit.edu/ Rochester Institute of Technology
  Manuela Campanelli
+ Alessandro Ciarfella
  Joshua Faber
  James Healy
  Carlos Lousto
@@ -639,6 +640,9 @@ https://wustl.edu/ Washington University in St. Louis
 http://wvu.edu West Virginia University
  Zachariah Etienne
 
+http://www.yasar.edu.tr/ Yasar University
+ Ali Tuler
+
 http://www.itu.edu.tr/en/ İstanbul Teknik Üniversitesi (Istanbul Technical University)
  Armin Vahdat
 
@@ -661,5 +665,3 @@ http://vidyasagar.ac.in/ বিদ্যাসাগর বিশ্ববিদ
 http://cnu.ac.kr/ 충남대학교 (Chungnam National University)
  Uicheol Jang
 
-http://www.yasar.edu.tr/ Yasar University
- Ali Tuler
