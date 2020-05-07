@@ -29,6 +29,9 @@ http://www.belmont.edu/ Belmont University
 https://www.bits-pilani.ac.in/ Birla Institute of Technology and Science, Pilani - Pilani Campus
  Aryan Sharma
 
+https://case.edu/about/ CWRU
+ Will Christopherson
+
 http://www.tapir.caltech.edu/ California Institute of Technology
  Ian Ocampo
 
