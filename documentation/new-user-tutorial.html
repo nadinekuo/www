@@ -42,7 +42,8 @@
       data.monitors.forEach(function(item) {
         var status = item.status;
         if(status !== 2) {
-          $('#status').append('<p class="alert alert-warning">The tutorial server is currently <em>unavailable</em>. Please use the <a href="https://nbviewer.jupyter.org/github/nds-org/jupyter-et/blob/master/CactusTutorial.ipynb">offline version</a> instead.</p>');
+          //$('#status').append('<p class="alert alert-warning">The tutorial server is currently <em>unavailable</em>. Please use the <a href="https://nbviewer.jupyter.org/github/nds-org/jupyter-et/blob/master/CactusTutorial.ipynb">offline version</a> instead.</p>');
+          $('#status').append('<p class="alert alert-warning">The tutorial server is currently <em>unavailable</em>. Please use the <a href="https://github.com/nds-org/jupyter-et/blob/master/CactusTutorial.ipynb">offline version</a> instead.</p>');
         }
       });
   };
@@ -75,7 +76,8 @@
         <p>If, instead of using the web-based service, you would rather like to
         run the tutorial on your own laptop, then please use a read only
         version of the notebook
-        <a href="https://nbviewer.jupyter.org/github/nds-org/jupyter-et/blob/master/CactusTutorial.ipynb">here</a>
+        <!--<a href="https://nbviewer.jupyter.org/github/nds-org/jupyter-et/blob/master/CactusTutorial.ipynb">here</a>-->
+        <a href="https://github.com/nds-org/jupyter-et/blob/master/CactusTutorial.ipynb">here</a>
         instead.
         </p>
         <h2>Online usage </h2>
