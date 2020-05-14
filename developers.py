@@ -6,6 +6,13 @@ missing = {}
 devs = {}
 with open("developers.txt","r") as fd:
     for line in fd.readlines():
+        # skip comments
+        if line.lstrip().startswith("#"):
+             continue
+        # skip empty lines
+        if line.lstrip() == "":
+            continue
+
         cols = line.strip().split(":")
 
         entry = [re.sub(r'~',' ',cols[0])]
