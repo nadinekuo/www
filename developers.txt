@@ -26,12 +26,14 @@ Ian Hinder: Kranc, Carpet Timers, Jenkins server, Multipole, SystemStatistics, W
 Jascha A Schewtschenko:simfactory sciama machine:University of Portsmouth:
 Jonathan Thornburg: AHFinderDirect, AELocalInterp, LocalInterp, Flesh, docs, Carpet docs, Exact: Indiana University:
 Lars Menger: AHFinder parallelization:Unknown:
+Manuela Campanelli:ET paper:Rochester Institute of Technology
 Michael Koppitz: PunctureTracker:Unknown:
 Mark Miller: EOS_IdalFluid:Unknown:
 Michael Thomas: simfactory: Unknown:
 Miguel Alcubierre: MoL, ADMConstraints, AHFinder:National Autonomous University of Mexico:0000-0003-3367-9868
 Miguel Zilhão: Lean, Proca: Instituto Superior Técnico, Lisbon:0000-0002-7089-5570
 Nils Dorband: Llama:Citadel LLC:
+Pablo Laguna:ET paper:Georgia Institute of Technology
 Peter Diener: EHFinder, SummationByParts, AHFinder, McLachlan, NoExcision:Louisiana State University:0000-0002-3877-0487
 Philipp Moesta: GRHydro MHD code:UC Berkeley
 Joshua Faber::Rochester Institute of Technology
