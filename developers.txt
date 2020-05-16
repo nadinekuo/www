@@ -16,12 +16,14 @@ Roberto De~Pietri: hybrid EOS:Parma University
 Eloisa Bentivegna: CT_MultiLevel, VTK Output in QuasiLocalMeasures:IBM:0000-0003-1229-1653
 Eric Seidel: CRL (GetComponents):Bloomberg LP:
 Erik Schnetter: Carpet, QuasiLocalMeasures, AHFinderDirect, Accelerator, Flesh, Vectors, ExternalLibraries :Perimeter Institute for Theoretical Physics:0000-0002-4518-9017
+Federico Cipolletta: EOS Omni bisection:Rochester Institute of Technology:0000-0001-7894-1028
 Frank Löffler: GRHydro, Flesh, ADMMass, HydroBase, EOS_Omni:Friedrich Schiller University Jena:0000-0001-6643-6323
 Gabrielle Allen: Flesh, Base Cactus thorns, ADMConstraints, ADMMacros, PUGH:University of Illinois:0000-0003-3106-5360
 Gerd Lanferman: Boundary, AHFinder, Flesh, Elliptic thorns:Unknown:
 Ian Hawke: MoL, GRHydro :University of Southampton
 Helvi Witek: Lean, Proca, Carpet:King's College, London:0000-0003-3043-163X
 Ian Hinder: Kranc, Carpet Timers, Jenkins server, Multipole, SystemStatistics, WeylScal4:University of Manchester:0000-0003-3548-9101
+Jascha A Schewtschenko:simfactory sciama machine:University of Portsmouth:
 Jonathan Thornburg: AHFinderDirect, AELocalInterp, LocalInterp, Flesh, docs, Carpet docs, Exact: Indiana University:
 Lars Menger: AHFinder parallelization:Unknown:
 Michael Koppitz: PunctureTracker:Unknown:
@@ -34,6 +36,7 @@ Peter Diener: EHFinder, SummationByParts, AHFinder, McLachlan, NoExcision:Louisi
 Philipp Moesta: GRHydro MHD code:UC Berkeley
 Joshua Faber::Rochester Institute of Technology
 Roland Haas: Flesh, Cactus, Carpet, Outflow, GRHydro, ExternalLibraries, simfactory:University of Illinois:0000-0003-1424-6178
+Samuel Cupp:PreSync code:Louisiana State University:
 Sascha Husa::Universitat de les Illes Balears
 Steven R. Brandt:Flesh, Piraha: Louisiana State University: 0000-0002-7979-2906
 Scott Hawley: AHFinder, Flesh, driver:Belmont University
