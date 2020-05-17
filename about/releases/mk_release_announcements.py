@@ -2,13 +2,21 @@
 import sys, os, re, markdown
 from datetime import datetime
 
+def readlines(fd):
+    """Read lines from file discarding comments at beginning"""
+    lines = []
+    for line in fd:
+        if not lines and re.match("^ *%", line):
+            continue # skip comments at beginning of file
+        lines.append(line)
+    return lines
 
 g = re.match(r'^(.*)\.md',sys.argv[1])
 assert g
 base_name = g.group(1)
 
 with open(sys.argv[1],"r") as fd:
-    html = markdown.markdown(fd.read())
+    html = markdown.markdown("\n".join(readlines(fd)))
     with open(base_name+".html","w") as fw:
         print("""
 <!DOCTYPE html>
@@ -43,7 +51,7 @@ with open(sys.argv[1],"r") as fd:
 
 def make_text(manual_breaks, fw):
   with open(sys.argv[1], "r", encoding='ascii') as fd:
-      for line in fd.readlines():
+      for line in readlines(fd):
           line = line.strip()
 
           # Ensure there are no weird characters
