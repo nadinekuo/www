@@ -68,7 +68,7 @@ Roberto De~Pietri: hybrid EOS:Parma University
 Roland Haas: Flesh, Cactus, Carpet, Outflow, GRHydro, ExternalLibraries, simfactory:University of Illinois:0000-0003-1424-6178
 Ryoji Takahashi::Sant Cugat Del Valles
 Sai Iyer::University of St. Louis
-Samuel Cupp:PreSync code:Louisiana State University:
+Samuel Cupp:PreSync code:Louisiana State University:0000-0003-1758-8376
 Sascha Husa::Universitat de les Illes Balears
 Scott C. Noble:mhd code2prim:The University of Tulsa
 Scott Hawley: AHFinder, Flesh, driver:Belmont University
