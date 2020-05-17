@@ -31,7 +31,7 @@ The changes between this and the previous release include:
 * **PRESYNC** Steven R. Brandt, Samuel Cupp: please add somethine here
 * **Baikal** Zachariah Etienne: please add something here
 * ExternalLibraries
-    - the HDF5 tarball included in the EinsteinToolkit has been updated to 1.10.5, which changed the hid_t types to 64 integers
+    - the HDF5 tarball included in the EinsteinToolkit has been updated to 1.10.5, which changed the hid_t types to 64bit integers
     - the hwloc tarball included in the EinsteinToolkit has been updated to 2.0.1, which is incompatible with version 1.X
 * new features and enhancements
     - thorn Vectors now supports vectorization on IBM POWER9 cpus used in Summit
@@ -54,7 +54,7 @@ The changes between this and the previous release include:
 * more thorn documentation available online
 * machine definition files were updated
 
-## Deprecate functionality
+## Deprecated functionality
 
 The following features are being marked as deprecated in this release and will be removed in the next release
 
