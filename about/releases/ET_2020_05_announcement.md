@@ -35,7 +35,7 @@ The changes between this and the previous release include:
     - the hwloc tarball included in the EinsteinToolkit has been updated to 2.0.1, which is incompatible with version 1.X
 * new features and enhancements
     - thorn Vectors now supports vectorization on IBM POWER9 cpus used in Summit
-    - Carpet will allocate less memory when testing parameter files using `cactus_sim -P parfile.par`
+    - Carpet will allocate less memory if `enable_no_storage = yes`, which is useful when testing parameter files using `cactus_sim -P parfile.par`
     - CarpetLib speedup during regridding by removing expensive debug checks
     - temperature finding for tabulated EOS in EOS_Omni become more robust for situations of almost degenerate internal energy functions
     - the MakeThornList utility was updated to support more use cases
