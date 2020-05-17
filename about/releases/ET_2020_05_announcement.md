@@ -30,7 +30,29 @@ The changes between this and the previous release include:
 
 * **PRESYNC** Steven R. Brandt, Samuel Cupp: please add somethine here
 * **Baikal** Zachariah Etienne: please add something here
-* other changes
+* ExternalLibraries
+    - the HDF5 tarball included in the EinsteinToolkit has been updated to 1.10.5, which changed the hid_t types to 64 integers
+    - the hwloc tarball included in the EinsteinToolkit has been updated to 2.0.1, which is incompatible with version 1.X
+* new features and enhancements
+    - thorn Vectors now supports vectorization on IBM POWER9 cpus used in Summit
+    - Carpet will allocate less memory when testing parameter files using `cactus_sim -P parfile.par`
+    - CarpetLib speedup during regridding by removing expensive debug checks
+    - temperature finding for tabulated EOS in EOS_Omni become more robust for situations of almost degerneate internal energy functions
+    - the MakeThornList utility was updated to support more use cases
+* important bugfixes
+    - Carpet fix bug when using "along-z", "along-dir" and "manual" processor depomposition
+    - AHFinderDirect has been fixed to avoid a long-standing issue where hte number of metric timelevels needed to be set to 3 to avoid errors during recovery from a checkpoint
+    - the parameter file for the Kasner exaxmple in Class. Quantum Grav. 29 115001 (2012) was corrected to produce the results shown in the paper
+* Cactus
+    - Cactus documentation now contains information on the git revisons used to produce documentation
+    - a long standing bug in `CCTK_TraverseString` when traversing "all" groups was fixed
+    - the testsuite mechanism provides options to run only some tests
+    - the testsuite mechanism will run all tests that request less than the available number of processes, running more tests
+    - Cactus option lists can now refer to environment variables using `${ENV-VAR-NAME}`
+    - cross compiling support in Cactus has been improved
+    - Cactus now supports building on Raspberry Pi out of the box
+* more thorn documentation available online
+* machine defintion files were updated
 
 ## How to upgrade from Mayer (ET_2019_10)
 
@@ -55,8 +77,8 @@ Supported (tested) machines include:
 * SuperMUC-NG
 * Wheeler
 
-* TACC machines: defs.local.ini needs to have sourcebasedir = $WORK and basedir = $SCRATCH/simulations configured for this machine. You need to determine $WORK and $SCRATCH by logging in to the machine.
-* SuperMUC-NG: defs.local.ini needs to have sourcebasedir = $HOME and basedir = $SCRATCH/simulations configured for this machine. You need to determine $HOME and $SCRATCH by logging in to the machine.
+* TACC machines: defs.local.ini needs to have `sourcebasedir = $WORK` and `basedir = $SCRATCH/simulations` configured for this machine. You need to determine `$WORK` and `$SCRATCH` by logging in to the machine.
+* SuperMUC-NG: defs.local.ini needs to have `sourcebasedir = $HOME` and `basedir = $SCRATCH/simulations` configured for this machine. You need to determine `$HOME` and `$SCRATCH` by logging in to the machine.
 
 All repositories participating in this release carry a branch ET_2020_05 marking this release. These release branches will be updated if severe errors are found.
 
