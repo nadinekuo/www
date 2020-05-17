@@ -17,9 +17,6 @@ access_token = os.environ["ZENODO_ACCESS"]
 listdeps = pres.list
 upload = pres.upload
 
-print(listdeps,upload)
-exit(0)
-
 if listdeps:
   deps = requests.get("https://zenodo.org/api/deposit/depositions",params={"access_token":access_token})
   assert deps.status_code == 200
