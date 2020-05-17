@@ -41,7 +41,7 @@ The changes between this and the previous release include:
     - the MakeThornList utility was updated to support more use cases
 * important bugfixes
     - Carpet fix bug when using "along-z", "along-dir" and "manual" processor decomposition
-    - AHFinderDirect has been fixed to avoid a long-standing issue where hte number of metric timelevels needed to be set to 3 to avoid errors during recovery from a checkpoint
+    - AHFinderDirect has been fixed to avoid a long-standing issue where the number of metric timelevels needed to be set to 3 to avoid errors during recovery from a checkpoint
     - the parameter file for the Kasner example in Class. Quantum Grav. 29 115001 (2012) was corrected to produce the results shown in the paper
 * Cactus
     - Cactus documentation now contains information on the git revisions used to produce documentation
@@ -52,7 +52,7 @@ The changes between this and the previous release include:
     - cross compiling support in Cactus has been improved
     - Cactus now supports building on Raspberry Pi out of the box
 * more thorn documentation available online
-* machine defintion files were updated
+* machine definition files were updated
 
 ## How to upgrade from Mayer (ET_2019_10)
 
