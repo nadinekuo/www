@@ -84,8 +84,11 @@ Supported (tested) machines include:
  * SuperMUC-NG
  * Wheeler
 
+Note for individual machines:
+
  * TACC machines: defs.local.ini needs to have `sourcebasedir = $WORK` and `basedir = $SCRATCH/simulations` configured for this machine. You need to determine $WORK and $SCRATCH by logging in to the machine.
  * SuperMUC-NG: defs.local.ini needs to have `sourcebasedir = $HOME` and `basedir = $SCRATCH/simulations` configured for this machine. You need to determine $HOME and $SCRATCH by logging in to the machine.
+ * compiling with the gcc compiler version 9.3.0 or later can be very slow. A workaround is to replace -O2 in the option list by the individual optimization flags reported by `gcc -O2 --help=optimizers`
 
 All repositories participating in this release carry a branch ET_2020_05 marking this release. These release branches will be updated if severe errors are found.
 

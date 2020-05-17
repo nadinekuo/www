@@ -174,11 +174,17 @@
 <li>
 <p>Wheeler</p>
 </li>
+</ul>
+<p>Note for individual machines:</p>
+<ul>
 <li>
 <p>TACC machines: defs.local.ini needs to have <code>sourcebasedir = $WORK</code> and <code>basedir = $SCRATCH/simulations</code> configured for this machine. You need to determine <code>$WORK</code> and <code>$SCRATCH</code> by logging in to the machine.</p>
 </li>
 <li>
 <p>SuperMUC-NG: defs.local.ini needs to have <code>sourcebasedir = $HOME</code> and <code>basedir = $SCRATCH/simulations</code> configured for this machine. You need to determine <code>$HOME</code> and <code>$SCRATCH</code> by logging in to the machine.</p>
+</li>
+<li>
+<p>compiling with the gcc compiler version 9.3.0 or later can be very slow. A workaround is to replace <code>-O2</code> in the option list by the individual optimization flags reported by <code>gcc -O2 --help=optimizers</code></p>
 </li>
 </ul>
 <p>All repositories participating in this release carry a branch ET_2020_05 marking this release. These release branches will be updated if severe errors are found.</p>
