@@ -1,7 +1,7 @@
 % vim: tw=0
 # Release Announcement
 
-We are pleased to announce the twnentieth release (code name ["Turing"](https://en.wikipedia.org/wiki/Alan_Turing)) of the Einstein Toolkit, an open, community developed software infrastructure for relativistic astrophysics. The highlights of this release are:
+We are pleased to announce the twentieth release (code name ["Turing"](https://en.wikipedia.org/wiki/Alan_Turing)) of the Einstein Toolkit, an open, community developed software infrastructure for relativistic astrophysics. The highlights of this release are:
 
 Two news thorn have been added:
 
@@ -37,14 +37,14 @@ The changes between this and the previous release include:
     - thorn Vectors now supports vectorization on IBM POWER9 cpus used in Summit
     - Carpet will allocate less memory when testing parameter files using `cactus_sim -P parfile.par`
     - CarpetLib speedup during regridding by removing expensive debug checks
-    - temperature finding for tabulated EOS in EOS_Omni become more robust for situations of almost degerneate internal energy functions
+    - temperature finding for tabulated EOS in EOS_Omni become more robust for situations of almost degenerate internal energy functions
     - the MakeThornList utility was updated to support more use cases
 * important bugfixes
-    - Carpet fix bug when using "along-z", "along-dir" and "manual" processor depomposition
+    - Carpet fix bug when using "along-z", "along-dir" and "manual" processor decomposition
     - AHFinderDirect has been fixed to avoid a long-standing issue where hte number of metric timelevels needed to be set to 3 to avoid errors during recovery from a checkpoint
-    - the parameter file for the Kasner exaxmple in Class. Quantum Grav. 29 115001 (2012) was corrected to produce the results shown in the paper
+    - the parameter file for the Kasner example in Class. Quantum Grav. 29 115001 (2012) was corrected to produce the results shown in the paper
 * Cactus
-    - Cactus documentation now contains information on the git revisons used to produce documentation
+    - Cactus documentation now contains information on the git revisions used to produce documentation
     - a long standing bug in `CCTK_TraverseString` when traversing "all" groups was fixed
     - the testsuite mechanism provides options to run only some tests
     - the testsuite mechanism will run all tests that request less than the available number of processes, running more tests
