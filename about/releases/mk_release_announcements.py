@@ -50,6 +50,7 @@ with open(sys.argv[1],"r") as fd:
         """,file=fw)
 
 def make_text(manual_breaks, fw):
+  textwidth = 72 # maxium allowed length including indentation
   with open(sys.argv[1], "r", encoding='ascii') as fd:
       for line in readlines(fd):
           line = line.strip()
@@ -62,12 +63,16 @@ def make_text(manual_breaks, fw):
 
           if len(line) == 0:
               indent = 0
+              linewidth = textwidth
           elif line[0] == '-':
               indent = 2
+              linewidth = textwidth - (2*indent+1)
           elif line[0] == '*':
               indent = 1
+              linewidth = textwidth - (2*indent+1)
           else:
               indent = 0
+              linewidth = textwidth
 
           line = re.sub(r'\[([^\]]*)\]\(([^\)]*)\)',r'\1',line)
           line = re.sub(r'^#+\s+','',line)
@@ -81,7 +86,7 @@ def make_text(manual_breaks, fw):
           # The regular expression {0,N} greedily looks
           # for matches of at most N characters.
           while True:
-              g = re.match(r'(.{1,%d})(\s+|$)' % (72-len(sp)), line)
+              g = re.match(r'(.{1,%d})(\s+|$)' % (linewidth-len(sp)), line)
               if not g:
                   break
               segment = g.group(0)
@@ -95,7 +100,7 @@ def make_text(manual_breaks, fw):
               # A list gets a different indentation
               # on the continuation line because we
               # want to indent past the bullet.
-              print(sp, segment, sep='', file=fw)
+              print(sp, segment.rstrip(), sep='', file=fw)
               if indent > 0:
                   sp = ' '*(2*indent+1)
 
