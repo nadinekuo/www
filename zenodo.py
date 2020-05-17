@@ -5,7 +5,7 @@ import argparse
 parser = argparse.ArgumentParser(description='Zenodo Tool')
 parser.add_argument('--list', action='store_true', default=False, help='List all depositions and exit')
 parser.add_argument('--upload', action='store_true', default=False, help='Upload changes')
-parser.add_argument('--users', action='store_true', default=False, help='Modify deposition by replacing creators with new list')
+parser.add_argument('--id', action='store', default=None, help='The deposit id to act on')
 pres=parser.parse_args(sys.argv[1:])
 
 if "ZENODO_ACCESS" not in os.environ:
@@ -16,6 +16,11 @@ access_token = os.environ["ZENODO_ACCESS"]
 
 listdeps = pres.list
 upload = pres.upload
+id = pres.id
+
+if upload and not id:
+    print("You need to provide an id to act on.")
+    exit(1)
 
 if listdeps:
   deps = requests.get("https://zenodo.org/api/deposit/depositions",params={"access_token":access_token})
@@ -24,7 +29,6 @@ if listdeps:
       print("id:",dep['id'],dep['title'])
   exit(0)
 
-id = "3522103"
 dep = requests.get("https://zenodo.org/api/deposit/depositions/"+id,params={"access_token":access_token})
 c = dep.json()
 
