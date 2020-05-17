@@ -5,7 +5,7 @@ import argparse
 parser = argparse.ArgumentParser(description='Zenodo Tool')
 parser.add_argument('--list', action='store_true', default=False, help='List all depositions and exit')
 parser.add_argument('--upload', action='store_true', default=False, help='Upload changes')
-parser.add_argument('--users', action='store_true', default=False, help='Modify deposition by replacing creators with 
+parser.add_argument('--users', action='store_true', default=False, help='Modify deposition by replacing creators with new list')
 pres=parser.parse_args(sys.argv[1:])
 
 if "ZENODO_ACCESS" not in os.environ:
@@ -41,25 +41,25 @@ with open("developers.txt", "r") as fd:
 
 names = creators.keys()
 
-release_team = {
-  "Steven R. Brandt":1,
-  "Maria Babiuc-Hamilton":1,
-  "Peter Diener":1,
-  "Matthew Elley":1,
-  "Zachariah Etienne":1,
-  "Giuseppe Ficarra":1,
-  "Roland Haas":1,
-  "Helvi Witek":1
-}
+release_team = [
+  "Roland Haas",
+  "Brock Brendal",
+  "Bill Gabella",
+  "Beyhan Karakaş",
+  "Atul Kedia",
+  "Shawn Rosofsky",
+  "Steven R. Brandt",
+  "Alois Peter Schaffarczyk",
+]
 
 def relkey(name):
     g = re.match(r'^(.+)\s+(\S+)$',name)
-    if name in release_team.keys():
+    if name in release_team:
         return "A"+g.group(2)+", "+g.group(1)
     else:
         return "Z"+g.group(2)+", "+g.group(1)
 
-for name in release_team.keys():
+for name in release_team:
     assert name in names, name
 
 names = sorted(names,key=relkey)
