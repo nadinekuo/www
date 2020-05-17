@@ -1,22 +1,18 @@
+% vim: tw=0
 # Release Announcement
 
-We are pleased to announce the nineteenth release (code name ["Mayer"](https://en.wikipedia.org/wiki/Maria_Goeppert_Mayer)) of the Einstein Toolkit, an open, community developed software infrastructure for relativistic astrophysics. The highlights of this release are:
+We are pleased to announce the twnentieth release (code name ["Turing"](https://en.wikipedia.org/wiki/Alan_Turing)) of the Einstein Toolkit, an open, community developed software infrastructure for relativistic astrophysics. The highlights of this release are:
 
-A new thorn has been added:
+Two news thorn have been added:
 
-* FishboneMoncriefID
+ * Baikal
+ * BaikalVacuum
 
-Also, for the first time, a new code has been added.
+Also, the Cactus code now supports tracking of data dependencies at runtime using schedule annotations. These can be used to check correctness of a schedule and also to automate data synchronizations between MPI ranks.
 
-* [SelfForce-1D](https://bitbucket.org/peterdiener/selfforce-1d.git)
+In addition, bug fixes accumulated since the previous release in October 2019 have been included.
 
-The ETK is embracing a new model of assigning credit: Until now, the 2012 Einstein Toolkit paper was the common way to cite the Einstein Toolkit (though we suggested citing the website itself). In this release, however, we will begin using [https://doi.org/10.5281/zenodo.3522086](https://doi.org/10.5281/zenodo.3522086) to recognize the many contributers that have worked on the toolkit since that time.
-
-In principle, the Einstein Toolkit was always intended to be a collection of codes for exploring numerical relativity, not simply a collection of arrangements and thorns for the Cactus Framework. Going forward, SelfForce-1D will have regular releases using the same release tags as the Cactus-based codes, and will have a similar setup for the running of test-suites. While the new code will not download at the same time as the Cactus-based code, download instructions will appear in the same places.
-
-In addition, bug fixes accumulated since the previous release in March 2019 have been included.
-
-The Einstein Toolkit is a collection of software components and tools for simulating and analyzing general relativistic astrophysical systems that builds on numerous software efforts in the numerical relativity community including the spacetime evolution codes McLachlan and Lean, analysis codes to compute horizon characteristics and gravitational waves, the Carpet AMR infrastructure, and the relativistic magneto-hydrodynamics codes GRHydro and IllinoisGRMHD. For parts of the toolkit, the Cactus Framework is used as the underlying computational infrastructure providing large-scale parallelization, general computational components, and a model for collaborative, portable code development.
+The Einstein Toolkit is a collection of software components and tools for simulating and analyzing general relativistic astrophysical systems that builds on numerous software efforts in the numerical relativity community including the spacetime evolution codes Baikal, Leann, and McLachlan, analysis codes to compute horizon characteristics and gravitational waves, the Carpet AMR infrastructure, and the relativistic magneto-hydrodynamics codes GRHydro and IllinoisGRMHD. The Einstein Toolkit also contains a 1D self-force code. For parts of the toolkit, the Cactus Framework is used as the underlying computational infrastructure providing large-scale parallelization, general computational components, and a model for collaborative, portable code development.
 
 The Einstein Toolkit uses a distributed software model and its different modules are developed, distributed, and supported either by the core team of Einstein Toolkit Maintainers, or by individual groups. Where modules are provided by external groups, the Einstein Toolkit Maintainers provide quality control for modules for inclusion in the toolkit and help coordinate support. The Einstein Toolkit Maintainers currently involve postdocs and faculty from six different institutions, and host weekly meetings that are open for anyone to join in.
 
@@ -26,30 +22,23 @@ For more information about using or contributing to the Einstein Toolkit, or to 
 
 The Einstein Toolkit is primarily supported by NSF 1550551/1550461/1550436/1550514 (Einstein Toolkit Community Integration and Data Exploration).
 
-The Einstein Toolkit contains about 400 regression test cases. On a large portion of the tested machines, almost all of these tests pass, using both MPI and OpenMP parallelization.
+The Einstein Toolkit contains about 300 regression test cases. On a large portion of the tested machines, almost all of these tests pass, using both MPI and OpenMP parallelization.
 
 The changes between this and the previous release include:
 
 ## Larger changes since last release
 
-* The Fishbone Moncrief Initial Data thorn (FishboneMoncriefID) thorn has been added to the `WVUThorns` arrangement 
-    - This thorn solves the equations originally posed by [Fishbone & Moncrief](https://ui.adsabs.harvard.edu/abs/1976ApJ...207..962F/abstract), describing a non-self-gravitating equilibrium disk of matter orbiting a spinning black hole in standard (spherical) Kerr-Schild coordinates. When the disk is seeded with initially dynamically unimportant poloidal magnetic fields, dramatic magnetic instabilities occur during the subsequent evolution, launching ultrarelativistic jets. Thus the Fishbone-Moncrief solution provides a standard testbed for GRMHD accretion disk codes.
-    - From a code perspective, FishboneMoncriefID is notable in that it is the first ETK thorn entirely written and documented within pedagogical Jupyter notebooks. In these notebooks, the Fishbone-Moncrief equations are converted from Einstein-like notation into optimized C code using [NRPy+](https://github.com/zachetienne/nrpytutorial), a Kranc analogue depending only on Python and its open-source [SymPy](https://sympy.org) computer algebra software.
-* The inclusion of the SelfForce-1D code in the Einstein Toolkit as the first non-Cactus code in the toolkit.
-    - Evolves the sourced scalar wave equation on a Schwarzschild spacetime using the effective source approach to point particles.
-    - The wave equation is decomposed into spherical harmonics and the resulting 1+1 dimensional equations are discretized in the radial direction using the discontinuous Galerkin method.
-* Update hwloc to 1.11.12
-* Groups of vectors of vectors are now handled properly by RotatingSymmetry90 and RotatingSymmetry180
-* Compilation of PAPI is faster and produces fewer warnings
+* **PRESYNC** Steven R. Brandt, Samuel Cupp: please add somethine here
+* **Baikal** Zachariah Etienne: please add something here
+* other changes
 
-
-## How to upgrade from Proca (ET_2019_03) 
+## How to upgrade from Mayer (ET_2019_10)
 
 To upgrade from the previous release, use GetComponents with the new thornlist to check out the new version.
 
 See the Download page ([http://einsteintoolkit.org/download.html](http://einsteintoolkit.org/download.html)) on the Einstein Toolkit website for download instructions.
 
-As the SelfForce-1D code was not present in the previous release, there is no need to upgrade. Just follow the download instructions.
+The SelfForce-1D code uses as single git repository, thus using `git pull ; git checkout ET_2020_05` will update the code.
 
 ## Machine notes
 
@@ -59,22 +48,27 @@ Supported (tested) machines include:
 * Bluewaters
 * Comet
 * Cori
+* Queen Bee 2
 * Stampede 2
-* Mike
+* Summit
+* Mike / Shelob
+* SuperMUC-NG
+* Wheeler
 
 * TACC machines: defs.local.ini needs to have sourcebasedir = $WORK and basedir = $SCRATCH/simulations configured for this machine. You need to determine $WORK and $SCRATCH by logging in to the machine.
+* SuperMUC-NG: defs.local.ini needs to have sourcebasedir = $HOME and basedir = $SCRATCH/simulations configured for this machine. You need to determine $HOME and $SCRATCH by logging in to the machine.
 
-All repositories participating in this release carry a branch ET_2019_10 marking this release. These release branches will be updated if severe errors are found.
+All repositories participating in this release carry a branch ET_2020_05 marking this release. These release branches will be updated if severe errors are found.
 
-The "Mayer" Release Team on behalf of the Einstein Toolkit Consortium (2019-10-25)
+The "Turing" Release Team on behalf of the Einstein Toolkit Consortium (2020-05-31)
 
-* Steven R. Brandt
-* Maria Babiuc-Hamilton
-* Peter Diener
-* Matthew Elley
-* Zachariah Etienne
-* Giuseppe Ficarra
 * Roland Haas
-* Helvi Witek
+* Brock Brendal
+* Bill Gabella
+* Beyhan Karakas
+* Atul Kedia
+* Shawn Rosofsky
+* Steven R. Brandt
+* Alois Peter Schaffarczyk
 
-Oct, 2019
+May, 2020
