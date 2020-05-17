@@ -110,6 +110,21 @@ Larger changes since last release
  * more thorn documentation available online
  * machine definition files were updated
 
+Deprecate functionality
+
+The following features are being marked as deprecated in this release
+and will be removed in the next release
+
+ * the non-Piraha parser in CST, avaiable only by modifying the CST
+   source code, will be removed since it fails to correctly parse
+   READS / WRITES clauses
+ * READS / WRITES statements that refer to non-existing variables
+   will cause a compile time errors and no longer be ignored at
+   runtime even if `presync_mode = off`
+ * the fourth order accurate second derivative operators in
+   SummationByParts will default to use the "Minimal Bandwidth"
+   version, as already is the case for the other second derivatives
+
 How to upgrade from Mayer (ET_2019_10)
 
 To upgrade from the previous release, use GetComponents with the new

@@ -124,6 +124,19 @@
 <p>machine definition files were updated</p>
 </li>
 </ul>
+<h2>Deprecate functionality</h2>
+<p>The following features are being marked as deprecated in this release and will be removed in the next release</p>
+<ul>
+<li>
+<p>the non-Piraha parser in CST, avaiable only by modifying the CST source code, will be removed since it fails to correctly parse READS / WRITES clauses</p>
+</li>
+<li>
+<p>READS / WRITES statements that refer to non-existing variables will cause a compile time errors and no longer be ignored at runtime even if <code>presync_mode = off</code></p>
+</li>
+<li>
+<p>the fourth order accurate second derivative operators in SummationByParts will default to use the "Minimal Bandwidth" version, as already is the case for the other second derivatives</p>
+</li>
+</ul>
 <h2>How to upgrade from Mayer (ET_2019_10)</h2>
 <p>To upgrade from the previous release, use GetComponents with the new thornlist to check out the new version.</p>
 <p>See the Download page (<a href="http://einsteintoolkit.org/download.html">http://einsteintoolkit.org/download.html</a>) on the Einstein Toolkit website for download instructions.</p>
