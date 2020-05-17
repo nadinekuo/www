@@ -10,7 +10,7 @@ Bela Szilagyi: PITTNullCode:Jet Propulsion Laboratory:
 Bernard Schutz::Cardiff University:
 Bernd Bruegmann::Friedrich Schiller University Jena:
 Beyhan Karakaş:Turing Release Team:Ege University:
-Bill Gabella:Turing Release Team:Vanderbilt University:
+William E. Gabella:Turing Release Team:Vanderbilt University:0000-0003-2954-512X
 Brock Brendal:Turing Release Team:University of Illinois:
 Bruno Giacomazzo::University of Milano-Bicocca:0000-0002-6947-4023
 Bruno Mundim: ExternalLibs, GHydro (MHD):SciNet High Performance Computing Consortium:
