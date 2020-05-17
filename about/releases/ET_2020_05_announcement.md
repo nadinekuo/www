@@ -3,22 +3,22 @@
 
 We are pleased to announce the twentieth release (code name ["Turing"](https://en.wikipedia.org/wiki/Alan_Turing)) of the Einstein Toolkit, an open, community developed software infrastructure for relativistic astrophysics. The highlights of this release are:
 
+Cactus now supports tracking of data dependencies at runtime using schedule annotations. These can be used to check correctness of a schedule and also to automate data synchronizations between MPI ranks.
+
 Two news thorn have been added:
 
- * Baikal
- * BaikalVacuum
-
-Also, the Cactus code now supports tracking of data dependencies at runtime using schedule annotations. These can be used to check correctness of a schedule and also to automate data synchronizations between MPI ranks.
+ * Baikal, a spacetime evolution code using [NRPy+](http://astro.phys.wvu.edu/bhathome/nrpy.html) for code generation
+ * BaikalVacuum, a version of Baikal optimized for vacuum only simulations
 
 In addition, bug fixes accumulated since the previous release in October 2019 have been included.
 
-The Einstein Toolkit is a collection of software components and tools for simulating and analyzing general relativistic astrophysical systems that builds on numerous software efforts in the numerical relativity community including the spacetime evolution codes Baikal, Leann, and McLachlan, analysis codes to compute horizon characteristics and gravitational waves, the Carpet AMR infrastructure, and the relativistic magneto-hydrodynamics codes GRHydro and IllinoisGRMHD. The Einstein Toolkit also contains a 1D self-force code. For parts of the toolkit, the Cactus Framework is used as the underlying computational infrastructure providing large-scale parallelization, general computational components, and a model for collaborative, portable code development.
+The Einstein Toolkit is a collection of software components and tools for simulating and analyzing general relativistic astrophysical systems that builds on numerous software efforts in the numerical relativity community including the spacetime evolution codes Baikal, Lean, and McLachlan, analysis codes to compute horizon characteristics and gravitational waves, the Carpet AMR infrastructure, and the relativistic magneto-hydrodynamics codes GRHydro and IllinoisGRMHD. The Einstein Toolkit also contains a 1D self-force code. For parts of the toolkit, the Cactus Framework is used as the underlying computational infrastructure providing large-scale parallelization, general computational components, and a model for collaborative, portable code development.
 
-The Einstein Toolkit uses a distributed software model and its different modules are developed, distributed, and supported either by the core team of Einstein Toolkit Maintainers, or by individual groups. Where modules are provided by external groups, the Einstein Toolkit Maintainers provide quality control for modules for inclusion in the toolkit and help coordinate support. The Einstein Toolkit Maintainers currently involve postdocs and faculty from six different institutions, and host weekly meetings that are open for anyone to join in.
+The Einstein Toolkit uses a distributed software model and its different modules are developed, distributed, and supported either by the core team of Einstein Toolkit Maintainers, or by individual groups. Where modules are provided by external groups, the Einstein Toolkit Maintainers provide quality control for modules for inclusion in the toolkit and help coordinate support. The Einstein Toolkit Maintainers currently involve staff, and faculty from five different institutions, and host weekly meetings that are open for anyone to join in.
 
 Guiding principles for the design and implementation of the toolkit include: open, community-driven software development; well thought-out and stable interfaces; separation of physics software from computational science infrastructure; provision of complete working production code; training and education for a new generation of researchers.
 
-For more information about using or contributing to the Einstein Toolkit, or to join the Einstein Toolkit Consortium, please visit our web pages at [http://einsteintoolkit.org](http://einsteintoolkit.org).
+For more information about using or contributing to the Einstein Toolkit, or to join the Einstein Toolkit Consortium, please visit our web pages at [http://einsteintoolkit.org](http://einsteintoolkit.org), or contact the users mailing list [users@einsteintoolkit.org](mailto:users@einsteintoolkit.org).
 
 The Einstein Toolkit is primarily supported by NSF 1550551/1550461/1550436/1550514 (Einstein Toolkit Community Integration and Data Exploration).
 
