@@ -4,7 +4,7 @@ Alois Peter Schaffarczyk:Turing Release Team:University Kiel:
 Andre Merzky::Vrije Universiteit, Amsterdam:
 Andrea Nerozzi::Technical University of Lisbon:
 Andrew Knapp::Penn State University:
-Atul Kedia:Turing Release Team:Notre Dame:
+Atul Kedia:Turing Release Team:University of Notre Dame:
 Barry Wardell: CCZ4, EinsteinExact, HTML documentation: University College Dublin:
 Bela Szilagyi: PITTNullCode:Jet Propulsion Laboratory:
 Bernard Schutz::Cardiff University:
