@@ -5,7 +5,7 @@
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <script src="../../head.js" type="text/javascript"></script>
-  <title>May 17, 2020</title>
+  <title>May 18, 2020</title>
 </head>
 
 <body>
@@ -41,7 +41,7 @@
 <h2>Larger changes since last release</h2>
 <ul>
 <li>
-<p><strong>PRESYNC</strong> Steven R. Brandt, Samuel Cupp: please add somethine here</p>
+<p>Automatic synchronization and correctness checking: For some time, Cactus has supported READS/WRITES declarations in the schedule. These declarations named grid functions and/or groups as well as the relevant region a function was reading and writing, e.g. "interior," "boundary," etc. In this release, we make it (1) possible to check the correctness of these declarations (both compile time and run time checks are implemented); and (2) we make it possible to automatically synchronized ghost zones and apply boundary conditions to grid functions when that is needed. By default, this functionality is off but can be enabled by setting the Cactus parameter "presync_mode." Please see the documentation for details.</p>
 </li>
 <li>
 <p><strong>Baikal</strong> Zachariah Etienne: please add something here</p>
