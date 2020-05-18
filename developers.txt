@@ -1,6 +1,6 @@
 Name: Contribution: Employed By: ORCID
 Aaryn Tonita::Univeristy of British Columbia:
-Alois Peter Schaffarczyk:Turing Release Team:University Kiel:
+Alois Peter Schaffarczyk:Turing Release Team:Kiel University of Applied Sciences, Kiel, Germany:0000-0002-9357-3232
 Andre Merzky::Vrije Universiteit, Amsterdam:
 Andrea Nerozzi::Technical University of Lisbon:
 Andrew Knapp::Penn State University:
