@@ -28,7 +28,7 @@ The changes between this and the previous release include:
 
 ## Larger changes since last release
 
-* Steven R. Brandt, Samuel Cupp, Roland Haas: For some time, Cactus has supported READS/WRITES declarations in the schedule. These declarations named grid functions and/or groups as well as the relevant region a function was reading and writing, e.g. "interior," "boundary," etc. In this release, we make it (1) possible to check the correctness of these declarations (both compile time and run time checks are implemented); and (2) we make it possible to automatically synchronized ghost zones and apply boundary conditions to grid functions when that is needed. By default, this functionality is off but can be enabled by setting the Cactus parameter "presync_mode." Please see the documentation for details.
+* Automatic synchronization and correctness checking: For some time, Cactus has supported READS/WRITES declarations in the schedule. These declarations named grid functions and/or groups as well as the relevant region a function was reading and writing, e.g. "interior," "boundary," etc. In this release, we make it (1) possible to check the correctness of these declarations (both compile time and run time checks are implemented); and (2) we make it possible to automatically synchronized ghost zones and apply boundary conditions to grid functions when that is needed. By default, this functionality is off but can be enabled by setting the Cactus parameter "presync_mode." Please see the documentation for details.
 * **Baikal** Zachariah Etienne: please add something here
 * ExternalLibraries
     - the HDF5 tarball included in the EinsteinToolkit has been updated to 1.10.5, which changed the hid_t types to 64bit integers
