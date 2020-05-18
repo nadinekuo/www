@@ -57,7 +57,7 @@ Miguel Alcubierre: MoL, ADMConstraints, AHFinder:National Autonomous University 
 Miguel Zilhão: Lean, Proca: Instituto Superior Técnico, Lisbon:0000-0002-7089-5570
 Nikolaos Stergioulas::University of Thessaloniki
 Nils Dorband: Llama:Citadel LLC:
-Pablo Laguna:ET paper:Georgia Institute of Technology
+Pablo Laguna:ET paper:University of Texas - Austin:0000-0002-2539-3897
 Paul Walker:Flesh and many thorns:Motive Partners:
 Pedro Montero::Harvard University:
 Peter Diener: EHFinder, SummationByParts, AHFinder, McLachlan, NoExcision:Louisiana State University:0000-0002-3877-0487
