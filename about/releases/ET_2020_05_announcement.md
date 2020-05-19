@@ -31,12 +31,12 @@ The changes between this and the previous release include:
 * Automatic synchronization and correctness checking: For some time, Cactus has supported READS/WRITES declarations in the schedule. These declarations named grid functions and/or groups as well as the relevant region a function was reading and writing, e.g. "interior," "boundary," etc. In this release, we make it (1) possible to check the correctness of these declarations (both compile time and run time checks are implemented); and (2) we make it possible to automatically synchronized ghost zones and apply boundary conditions to grid functions when that is needed. By default, this functionality is off but can be enabled by setting the Cactus parameter "presync_mode." Please see the documentation for details.
 * Baikal
     - new thorn that solves Einstein's equations, using the BSSN 3+1 formalism, in Cartesian coordinates.
-        * extensively documented in [pedagogical Jupyter notebooks](https://nbviewer.jupyter.org/github/zachetienne/nrpytutorial/blob/master/Tutorial-BaikalETK.ipynb)
-        * borrows extensively from Lean
+        + extensively documented in [pedagogical Jupyter notebooks](https://nbviewer.jupyter.org/github/zachetienne/nrpytutorial/blob/master/Tutorial-BaikalETK.ipynb)
+        + borrows extensively from Lean
     - makes extensive use of the [Python](http://python.org/) and [SymPy](https://www.sympy.org/)-based [NRPy+](http://nrpyplus.net/) code generation infrastructure ([NRPy+](https://github.com/zachetienne/nrpytutorial)), which aims to provide a completely free, open-source means for converting expressions in Einstein-like tensorial notation into highly optimized C-code kernels. 
     - implements most common (highly robust) options for numerical relativity GRHD and GRMHD simulations
-        * moving-puncture gauge conditions (1+log lapse and Gamma-driving shift condition) enabled by default.
-        * options of 2nd or 4th order finite-difference kernels, Kreiss-Oliger dissipation enabled by default via tunable parameter
+        + moving-puncture gauge conditions (1+log lapse and Gamma-driving shift condition) enabled by default.
+        + options of 2nd or 4th order finite-difference kernels, Kreiss-Oliger dissipation enabled by default via tunable parameter
     - validated to agree with [ML_BSSN](https://bitbucket.org/einsteintoolkit/mclachlan/src/master/ML_BSSN/) in case of BNS evolutions
 * BaikalVacuum
     - version of Baikal optimized for vacuum (e.g., black hole and binary black hole) spacetimes
