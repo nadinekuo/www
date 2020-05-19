@@ -568,6 +568,9 @@ http://www.olemiss.edu University of Mississippi
 http://www.unina.it University of Naples
  Mo Basurto
 
+http://physics.nd.edu/ University of Notre Dame
+ https://atulkedia93.github.io/ Atul Kedia
+
 http://www.ou.edu/web.html University of Oklahoma
  Brian Friesen
 
