@@ -7,7 +7,7 @@ Cactus now supports tracking of data dependencies at runtime using schedule anno
 
 Two new thorns have been added:
 
- * Baikal, a spacetime evolution code using [NRPy+](http://astro.phys.wvu.edu/bhathome/nrpy.html) for code generation
+ * Baikal, a spacetime evolution code using [NRPy+](http://astro.phys.wvu.edu/bhathome/nrpy.html) ([GitHub page](https://github.com/zachetienne/nrpytutorial)) for code generation
  * BaikalVacuum, a version of Baikal optimized for vacuum only simulations
 
 In addition, bug fixes accumulated since the previous release in October 2019 have been included.
