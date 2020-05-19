@@ -111,8 +111,9 @@ The "Turing" Release Team on behalf of the Einstein Toolkit Consortium (2020-05-
  * Bill Gabella
  * Beyhan Karakas
  * Atul Kedia
- * Shawn Rosofsky
+ * Shawn G. Rosofsky
  * Steven R. Brandt
  * Alois Peter Schaffarczyk
+ * Helvi Witek
 
 May, 2020
