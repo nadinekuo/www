@@ -112,6 +112,7 @@ The "Turing" Release Team on behalf of the Einstein Toolkit Consortium (2020-05-
 
 * Roland Haas
 * Brock Brendal
+* Zachariah Etienne
 * Bill Gabella
 * Beyhan Karakas
 * Atul Kedia
