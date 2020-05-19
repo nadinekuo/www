@@ -7,7 +7,7 @@ Cactus now supports tracking of data dependencies at runtime using schedule anno
 
 Two new thorns have been added:
 
- * Baikal, a spacetime evolution code using [NRPy+](http://astro.phys.wvu.edu/bhathome/nrpy.html) ([GitHub page](https://github.com/zachetienne/nrpytutorial)) for code generation
+ * Baikal, a spacetime evolution code using [NRPy+](http://astro.phys.wvu.edu/bhathome/nrpy.html) for code generation
  * BaikalVacuum, a version of Baikal optimized for vacuum only simulations
 
 In addition, bug fixes accumulated since the previous release in October 2019 have been included.
@@ -33,7 +33,7 @@ The changes between this and the previous release include:
     - new thorn that solves Einstein's equations, using the BSSN 3+1 formalism, in Cartesian coordinates.
         + extensively documented in [pedagogical Jupyter notebooks](https://nbviewer.jupyter.org/github/zachetienne/nrpytutorial/blob/master/Tutorial-BaikalETK.ipynb)
         + borrows extensively from Lean
-    - makes extensive use of the [Python](http://python.org/) and [SymPy](https://www.sympy.org/)-based [NRPy+](http://nrpyplus.net/) code generation infrastructure ([NRPy+](https://github.com/zachetienne/nrpytutorial)), which aims to provide a completely free, open-source means for converting expressions in Einstein-like tensorial notation into highly optimized C-code kernels. 
+    - makes extensive use of the [Python](http://python.org/) and [SymPy](https://www.sympy.org/)-based [NRPy+](http://nrpyplus.net/) code generation infrastructure available on [GitHub](https://github.com/zachetienne/nrpytutorial), which aims to provide a completely free, open-source means for converting expressions in Einstein-like tensorial notation into highly optimized C-code kernels. 
     - implements most common (highly robust) options for numerical relativity GRHD and GRMHD simulations
         + moving-puncture gauge conditions (1+log lapse and Gamma-driving shift condition) enabled by default.
         + options of 2nd or 4th order finite-difference kernels, Kreiss-Oliger dissipation enabled by default via tunable parameter
