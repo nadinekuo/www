@@ -73,7 +73,7 @@ Sascha Husa::Universitat de les Illes Balears
 Scott C. Noble:mhd code2prim:The University of Tulsa
 Scott Hawley: AHFinder, Flesh, driver:Belmont University
 Sebastiano Bernuzzi::University of Jena:0000-0002-7089-5570
-Shawn Rosofsky:Turing Release Team:University of Illinois:0000-0002-3319-576X
+Shawn G. Rosofsky:Turing Release Team:University of Illinois:0000-0002-3319-576X
 Steven R. Brandt:Flesh, Piraha: Louisiana State University: 0000-0002-7979-2906
 Tanja Bode: WeylScal4, GRHydro, Outflow:University of Tübingen:0000-0003-1509-8453
 Thomas Radke: Flesh, Carpet, Boundary, Formaline:Max Planck Institute for Gravitational Physics
