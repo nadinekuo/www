@@ -11,8 +11,7 @@ schedule and also to automate data synchronizations between MPI ranks.
 
 Two new thorns have been added:
 
- * Baikal, a spacetime evolution code using NRPy+ (GitHub page) for
-   code generation
+ * Baikal, a spacetime evolution code using NRPy+ for code generation
  * BaikalVacuum, a version of Baikal optimized for vacuum only
    simulations
 
@@ -82,10 +81,10 @@ Larger changes since last release
      + extensively documented in pedagogical Jupyter notebooks
      + borrows extensively from Lean
    - makes extensive use of the Python and SymPy-based NRPy+ code
-     generation infrastructure (NRPy+), which aims to provide a
-     completely free, open-source means for converting expressions
-     in Einstein-like tensorial notation into highly optimized
-     C-code kernels.
+     generation infrastructure available on GitHub, which aims to
+     provide a completely free, open-source means for converting
+     expressions in Einstein-like tensorial notation into highly
+     optimized C-code kernels.
    - implements most common (highly robust) options for numerical
      relativity GRHD and GRMHD simulations
      + moving-puncture gauge conditions (1+log lapse and
