@@ -5,7 +5,7 @@ We are pleased to announce the twentieth release (code name ["Turing"](https://e
 
 Cactus now supports tracking of data dependencies at runtime using schedule annotations. These can be used to check correctness of a schedule and also to automate data synchronizations between MPI ranks.
 
-Two news thorn have been added:
+Two new thorns have been added:
 
  * Baikal, a spacetime evolution code using [NRPy+](http://astro.phys.wvu.edu/bhathome/nrpy.html) for code generation
  * BaikalVacuum, a version of Baikal optimized for vacuum only simulations
@@ -29,7 +29,22 @@ The changes between this and the previous release include:
 ## Larger changes since last release
 
 * Automatic synchronization and correctness checking: For some time, Cactus has supported READS/WRITES declarations in the schedule. These declarations named grid functions and/or groups as well as the relevant region a function was reading and writing, e.g. "interior," "boundary," etc. In this release, we make it (1) possible to check the correctness of these declarations (both compile time and run time checks are implemented); and (2) we make it possible to automatically synchronized ghost zones and apply boundary conditions to grid functions when that is needed. By default, this functionality is off but can be enabled by setting the Cactus parameter "presync_mode." Please see the documentation for details.
-* **Baikal** Zachariah Etienne: please add something here
+* Baikal
+    - new thorn that solves Einstein's equations, using the BSSN 3+1 formalism, in Cartesian coordinates.
+        * extensively documented in [pedagogical Jupyter notebooks](https://nbviewer.jupyter.org/github/zachetienne/nrpytutorial/blob/master/Tutorial-BaikalETK.ipynb)
+        * borrows extensively from Lean
+    - makes extensive use of the [Python](http://python.org/) and [SymPy](https://www.sympy.org/)-based [NRPy+](http://nrpyplus.net/) code generation infrastructure ([GitHub page](https://github.com/zachetienne/nrpytutorial)), which aims to provide a completely free, open-source means for converting expressions in Einstein-like tensorial notation into highly optimized C-code kernels. 
+    - chooses most common (highly robust) options for numerical relativity GRHD and GRMHD simulations
+        * moving-puncture gauge conditions (1+log lapse and Gamma-driving shift condition) enabled by default.
+        * options of 2nd or 4th order finite-difference kernels, Kreiss-Oliger dissipation enabled by default via tunable parameter
+    - validated to agree with [ML_BSSN](https://bitbucket.org/einsteintoolkit/mclachlan/src/master/ML_BSSN/) in case of BNS evolutions; >~10-20% faster than ML_BSSN, M_ADM volume integral conserved ~3x better during BNS inspirals
+* BaikalVacuum
+    - version of Baikal optimized for vacuum (e.g., black hole and binary black hole) spacetimes
+        * extensively documented in [pedagogical Jupyter notebooks](https://nbviewer.jupyter.org/github/zachetienne/nrpytutorial/blob/master/Tutorial-BaikalETK.ipynb)
+    - chooses most common (highly robust) options for numerical relativity black hole and binary black hole calculations
+        * Moving-puncture gauge conditions (1+log lapse and Gamma-driving shift condition) enabled by default.
+        * options of 4th, 6th, or 8th-order finite-difference kernels, Kreiss-Oliger dissipation enabled by default via tunable parameter
+    - validated to agree with [ML_BSSN](https://bitbucket.org/einsteintoolkit/mclachlan/src/master/ML_BSSN/) in BBH evolutions; >~10-20% faster than ML_BSSN, perfect overlap with gravitational waves extracted from binary black hole calculations (using parameter files found [here](https://bitbucket.org/zach_etienne/wvuthorns/src/master/BaikalVacuum/par/))
 * ExternalLibraries
     - the HDF5 tarball included in the EinsteinToolkit has been updated to 1.10.5, which changed the hid_t types to 64bit integers
     - the hwloc tarball included in the EinsteinToolkit has been updated to 2.0.1, which is incompatible with version 1.X
