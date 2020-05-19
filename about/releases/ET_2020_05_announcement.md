@@ -57,6 +57,7 @@ The changes between this and the previous release include:
     - Cactus documentation now contains information on the git revisions used to produce documentation
     - a long standing bug in `CCTK_TraverseString` when traversing "all" groups was fixed
     - the testsuite mechanism provides options to run only some tests
+    - the testsuite mechanism provides options to postprocess data before comparison, for example to compare HDF5 files
     - the testsuite mechanism will run all tests that request less than the available number of processes, running more tests
     - Cactus option lists can now refer to environment variables using `${ENV-VAR-NAME}`
     - cross compiling support in Cactus has been improved
