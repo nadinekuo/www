@@ -4,9 +4,9 @@ We are pleased to announce the twentieth release (code name "Turing") of the Ein
 
 Cactus now supports tracking of data dependencies at runtime using schedule annotations. These can be used to check correctness of a schedule and also to automate data synchronizations between MPI ranks.
 
-Two news thorn have been added:
+Two new thorns have been added:
 
- * Baikal, a spacetime evolution code using NRPy+ for code generation
+ * Baikal, a spacetime evolution code using NRPy+ (GitHub page) for code generation
  * BaikalVacuum, a version of Baikal optimized for vacuum only simulations
 
 In addition, bug fixes accumulated since the previous release in October 2019 have been included.
@@ -28,7 +28,17 @@ The changes between this and the previous release include:
 Larger changes since last release
 
  * Automatic synchronization and correctness checking: For some time, Cactus has supported READS/WRITES declarations in the schedule. These declarations named grid functions and/or groups as well as the relevant region a function was reading and writing, e.g. "interior," "boundary," etc. In this release, we make it (1) possible to check the correctness of these declarations (both compile time and run time checks are implemented); and (2) we make it possible to automatically synchronized ghost zones and apply boundary conditions to grid functions when that is needed. By default, this functionality is off but can be enabled by setting the Cactus parameter "presync_mode." Please see the documentation for details.
- * **Baikal** Zachariah Etienne: please add something here
+ * Baikal
+   - new thorn that solves Einstein's equations, using the BSSN 3+1 formalism, in Cartesian coordinates.
+     + extensively documented in pedagogical Jupyter notebooks
+     + borrows extensively from Lean
+   - makes extensive use of the Python and SymPy-based NRPy+ code generation infrastructure (NRPy+), which aims to provide a completely free, open-source means for converting expressions in Einstein-like tensorial notation into highly optimized C-code kernels.
+   - implements most common (highly robust) options for numerical relativity GRHD and GRMHD simulations
+     + moving-puncture gauge conditions (1+log lapse and Gamma-driving shift condition) enabled by default.
+     + options of 2nd or 4th order finite-difference kernels, Kreiss-Oliger dissipation enabled by default via tunable parameter
+   - validated to agree with ML_BSSN in case of BNS evolutions
+ * BaikalVacuum
+   - version of Baikal optimized for vacuum (e.g., black hole and binary black hole) spacetimes
  * ExternalLibraries
    - the HDF5 tarball included in the EinsteinToolkit has been updated to 1.10.5, which changed the hid_t types to 64bit integers
    - the hwloc tarball included in the EinsteinToolkit has been updated to 2.0.1, which is incompatible with version 1.X
@@ -46,6 +56,7 @@ Larger changes since last release
    - Cactus documentation now contains information on the git revisions used to produce documentation
    - a long standing bug in CCTK_TraverseString when traversing "all" groups was fixed
    - the testsuite mechanism provides options to run only some tests
+   - the testsuite mechanism provides options to postprocess data before comparison, for example to compare HDF5 files
    - the testsuite mechanism will run all tests that request less than the available number of processes, running more tests
    - Cactus option lists can now refer to environment variables using ${ENV-VAR-NAME}
    - cross compiling support in Cactus has been improved
@@ -96,6 +107,7 @@ The "Turing" Release Team on behalf of the Einstein Toolkit Consortium (2020-05-
 
  * Roland Haas
  * Brock Brendal
+ * Zachariah Etienne
  * Bill Gabella
  * Beyhan Karakas
  * Atul Kedia
