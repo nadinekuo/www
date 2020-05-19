@@ -64,6 +64,9 @@ def make_text(manual_breaks, fw):
           if len(line) == 0:
               indent = 0
               linewidth = textwidth
+          elif line[0] == '+':
+              indent = 3
+              linewidth = textwidth - (2*indent+1)
           elif line[0] == '-':
               indent = 2
               linewidth = textwidth - (2*indent+1)
