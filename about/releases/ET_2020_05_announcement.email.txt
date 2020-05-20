@@ -1,5 +1,8 @@
 Release Announcement
 
+Click here to see this online:
+https://einsteintoolkit.org/about/releases/ET_2020_05_announcement.html
+
 We are pleased to announce the twentieth release (code name "Turing") of
 the Einstein Toolkit, an open, community developed software
 infrastructure for relativistic astrophysics. The highlights of this
