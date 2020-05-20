@@ -1,6 +1,6 @@
 Release Announcement
 
-Click here to see this online:
+Click here to read the announcement in HTML (with hyperlinks):
 https://einsteintoolkit.org/about/releases/ET_2020_05_announcement.html
 
 We are pleased to announce the twentieth release (code name "Turing") of
