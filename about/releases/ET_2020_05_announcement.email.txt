@@ -21,8 +21,8 @@ In addition, bug fixes accumulated since the previous release in October
 The Einstein Toolkit is a collection of software components and tools
 for simulating and analyzing general relativistic astrophysical systems
 that builds on numerous software efforts in the numerical relativity
-community including the spacetime evolution codes Baikal, Lean, and
-McLachlan, analysis codes to compute horizon characteristics and
+community including the spacetime evolution codes Baikal, lean_public,
+and McLachlan, analysis codes to compute horizon characteristics and
 gravitational waves, the Carpet AMR infrastructure, and the relativistic
 magneto-hydrodynamics codes GRHydro and IllinoisGRMHD. The Einstein
 Toolkit also contains a 1D self-force code. For parts of the toolkit,
@@ -37,7 +37,7 @@ team of Einstein Toolkit Maintainers, or by individual groups. Where
 modules are provided by external groups, the Einstein Toolkit
 Maintainers provide quality control for modules for inclusion in the
 toolkit and help coordinate support. The Einstein Toolkit Maintainers
-currently involve staff, and faculty from five different institutions,
+currently involve staff and faculty from five different institutions,
 and host weekly meetings that are open for anyone to join in.
 
 Guiding principles for the design and implementation of the toolkit
@@ -70,7 +70,7 @@ Larger changes since last release
    "interior," "boundary," etc. In this release, we make it (1)
    possible to check the correctness of these declarations (both
    compile time and run time checks are implemented); and (2) we make
-   it possible to automatically synchronized ghost zones and apply
+   it possible to automatically synchronize ghost zones and apply
    boundary conditions to grid functions when that is needed. By
    default, this functionality is off but can be enabled by setting
    the Cactus parameter "presync_mode." Please see the documentation
@@ -79,7 +79,7 @@ Larger changes since last release
    - new thorn that solves Einstein's equations, using the BSSN 3+1
      formalism, in Cartesian coordinates.
      + extensively documented in pedagogical Jupyter notebooks
-     + borrows extensively from Lean
+     + borrows extensively from lean_public
    - makes extensive use of the Python and SymPy-based NRPy+ code
      generation infrastructure available on GitHub, which aims to
      provide a completely free, open-source means for converting
@@ -147,12 +147,12 @@ Deprecated functionality
 The following features are being marked as deprecated in this release
 and will be removed in the next release
 
- * the non-Piraha parser in CST, avaiable only by modifying the CST
+ * the non-Piraha parser in CST, available only by modifying the CST
    source code, will be removed since it fails to correctly parse
    READS / WRITES clauses
  * READS / WRITES statements that refer to non-existing variables
-   will cause a compile time errors and no longer be ignored at
-   runtime even if `presync_mode = off`
+   will cause compile time errors and no longer be ignored at runtime
+   even if `presync_mode = off`
  * the fourth order accurate second derivative operators in
    SummationByParts will default to use the "Minimal Bandwidth"
    version, as already is the case for the other second derivatives
@@ -165,8 +165,8 @@ thornlist to check out the new version.
 See the Download page (http://einsteintoolkit.org/download.html) on the
 Einstein Toolkit website for download instructions.
 
-The SelfForce-1D code uses as single git repository, thus using `git
-pull ; git checkout ET_2020_05` will update the code.
+The SelfForce-1D code uses a single git repository, thus using `git pull
+; git checkout ET_2020_05` will update the code.
 
 Machine notes
 

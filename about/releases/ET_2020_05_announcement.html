@@ -5,7 +5,7 @@
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <script src="../../head.js" type="text/javascript"></script>
-  <title>May 19, 2020</title>
+  <title>May 20, 2020</title>
 </head>
 
 <body>
@@ -31,8 +31,8 @@
 </li>
 </ul>
 <p>In addition, bug fixes accumulated since the previous release in October 2019 have been included.</p>
-<p>The Einstein Toolkit is a collection of software components and tools for simulating and analyzing general relativistic astrophysical systems that builds on numerous software efforts in the numerical relativity community including the spacetime evolution codes Baikal, Lean, and McLachlan, analysis codes to compute horizon characteristics and gravitational waves, the Carpet AMR infrastructure, and the relativistic magneto-hydrodynamics codes GRHydro and IllinoisGRMHD. The Einstein Toolkit also contains a 1D self-force code. For parts of the toolkit, the Cactus Framework is used as the underlying computational infrastructure providing large-scale parallelization, general computational components, and a model for collaborative, portable code development.</p>
-<p>The Einstein Toolkit uses a distributed software model and its different modules are developed, distributed, and supported either by the core team of Einstein Toolkit Maintainers, or by individual groups. Where modules are provided by external groups, the Einstein Toolkit Maintainers provide quality control for modules for inclusion in the toolkit and help coordinate support. The Einstein Toolkit Maintainers currently involve staff, and faculty from five different institutions, and host weekly meetings that are open for anyone to join in.</p>
+<p>The Einstein Toolkit is a collection of software components and tools for simulating and analyzing general relativistic astrophysical systems that builds on numerous software efforts in the numerical relativity community including the spacetime evolution codes Baikal, lean_public, and McLachlan, analysis codes to compute horizon characteristics and gravitational waves, the Carpet AMR infrastructure, and the relativistic magneto-hydrodynamics codes GRHydro and IllinoisGRMHD. The Einstein Toolkit also contains a 1D self-force code. For parts of the toolkit, the Cactus Framework is used as the underlying computational infrastructure providing large-scale parallelization, general computational components, and a model for collaborative, portable code development.</p>
+<p>The Einstein Toolkit uses a distributed software model and its different modules are developed, distributed, and supported either by the core team of Einstein Toolkit Maintainers, or by individual groups. Where modules are provided by external groups, the Einstein Toolkit Maintainers provide quality control for modules for inclusion in the toolkit and help coordinate support. The Einstein Toolkit Maintainers currently involve staff and faculty from five different institutions, and host weekly meetings that are open for anyone to join in.</p>
 <p>Guiding principles for the design and implementation of the toolkit include: open, community-driven software development; well thought-out and stable interfaces; separation of physics software from computational science infrastructure; provision of complete working production code; training and education for a new generation of researchers.</p>
 <p>For more information about using or contributing to the Einstein Toolkit, or to join the Einstein Toolkit Consortium, please visit our web pages at <a href="http://einsteintoolkit.org">http://einsteintoolkit.org</a>, or contact the users mailing list <a href="mailto:users@einsteintoolkit.org">users@einsteintoolkit.org</a>.</p>
 <p>The Einstein Toolkit is primarily supported by NSF 1550551/1550461/1550436/1550514 (Einstein Toolkit Community Integration and Data Exploration).</p>
@@ -41,7 +41,7 @@
 <h2>Larger changes since last release</h2>
 <ul>
 <li>
-<p>Automatic synchronization and correctness checking: For some time, Cactus has supported READS/WRITES declarations in the schedule. These declarations named grid functions and/or groups as well as the relevant region a function was reading and writing, e.g. "interior," "boundary," etc. In this release, we make it (1) possible to check the correctness of these declarations (both compile time and run time checks are implemented); and (2) we make it possible to automatically synchronized ghost zones and apply boundary conditions to grid functions when that is needed. By default, this functionality is off but can be enabled by setting the Cactus parameter "presync_mode." Please see the documentation for details.</p>
+<p>Automatic synchronization and correctness checking: For some time, Cactus has supported READS/WRITES declarations in the schedule. These declarations named grid functions and/or groups as well as the relevant region a function was reading and writing, e.g. "interior," "boundary," etc. In this release, we make it (1) possible to check the correctness of these declarations (both compile time and run time checks are implemented); and (2) we make it possible to automatically synchronize ghost zones and apply boundary conditions to grid functions when that is needed. By default, this functionality is off but can be enabled by setting the Cactus parameter "presync_mode." Please see the documentation for details.</p>
 </li>
 <li>
 <p>Baikal</p>
@@ -53,7 +53,7 @@
 <p>extensively documented in <a href="https://nbviewer.jupyter.org/github/zachetienne/nrpytutorial/blob/master/Tutorial-BaikalETK.ipynb">pedagogical Jupyter notebooks</a></p>
 </li>
 <li>
-<p>borrows extensively from Lean</p>
+<p>borrows extensively from lean_public</p>
 </li>
 </ul>
 </li>
@@ -167,10 +167,10 @@
 <p>The following features are being marked as deprecated in this release and will be removed in the next release</p>
 <ul>
 <li>
-<p>the non-Piraha parser in CST, avaiable only by modifying the CST source code, will be removed since it fails to correctly parse READS / WRITES clauses</p>
+<p>the non-Piraha parser in CST, available only by modifying the CST source code, will be removed since it fails to correctly parse READS / WRITES clauses</p>
 </li>
 <li>
-<p>READS / WRITES statements that refer to non-existing variables will cause a compile time errors and no longer be ignored at runtime even if <code>presync_mode = off</code></p>
+<p>READS / WRITES statements that refer to non-existing variables will cause compile time errors and no longer be ignored at runtime even if <code>presync_mode = off</code></p>
 </li>
 <li>
 <p>the fourth order accurate second derivative operators in SummationByParts will default to use the "Minimal Bandwidth" version, as already is the case for the other second derivatives</p>
@@ -179,7 +179,7 @@
 <h2>How to upgrade from Mayer (ET_2019_10)</h2>
 <p>To upgrade from the previous release, use GetComponents with the new thornlist to check out the new version.</p>
 <p>See the Download page (<a href="http://einsteintoolkit.org/download.html">http://einsteintoolkit.org/download.html</a>) on the Einstein Toolkit website for download instructions.</p>
-<p>The SelfForce-1D code uses as single git repository, thus using <code>git pull ; git checkout ET_2020_05</code> will update the code.</p>
+<p>The SelfForce-1D code uses a single git repository, thus using <code>git pull ; git checkout ET_2020_05</code> will update the code.</p>
 <h2>Machine notes</h2>
 <p>Supported (tested) machines include:</p>
 <ul>
