@@ -65,7 +65,7 @@ def make_text(email_target, base_name):
               for i in range(len(lines)):
                     if(re.match(r'^# ', lines[i])):
                         lines.insert(i+1, '\n')
-                        lines.insert(i+2, 'Click here to see this online:\n')
+                        lines.insert(i+2, 'Click here to read the announcement in HTML (with hyperlinks):\n')
                         lines.insert(i+3, '%s\n' % url)
                         break
 
