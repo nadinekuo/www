@@ -41,6 +41,7 @@ Joan Masso: Flesh:Universitat de les Illes Balears:0000-0001-5816-4874
 John Shalf::Lawrence Berkeley National Laboratory
 Jonathan Thornburg: AHFinderDirect, AELocalInterp, LocalInterp, Flesh, docs, Carpet docs, Exact: Indiana University:
 Joshua Faber::Rochester Institute of Technology
+Ken Sible:Baikal:West Virginia University:
 Lars Menger: AHFinder parallelization:Unknown:
 Lorenzo Sala:EOS Omni bisection:University of Trento
 Luca Baiotti: GRHydro: Osaka University
