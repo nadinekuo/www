@@ -160,6 +160,14 @@ and will be removed in the next release
    SummationByParts will default to use the "Minimal Bandwidth"
    version, as already is the case for the other second derivatives
 
+Contributors
+
+This release includes contributions by Eloisa Bentivegna, Erik
+Schnetter, Federico Cipolletta, Frank Loeffler, Giuseppe Ficarra, Ian
+Hinder, Jascha Schewtschenko, Miguel Zilhao, Philipp Moesta, Roland
+Haas, Samuel Cupp, Steven R. Brandt, and Zachariah Etienne.
+
+
 How to upgrade from Mayer (ET_2019_10)
 
 To upgrade from the previous release, use GetComponents with the new
@@ -211,7 +219,6 @@ The "Turing" Release Team on behalf of the Einstein Toolkit Consortium
 
  * Roland Haas
  * Brock Brendal
- * Zachariah Etienne
  * Bill Gabella
  * Beyhan Karakas
  * Atul Kedia

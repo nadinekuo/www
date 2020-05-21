@@ -72,6 +72,11 @@ The following features are being marked as deprecated in this release and will b
  * READS / WRITES statements that refer to non-existing variables will cause compile time errors and no longer be ignored at runtime even if `presync_mode = off`
  * the fourth order accurate second derivative operators in SummationByParts will default to use the "Minimal Bandwidth" version, as already is the case for the other second derivatives
 
+Contributors
+
+This release includes contributions by Eloisa Bentivegna, Erik Schnetter, Federico Cipolletta, Frank Loeffler, Giuseppe Ficarra, Ian Hinder, Jascha Schewtschenko, Miguel Zilhao, Philipp Moesta, Roland Haas, Samuel Cupp, Steven R. Brandt, and Zachariah Etienne.
+
+
 How to upgrade from Mayer (ET_2019_10)
 
 To upgrade from the previous release, use GetComponents with the new thornlist to check out the new version.
@@ -107,7 +112,6 @@ The "Turing" Release Team on behalf of the Einstein Toolkit Consortium (2020-05-
 
  * Roland Haas
  * Brock Brendal
- * Zachariah Etienne
  * Bill Gabella
  * Beyhan Karakas
  * Atul Kedia
