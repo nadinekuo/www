@@ -164,8 +164,8 @@ Contributors
 
 This release includes contributions by Eloisa Bentivegna, Erik
 Schnetter, Federico Cipolletta, Frank Loeffler, Giuseppe Ficarra, Ian
-Hinder, Jascha Schewtschenko, Miguel Zilhao, Philipp Moesta, Roland
-Haas, Samuel Cupp, Steven R. Brandt, and Zachariah Etienne.
+Hinder, Jascha Schewtschenko, Ken Sible, Miguel Zilhao, Philipp Moesta,
+Roland Haas, Samuel Cupp, Steven R. Brandt, and Zachariah Etienne.
 
 
 How to upgrade from Mayer (ET_2019_10)
