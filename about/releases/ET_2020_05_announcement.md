@@ -53,6 +53,7 @@ The changes between this and the previous release include:
     - Carpet fix bug when using "along-z", "along-dir" and "manual" processor decomposition
     - AHFinderDirect has been fixed to avoid a long-standing issue where the number of metric timelevels needed to be set to 3 to avoid errors during recovery from a checkpoint
     - the parameter file for the Kasner example in Class. Quantum Grav. 29 115001 (2012) was corrected to produce the results shown in the paper
+    - bug was found in Multipole's default "midpoint" integration scheme, lowering its integration order, the released version changes the default method as a workaround and a full fix will be backported after the release
 * Cactus
     - Cactus documentation now contains information on the git revisions used to produce documentation
     - a long standing bug in `CCTK_TraverseString` when traversing "all" groups was fixed
