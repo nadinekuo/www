@@ -127,6 +127,10 @@ Larger changes since last release
    - the parameter file for the Kasner example in Class. Quantum
      Grav. 29 115001 (2012) was corrected to produce the results
      shown in the paper
+   - bug was found in Multipole's default "midpoint" integration
+     scheme, lowering its integration order, the released version
+     changes the default method as a workaround and a full fix will
+     be backported after the release
  * Cactus
    - Cactus documentation now contains information on the git
      revisions used to produce documentation
@@ -164,8 +168,9 @@ Contributors
 
 This release includes contributions by Eloisa Bentivegna, Erik
 Schnetter, Federico Cipolletta, Frank Loeffler, Giuseppe Ficarra, Ian
-Hinder, Jascha Schewtschenko, Ken Sible, Miguel Zilhao, Philipp Moesta,
-Roland Haas, Samuel Cupp, Steven R. Brandt, and Zachariah Etienne.
+Hinder, Jascha Schewtschenko, Ken Sible, Lorenzo Sala, Miguel Zilhao,
+Philipp Moesta, Roland Haas, Samuel Cupp, Steven R. Brandt, and
+Zachariah Etienne.
 
 
 How to upgrade from Mayer (ET_2019_10)
