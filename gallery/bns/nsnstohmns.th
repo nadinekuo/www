@@ -9,7 +9,7 @@
 !DEFINE ARR  = $ROOT/arrangements
 !DEFINE COMPONENTLIST_TARGET = $ROOT/thornlists/
 
-!DEFINE ET_RELEASE = ET_2019_10
+!DEFINE ET_RELEASE = ET_2020_05
 
 
 # A note on CUDA and OpenCL:
