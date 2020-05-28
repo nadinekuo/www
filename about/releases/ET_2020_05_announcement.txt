@@ -111,8 +111,8 @@ All repositories participating in this release carry a branch ET_2020_05 marking
 The "Turing" Release Team on behalf of the Einstein Toolkit Consortium (2020-05-31)
 
 * Roland Haas
-* Brock Brendal
-* Bill Gabella
+* Brockton Brendal
+* William E. Gabella
 * Beyhan Karakas
 * Atul Kedia
 * Shawn G. Rosofsky
