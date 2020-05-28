@@ -55,8 +55,10 @@ def make_text(email_target, base_name):
   url = "https://einsteintoolkit.org/about/releases/%s.html" % os.path.basename(base_name)
   if(email_target):
       fwn = base_name + ".email.txt"
+      indentby = 2
   else:
       fwn = base_name + ".txt"
+      indentby = 0
   with open(fwn, "w") as fw:
       with open(base_name + ".md", "r", encoding='ascii') as fd:
           lines = readlines(fd)
@@ -83,13 +85,13 @@ def make_text(email_target, base_name):
                   linewidth = textwidth
               elif line[0] == '+':
                   indent = 3
-                  linewidth = textwidth - (2*indent+1)
+                  linewidth = textwidth - (indentby*indent+1)
               elif line[0] == '-':
                   indent = 2
-                  linewidth = textwidth - (2*indent+1)
+                  linewidth = textwidth - (indentby*indent+1)
               elif line[0] == '*':
                   indent = 1
-                  linewidth = textwidth - (2*indent+1)
+                  linewidth = textwidth - (indentby*indent+1)
               else:
                   indent = 0
                   linewidth = textwidth
@@ -98,7 +100,7 @@ def make_text(email_target, base_name):
               line = re.sub(r'^#+\s+','',line)
               line = re.sub(r'`([^`\s]*)`',r'\1',line)
 
-              sp = ' '*(2*indent-1)
+              sp = ' '*(indentby*indent-1)
 
               if line == '' or not manual_breaks:
                   print(sp,line,sep='',file=fw)
@@ -122,7 +124,7 @@ def make_text(email_target, base_name):
                   # want to indent past the bullet.
                   print(sp, segment.rstrip(), sep='', file=fw)
                   if indent > 0:
-                      sp = ' '*(2*indent+1)
+                      sp = ' '*(indentby*indent+1)
 
 make_text(email_target=False, base_name=base_name)
 make_text(email_target=True, base_name=base_name)
