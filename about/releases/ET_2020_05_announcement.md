@@ -97,7 +97,6 @@ Supported (tested) machines include:
 * Cori
 * Queen Bee 2
 * Stampede 2
-* Summit
 * Mike / Shelob
 * SuperMUC-NG
 * Wheeler
