@@ -65,7 +65,7 @@ if listdeps:
 if create:
   c = eval(open(create).read())
   c["submitted"] = False
-  dep = requests.post("https://{server}/api/deposit/depositions".format(server=server,id=id),
+  dep = requests.post("https://{server}/api/deposit/depositions".format(server=server),
        data=json.dumps(c),
        headers={"Content-Type": "application/json"},
        params={"access_token":access_token})
