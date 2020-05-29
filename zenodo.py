@@ -106,6 +106,9 @@ release_team = [
   "Alois Peter Schaffarczyk",
 ]
 
+et_release = "ET_2020_05"
+et_release_codename = "Turing"
+
 def relkey(name):
     g = re.match(r'^(.+)\s+(\S+)$',name)
     if name in release_team:
@@ -135,6 +138,7 @@ for name in names:
 #c = {'metadata':{'creators':[]}}
 
 c['metadata']['creators'] = items
+c['metadata']['version'] = 'The "{et_release_codename}" release, {et_release}'.format(et_release=et_release, et_release_codename=et_release_codename)
 
 with open("zupload.py","w") as fd:
     pp = pprint.PrettyPrinter(stream=fd)
