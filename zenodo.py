@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import os, requests, pprint, json, re, sys
+import datetime
 import argparse
 
 parser = argparse.ArgumentParser(description='Zenodo Tool')
@@ -198,6 +199,7 @@ for name in names:
 
 c['metadata']['creators'] = items
 c['metadata']['version'] = 'The "{et_release_codename}" release, {et_release}'.format(et_release=et_release, et_release_codename=et_release_codename)
+c['metadata']['publication_date'] = datetime.datetime.now().strftime("%Y-%m-%d")
 
 with open("zupload.py","w") as fd:
     pp = pprint.PrettyPrinter(stream=fd)
