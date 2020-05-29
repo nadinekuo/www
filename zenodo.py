@@ -6,23 +6,33 @@ parser = argparse.ArgumentParser(description='Zenodo Tool')
 parser.add_argument('--list', action='store_true', default=False, help='List all depositions and exit')
 parser.add_argument('--sandbox', action='store_true', default=False, help='Acto on Zenodo\'s sandbox server instead of real one')
 parser.add_argument('--upload', action='store_true', default=False, help='Upload changes')
+parser.add_argument('--create', action='store', default=None, help='Create a new deposit using metadata given by the file argument')
 parser.add_argument('--id', action='store', default=None, help='The deposit id to act on')
 pres=parser.parse_args(sys.argv[1:])
 
 if "ZENODO_ACCESS" not in os.environ:
     print("You need a zenodo access token to use this tool.")
-    exit(1)
+    sys.exit(1)
 
 access_token = os.environ["ZENODO_ACCESS"]
 
 listdeps = pres.list
 sandbox = pres.sandbox
 upload = pres.upload
+create = pres.create
 id = pres.id
 
 if upload and not id:
-    print("You need to provide an id to act on.")
-    exit(1)
+    print("You need to provide an id to upload to.")
+    sys.exit(1)
+
+if create and not os.access(create, os.R_OK):
+    print("'%s' does not exist or is not readable." % create)
+    sys.exit(1)
+
+if create and id != None:
+    print("You must not provide an id when creating a new deposit")
+    sys.exit(1)
 
 if sandbox:
     server = "sandbox.zenodo.org"
@@ -36,8 +46,21 @@ if listdeps:
       print("id:",dep['id'],dep['title'])
   exit(0)
 
-dep = requests.get("https://{server}/api/deposit/depositions/{id}".format(server=server,id=id),params={"access_token":access_token})
-c = dep.json()
+if create:
+  c = eval(open(create).read())
+  c["submitted"] = False
+  dep = requests.post("https://{server}/api/deposit/depositions".format(server=server,id=id),
+       data=json.dumps(c),
+       headers={"Content-Type": "application/json"},
+       params={"access_token":access_token})
+  if dep.status_code != 200:
+    print("request faild: %s\n%s" % (dep.status_code, dep.json()))
+    sys.exit(1)
+  c = dep.json()
+  id = c["id"]
+else:
+  dep = requests.get("https://{server}/api/deposit/depositions/{id}".format(server=server,id=id),params={"access_token":access_token})
+  c = dep.json()
 
 creators = {}
 with open("developers.txt", "r") as fd:
@@ -100,5 +123,7 @@ if upload:
         data=json.dumps(c),
         headers={"Content-Type": "application/json"},
         params={"access_token":access_token})
-    print(dep.status_code)
+    if dep.status_code != 200:
+        print("request faild: %s\n%s" % (dep.status_code, dep.json()))
+        sys.exit(1)
     pp.pprint(dep.json())
