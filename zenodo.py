@@ -188,7 +188,6 @@ with open("zupload.py","w") as fd:
     pp.pprint(c)
 
 if upload:
-    pp = pprint.PrettyPrinter()
     dep = requests.put("https://{server}/api/deposit/depositions/{id}".format(server=server,id=id),
         data=json.dumps(c),
         headers={"Content-Type": "application/json"},
@@ -196,7 +195,6 @@ if upload:
     if not dep.ok:
       print("request faild: %s\n%s" % (dep.status_code, dep.json()))
       dep.raise_for_status()
-    pp.pprint(dep.json())
 
 if publish:
     answer = input('Really publish (cannot be reverted)? Have you double checked upload.py and have someone look at a dummy commit in the Zenodo sandbox? (yes/no) ')
