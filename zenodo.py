@@ -4,6 +4,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Zenodo Tool')
 parser.add_argument('--list', action='store_true', default=False, help='List all depositions and exit')
+parser.add_argument('--sandbox', action='store_true', default=False, help='Acto on Zenodo\'s sandbox server instead of real one')
 parser.add_argument('--upload', action='store_true', default=False, help='Upload changes')
 parser.add_argument('--id', action='store', default=None, help='The deposit id to act on')
 pres=parser.parse_args(sys.argv[1:])
@@ -15,6 +16,7 @@ if "ZENODO_ACCESS" not in os.environ:
 access_token = os.environ["ZENODO_ACCESS"]
 
 listdeps = pres.list
+sandbox = pres.sandbox
 upload = pres.upload
 id = pres.id
 
@@ -22,14 +24,19 @@ if upload and not id:
     print("You need to provide an id to act on.")
     exit(1)
 
+if sandbox:
+    server = "sandbox.zenodo.org"
+else:
+    server = "zenodo.org"
+
 if listdeps:
-  deps = requests.get("https://zenodo.org/api/deposit/depositions",params={"access_token":access_token})
+  deps = requests.get("https://{server}/api/deposit/depositions".format(server=server),params={"access_token":access_token})
   assert deps.status_code == 200
   for dep in deps.json():
       print("id:",dep['id'],dep['title'])
   exit(0)
 
-dep = requests.get("https://zenodo.org/api/deposit/depositions/"+id,params={"access_token":access_token})
+dep = requests.get("https://{server}/api/deposit/depositions/{id}".format(server=server,id=id),params={"access_token":access_token})
 c = dep.json()
 
 creators = {}
@@ -89,7 +96,7 @@ with open("zupload.py","w") as fd:
 
 if upload:
     pp = pprint.PrettyPrinter()
-    dep = requests.put("https://zenodo.org/api/deposit/depositions/"+id,
+    dep = requests.put("https://{server}/api/deposit/depositions/{id}".format(server=server,id=id),
         data=json.dumps(c),
         headers={"Content-Type": "application/json"},
         params={"access_token":access_token})
