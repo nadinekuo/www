@@ -76,6 +76,9 @@ if create:
   id = c["id"]
 else:
   dep = requests.get("https://{server}/api/deposit/depositions/{id}".format(server=server,id=id),params={"access_token":access_token})
+  if dep.status_code != 200:
+    print("request faild: %s\n%s" % (dep.status_code, dep.json()))
+    sys.exit(1)
   c = dep.json()
 
 if deposit:
