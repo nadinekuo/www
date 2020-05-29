@@ -78,6 +78,15 @@ if listdeps:
 if create:
   c = eval(open(create).read())
   c["submitted"] = False
+  # doi entries tend to confused Zenodo / interfere with it allocation a new one / cause internal server errors
+  # while we are at it, get rid of a couple other entries that make no sense when creating a new deposit
+  for entry in ["doi", "doi_url", "files", "id", "links", "metadata.doi", "metadata.prereserve_doi"]:
+    final = entry.split(".")[-1]
+    sub_c = c
+    for pathpart in entry.split(".")[:-1]:
+        sub_c = c[pathpart]
+    del sub_c[final]
+
   dep = requests.post("https://{server}/api/deposit/depositions".format(server=server),
        data=json.dumps(c),
        headers={"Content-Type": "application/json"},
