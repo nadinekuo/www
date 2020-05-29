@@ -8,6 +8,7 @@ parser.add_argument('--sandbox', action='store_true', default=False, help='Acto 
 parser.add_argument('--upload', action='store_true', default=False, help='Upload changes')
 parser.add_argument('--create', action='store', default=None, help='Create a new deposit using metadata given by the file argument')
 parser.add_argument('--deposit', action='store', default=None, help='Deposit a file given by the file argument')
+parser.add_argument('--publish', action='store_true', default=False, help='Publish changes (cannot be reverted)')
 parser.add_argument('--id', action='store', default=None, help='The deposit id to act on')
 pres=parser.parse_args(sys.argv[1:])
 
@@ -22,6 +23,7 @@ sandbox = pres.sandbox
 upload = pres.upload
 create = pres.create
 deposit = pres.deposit
+publish = pres.publish
 id = pres.id
 
 if upload and not id:
@@ -42,6 +44,10 @@ if deposit and not id:
 
 if deposit and not os.access(deposit, os.R_OK):
     print("'%s' does not exist or is not readable." % deposit)
+    sys.exit(1)
+
+if publish and not id:
+    print("You need to provide an id to publish.")
     sys.exit(1)
 
 if sandbox:
@@ -77,7 +83,7 @@ if deposit:
   # sed -i 's/ET_2019_10/ET_2020_05/;s/c32f345352864d88cb4fa6e649262d35da69a1a7/ET_2020_05_v0/g' Definition.md
   bucket_url = c["links"]["bucket"]
   with open(deposit, "rb") as fh:
-    dep = requests.post("%s/%s" % (bucket_rul, os.path.basename(deposit)),
+    dep = requests.put("%s/%s" % (bucket_url, os.path.basename(deposit)),
          data=fh,
          # No headers included in the request, since it's a raw byte request
          params={"access_token":access_token})
@@ -154,3 +160,14 @@ if upload:
         print("request faild: %s\n%s" % (dep.status_code, dep.json()))
         sys.exit(1)
     pp.pprint(dep.json())
+
+if publish:
+    answer = input('Really publish (cannot be reverted)? Have you double checked upload.py and have someone look at a dummy commit in the Zenodo sandbox? (yes/no) ')
+    if answer != "yes":
+        print("Aborting publishing")
+        sys.exit(0)
+    dep = requests.post("https://{server}/api/deposit/depositions/{id}/actions/publish".format(server=server,id=id),
+        params={"access_token":access_token})
+    if dep.status_code != 200:
+        print("request faild: %s\n%s" % (dep.status_code, dep.json()))
+        sys.exit(1)
