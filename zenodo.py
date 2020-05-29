@@ -44,11 +44,11 @@ names = creators.keys()
 
 release_team = [
   "Roland Haas",
-  "Brock Brendal",
-  "Bill Gabella",
+  "Brockton Brendal",
+  "William E. Gabella",
   "Beyhan Karakaş",
   "Atul Kedia",
-  "Shawn Rosofsky",
+  "Shawn G. Rosofsky",
   "Steven R. Brandt",
   "Alois Peter Schaffarczyk",
 ]
