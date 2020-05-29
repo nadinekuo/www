@@ -7,6 +7,7 @@ parser.add_argument('--list', action='store_true', default=False, help='List all
 parser.add_argument('--sandbox', action='store_true', default=False, help='Acto on Zenodo\'s sandbox server instead of real one')
 parser.add_argument('--upload', action='store_true', default=False, help='Upload changes')
 parser.add_argument('--create', action='store', default=None, help='Create a new deposit using metadata given by the file argument')
+parser.add_argument('--deposit', action='store', default=None, help='Deposit a file given by the file argument')
 parser.add_argument('--id', action='store', default=None, help='The deposit id to act on')
 pres=parser.parse_args(sys.argv[1:])
 
@@ -20,6 +21,7 @@ listdeps = pres.list
 sandbox = pres.sandbox
 upload = pres.upload
 create = pres.create
+deposit = pres.deposit
 id = pres.id
 
 if upload and not id:
@@ -32,6 +34,14 @@ if create and not os.access(create, os.R_OK):
 
 if create and id != None:
     print("You must not provide an id when creating a new deposit")
+    sys.exit(1)
+
+if deposit and not id:
+    print("You need to provide an id to deposit to.")
+    sys.exit(1)
+
+if deposit and not os.access(deposit, os.R_OK):
+    print("'%s' does not exist or is not readable." % deposit)
     sys.exit(1)
 
 if sandbox:
@@ -61,6 +71,19 @@ if create:
 else:
   dep = requests.get("https://{server}/api/deposit/depositions/{id}".format(server=server,id=id),params={"access_token":access_token})
   c = dep.json()
+
+if deposit:
+  # usually the file Definition.md modified like so:
+  # sed -i 's/ET_2019_10/ET_2020_05/;s/c32f345352864d88cb4fa6e649262d35da69a1a7/ET_2020_05_v0/g' Definition.md
+  bucket_url = c["links"]["bucket"]
+  with open(deposit, "rb") as fh:
+    dep = requests.post("%s/%s" % (bucket_rul, os.path.basename(deposit)),
+         data=fh,
+         # No headers included in the request, since it's a raw byte request
+         params={"access_token":access_token})
+    if dep.status_code != 200:
+      print("request faild: %s\n%s" % (dep.status_code, dep.json()))
+      sys.exit(1)
 
 creators = {}
 with open("developers.txt", "r") as fd:
