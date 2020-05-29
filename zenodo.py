@@ -72,7 +72,14 @@ if listdeps:
     print("request faild: %s\n%s" % (deps.status_code, deps.json()))
     deps.raise_for_status()
   for dep in deps.json():
-      print("id:",dep['id'],dep['title'])
+    try:
+      latest_draft = dep["links"]["latest_draft"]
+      m = re.search(r'/([0-9]*)$',latest_draft)
+      id = m.group(1)
+    except KeyError:
+      # no draft, everything submitted
+      id = dep["id"]
+    print("id:",id,dep['title'])
   exit(0)
 
 if create:
