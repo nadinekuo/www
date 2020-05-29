@@ -68,7 +68,9 @@ else:
 
 if listdeps:
   deps = requests.get("https://{server}/api/deposit/depositions".format(server=server),params={"access_token":access_token})
-  assert deps.status_code == 200
+  if not deps.ok:
+    print("request faild: %s\n%s" % (deps.status_code, deps.json()))
+    deps.raise_for_status()
   for dep in deps.json():
       print("id:",dep['id'],dep['title'])
   exit(0)
@@ -80,24 +82,24 @@ if create:
        data=json.dumps(c),
        headers={"Content-Type": "application/json"},
        params={"access_token":access_token})
-  if dep.status_code != 200:
+  if not dep.ok:
     print("request faild: %s\n%s" % (dep.status_code, dep.json()))
-    sys.exit(1)
+    dep.raise_for_status()
   c = dep.json()
   id = c["id"]
 else:
   dep = requests.get("https://{server}/api/deposit/depositions/{id}".format(server=server,id=id),params={"access_token":access_token})
-  if dep.status_code != 200:
+  if not dep.ok:
     print("request faild: %s\n%s" % (dep.status_code, dep.json()))
-    sys.exit(1)
+    dep.raise_for_status()
   c = dep.json()
 
 if newversion:
   dep = requests.post("https://{server}/api/deposit/depositions/{id}/actions/newversion".format(server=server,id=id),
        params={"access_token":access_token})
-  if dep.status_code != 200:
+  if not dep.ok:
     print("request faild: %s\n%s" % (dep.status_code, dep.json()))
-    sys.exit(1)
+    dep.raise_for_status()
   c = dep.json()
   # the docs (https://developers.zenodo.org/#new-version) say:
   # > The response body of this action is NOT the new version deposit, but the
@@ -107,9 +109,9 @@ if newversion:
   # > to use the global id that references all the versions.
   # so get that id and data
   dep = requests.get(c["links"]["latest_draft"],params={"access_token":access_token})
-  if dep.status_code != 200:
+  if not dep.ok:
     print("request faild: %s\n%s" % (dep.status_code, dep.json()))
-    sys.exit(1)
+    dep.raise_for_status()
   c = dep.json()
   id = c["id"]
 
@@ -122,9 +124,9 @@ if deposit:
          data=fh,
          # No headers included in the request, since it's a raw byte request
          params={"access_token":access_token})
-    if dep.status_code != 200:
+    if not dep.ok:
       print("request faild: %s\n%s" % (dep.status_code, dep.json()))
-      sys.exit(1)
+      dep.raise_for_status()
 
 creators = {}
 with open("developers.txt", "r") as fd:
@@ -191,9 +193,9 @@ if upload:
         data=json.dumps(c),
         headers={"Content-Type": "application/json"},
         params={"access_token":access_token})
-    if dep.status_code != 200:
-        print("request faild: %s\n%s" % (dep.status_code, dep.json()))
-        sys.exit(1)
+    if not dep.ok:
+      print("request faild: %s\n%s" % (dep.status_code, dep.json()))
+      dep.raise_for_status()
     pp.pprint(dep.json())
 
 if publish:
@@ -203,6 +205,6 @@ if publish:
         sys.exit(0)
     dep = requests.post("https://{server}/api/deposit/depositions/{id}/actions/publish".format(server=server,id=id),
         params={"access_token":access_token})
-    if dep.status_code != 200:
-        print("request faild: %s\n%s" % (dep.status_code, dep.json()))
-        sys.exit(1)
+    if not dep.ok:
+      print("request faild: %s\n%s" % (dep.status_code, dep.json()))
+      dep.raise_for_status()
