@@ -7,6 +7,7 @@ parser.add_argument('--list', action='store_true', default=False, help='List all
 parser.add_argument('--sandbox', action='store_true', default=False, help='Acto on Zenodo\'s sandbox server instead of real one')
 parser.add_argument('--upload', action='store_true', default=False, help='Upload changes')
 parser.add_argument('--create', action='store', default=None, help='Create a new deposit using metadata given by the file argument')
+parser.add_argument('--newversion', action='store_true', default=None, help='Create a new version for the deposit')
 parser.add_argument('--deposit', action='store', default=None, help='Deposit a file given by the file argument')
 parser.add_argument('--publish', action='store_true', default=False, help='Publish changes (cannot be reverted)')
 parser.add_argument('--id', action='store', default=None, help='The deposit id to act on')
@@ -22,6 +23,7 @@ listdeps = pres.list
 sandbox = pres.sandbox
 upload = pres.upload
 create = pres.create
+newversion = pres.newversion
 deposit = pres.deposit
 publish = pres.publish
 id = pres.id
@@ -37,6 +39,15 @@ if create and not os.access(create, os.R_OK):
 if create and id != None:
     print("You must not provide an id when creating a new deposit")
     sys.exit(1)
+
+if newversion and not id:
+    print("You need to provide an id to create a new version for.")
+    sys.exit(1)
+
+if create and newversion:
+   # TODO: allow this by checking for id being set only if not create
+   print("Only one of --create or --newversion is allowed")
+   sys.exit(1)
 
 if deposit and not id:
     print("You need to provide an id to deposit to.")
@@ -80,6 +91,27 @@ else:
     print("request faild: %s\n%s" % (dep.status_code, dep.json()))
     sys.exit(1)
   c = dep.json()
+
+if newversion:
+  dep = requests.post("https://{server}/api/deposit/depositions/{id}/actions/newversion".format(server=server,id=id),
+       params={"access_token":access_token})
+  if dep.status_code != 200:
+    print("request faild: %s\n%s" % (dep.status_code, dep.json()))
+    sys.exit(1)
+  c = dep.json()
+  # the docs (https://developers.zenodo.org/#new-version) say:
+  # > The response body of this action is NOT the new version deposit, but the
+  # > original resource. The new version deposition can be accessed through the
+  # > "latest_draft" under "links" in the response body. - The id used to create
+  # > this new version has to be the id of the latest version. It is not possible
+  # > to use the global id that references all the versions.
+  # so get that id and data
+  dep = requests.get(c["links"]["latest_draft"],params={"access_token":access_token})
+  if dep.status_code != 200:
+    print("request faild: %s\n%s" % (dep.status_code, dep.json()))
+    sys.exit(1)
+  c = dep.json()
+  id = c["id"]
 
 if deposit:
   # usually the file Definition.md modified like so:
