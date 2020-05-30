@@ -94,6 +94,8 @@ if create:
     for pathpart in entry.split(".")[:-1]:
         sub_c = c[pathpart]
     del sub_c[final]
+  # request a new DOI
+  c["metadata"]["prereserve_doi"] = True
 
   dep = requests.post("https://{server}/api/deposit/depositions".format(server=server),
        data=json.dumps(c),
