@@ -305,6 +305,22 @@ function makeTable(cites, tableNode)
     }
   }
 }
+  // <a href="https://doi.org/10.5281/zenodo.3522086">doi:10.5281/zenodo.3522086</a> (key: EinsteinToolkit:2019_10).
+function makeMainCite(cite, spanNode)
+{
+  var spaceNode = document.createTextNode(" ");
+  spanNode.appendChild(spaceNode);
+
+  var anchorNode = document.createElement("a");
+  anchorNode.href = cite['url']
+  spanNode.appendChild(anchorNode);
+
+  var labelNode = document.createTextNode("doi:" + cite['doi']);
+  anchorNode.appendChild(labelNode);
+
+  var textNode = document.createTextNode(" (key: " + cite['cite'] + ")");
+  spanNode.appendChild(textNode);
+}
 
 function makeTables(content)
 {
@@ -348,6 +364,9 @@ function makeTables(content)
 
   // suggested
   makeTable(suggested, document.getElementById("suggestedcites"));
+
+  // main ET citation in bulk text
+  makeMainCite(requested["EinsteinToolkit"][0], document.getElementById("etrequestedcite"));
 }
 
 function httpGetAsync(theURL, callback)
