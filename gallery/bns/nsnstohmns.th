@@ -12,6 +12,7 @@
 !DEFINE ET_RELEASE = ET_2020_05
 
 
+
 # A note on CUDA and OpenCL:
 
 # The thorns supporting and using CUDA and OpenCL are working and are
@@ -46,9 +47,9 @@
 !TARGET   = $ROOT
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/manifest.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $1
 !NAME     = manifest
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = ./manifest
 
 
@@ -56,8 +57,8 @@
 !TARGET   = $ROOT
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactus.git
+!REPO_BRANCH = ET_2020_05
 !NAME     = flesh
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = .clang-format CONTRIBUTORS COPYRIGHT doc lib Makefile src
 
 
@@ -65,9 +66,9 @@
 !TARGET   = $ROOT
 !TYPE     = git
 !URL      = https://bitbucket.org/simfactory/simfactory2.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH=$1
 !NAME     = simfactory2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = ./simfactory
 
 
@@ -75,7 +76,7 @@
 !TARGET   = $ROOT
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/einsteinexamples.git
-!REPO_BRANCH = $ET_RELEASE
+!REPO_BRANCH = ET_2020_05
 !CHECKOUT = par
 
 
@@ -83,9 +84,9 @@
 !TARGET   = $ROOT
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/utilities.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $1
 !NAME     = utils
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = ./utils
 
 
@@ -93,7 +94,7 @@
 !TARGET   = $ROOT/bin
 !TYPE     = git
 !URL      = https://github.com/gridaphobe/CRL.git
-!REPO_BRANCH = $ET_RELEASE
+!REPO_BRANCH = ET_2020_05
 !CHECKOUT = GetComponents
 
 
@@ -101,9 +102,9 @@
 !TARGET   = $ARR/CactusDoc
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/coredoc.git
+!REPO_BRANCH = ET_2020_05
 !NAME     = CoreDoc
 !REPO_PATH= $1
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = ./CoreDoc
 
 
@@ -111,8 +112,8 @@
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactusbase.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 CactusBase/Boundary
 CactusBase/CartGrid3D
@@ -129,8 +130,8 @@ CactusBase/Time
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactusconnect.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 CactusConnect/HTTPD
 CactusConnect/HTTPDExtra
@@ -140,8 +141,8 @@ CactusConnect/Socket
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactuselliptic.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = CactusElliptic/EllPETSc CactusElliptic/TATPETSc
 CactusElliptic/EllBase
 #DISABLED CactusElliptic/EllPETSc
@@ -153,8 +154,8 @@ CactusElliptic/TATelliptic
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactusexamples.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = CactusExamples/HelloWorldCUDA CactusExamples/HelloWorldOpenCL CactusExamples/WaveToyOpenCL
 CactusExamples/DemoInterp
 CactusExamples/FleshInfo
@@ -175,8 +176,8 @@ CactusExamples/WaveToy2DF77
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactusio.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 CactusIO/IOJpeg
 
@@ -184,8 +185,8 @@ CactusIO/IOJpeg
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactusnumerical.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 CactusNumerical/Cartoon2D
 CactusNumerical/Dissipation
@@ -213,8 +214,8 @@ CactusNumerical/TestLocalReduce
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactuspugh.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 CactusPUGH/PUGH
 CactusPUGH/PUGHInterp
@@ -225,8 +226,8 @@ CactusPUGH/PUGHSlab
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactuspughio.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 CactusPUGHIO/IOHDF5
 CactusPUGHIO/IOHDF5Util
@@ -235,8 +236,8 @@ CactusPUGHIO/IOHDF5Util
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactustest.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = CactusTest/TestAllTypes
 #DISABLED CactusTest/TestAllTypes
 CactusTest/TestArrays
@@ -254,6 +255,7 @@ CactusTest/TestLoop
 CactusTest/TestMath
 CactusTest/TestMoL
 CactusTest/TestPar
+CactusTest/TestReadWrite
 CactusTest/TestReduce
 CactusTest/TestSchedule
 CactusTest/TestStrings
@@ -265,8 +267,8 @@ CactusTest/TestTypes
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactusutils.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = CactusUtils/Accelerator CactusUtils/OpenCLRunTime
 #DISABLED CactusUtils/Accelerator
 CactusUtils/Formaline
@@ -288,8 +290,8 @@ CactusUtils/WatchDog
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactuswave.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 CactusWave/IDScalarWave
 CactusWave/IDScalarWaveC
@@ -308,8 +310,8 @@ CactusWave/WaveToyFreeF90
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/eschnett/carpet.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = Carpet/doc
 Carpet/Carpet
 Carpet/CarpetEvolutionMask
@@ -346,8 +348,8 @@ Carpet/Timers
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/eloisa/ctthorns.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 CTThorns/CT_Analytic
 CTThorns/CT_MultiLevel
@@ -357,8 +359,8 @@ CTThorns/CT_MultiLevel
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/einsteinanalysis.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 EinsteinAnalysis/ADMAnalysis
 EinsteinAnalysis/ADMMass
@@ -378,8 +380,8 @@ EinsteinAnalysis/WeylScal4
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/einsteinbase.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 EinsteinBase/ADMBase
 EinsteinBase/ADMCoupling        # deprecated
@@ -395,8 +397,8 @@ EinsteinBase/TmunuBase
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/einsteineos.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 EinsteinEOS/EOS_Hybrid
 EinsteinEOS/EOS_IdealFluid
@@ -407,8 +409,8 @@ EinsteinEOS/EOS_Polytrope
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/einsteinevolve.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 EinsteinEvolve/GRHydro
 EinsteinEvolve/GRHydro_InitData
@@ -418,8 +420,8 @@ EinsteinEvolve/NewRad
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://github.com/barrywardell/EinsteinExact.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = EinsteinExact/doc EinsteinExact/m EinsteinExact/tests
 EinsteinExact/EinsteinExact_Test
 EinsteinExact/GaugeWave
@@ -434,8 +436,8 @@ EinsteinExact/Vaidya2
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/einsteininitialdata.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 EinsteinInitialData/DistortedBHIVP
 EinsteinInitialData/Exact
@@ -460,8 +462,8 @@ EinsteinInitialData/TwoPunctures
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/einsteinutils.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 EinsteinUtils/SetMask_SphericalSurface
 EinsteinUtils/TGRtensor
@@ -470,7 +472,8 @@ EinsteinUtils/TGRtensor
 # Additional Cactus thorns
 !TARGET   = $ARR
 !TYPE     = svn
-!URL      = https://github.com/EinsteinToolkit/$1-$2.git/branches/$ET_RELEASE
+!URL      = https://github.com/EinsteinToolkit/$1-$2.git/branches/ET_2020_05
+!REPO_BRANCH = ET_2020_05
 !CHECKOUT = ExternalLibraries/OpenBLAS ExternalLibraries/OpenCL ExternalLibraries/pciutils ExternalLibraries/PETSc
 ExternalLibraries/BLAS
 ExternalLibraries/FFTW3
@@ -490,12 +493,23 @@ ExternalLibraries/PAPI
 ExternalLibraries/pthreads
 ExternalLibraries/zlib
 
+# A newer version of Lorene, by default disabled
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/einsteintoolkit/lorene.git
+!REPO_BRANCH = ET_2020_05
+!NAME     = LORENE2
+!REPO_PATH= ../$2
+!CHECKOUT = ExternalLibraries/LORENE2
+#DISABLED ExternalLibraries/LORENE2
+
+
 # From Kranc (required e.g. by McLachlan)
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://github.com/ianhinder/Kranc.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= Auxiliary/Cactus
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 KrancNumericalTools/GenericFD
 
@@ -506,8 +520,8 @@ KrancNumericalTools/GenericFD
 !TARGET    = $ARR
 !TYPE      = git
 !URL       = https://bitbucket.org/canuda/lean_public.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH = $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 Lean/LeanBSSNMoL
 Lean/NPScalars
@@ -518,8 +532,8 @@ Lean/NPScalars
 !TYPE     = git
 !AUTH_URL = https://bitbucket.org/llamacode/llama.git
 !URL      = https://bitbucket.org/llamacode/llama.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 Llama/ADMDerivatives
 Llama/Coordinates
@@ -530,23 +544,12 @@ Llama/LlamaWaveToy
 Llama/WaveExtractL
 
 
-# A newer version of Lorene, by default disabled
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://bitbucket.org/einsteintoolkit/lorene.git
-!NAME     = LORENE2
-!REPO_PATH= ../$2
-!REPO_BRANCH = $ET_RELEASE
-!CHECKOUT = ExternalLibraries/LORENE2
-#DISABLED ExternalLibraries/LORENE2
-
-
 # McLachlan, the spacetime code
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/mclachlan.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT = McLachlan/doc McLachlan/m McLachlan/par McLachlan/ML_WaveToy_CL
 McLachlan/ML_ADMConstraints
 McLachlan/ML_ADMQuantities
@@ -565,8 +568,8 @@ McLachlan/ML_WaveToy_Test
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/numerical.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 Numerical/AEILocalInterp
 
@@ -575,8 +578,8 @@ Numerical/AEILocalInterp
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/pittnullcode.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 PITTNullCode/NullConstr
 PITTNullCode/NullDecomp
@@ -597,8 +600,8 @@ PITTNullCode/SphericalHarmonicReconGen
 !TARGET    = $ARR
 !TYPE      = git
 !URL       = https://bitbucket.org/canuda/Proca.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH = $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
 Proca/NPScalars_Proca
 Proca/ProcaBase
@@ -611,19 +614,21 @@ Proca/TwoPunctures_KerrProca
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/zach_etienne/wvuthorns.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
-WVUThorns/IllinoisGRMHD
+WVUThorns/Baikal
+WVUThorns/BaikalVacuum
 WVUThorns/Convert_to_HydroBase
-WVUThorns/ID_converter_ILGRMHD
-WVUThorns/Seed_Magnetic_Fields
-WVUThorns/GiRaFFE
-WVUThorns/GiRaFFE_to_HydroBase
-WVUThorns/GiRaFFEfood
-WVUThorns/ID_converter_GiRaFFE
-WVUThorns/ShiftedKerrSchild
 WVUThorns/FishboneMoncriefID
+WVUThorns/GiRaFFE
+WVUThorns/GiRaFFEfood
+WVUThorns/GiRaFFE_to_HydroBase
+WVUThorns/ID_converter_GiRaFFE
+WVUThorns/ID_converter_ILGRMHD
+WVUThorns/IllinoisGRMHD
+WVUThorns/Seed_Magnetic_Fields
+WVUThorns/ShiftedKerrSchild
 
 
 # Various "diagnostic" thorns from WVU:
@@ -637,11 +642,11 @@ WVUThorns/FishboneMoncriefID
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/zach_etienne/wvuthorns_diagnostics.git
+!REPO_BRANCH = ET_2020_05
 !REPO_PATH= $2
-!REPO_BRANCH = $ET_RELEASE
 !CHECKOUT =
-WVUThorns_Diagnostics/Seed_Magnetic_Fields_BNS
 WVUThorns_Diagnostics/particle_tracerET
+WVUThorns_Diagnostics/Seed_Magnetic_Fields_BNS
 WVUThorns_Diagnostics/smallbPoynET
 WVUThorns_Diagnostics/VolumeIntegrals_GRMHD
 WVUThorns_Diagnostics/VolumeIntegrals_vacuum
