@@ -86,8 +86,9 @@ function verify_GitHub_Profile($github) {
     curl_setopt($curl,CURLOPT_CUSTOMREQUEST,'GET');
     curl_setopt($curl,CURLOPT_RETURNTRANSFER ,TRUE);
     $result = curl_exec($curl);
+    $returncode = curl_getinfo($curl, CURLINFO_RESPONSE_CODE);
     curl_close($curl);
-    return $result != "Not Found";
+    return $returncode < 300;
   } else {
     return 1;
   }
