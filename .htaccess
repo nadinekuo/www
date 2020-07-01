@@ -1,2 +1,6 @@
 Redirect 301 /about/gallery/GW150914 /gallery/bbh
 
+<Directory .git>
+    order allow,deny
+    deny from all
+</Directory>
