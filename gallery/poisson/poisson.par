@@ -47,7 +47,7 @@ CoordBase::boundary_shiftout_z_upper = 1
 CartGrid3D::type = "coordbase"
 
 ##################################################################################
-ActiveThorns = "IOUtil Carpet CarpetLib CarpetInterp LoopControl CarpetReduce CarpetSlab"
+ActiveThorns = "IOUtil Carpet CarpetLib CarpetInterp LoopControl CarpetReduce CarpetSlab SystemTopology"
 ##################################################################################
 
 Carpet::adaptive_stepsize = "no"
