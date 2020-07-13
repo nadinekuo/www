@@ -34,7 +34,7 @@ ActiveThorns = "GenericFD NewRad"
 ActiveThorns = "ML_BSSN ML_BSSN_Helper ML_ADMConstraints"
 ActiveThorns = "Hydro_Analysis NSTracker"
 ActiveThorns = "Dissipation"
-ActiveThorns = "SystemStatistics"
+ActiveThorns = "SystemStatistics SystemTopology"
 
 # Wave extraction (Psi4)
 ActiveThorns = "WeylScal4 Multipole"
