@@ -2,7 +2,7 @@
 ActiveThorns = "Time MoL"
 ActiveThorns = "Coordbase CartGrid3d Boundary StaticConformal"
 ActiveThorns = "SymBase ADMBase TmunuBase HydroBase InitBase ADMCoupling ADMMacros"
-ActiveThorns = "IOUtil Formaline"
+ActiveThorns = "IOUtil Formaline SystemTopology"
 ActiveThorns = "SpaceMask CoordGauge Constants LocalReduce aeilocalinterp LoopControl"
 ActiveThorns = "Carpet CarpetLib CarpetReduce CarpetRegrid2 CarpetInterp"
 ActiveThorns = "CarpetIOASCII CarpetIOScalar CarpetIOHDF5 CarpetIOBasic"
