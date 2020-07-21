@@ -123,14 +123,6 @@ CactusBase/IOUtil
 CactusBase/SymBase
 CactusBase/Time
 
-# CactusConnect thorns
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://bitbucket.org/cactuscode/cactusconnect.git
-!REPO_BRANCH = ET_2020_05
-!REPO_PATH= $2
-!CHECKOUT =
-
 # CactusElliptic thorns
 !TARGET   = $ARR
 !TYPE     = git
@@ -153,14 +145,6 @@ CactusExamples/HelloWorld
 #DISABLED CactusExamples/HelloWorldOpenCL
 #DISABLED CactusExamples/WaveToyOpenCL
 
-# CactusIO thorns
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://bitbucket.org/cactuscode/cactusio.git
-!REPO_BRANCH = ET_2020_05
-!REPO_PATH= $2
-!CHECKOUT =
-
 # CactusNumerical thorns
 !TARGET   = $ARR
 !TYPE     = git
@@ -174,22 +158,6 @@ CactusNumerical/MoL
 CactusNumerical/ReflectionSymmetry
 CactusNumerical/SpaceMask
 CactusNumerical/SphericalSurface
-
-# CactusPUGH thorns
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://bitbucket.org/cactuscode/cactuspugh.git
-!REPO_BRANCH = ET_2020_05
-!REPO_PATH= $2
-!CHECKOUT =
-
-# CactusPUGHIO thorns
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://bitbucket.org/cactuscode/cactuspughio.git
-!REPO_BRANCH = ET_2020_05
-!REPO_PATH= $2
-!CHECKOUT =
 
 # CactusTest thorns
 !TARGET   = $ARR
@@ -214,15 +182,6 @@ CactusUtils/NaNChecker
 CactusUtils/TerminationTrigger
 CactusUtils/Vectors
 
-# CactusWave thorns
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://bitbucket.org/cactuscode/cactuswave.git
-!REPO_BRANCH = ET_2020_05
-!REPO_PATH= $2
-!CHECKOUT =
-
-
 # Carpet, the AMR driver
 !TARGET   = $ARR
 !TYPE     = git
@@ -242,24 +201,6 @@ Carpet/CarpetRegrid2
 Carpet/CycleClock
 Carpet/LoopControl
 Carpet/Timers
-
-
-# Thorns developed at the University of Catania
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://bitbucket.org/eloisa/ctthorns.git
-!REPO_BRANCH = ET_2020_05
-!REPO_PATH= $2
-!CHECKOUT =
-
-
-# EinsteinAnalysis
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://bitbucket.org/einsteintoolkit/einsteinanalysis.git
-!REPO_BRANCH = ET_2020_05
-!REPO_PATH= $2
-!CHECKOUT =
 
 # EinsteinBase
 !TARGET   = $ARR
@@ -317,15 +258,6 @@ EinsteinEvolve/NewRad
 EinsteinInitialData/TOVSolver
 EinsteinInitialData/Exact
 
-# EinsteinUtils
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://bitbucket.org/einsteintoolkit/einsteinutils.git
-!REPO_BRANCH = ET_2020_05
-!REPO_PATH= $2
-!CHECKOUT =
-
-
 # Additional Cactus thorns
 !TARGET   = $ARR
 !TYPE     = svn
@@ -333,56 +265,6 @@ EinsteinInitialData/Exact
 !REPO_BRANCH = ET_2020_05
 !CHECKOUT = ExternalLibraries/OpenBLAS ExternalLibraries/OpenCL ExternalLibraries/pciutils ExternalLibraries/PETSc
 ExternalLibraries/HDF5
-ExternalLibraries/hwloc
-ExternalLibraries/MPI
-#DISABLED ExternalLibraries/OpenBLAS
-#DISABLED ExternalLibraries/OpenCL
-#DISABLED ExternalLibraries/pciutils
-#DISABLED ExternalLibraries/PETSc
-ExternalLibraries/pthreads
-ExternalLibraries/zlib
-
-# A newer version of Lorene, by default disabled
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://bitbucket.org/einsteintoolkit/lorene.git
-!REPO_BRANCH = ET_2020_05
-!NAME     = LORENE2
-!REPO_PATH= ../$2
-!CHECKOUT = ExternalLibraries/LORENE2
-#DISABLED ExternalLibraries/LORENE2
-
-
-# From Kranc (required e.g. by McLachlan)
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://github.com/ianhinder/Kranc.git
-!REPO_BRANCH = ET_2020_05
-!REPO_PATH= Auxiliary/Cactus
-!CHECKOUT =
-KrancNumericalTools/GenericFD
-
-
-# Canuda thorns
-#===============
-# Canuda -- Lean
-!TARGET    = $ARR
-!TYPE      = git
-!URL       = https://bitbucket.org/canuda/lean_public.git
-!REPO_BRANCH = ET_2020_05
-!REPO_PATH = $2
-!CHECKOUT =
-
-
-# Llama
-!TARGET   = $ARR
-!TYPE     = git
-!AUTH_URL = https://bitbucket.org/llamacode/llama.git
-!URL      = https://bitbucket.org/llamacode/llama.git
-!REPO_BRANCH = ET_2020_05
-!REPO_PATH= $2
-!CHECKOUT =
-
 
 # McLachlan, the spacetime code
 !TARGET   = $ARR
@@ -404,50 +286,6 @@ McLachlan/ML_BSSN_Helper
 !REPO_PATH= $2
 !CHECKOUT =
 Numerical/AEILocalInterp
-
-
-# PITTNullCode
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://bitbucket.org/einsteintoolkit/pittnullcode.git
-!REPO_BRANCH = ET_2020_05
-!REPO_PATH= $2
-!CHECKOUT =
-
-
-# Canuda -- Proca
-!TARGET    = $ARR
-!TYPE      = git
-!URL       = https://bitbucket.org/canuda/Proca.git
-!REPO_BRANCH = ET_2020_05
-!REPO_PATH = $2
-!CHECKOUT =
-
-
-# Various thorns from WVU: IllinoisGRMHD, GiRaFFE, ShiftedKerrSchild, and FishboneMoncriefID
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://bitbucket.org/zach_etienne/wvuthorns.git
-!REPO_BRANCH = ET_2020_05
-!REPO_PATH= $2
-!CHECKOUT =
-
-
-# Various "diagnostic" thorns from WVU:
-#    particle_tracerET
-#    smallbPoynET
-#    VolumeIntegrals_GRMHD
-#    VolumeIntegrals_vacuum
-# ... and a thorn for seeding binary neutron stars with
-#     magnetic fields:
-#    Seed_Magnetic_Fields_BNS
-!TARGET   = $ARR
-!TYPE     = git
-!URL      = https://bitbucket.org/zach_etienne/wvuthorns_diagnostics.git
-!REPO_BRANCH = ET_2020_05
-!REPO_PATH= $2
-!CHECKOUT =
-
 
 # Private thorns
 !TARGET   = $ARR
