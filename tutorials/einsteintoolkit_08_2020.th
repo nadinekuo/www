@@ -266,6 +266,15 @@ EinsteinInitialData/Exact
 !CHECKOUT = ExternalLibraries/OpenBLAS ExternalLibraries/OpenCL ExternalLibraries/pciutils ExternalLibraries/PETSc
 ExternalLibraries/HDF5
 
+# From Kranc (required e.g. by McLachlan)
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://github.com/ianhinder/Kranc.git
+!REPO_BRANCH = ET_2020_05
+!REPO_PATH= Auxiliary/Cactus
+!CHECKOUT =
+KrancNumericalTools/GenericFD
+
 # McLachlan, the spacetime code
 !TARGET   = $ARR
 !TYPE     = git
