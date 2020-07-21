@@ -265,6 +265,14 @@ EinsteinInitialData/Exact
 !REPO_BRANCH = ET_2020_05
 !CHECKOUT = ExternalLibraries/OpenBLAS ExternalLibraries/OpenCL ExternalLibraries/pciutils ExternalLibraries/PETSc
 ExternalLibraries/HDF5
+ExternalLibraries/hwloc
+ExternalLibraries/MPI
+#DISABLED ExternalLibraries/OpenBLAS
+#DISABLED ExternalLibraries/OpenCL
+#DISABLED ExternalLibraries/pciutils
+#DISABLED ExternalLibraries/PETSc
+ExternalLibraries/pthreads
+ExternalLibraries/zlib
 
 # From Kranc (required e.g. by McLachlan)
 !TARGET   = $ARR
