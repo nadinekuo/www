@@ -20,13 +20,40 @@
 /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
 $name = htmlentities($_POST['name'], ENT_QUOTES, "UTF-8");
 $email = $_POST['email'];
+$home = $_POST['home'];
 $institution = $_POST['institution'];
+$institution_url = $_POST['institution-url'];
+$list = $_POST['list'];
 $buechsenwursttest = $_POST['buechsenwursttest'];
 
-$message = "New tutorial account request:\n".
-  "Name: ".$name."\n".
-  "Email: ".$email."\n".
-  "Org: ".$institution."\n";
+$frominstitution = "";
+if (!empty($institution)) {
+  $frominstitution = "from $institution";
+}
+$institution_url_paren = "";
+if (!empty($institution_url)) {
+  $institution_url_paren = " (" . $institution_url . ") ";
+}
+$home_entry = "";
+if (!empty($home)) {
+  $homepg = "Home Page: ".$home."\n";
+  $home_entry = "$home ";
+}
+
+if ($list=='yes') {
+$addtolist = "Please add this person to the ET users mailing list:\n\n  ".
+             "http://lists.einsteintoolkit.org/mailman/admin/users/members/add\n\n  ".
+             $name." <".$email.">";
+}
+else {
+$addtolist = "This person's email address is ".$email."; however, this person does not wish to be added to the ET users mailing list.";
+}
+
+$message = "Einstein Toolkit maintainers: \n\n".$name." ".$frominstitution.$institution_url_paren."has submitted a request to register with the Einstein Toolkit. ".$addtolist."\n".$homepg."\n Thanks,\n Einstein Toolkit Registration Bot\n";
+
+$message .= "\n\nmembers.txt entry:\n\n".
+  "$institution_url $institution\n".
+  " $home_entry$name\n";
 
 /* PHP form validation: the script checks that the Email field contains a valid email address and the Subject field isn't empty. preg_match performs a regular expression match. It's a very powerful PHP function to validate form fields and other strings - see PHP manual for details. */
 if (empty($name)) {
@@ -39,13 +66,16 @@ if (empty($name)) {
 } elseif (!empty($institution) && ($name == $institution)) {
   echo '<h4>You provided the same for name and institution. Go away, spam bot, or </h4>';
   echo '<br /><a href="javascript:history.back(1);">try again</a>';
+} elseif (empty($institution_url)) {
+  echo '<h4>Please provide a URL for your institution.</h4>';
+  echo '<br /><a href="javascript:history.back(1);">try again</a>';
 } elseif (empty($buechsenwursttest) || ($buechsenwursttest != "nietsniE")) {
   echo '<h4>You did not spell \'Einstein\' backwards correctly. Go away, spam bot, or </h4>';
   echo '<br /><a href="javascript:history.back(1);">try again</a>';
 }
 
 /* Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
-elseif (mail('sbrandt@cct.lsu.edu','New Tutorial Account Received',$message,'From: RegistrationBot@einsteintoolkit.org')) {
+elseif (mail('maintainers@einsteintoolkit.org','New Einstein Toolkit registration received',$message,'From: RegistrationBot@einsteintoolkit.org')) {
   echo '<h4>Your registration has been successfully submitted. Thank you for registering!</h4>';
   echo '<br /><a href="/">Home</a>';
 } else {
