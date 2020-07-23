@@ -47,7 +47,7 @@ if (empty($name)) {
 }
 
 /* Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
-elseif (mail('sbrandt@cct.lsu.edu','New Tutorial Account Requested',$message,'From: RegistrationBot@einsteintoolkit.org')) {
+elseif (mail('maintainers@einsteintoolkit.org','New Tutorial Account Requested',$message,'From: RegistrationBot@einsteintoolkit.org')) {
   echo '<h4>Your tutorial account request has been successfully submitted. Thank you for registering!</h4>';
   echo '<br /><a href="/">Home</a>';
 } else {
