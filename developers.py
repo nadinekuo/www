@@ -81,10 +81,10 @@ with open('developers.html','w') as fd:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="head.js" type="text/javascript">
   </script>
-  <title>Developers of the ETK</title>
+  <title>Developers of the ET</title>
 </head>
 <body id="developers">
-    <h1>Developers of the ETK</h1>""",file=fd)
+    <h1>Developers of the ET</h1>""",file=fd)
     print("<table cellpadding=5 cellspacing=0 border=1>",file=fd)
     devlist = sorted(devs.keys(),key=namekey)
     for dev in devlist:
