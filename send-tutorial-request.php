@@ -23,7 +23,7 @@ $email = $_POST['email'];
 $institution = $_POST['institution'];
 $buechsenwursttest = $_POST['buechsenwursttest'];
 
-$message = "Einstein Toolkit maintainers: \n\n".$name." ".$institution." has requested a tutorial account.\n Thanks,\n Einstein Toolkit Registration Bot\n";
+$message = "Einstein Toolkit maintainers:\n\nNew Tutorail Request:\nName: .$name."\nEmail: ".$email."\nOrganization: ".$institution."\nhas requested a tutorial account.\n\n Thanks,\n Einstein Toolkit Registration Bot\n";
 
 /* PHP form validation: the script checks that the Email field contains a valid email address and the Subject field isn't empty. preg_match performs a regular expression match. It's a very powerful PHP function to validate form fields and other strings - see PHP manual for details. */
 if (empty($name)) {
