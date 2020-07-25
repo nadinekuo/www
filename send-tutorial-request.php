@@ -23,7 +23,7 @@ $email = $_POST['email'];
 $institution = $_POST['institution'];
 $buechsenwursttest = $_POST['buechsenwursttest'];
 
-$message = "Einstein Toolkit maintainers:\n\nNew Tutorail Request:\nName: ".$name."\n".
+$message = "Einstein Toolkit maintainers:\n\nNew Tutorial Request:\nName: ".$name."\n".
 "Email: ".$email."\n".
 "Organization: ".$institution."\n".
 "\n\n".
