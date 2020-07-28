@@ -15,19 +15,7 @@ document.write(
            NSFLink('1550551')+'/'+
            NSFLink('1550461')+'/'+
            NSFLink('1550436')+'/'+
-           NSFLink('1550514')+', NSF '+
-           NSFLink('1212401')+'/'+
-           NSFLink('1212426')+'/'+
-           NSFLink('1212433')+'/'+
-           NSFLink('1212460')+', NSF '+
-           NSFLink('0903973')+'/'+
-           NSFLink('0903782')+'/'+
-           NSFLink('0904015')+' (CIGR), '+
-           NSFLink('0701566')+'/'+
-           NSFLink('0855892')+' (XiRel), '+
-           NSFLink('0721915')+' (Alpaca), '+
-           NSFLink('0905046')+'/'+
-           NSFLink('0941653')+'(PetaCactus/PRAC).'+
+           NSFLink('1550514')+'.'+
   '        Any opinions, findings, and conclusions or recommendations expressed in this material '+
   '        are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.'+
   '        </div>'
