@@ -29,7 +29,7 @@ if(isset($_REQUEST['email']) and isset($_REQUEST['org']) and isset($_REQUEST['na
  <div class="form-group">
    <label for="name">Full Name:</label>
    <?=$_REQUEST["name"]?>
-   <input type="hidden" class="form-control" id="name" name="name" value="<?=$_REQUEST["name"?>"/>
+   <input type="hidden" class="form-control" id="name" name="name" value="<?=$_REQUEST["name"]?>"/>
  </div>
  <div class="form-group">
    <label for="email">Email:</label>
