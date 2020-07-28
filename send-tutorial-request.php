@@ -22,10 +22,12 @@ $name = htmlentities($_POST['name'], ENT_QUOTES, "UTF-8");
 $email = $_POST['email'];
 $institution = $_POST['institution'];
 $buechsenwursttest = $_POST['buechsenwursttest'];
+$why = $_POST['why'];
 
 $message = "Einstein Toolkit maintainers:\n\nNew Tutorial Request:\nName: ".$name."\n".
 "Email: ".$email."\n".
 "Organization: ".$institution."\n".
+"Why: ".$why."\n".
 "\n\n".
 "The above user has requested a tutorial account.\n\n".
 "Thanks,\n".

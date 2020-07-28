@@ -42,7 +42,9 @@ if(isset($_REQUEST['email']) and isset($_REQUEST['org']) and isset($_REQUEST['na
    <input type="hidden" class="form-control" id="institution" name="institution" value="<?=$_REQUEST["org"]?>"/>
  </div>
  <div class="form-group">
-    <label for="why">Where are you from? What is your interest in the ET?</a>
+    <label for="why">Before we can give a login for our system, we need to know something
+    about you. Where are you from? What is your interest in the ET? Do you have a home
+    page, if so, what is it? Thanks.</a>
     <textarea class="form-control" id="why" name="why" rows=10 cols=80></textarea>
  </div>
  <div class="form-group">
