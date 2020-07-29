@@ -201,6 +201,7 @@ Carpet/CarpetRegrid2
 Carpet/CycleClock
 Carpet/LoopControl
 Carpet/Timers
+Carpet/CarpetSlab
 
 # EinsteinBase
 !TARGET   = $ARR
