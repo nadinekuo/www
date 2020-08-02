@@ -290,9 +290,6 @@ http://en.ntnu.edu.tw/ National Taiwan Normal University
 https://www.mandela.ac.za/ Nelson Mandela University
  Azwinndini Muronga
 
-https://www.ncl.ac.uk/maths-physics/postgraduate/current/pgrprofiles/mlgutierrez-abed2.html Newcastle University
- https://blogs.ncl.ac.uk/mlgutierrezabed2/ Mario Luis Gutierrez Abed
-
 https://www.camk.edu.pl/en/ Nicolaus Copernicus Astronomical Center (NCAC)
  Antonios Manousakis
  Bhupendra Prakash Mishra
@@ -376,6 +373,7 @@ http://www.ru.ac.za/ Rhodes University, South Africa
  http://www.chrisdoesmaths.com/ Chris Stevens
 
 http://ccrg.rit.edu/ Rochester Institute of Technology
+ https://ccrg.rit.edu/user/mario.gutierrez Mario Luis Gutierrez Abed
  Manuela Campanelli
  Alessandro Ciarfella
  Joshua Faber
