@@ -122,6 +122,9 @@ https://www.heritagecommunity.com/ Heritage Community of Kalamazoo
 http://english.hust.edu.cn Huazhong University of Science and Technology
  https://github.com/YuLiumt Yu Liu
 
+http://research.ibm.com IBM
+ Eloisa Bentivegna
+
 http://www.iisertvm.ac.in/ IISER Thiruvananthapuram
  Jose Mathew
 
@@ -619,9 +622,6 @@ http://www.unifi.it/mdswitch.html Università degli Studi di Firenze (University
 
 http://www.units.it/ Università degli Studi di Trieste (University of Trieste)
  Francesco Maria Fabbri
-
-http://research.ibm.com IBM
- Eloisa Bentivegna
 
 https://www.unimib.it Università di Milano-Bicocca
  Giulia Crotti
