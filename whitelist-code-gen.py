@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Generate the code to include in tutorial-whitelist.txt
 # The CILogon identifier (the email address) is provided
 # to this program on the command line, and the resulting
