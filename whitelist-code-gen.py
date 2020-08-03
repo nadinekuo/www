@@ -36,5 +36,5 @@ for name in sys.argv[1:]:
         exit(0)
 
 with open(file_name, "w") as fd:
-    for code in codes:
+    for code in sorted(codes):
         print(code, file=fd)
