@@ -89,6 +89,9 @@ https://ege.edu.tr/eng-0/Homepage.html Ege University
 http://www.emory.edu/home/index.html Emory University
  Andrew Vu
 
+https://fias.institute/ FIAS
+ Thomas Hagen
+
 http://www.fau.edu/ Florida Atlantic University
  Petr Tsatsin
  Konstantin Yakunin
