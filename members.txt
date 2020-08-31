@@ -335,7 +335,7 @@ http://en.unipr.it/ Parma University
 http://www.gravity.psu.edu/ Penn State University
  Surendra Padamata
 
-https://www.psu.edu/ PennState University
+https://www.psu.edu/ Penn State University
  http://personal.psu.edu/dur566/ David Radice
 
 http://www.perimeterinstitute.ca/ Perimeter Institute for Theoretical Physics
