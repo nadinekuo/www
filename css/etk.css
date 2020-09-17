@@ -293,3 +293,8 @@ table.news tr td:nth-child(1) {
 table.news tr td:nth-child(2) {
     white-space: nowrap;
 }
+
+/* Google CSE */
+.gsc-control-cse {
+  padding: 0px !important;
+}
