@@ -27,7 +27,7 @@ with open(file_name, "r") as fd:
         codes.add(code)
 
 for name in sys.argv[1:]:
-    code = codeme(name).lower()
+    code = codeme(name.lower())
     print(name, "->", code)
     if code not in codes:
         codes.add(code)
