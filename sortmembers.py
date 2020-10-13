@@ -76,3 +76,8 @@ for u1 in univ:
                         print("  ",k2,"at",ku2)
                         print()
 #print(dist("Steve Brandt","Steven R. Brandt"))
+print("Locations:",len(univ))
+member_count = 0
+for m in members:
+    member_count += len(members[m])
+print("Members:",member_count)
