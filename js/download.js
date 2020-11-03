@@ -72,12 +72,6 @@
 					saver(payload) ; // everyone else can save dataURLs un-processed
 			}
 			
-		}else{//not data url, is it a string with special needs?
-			if(/([\x80-\xff])/.test(payload)){			  
-				var i=0, tempUiArr= new Uint8Array(payload.length), mx=tempUiArr.length;
-				for(i;i<mx;++i) tempUiArr[i]= payload.charCodeAt(i);
-			 	payload=new myBlob([tempUiArr], {type: mimeType});
-			}		  
 		}
 		blob = payload instanceof myBlob ?
 			payload :
