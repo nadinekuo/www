@@ -305,7 +305,7 @@ function makeTable(cites, tableNode)
     }
   }
 }
-  // <a href="https://doi.org/10.5281/zenodo.3522086">doi:10.5281/zenodo.3522086</a> (key: EinsteinToolkit:2019_10).
+
 function makeMainCite(cite, spanNode)
 {
   var spaceNode = document.createTextNode(" ");
@@ -318,8 +318,18 @@ function makeMainCite(cite, spanNode)
   var labelNode = document.createTextNode("doi:" + cite['doi']);
   anchorNode.appendChild(labelNode);
 
-  var textNode = document.createTextNode(" (key: " + cite['cite'] + ")");
-  spanNode.appendChild(textNode);
+  spanNode.appendChild(document.createTextNode(" (key: "));
+  var anchorNode = document.createElement("a");
+  spanNode.appendChild(anchorNode);
+  // using this this returns the INSPIRE bibtex entry for this DOI which is
+  // almost but not exactly the ET einsteintoolkit.bib entry.
+  //anchorNode.href = "https://inspirehep.net/search?p=find+"+encodeURIComponent(cite['doi'])+"&of=hx";
+  anchorNode.href = "javascript:void(0)";
+  // since download_bibtex returns false it *should* not follow the link
+  // but somehow still does unless I makre the href void
+  anchorNode.addEventListener("click", function(){download(cite['raw'], cite['cite']+".bib", 'text/plain; charset=utf-8')});
+  anchorNode.appendChild(document.createTextNode(cite['cite']));
+  spanNode.appendChild(document.createTextNode(")"));
 }
 
 function makeTables(content)
