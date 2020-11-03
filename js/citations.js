@@ -8,7 +8,7 @@ var download = window['download']
 // downloads the stored bibtex information
 function download_bibtex(key)
 {
-  download(window.bibtex_downloads[key], key+'.bib', 'text/plain');
+  download(window.bibtex_downloads[key], key+'.bib', 'text/plain; charset=utf-8');
   return false;
 }
 
@@ -266,7 +266,7 @@ function makeCitation(cite)
     anchorNode.href = "javascript:void(0)";
     // since download_bibtex returns false it *should* not follow the link
     // but somehow still does unless I makre the href void
-    anchorNode.addEventListener("click", function(){download(cite['raw'], cite['cite']+".bib", 'text/plain')});
+    anchorNode.addEventListener("click", function(){download(cite['raw'], cite['cite']+".bib", 'text/plain; charset=utf-8')});
     anchorNode.appendChild(document.createTextNode("BibTeX"));
     retval.appendChild(document.createTextNode(")"));
   }
