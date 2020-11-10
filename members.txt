@@ -154,6 +154,9 @@ https://www.iucaa.in/ IUCAA
 http://csp.res.in/ Indian Centre for Space Physics, Kolkata
  Abhrajit Bhattacharjee
 
+https://www.iiserb.ac.in/ Indian Institute of Science Education and Research Bhopal (IISER-B)
+ Shamim Haque
+
 http://www.iiserkol.ac.in/ Indian Institute of Science Education and Research Kolkata
  Praveer K. Gollapudi
 
