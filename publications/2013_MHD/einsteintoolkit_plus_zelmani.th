@@ -352,7 +352,7 @@ KrancNumericalTools/GenericFD
 # McLachlan, the spacetime code
 !TARGET   = $ARR
 !TYPE     = git
-!URL      = https://bitbucket.org/mclachlan
+!URL      = https://bitbucket.org/einsteintoolkit/mclachlan.git
 !REPO_PATH= $2
 !CHECKOUT = McLachlan/doc McLachlan/m McLachlan/par
 McLachlan/ML_ADMConstraints
