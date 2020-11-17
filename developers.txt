@@ -52,6 +52,7 @@ Marcus Ansorg::University of Jena:
 Maria Babiuc-Hamilton::Marshall University
 Mark Miller: EOS_IdalFluid:Unknown:
 Matei Ripeanu::University of Chicago
+Matthew Elley:Lean Public:King's College London:
 Mew-Bing Wan::Washington University
 Michael Koppitz: PunctureTracker:Unknown:
 Michael Thomas: simfactory: Unknown:
