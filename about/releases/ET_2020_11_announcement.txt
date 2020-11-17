@@ -53,7 +53,7 @@ The following features are being marked as deprecated in this release and will b
 * The "old" (include file based) interface to Tmunu provided by ADMCoupling is no longer included.
 * Non-piraha parser has been removed from CST.
 * ADMCoupling and ADMMacros will be removed in the next release
-* READS / WRITES statements that refer to non-existing variables cause compile time errors and no longer be ignored at runtime even if `presync_mode = off`
+* READS / WRITES statements that refer to non-existing variables cause compile time errors and are no longer ignored at runtime even if `presync_mode = off`
 
 Contributors
 
