@@ -58,7 +58,7 @@ The following features are being marked as deprecated in this release and will b
 
 ## Contributors
 
-This release includes contributions by Steven R. Brandt, Federico Cipolletta, Matthew Elley, Zachariah Etienne, Roland Haas, Ian Hinder, Jonah Miller, Erik Schnetter, Barry Wardell, Helvi Witek , and Miguel Zilhão.
+This release includes contributions by Steven R. Brandt, Federico Cipolletta, Matthew Elley, Zachariah Etienne, Roland Haas, Ian Hinder, Jonah Miller, Erik Schnetter, Barry Wardell, Helvi Witek , and Miguel Zilhao.
 
 ## How to upgrade from Turing (ET_2020_05)
 
@@ -96,7 +96,7 @@ The "DeWitt-Morette" Release Team on behalf of the Einstein Toolkit Consortium (
 * Roland Haas
 * Steven R. Brandt
 * Rahime Matur
-* Beyhan Karakaş
+* Beyhan Karakas
 * William E. Gabella
 * Miguel Gracia
 
