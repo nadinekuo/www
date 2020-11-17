@@ -1,0 +1,165 @@
+Release Announcement
+
+Click here to read the announcement in HTML (with hyperlinks):
+https://einsteintoolkit.org/about/releases/ET_2020_11_announcement.html
+
+We are pleased to announce the twenty-first release (code name
+"DeWitt-Morette") of the Einstein Toolkit, an open, community developed
+software infrastructure for relativistic astrophysics. The highlights of
+this release are:
+
+ * This release includes NRPyPN, a Python code to compute initial
+   data parameters for binary black hole simulations.
+ * Lean_Public supports curvilinear coordinates provided by Llama.
+ * The include style ("old") Tmunu interface using thorn ADMCoupling
+   has been removed.
+
+One new thorn have been added:
+
+ * ReadInterpolate, a FileReader like thorn that uses
+   InterolateLocalUniform to interpolate the data read in onto the
+   new grid.
+
+In addition, bug fixes accumulated since the previous release in May
+2020 have been included.
+
+The Einstein Toolkit is a collection of software components and tools
+for simulating and analyzing general relativistic astrophysical systems
+that builds on numerous software efforts in the numerical relativity
+community including code to compute initial data parameters, the
+spacetime evolution codes Baikal, lean_public, and McLachlan, analysis
+codes to compute horizon characteristics and gravitational waves, the
+Carpet AMR infrastructure, and the relativistic magneto-hydrodynamics
+codes GRHydro and IllinoisGRMHD. The Einstein Toolkit also contains a 1D
+self-force code. For parts of the toolkit, the Cactus Framework is used
+as the underlying computational infrastructure providing large-scale
+parallelization, general computational components, and a model for
+collaborative, portable code development.
+
+The Einstein Toolkit uses a distributed software model and its different
+modules are developed, distributed, and supported either by the core
+team of Einstein Toolkit Maintainers, or by individual groups. Where
+modules are provided by external groups, the Einstein Toolkit
+Maintainers provide quality control for modules for inclusion in the
+toolkit and help coordinate support. The Einstein Toolkit Maintainers
+currently involve staff and faculty from five different institutions,
+and host weekly meetings that are open for anyone to join in.
+
+Guiding principles for the design and implementation of the toolkit
+include: open, community-driven software development; well thought-out
+and stable interfaces; separation of physics software from computational
+science infrastructure; provision of complete working production code;
+training and education for a new generation of researchers.
+
+For more information about using or contributing to the Einstein
+Toolkit, or to join the Einstein Toolkit Consortium, please visit our
+web pages at http://einsteintoolkit.org, or contact the users mailing
+list users@einsteintoolkit.org.
+
+The Einstein Toolkit is primarily supported by NSF
+2004157/2004044/2004311/2004879/2003893 (Enabling fundamental research
+in the era of multi-messenger astrophysics).
+
+The Einstein Toolkit contains about 327 regression test cases. On a
+large portion of the tested machines, almost all of these tests pass,
+using both MPI and OpenMP parallelization.
+
+The changes between this and the previous release include:
+
+Larger changes since last release
+
+ * Fully support gcc / gfortran 10
+ * ExternalLibraries support PAPI version 6
+ * testsuite harness supports running multiple tests in parallel
+ * Fix accidentally remove caching in Piaraha
+ * Documentation uses mathjax when creating HTML docs
+ * Cactus now checks that parameter types declared in USE and EXTEND
+   statements match
+ * Build system correctly propagates VERBOSE=no no sub-makes in make
+   version 4.3 and newer
+ * All tests that used to use ADMConstraints now ML_ADMConstraints
+ * Thorn Vectors supports POWER9 cpus used in Summit
+ * Correct long standing read-after-free bug in Carpet's SplitAlonDir
+   routine
+ * Correct outputting non-gridfunction data in CarpetIOHDF5
+ * Implement correct "midpoint" rule in thorn Multipole
+ * Fix interaction between thorn NewRad and Cartoon2D
+ * All example parameter file include thorn SystemTopology
+ * Support Python3 in GW150914 example parameter file
+ * Support wide outer boundaries in lean_public and Baikal
+ * Work around slow compilation with new gcc in Baikal
+
+Deprecated functionality
+
+The following features are being marked as deprecated in this release
+and will be removed in the next release
+
+ * The "old" (include file based) interface to Tmunu provided by
+   ADMCoupling is no longer included.
+ * Non-piraha parser has been removed from CST.
+ * ADMCoupling and ADMMacros will be removed in the next release
+ * READS / WRITES statements that refer to non-existing variables
+   cause compile time errors and are no longer ignored at runtime
+   even if `presync_mode = off`
+
+Contributors
+
+This release includes contributions by Steven R. Brandt, Federico
+Cipolletta, Matthew Elley, Zachariah Etienne, Roland Haas, Ian Hinder,
+Jonah Miller, Erik Schnetter, Barry Wardell, Helvi Witek , and Miguel
+Zilhao.
+
+How to upgrade from Turing (ET_2020_05)
+
+To upgrade from the previous release, use GetComponents with the new
+thornlist to check out the new version.
+
+See the Download page (http://einsteintoolkit.org/download.html) on the
+Einstein Toolkit website for download instructions.
+
+The SelfForce-1D code uses a single git repository, thus using `git pull
+; git checkout ET_2020_11` will update the code.
+
+Machine notes
+
+Supported (tested) machines include:
+
+ * Default Debian, Ubuntu, Fedora, CentOS 7, Mint, OpenSUSE and MacOS
+   Catalina (MacPorts) installations
+ * Bluewaters
+ * Comet
+ * Cori
+ * Queen Bee 2
+ * Stampede 2
+ * Mike / Shelob
+ * SuperMIC
+ * SuperMUC-NG
+ * Summit
+ * Wheeler
+
+Note for individual machines:
+
+ * TACC machines: defs.local.ini needs to have `sourcebasedir =
+   $WORK` and `basedir = $SCRATCH/simulations` configured for this
+   machine. You need to determine $WORK and $SCRATCH by logging in to
+   the machine.
+ * SuperMUC-NG: defs.local.ini needs to have `sourcebasedir = $HOME`
+   and `basedir = $SCRATCH/simulations` configured for this machine.
+   You need to determine $HOME and $SCRATCH by logging in to the
+   machine.
+
+All repositories participating in this release carry a branch ET_2020_11
+marking this release. These release branches will be updated if severe
+errors are found.
+
+The "DeWitt-Morette" Release Team on behalf of the Einstein Toolkit
+Consortium (2020-11-30)
+
+ * Roland Haas
+ * Steven R. Brandt
+ * Rahime Matur
+ * Beyhan Karakas
+ * William E. Gabella
+ * Miguel Gracia
+
+November, 2020
