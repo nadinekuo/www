@@ -77,7 +77,7 @@ def make_text(email_target, base_name):
               # Ensure there are no weird characters
               n = 0
               for ch in line:
-                  assert re.match(r'^[=$\+\&`\[\]\(\)\{\}@;,?\./" \t\w:\*\#\'-]+$',ch), line[0:n]+"<"+ch+":"+str(ord(ch))+">"+line[n+1:]
+                  assert re.match(r'^[=$\+\&`\[\]\(\)\{\}@;,?\./" \t\w:\*\#\'%-]+$',ch), line[0:n]+"<"+ch+":"+str(ord(ch))+">"+line[n+1:]
                   n += 1
 
               if len(line) == 0:
