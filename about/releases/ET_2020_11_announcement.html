@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <script src="../../head.js" type="text/javascript"></script>
+  <title>November 17, 2020</title>
+</head>
+
+<body>
+  <header>
+    <script src="../../menu.js" type="text/javascript">
+    </script>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 section">
+<h1>Release Announcement</h1>
+<p>We are pleased to announce the twenty-first release (code name <a href="https://en.wikipedia.org/wiki/C%C3%A9cile_DeWitt-Morette">"DeWitt-Morette"</a>) of the Einstein Toolkit, an open, community developed software infrastructure for relativistic astrophysics. The highlights of this release are:</p>
+<ul>
+<li>
+<p>This release includes NRPyPN, a Python code to compute initial data parameters for binary black hole simulations.</p>
+</li>
+<li>
+<p>Lean_Public supports curvilinear coordinates provided by Llama.</p>
+</li>
+<li>
+<p>The include style ("old") Tmunu interface using thorn ADMCoupling has been removed.</p>
+</li>
+</ul>
+<p>Two new thorns have been added:</p>
+<ul>
+<li>ReadInterpolate, a FileReader like thorn that uses InterolateLocalUniform to interpolate the data read in onto the new grid.</li>
+</ul>
+<p>In addition, bug fixes accumulated since the previous release in May 2020 have been included.</p>
+<p>The Einstein Toolkit is a collection of software components and tools for simulating and analyzing general relativistic astrophysical systems that builds on numerous software efforts in the numerical relativity community including code to compute initial data parameters, the spacetime evolution codes Baikal, lean_public, and McLachlan, analysis codes to compute horizon characteristics and gravitational waves, the Carpet AMR infrastructure, and the relativistic magneto-hydrodynamics codes GRHydro and IllinoisGRMHD. The Einstein Toolkit also contains a 1D self-force code. For parts of the toolkit, the Cactus Framework is used as the underlying computational infrastructure providing large-scale parallelization, general computational components, and a model for collaborative, portable code development.</p>
+<p>The Einstein Toolkit uses a distributed software model and its different modules are developed, distributed, and supported either by the core team of Einstein Toolkit Maintainers, or by individual groups. Where modules are provided by external groups, the Einstein Toolkit Maintainers provide quality control for modules for inclusion in the toolkit and help coordinate support. The Einstein Toolkit Maintainers currently involve staff and faculty from five different institutions, and host weekly meetings that are open for anyone to join in.</p>
+<p>Guiding principles for the design and implementation of the toolkit include: open, community-driven software development; well thought-out and stable interfaces; separation of physics software from computational science infrastructure; provision of complete working production code; training and education for a new generation of researchers.</p>
+<p>For more information about using or contributing to the Einstein Toolkit, or to join the Einstein Toolkit Consortium, please visit our web pages at <a href="http://einsteintoolkit.org">http://einsteintoolkit.org</a>, or contact the users mailing list <a href="mailto:users@einsteintoolkit.org">users@einsteintoolkit.org</a>.</p>
+<p>The Einstein Toolkit is primarily supported by NSF 2004157/2004044/2004311/2004879/2003893 (Enabling fundamental research in the era of multi-messenger astrophysics).</p>
+<p>The Einstein Toolkit contains about 327 regression test cases. On a large portion of the tested machines, almost all of these tests pass, using both MPI and OpenMP parallelization.</p>
+<p>The changes between this and the previous release include:</p>
+<h2>Larger changes since last release</h2>
+<ul>
+<li>
+<p>Fully support gcc / gfortran 10</p>
+</li>
+<li>
+<p>ExternalLibraries support PAPI version 6</p>
+</li>
+<li>
+<p>testsuite harness supports running multiple tests in parallel</p>
+</li>
+<li>
+<p>Fix accidentally remove caching in Piaraha</p>
+</li>
+<li>
+<p>Documentation uses mathjax when creating HTML docs</p>
+</li>
+<li>
+<p>Cactus now checks that parameter types declared in USE and EXTEND statements match</p>
+</li>
+<li>
+<p>Build system correctly propagates VERBOSE=no no sub-makes in make version 4.3 and newer</p>
+</li>
+<li>
+<p>All tests that used to use ADMConstraints now ML_ADMConstraints</p>
+</li>
+<li>
+<p>Thorn Vectors supports POWER9 cpus used in Summit</p>
+</li>
+<li>
+<p>Correct long standing read-after-free bug in Carpet's SplitAlonDir routine</p>
+</li>
+<li>
+<p>Correct outputting non-gridfunction data in CarpetIOHDF5</p>
+</li>
+<li>
+<p>Implement correct "midpoint" rule in thorn Multipole</p>
+</li>
+<li>
+<p>Fix interaction between thorn NewRad and Cartoon2D</p>
+</li>
+<li>
+<p>All example parameter file include thorn SystemTopology</p>
+</li>
+<li>
+<p>Support Python3 in GW150914 example parameter file</p>
+</li>
+<li>
+<p>Support wide outer boundaries in lean_public and Baikal</p>
+</li>
+<li>
+<p>Work around slow compilation with new gcc in Baikal</p>
+</li>
+</ul>
+<h2>Deprecated functionality</h2>
+<p>The following features are being marked as deprecated in this release and will be removed in the next release</p>
+<ul>
+<li>
+<p>The "old" (include file based) interface to Tmunu provided by ADMCoupling is no longer included.</p>
+</li>
+<li>
+<p>Non-piraha parser has been removed from CST.</p>
+</li>
+<li>
+<p>ADMCoupling and ADMMacros will be removed in the next release</p>
+</li>
+<li>
+<p>READS / WRITES statements that refer to non-existing variables cause compile time errors and no longer be ignored at runtime even if <code>presync_mode = off</code></p>
+</li>
+</ul>
+<h2>Contributors</h2>
+<p>This release includes contributions by Steven R. Brandt, Federico Cipolletta, Matthew Elley, Zachariah Etienne, Roland Haas, Ian Hinder, Jonah Miller, Erik Schnetter, Barry Wardell, Helvi Witek , and Miguel Zilhao.</p>
+<h2>How to upgrade from Turing (ET_2020_05)</h2>
+<p>To upgrade from the previous release, use GetComponents with the new thornlist to check out the new version.</p>
+<p>See the Download page (<a href="http://einsteintoolkit.org/download.html">http://einsteintoolkit.org/download.html</a>) on the Einstein Toolkit website for download instructions.</p>
+<p>The SelfForce-1D code uses a single git repository, thus using <code>git pull ; git checkout ET_2020_11</code> will update the code.</p>
+<h2>Machine notes</h2>
+<p>Supported (tested) machines include:</p>
+<ul>
+<li>
+<p>Default Debian, Ubuntu, Fedora, CentOS 7, Mint, OpenSUSE and MacOS Catalina (MacPorts) installations</p>
+</li>
+<li>
+<p>Bluewaters</p>
+</li>
+<li>
+<p>Comet</p>
+</li>
+<li>
+<p>Cori</p>
+</li>
+<li>
+<p>Queen Bee 2</p>
+</li>
+<li>
+<p>Stampede 2</p>
+</li>
+<li>
+<p>Mike / Shelob</p>
+</li>
+<li>
+<p>SuperMIC</p>
+</li>
+<li>
+<p>SuperMUC-NG</p>
+</li>
+<li>
+<p>Summit</p>
+</li>
+<li>
+<p>Wheeler</p>
+</li>
+</ul>
+<p>Note for individual machines:</p>
+<ul>
+<li>
+<p>TACC machines: defs.local.ini needs to have <code>sourcebasedir = $WORK</code> and <code>basedir = $SCRATCH/simulations</code> configured for this machine. You need to determine <code>$WORK</code> and <code>$SCRATCH</code> by logging in to the machine.</p>
+</li>
+<li>
+<p>SuperMUC-NG: defs.local.ini needs to have <code>sourcebasedir = $HOME</code> and <code>basedir = $SCRATCH/simulations</code> configured for this machine. You need to determine <code>$HOME</code> and <code>$SCRATCH</code> by logging in to the machine.</p>
+</li>
+</ul>
+<p>All repositories participating in this release carry a branch ET_2020_11 marking this release. These release branches will be updated if severe errors are found.</p>
+<p>The "DeWitt-Morette" Release Team on behalf of the Einstein Toolkit Consortium (2020-11-30)</p>
+<ul>
+<li>
+<p>Roland Haas</p>
+</li>
+<li>
+<p>Steven R. Brandt</p>
+</li>
+<li>
+<p>Rahime Matur</p>
+</li>
+<li>
+<p>Beyhan Karakas</p>
+</li>
+<li>
+<p>William E. Gabella</p>
+</li>
+<li>
+<p>Miguel Gracia</p>
+</li>
+</ul>
+<p>November, 2020</p>
+
+        <script src="../../footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+        
