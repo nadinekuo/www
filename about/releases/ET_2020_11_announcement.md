@@ -35,7 +35,7 @@ The changes between this and the previous release include:
 * Fix accidentally remove caching in Piaraha
 * Documentation uses mathjax when creating HTML docs
 * Cactus now checks that parameter types declared in USE and EXTEND statements match
-* Build system correctly propagates VERBOSE=no no sub-makes in make version 4.3 and newer
+* Build system correctly propagates VERBOSE=no to sub-makes in make version 4.3 and newer
 * All tests that used to use ADMConstraints now ML_ADMConstraints
 * Thorn Vectors supports POWER9 cpus used in Summit
 * Correct long standing read-after-free bug in Carpet's SplitAlonDir routine
