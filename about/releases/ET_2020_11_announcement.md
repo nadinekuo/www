@@ -38,7 +38,7 @@ The changes between this and the previous release include:
 * Build system correctly propagates VERBOSE=no to sub-makes in make version 4.3 and newer
 * All tests that used to use ADMConstraints now use ML_ADMConstraints
 * Thorn Vectors supports POWER9 cpus used in Summit
-* Correct long standing read-after-free bug in Carpet's SplitAlonDir routine
+* Correct long standing read-after-free bug in Carpet's SplitAlongDir routine
 * Correct outputting non-gridfunction data in CarpetIOHDF5
 * Implement correct "midpoint" rule in thorn Multipole
 * Fix interaction between thorn NewRad and Cartoon2D
