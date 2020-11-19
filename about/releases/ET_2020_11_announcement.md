@@ -31,8 +31,8 @@ The changes between this and the previous release include:
 
 * Fully support gcc / gfortran 10
 * ExternalLibraries support PAPI version 6
-* testsuite harness supports running multiple tests in parallel
-* Fix accidentally remove caching in Piaraha
+* Testsuite harness supports running multiple tests in parallel
+* Fix accidentally removed caching in Piaraha
 * Documentation uses mathjax when creating HTML docs
 * Cactus now checks that parameter types declared in USE and EXTEND statements match
 * Build system correctly propagates VERBOSE=no to sub-makes in make version 4.3 and newer
