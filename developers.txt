@@ -64,7 +64,7 @@ Paul Walker:Flesh and many thorns:Motive Partners:
 Pedro Montero::Harvard University:
 Peter Diener: EHFinder, SummationByParts, AHFinder, McLachlan, NoExcision:Louisiana State University:0000-0002-3877-0487
 Philipp Moesta: GRHydro MHD code:UC Berkeley
-Rahime Matur:DeWitt-Morette Release Team:TBD
+Rahime Matur:DeWitt-Morette Release Team:Ege University:0000-0001-9488-3817
 Ravi Paruchuri::Unknown:
 Rion Dooley::Clemson University
 Roberto De~Pietri: hybrid EOS:Parma University
