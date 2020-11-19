@@ -42,7 +42,7 @@ The changes between this and the previous release include:
 * Correct outputting non-gridfunction data in CarpetIOHDF5
 * Implement correct "midpoint" rule in thorn Multipole
 * Fix interaction between thorn NewRad and Cartoon2D
-* All example parameter file include thorn SystemTopology
+* All example parameter files include thorn SystemTopology
 * Support Python3 in GW150914 example parameter file
 * Support wide outer boundaries in lean_public and Baikal
 * Work around slow compilation with new gcc in Baikal
