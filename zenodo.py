@@ -159,17 +159,15 @@ names = creators.keys()
 
 release_team = [
   "Roland Haas",
-  "Brockton Brendal",
-  "William E. Gabella",
-  "Beyhan Karakaş",
-  "Atul Kedia",
-  "Shawn G. Rosofsky",
   "Steven R. Brandt",
-  "Alois Peter Schaffarczyk",
+  "William E. Gabella",
+  "Miguel Gracia",
+  "Beyhan Karakaş",
+  "Rahime Matur",
 ]
 
-et_release = "ET_2020_05"
-et_release_codename = "Turing"
+et_release = "ET_2020_11"
+et_release_codename = "DeWitt-Morette"
 
 def relkey(name):
     g = re.match(r'^(.+)\s+(\S+)$',name)
