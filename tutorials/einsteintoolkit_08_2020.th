@@ -9,7 +9,7 @@
 !DEFINE ARR  = $ROOT/arrangements
 !DEFINE COMPONENTLIST_TARGET = $ROOT/thornlists/
 
-!DEFINE ET_RELEASE = ET_2020_05
+!DEFINE ET_RELEASE = ET_2020_11
 
 
 
@@ -47,7 +47,7 @@
 !TARGET   = $ROOT
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/manifest.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= $1
 !NAME     = manifest
 !CHECKOUT = ./manifest
@@ -57,7 +57,7 @@
 !TARGET   = $ROOT
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactus.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !NAME     = flesh
 !CHECKOUT = .clang-format CONTRIBUTORS COPYRIGHT doc lib Makefile src
 
@@ -66,7 +66,7 @@
 !TARGET   = $ROOT
 !TYPE     = git
 !URL      = https://bitbucket.org/simfactory/simfactory2.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH=$1
 !NAME     = simfactory2
 !CHECKOUT = ./simfactory
@@ -76,7 +76,7 @@
 !TARGET   = $ROOT
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/einsteinexamples.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !CHECKOUT = par
 
 
@@ -84,7 +84,7 @@
 !TARGET   = $ROOT
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/utilities.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= $1
 !NAME     = utils
 !CHECKOUT = ./utils
@@ -94,7 +94,7 @@
 !TARGET   = $ROOT/bin
 !TYPE     = git
 !URL      = https://github.com/gridaphobe/CRL.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !CHECKOUT = GetComponents
 
 
@@ -102,7 +102,7 @@
 !TARGET   = $ARR/CactusDoc
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/coredoc.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !NAME     = CoreDoc
 !REPO_PATH= $1
 !CHECKOUT = ./CoreDoc
@@ -112,7 +112,7 @@
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactusbase.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= $2
 !CHECKOUT =
 CactusBase/Boundary
@@ -127,7 +127,7 @@ CactusBase/Time
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactuselliptic.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= $2
 !CHECKOUT = CactusElliptic/EllPETSc CactusElliptic/TATPETSc
 #DISABLED CactusElliptic/EllPETSc
@@ -137,7 +137,7 @@ CactusBase/Time
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactusexamples.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= $2
 !CHECKOUT = CactusExamples/HelloWorldCUDA CactusExamples/HelloWorldOpenCL CactusExamples/WaveToyOpenCL
 CactusExamples/HelloWorld
@@ -149,7 +149,7 @@ CactusExamples/HelloWorld
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactusnumerical.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= $2
 !CHECKOUT =
 CactusNumerical/Dissipation
@@ -163,7 +163,7 @@ CactusNumerical/SphericalSurface
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactustest.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= $2
 !CHECKOUT = CactusTest/TestAllTypes
 #DISABLED CactusTest/TestAllTypes
@@ -172,7 +172,7 @@ CactusNumerical/SphericalSurface
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/cactusutils.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= $2
 !CHECKOUT = CactusUtils/Accelerator CactusUtils/OpenCLRunTime
 #DISABLED CactusUtils/Accelerator
@@ -186,7 +186,7 @@ CactusUtils/Vectors
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/eschnett/carpet.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= $2
 !CHECKOUT = Carpet/doc
 Carpet/Carpet
@@ -207,7 +207,7 @@ Carpet/CarpetSlab
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/einsteinbase.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= $2
 !CHECKOUT =
 EinsteinBase/ADMBase
@@ -224,7 +224,7 @@ EinsteinBase/TmunuBase
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/einsteineos.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= $2
 !CHECKOUT =
 EinsteinEOS/EOS_Omni
@@ -234,7 +234,7 @@ EinsteinEOS/EOS_Polytrope
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/einsteinevolve.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= $2
 !CHECKOUT =
 EinsteinEvolve/GRHydro
@@ -244,7 +244,7 @@ EinsteinEvolve/NewRad
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://github.com/barrywardell/EinsteinExact.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= $2
 !CHECKOUT = EinsteinExact/doc EinsteinExact/m EinsteinExact/tests
 
@@ -253,7 +253,7 @@ EinsteinEvolve/NewRad
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/einsteininitialdata.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= $2
 !CHECKOUT =
 EinsteinInitialData/TOVSolver
@@ -262,8 +262,8 @@ EinsteinInitialData/Exact
 # Additional Cactus thorns
 !TARGET   = $ARR
 !TYPE     = svn
-!URL      = https://github.com/EinsteinToolkit/$1-$2.git/branches/ET_2020_05
-!REPO_BRANCH = ET_2020_05
+!URL      = https://github.com/EinsteinToolkit/$1-$2.git/branches/ET_2020_11
+!REPO_BRANCH = ET_2020_11
 !CHECKOUT = ExternalLibraries/OpenBLAS ExternalLibraries/OpenCL ExternalLibraries/pciutils ExternalLibraries/PETSc
 ExternalLibraries/HDF5
 ExternalLibraries/hwloc
@@ -279,7 +279,7 @@ ExternalLibraries/zlib
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://github.com/ianhinder/Kranc.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= Auxiliary/Cactus
 !CHECKOUT =
 KrancNumericalTools/GenericFD
@@ -288,7 +288,7 @@ KrancNumericalTools/GenericFD
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/einsteintoolkit/mclachlan.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= $2
 !CHECKOUT = McLachlan/doc McLachlan/m McLachlan/par McLachlan/ML_WaveToy_CL
 McLachlan/ML_BSSN
@@ -300,7 +300,7 @@ McLachlan/ML_BSSN_Helper
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = https://bitbucket.org/cactuscode/numerical.git
-!REPO_BRANCH = ET_2020_05
+!REPO_BRANCH = ET_2020_11
 !REPO_PATH= $2
 !CHECKOUT =
 Numerical/AEILocalInterp
