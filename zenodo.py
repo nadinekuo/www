@@ -135,8 +135,6 @@ if newversion:
   id = c["id"]
 
 if deposit:
-  # usually the file Definition.md modified like so:
-  # sed -i 's/ET_2019_10/ET_2020_11/;s/c32f345352864d88cb4fa6e649262d35da69a1a7/ET_2020_11_v0/g' Definition.md
   bucket_url = c["links"]["bucket"]
   with open(deposit, "rb") as fh:
     dep = requests.put("%s/%s" % (bucket_url, os.path.basename(deposit)),
