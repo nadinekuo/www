@@ -141,6 +141,9 @@ http://research.ibm.com IBM
 http://www.iisertvm.ac.in/ IISER Thiruvananthapuram
  Jose Mathew
 
+https://www.iisc.ac.in/ IISc Bangalore
+ Nilanjandv Bhaumik
+
 http://www.iitb.ac.in/acad/index.html  IIT BOMBAY
  Semin Xavier
 
@@ -153,6 +156,9 @@ https://www.iucaa.in/ IUCAA
 
 http://csp.res.in/ Indian Centre for Space Physics, Kolkata
  Abhrajit Bhattacharjee
+
+https://www.iisc.ac.in/ Indian Institute of Science
+ Sahel Dey
 
 https://www.iiserb.ac.in/ Indian Institute of Science Education and Research Bhopal (IISER-B)
  Shamim Haque
