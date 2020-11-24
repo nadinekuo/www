@@ -1,6 +1,9 @@
 
 << SimulationTools`;
 
+(* Note, the $SimulationPath can be set manually, e.g.
+   $SimulationPath = "/work/username/GW150914_28";
+   *)
 simDirs = ReplaceList[$ScriptCommandLine,
   {___, "--simulations-directory", val_, ___} :> val];
 
@@ -9,6 +12,9 @@ $SimulationPath = Join[simDirs, $SimulationPath];
 outDir = Directory[];
 
 sim = "GW150914_28";
+
+ProviderPreferences["InitialData"] = {"TwoPunctures"};
+ProviderPreferences["Waveforms"] = {"MultipoleHDF5"};
 
 trajs = ReadBHTrajectories[sim];
 relTrajs = trajs[[1]] - trajs[[2]];
