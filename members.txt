@@ -109,13 +109,9 @@ https://www.gsi.de GSI Helmholtzzentrum f&uuml;r Schwerionenforschung GmbH
 
 http://www.cra.gatech.edu/ Georgia Institute of Technology
  Christopher Evans
- Deborah Ferguson
  Matthew Golden
- Miguel Gracia
  Bhavesh Khamesra
- http://www.cra.gatech.edu/people/laguna.shtml Pablo Laguna
  Kendra Sands
- Deirdre Shoemaker
 
 https://www.griffith.edu.au Griffith University
  Moji Ghadimi
@@ -637,6 +633,10 @@ https://www.southampton.ac.uk/ University of Southampton
  Charalampos Markakis
 
 https://www.utexas.edu/ University of Texas at Austin
+ Deborah Ferguson
+ Miguel Gracia
+ http://www.cra.gatech.edu/people/laguna.shtml Pablo Laguna
+ Deirdre Shoemaker
  https://maxtrostel.com/ Max Trostel
 
 http://www.unitn.it/en/dphys University of Trento
