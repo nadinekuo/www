@@ -31,7 +31,7 @@ Print["data -> ",data];
 For[i=1, i <= Length[data], i = i + 1,
   t = values[[i]];
   x = coords[[i]];
-  WriteString[fd, CForm[x], " ", CForm[t], "\n" ]];
+  WriteString[fd, CForm[x], ",", CForm[t], "\n" ]];
 Close[fd];
 
 waveformPlot =

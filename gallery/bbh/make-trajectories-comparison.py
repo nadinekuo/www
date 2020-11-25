@@ -1,0 +1,18 @@
+import numpy as np
+data = np.genfromtxt("reftrajectories.csv", delimiter=',')
+data2 = np.genfromtxt("trajectories.csv", delimiter=',')
+import matplotlib.pyplot as plt
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.set_aspect('equal')
+plt.xlabel('(x1-x2)/M')
+plt.ylabel('(y1-y2)/M')
+plt.xticks([-10,-5,0,5,10])
+plt.xlim(-10,10)
+plt.ylim(-10,10)
+plt.plot(data[:,0],data[:,1],'b-',label='Zenodo')
+plt.plot(data[:,0],data[:,1],'y--',label='Recent Run')
+plt.legend()
+plt.title("Trajectories Comparison")
+#plt.show()
+plt.savefig("trajectories-comparison.png")

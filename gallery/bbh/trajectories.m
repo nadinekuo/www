@@ -19,6 +19,13 @@ ProviderPreferences["Waveforms"] = {"MultipoleHDF5"};
 trajs = ReadBHTrajectories[sim];
 relTrajs = trajs[[1]] - trajs[[2]];
 
+(* Save the trajectories data in a file. *)
+fd = OpenWrite["trajectories.csv"];
+For[i=1, i <= Length[relTrajs], i = i + 1,
+  t = relTrajs[[i]];
+  WriteString[fd, CForm[t[[1]]], ",", CForm[t[[2]]], "\n" ]];
+Close[fd];
+
 trajPlot =
   Framed[ListLinePlot[relTrajs,
     PlotTheme -> "Detailed",
