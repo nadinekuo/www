@@ -4,9 +4,9 @@ Click here to read the announcement in HTML (with hyperlinks):
 https://einsteintoolkit.org/about/releases/ET_2020_11_announcement.html
 
 We are pleased to announce the twenty-first release (code name
-"DeWitt-Morette") of the Einstein Toolkit, an open, community developed
-software infrastructure for relativistic astrophysics. The highlights of
-this release are:
+"DeWitt-Morette") of the Einstein Toolkit, an open-source, community
+developed software infrastructure for relativistic astrophysics. The
+highlights of this release are:
 
  * This release includes NRPyPN, a Python code to compute initial
    data parameters for binary black hole simulations.
@@ -14,7 +14,7 @@ this release are:
  * The include style ("old") Tmunu interface using thorn ADMCoupling
    has been removed.
 
-One new thorn have been added:
+One new thorn has been added:
 
  * ReadInterpolate, a FileReader like thorn that uses
    InterolateLocalUniform to interpolate the data read in onto the
@@ -43,7 +43,7 @@ modules are provided by external groups, the Einstein Toolkit
 Maintainers provide quality control for modules for inclusion in the
 toolkit and help coordinate support. The Einstein Toolkit Maintainers
 currently involve staff and faculty from five different institutions,
-and host weekly meetings that are open for anyone to join in.
+and host weekly meetings that are open for anyone to join.
 
 Guiding principles for the design and implementation of the toolkit
 include: open, community-driven software development; well thought-out
