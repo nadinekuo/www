@@ -7,7 +7,7 @@ We are pleased to announce the twenty-first release (code name ["DeWitt-Morette"
 * Lean_Public supports curvilinear coordinates provided by Llama.
 * The include style ("old") Tmunu interface using thorn ADMCoupling has been removed.
 
-One new thorn have been added:
+One new thorn has been added:
 
  * ReadInterpolate, a FileReader like thorn that uses InterolateLocalUniform to interpolate the data read in onto the new grid.
 
