@@ -170,7 +170,11 @@ et_release_codename = "DeWitt-Morette"
 def relkey(name):
     g = re.match(r'^(.+)\s+(\S+)$',name)
     if name in release_team:
-        return "A"+g.group(2)+", "+g.group(1)
+        idx = release_team.index(name)
+        if idx == 0:
+            return "A"+g.group(2)+", "+g.group(1)
+        else:
+            return "B"+g.group(2)+", "+g.group(1)
     else:
         return "Z"+g.group(2)+", "+g.group(1)
 
