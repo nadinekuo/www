@@ -159,7 +159,7 @@ release_team = [
   "Roland Haas",
   "Steven R. Brandt",
   "William E. Gabella",
-  "Miguel Gracia",
+  "Miguel Gracia-Linares",
   "Beyhan Karakaş",
   "Rahime Matur",
 ]
