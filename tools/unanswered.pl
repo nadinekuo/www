@@ -36,7 +36,7 @@ while(1) {
 } 
 
 # get list of thread marked as "done" from wiki
-my $content = get("https://docs.einsteintoolkit.org/et-docs/Answered_emails");
+my $content = get("http://docs.einsteintoolkit.org/et-docs/Answered_emails") // '';
 my %answered;
 while($content =~ m!(http://lists\.einsteintoolkit\.org/pipermail/users/\d\d\d\d-\w+/\d+\.html)!g) {
   $answered{$1} = 1;
