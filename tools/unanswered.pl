@@ -3,6 +3,8 @@
 use strict;
 use warnings;
 
+use v5.10;
+
 use LWP::Simple;
 
 # some constants (do not use locale specific values since the server is in the
