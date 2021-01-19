@@ -140,11 +140,11 @@ ADMBase::dtshift_evolution_method= "ML_BSSN"
 
 ML_BSSN::timelevels = 3
 
-ML_BSSN::harmonicN           = 1      # 1+log
-ML_BSSN::harmonicF           = 1.0    # 1+log
-ML_BSSN::evolveA             = 1
-ML_BSSN::evolveB             = 1
-ML_BSSN::ShiftGammaCoeff     = 0.0
+ML_BSSN::harmonicN           = 1      # these set:
+ML_BSSN::harmonicF           = 1.0    # dot[alpha] = - alpha A
+ML_BSSN::evolveA             = 1      # dot[A] = dot[trK]
+ML_BSSN::evolveB             = 1      # these set: dot[beta] = dot[dot[beta]] = 0
+ML_BSSN::ShiftGammaCoeff     = 0.0    # by choosing coeffs to zero the RHS
 ML_BSSN::AlphaDriver         = 0.0
 ML_BSSN::BetaDriver          = 0.0
 ML_BSSN::advectLapse         = 0
