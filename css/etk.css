@@ -17,6 +17,10 @@ body {
   max-width: none;
 }
 
+.carousel-caption a {
+  color: inherit;
+}
+
 
 h1 {
   font-weight: bold;
