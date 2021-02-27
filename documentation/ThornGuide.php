@@ -56,25 +56,34 @@ function dirContent($dir) {
   return $content;
 }
 
-$thdocdir = "../../documentation/ThornDoc/";
-$ardocdir = "../../documentation/ArrangementDoc/";
-$arrCount = 0;
+$thdocdir = "ThornDoc/";
+$ardocdir = "ArrangementDoc/";
 $colCount = array(
   "xs" => 6,
   "sm" => 4,
   "md" => 3,
   "lg" => 2, );
-foreach (dirContent($thdocdir) as $arrangement) {
+$arrangements = array_unique(array_merge(dirContent($thdocdir), dirContent($ardocdir)));
+asort($arrangements);
+foreach ($arrangements as $arrangement) {
+  # if there is an arrangement doc. output a link to it as the header,
+  # if there is none, wait until we actually see a thorndoc
+  $arrHeader = false;
+  if (file_exists($ardocdir.$arrangement."/documentation.html")) {
+    echo "<div class='nobreak'>\n";
+    echo "<a href=\"../arrangementguide/".$arrangement."/documentation.html\">".
+         $arrangement."</a>\n";
+    $arrHeader = true;
+  }
+
   $arrThornCount = 0;
   foreach (dirContent($thdocdir.$arrangement) as $thorn) {
     if (file_exists($thdocdir.$arrangement."/".$thorn."/documentation.html")) {
       if ($arrThornCount == 0) {
-        echo "<div class='nobreak'>";
-        if (file_exists($ardocdir.$arrangement."/documentation.html")) {
-          echo "<a href=\"../arrangementguide/".$arrangement."/documentation.html\">".
-               $arrangement."</a>";
-        } else {
-          echo $arrangement;
+        if (!$arrHeader) {
+          echo "<div class='nobreak'>\n";
+          echo "$arrangement\n";
+          $arrHeader = true;
         }
         echo "<ul>\n";
       }
@@ -84,7 +93,11 @@ foreach (dirContent($thdocdir) as $arrangement) {
     }
   }
   if ($arrThornCount > 0) {
-    echo " </ul></div>\n";
+    echo " </ul>\n";
+  }
+
+  if ($arrHeader) {
+    echo " </div>\n";
   }
 }
 ?>
