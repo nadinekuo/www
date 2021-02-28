@@ -73,6 +73,7 @@ foreach ($arrangements as $arrangement) {
     echo "<div class='nobreak'>\n";
     echo "<a href=\"../arrangementguide/".$arrangement."/documentation.html\">".
          $arrangement."</a>\n";
+    echo "<ul>\n";
     $arrHeader = true;
   }
 
@@ -83,20 +84,18 @@ foreach ($arrangements as $arrangement) {
         if (!$arrHeader) {
           echo "<div class='nobreak'>\n";
           echo "$arrangement\n";
+          echo "<ul>\n";
           $arrHeader = true;
         }
-        echo "<ul>\n";
       }
       $arrThornCount += 1;
       echo " <li><a href=\"../thornguide/".$arrangement."/".$thorn."/documentation.html\">".
            $thorn."</a></li>\n";
     }
   }
-  if ($arrThornCount > 0) {
-    echo " </ul>\n";
-  }
 
   if ($arrHeader) {
+    echo " </ul>\n";
     echo " </div>\n";
   }
 }
