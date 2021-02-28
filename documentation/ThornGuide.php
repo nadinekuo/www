@@ -56,8 +56,8 @@ function dirContent($dir) {
   return $content;
 }
 
-$thdocdir = "../../ThornDoc/";
-$ardocdir = "../../ArrangementDoc/";
+$thdocdir = "../../documentation/ThornDoc/";
+$ardocdir = "../../documentation/ArrangementDoc/";
 $colCount = array(
   "xs" => 6,
   "sm" => 4,
