@@ -11,7 +11,7 @@
     <script src="../menu.js" type="text/javascript"></script>
   </header>
   <div class="container">
-  <h3>Possible unanswered emails</h3>
+  <h3>Possible unanswered emails younger than 1 month</h3>
   <?php passthru('/usr/bin/perl 2>&1 ./unanswered.pl'); ?>
   <p>Threads already marked as
   <a href="https://docs.einsteintoolkit.org/et-docs/Answered_emails">answered</a>
