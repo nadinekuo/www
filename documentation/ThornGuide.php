@@ -51,7 +51,7 @@ function dirContent($dir) {
       $content[] = $entry;
     }
   }
-  asort($content);
+  asort($content, SORT_STRING | SORT_FLAG_CASE);
   closedir($dd);
   return $content;
 }
@@ -64,7 +64,7 @@ $colCount = array(
   "md" => 3,
   "lg" => 2, );
 $arrangements = array_unique(array_merge(dirContent($thdocdir), dirContent($ardocdir)));
-asort($arrangements);
+asort($arrangements, SORT_STRING | SORT_FLAG_CASE);
 foreach ($arrangements as $arrangement) {
   # if there is an arrangement doc. output a link to it as the header,
   # if there is none, wait until we actually see a thorndoc
