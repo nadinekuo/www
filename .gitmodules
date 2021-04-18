@@ -1,0 +1,4 @@
+[submodule "seminars"]
+	path = seminars
+	url = https://bitbucket.org/einsteintoolkit/seminars
+	branch = master
