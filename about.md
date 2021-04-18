@@ -219,7 +219,6 @@ coalescence, and a static TOV star. Distribution:
 [CactusCode](https://bitbucket.org/cactuscode/cactusexamples) and
 [EinsteinToolkit](https://bitbucket.org/einsteintoolkit/einsteinexamples).
 </dd>
-</dl>
 <dt class="col-sm-3 col-md-2 hline">SelfForce-1D code.</dt>
 <dd class="col-sm-9 col-md-10 hline" markdown="1">
 [SelfForce-1D](https://bitbucket.org/peterdiener/selfforce-1d/)
