@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Guiding principles
 ---
 
 <a class='local_anchor' id="top"> </a>
@@ -9,6 +10,11 @@ layout: default
 Find out what you can do using the Einstein Toolkit. Have a look at its
 <br/>
 <a class="btn btn-info" href="#capabilities" role="button">Capabilities</a>
+</div>
+
+<div class="col-sm-3">
+If you use the Einstein Toolkit in a publication please cite the requested<br>
+<a class="btn btn-info" href="citation.html" role="button">Citations</a>
 </div>
 
 <div class="col-sm-3" markdown="1">
@@ -22,6 +28,11 @@ Not just any code can be included in the Einstein Toolkit. More about this in
 our
 <br/>
 <a class="btn btn-info" href="#guidelines" role="button">Guidelines</a>
+</div>
+
+<div class="col-sm-3">
+  The development and support of the core components in the Einstein Toolkit is overseen by the<br>
+  <a class="btn btn-info" href="maintainers-credits.html" role="button">Maintainers</a>
 </div>
 
 <div class="col-sm-3" markdown="1">
@@ -44,23 +55,23 @@ broaden our community, facilitate interdisciplinary research and take advantage
 of emerging petascale computers and advanced cyberinfrastructure.
 
 The Einstein Toolkit aims to include any computational tool the fits into it's
-scope. Currently, a large portion of the toolkit is made up by over 100
+scope. Currently, a large portion of the toolkit is made up by over 270
 [Cactus](http://www.cactuscode.org) components (called thorns) for
 computational relativity along with associated tools for simulation management
-and visualization. This includes a vacuum spacetime solver (McLachlan), two
+and visualization. This includes three vacuum spacetime solver (McLachlan, Lean, Baikal), two
 relativistic hydrodynamics solvers (GRHydro and IllinoisGRMHD), along with
 components for initial data, analysis and computational infrastructure. These
-components have been developed and improved over many years by [many different
-researchers](maintainers-credits.html).
+components have been developed and improved over many years by many different
+researchers.
 
 The Einstein Toolkit is supported by a distributed model, combining core
 support of software, tools, and documentation with partnerships with other
 developers who contribute open software and coordinate together on development.
 
 The tools and thorns comprising the Einstein Toolkit are provided in this
-[Component List](https://bitbucket.org/einsteintoolkit/manifest/raw/ET_2018_02/einsteintoolkit.th).
-A [tutorial](http://docs.einsteintoolkit.org/et-docs/Tutorial_for_New_Users)
-describes in easy steps how to download, compile, and run this resoluting code.
+[Component List](https://bitbucket.org/einsteintoolkit/manifest/raw/ET_2020_11/einsteintoolkit.th).
+A [tutorial](documentation/new-user-tutorial.html)
+describes in easy steps how to compile the Einstein Toolkit, and run a short simulations.
 
 </div>
 
@@ -176,9 +187,8 @@ The Einstein Toolkit component list contains the locations of the source code
 and associated tools for simulations, including Cactus thorns. The component
 list is written using the Component Retrieval Language and can be checked out
 using the
-[GetComponents](https://github.com/gridaphobe/CRL/raw/ET_2018_02/GetComponents)
-tools. Distribution:
-[https://github.com/gridaphobe/CRL/raw/ET_2018_02/GetComponents](https://github.com/gridaphobe/CRL/raw/ET_2018_02/GetComponents)
+[GetComponents](https://github.com/gridaphobe/CRL/)
+tools.
 </dd>
 <dt class="col-sm-3 col-md-2 hline">Simulation Factory</dt>
 <dd class="col-sm-9 col-md-10 hline" markdown="1">
@@ -190,7 +200,6 @@ and remote use of machines. The Einstein Consortium have selected the
 simulation factory as the default mechanism for supporting the easy use of
 Cactus on heterogeneous resources.  Distribution: Bitbucket git repository:
 [https://bitbucket.org/simfactory/simfactory2](https://bitbucket.org/simfactory/simfactory2)
-(ET_2018_02 branch)
 </dd>
 <dt class="col-sm-3 col-md-2 hline">Cactus Thorns</dt>
 <dd class="col-sm-9 col-md-10 hline" markdown="1">
@@ -206,11 +215,18 @@ but includes also components that now moved to Bitbucket:
 <dd class="col-sm-9 col-md-10 hline" markdown="1">
 Example Cactus code parameter files for Einstein Toolkit beginners. Simple
 examples are provided for a Kerr-Schild black hole, a binary black hole
-coalescence, and a static TOV star. See the documentation for information on
-how to run these on the QueenBee 2 machine. Distribution:
-[Cactuscode](https://bitbucket.org/cactuscode/cactusexamples) and
-[EinsteinToolkit](https://bitbucket.org/einsteintoolkit/einsteinexamples)
-(choose ET_2018_02 branch for both).
+coalescence, and a static TOV star. Distribution:
+[CactusCode](https://bitbucket.org/cactuscode/cactusexamples) and
+[EinsteinToolkit](https://bitbucket.org/einsteintoolkit/einsteinexamples).
+</dd>
+</dl>
+<dt class="col-sm-3 col-md-2 hline">SelfForce-1D code.</dt>
+<dd class="col-sm-9 col-md-10 hline" markdown="1">
+[SelfForce-1D](https://bitbucket.org/peterdiener/selfforce-1d/)
+is a code infrastructure for simulating Extreme Mass Ratio Inspirals using the
+effective source approach to the self-force problem. Currently, only a scalar
+charge in a Schwarzschild spacetime background has been implemented, but it is
+the hope that more systems will be added soon.
 </dd>
 </dl>
 
@@ -229,7 +245,7 @@ collapse supernovae and Gamma-Ray Bursts.
 
 The Einstein Toolkit builds on numerous software efforts in the numerical
 relativity community including CactusEinstein,
-[Whisky](http://www.whiskycode.org/), and [Carpet](http://www.carpetcode.org).
+[Whisky](http://www.whiskycode.org/), and [Carpet](https://bitbucket.org/eschnett/carpet.git).
 The Einstein Toolkit currently uses the
 [Cactus Framework](http://www.cactuscode.org) as the underlying computational
 infrastructure that provides large-scale parallelization, general computational
@@ -261,8 +277,6 @@ interested in tools that interface with Cactus for initial data, post-processing
 </div>
 
 <!-- Memmbers -->
-<!-- TODO: find out what script generates these -->
-
 <div class="section col-xs-12" data-shorthand="Members" markdown="1">
 <a class='local_anchor' id="members">[back](#top)</a>
 # Einstein Toolkit Members
@@ -279,6 +293,8 @@ page](join.html).
   var toInsert = "";
   var nMembers = 0;
   var nInst    = 0;
+  var nCountries = 0;
+  var countries = {};
   if (membersFile.status === 200) {
     lines = membersFile.responseText.split("\n");
     var pi=0;
@@ -312,6 +328,20 @@ page](join.html).
             link = words[0];
             name = words.slice(1).join(" ");
             toInsert += "<a href='" + link + "'>" + name + "</a>";
+            hostName = words[0].split("/")[2];
+            countryCode = hostName.split(".").slice(-1)[0]
+            // the US uses more than just a simple country code so I am making some guesses.
+            // edu, gov and mil should be fine as always being US but the
+            // others are less clear
+            if (countryCode === "edu" || countryCode === "gov" || countryCode === "org" ||
+                countryCode === "mil" || countryCode === "net") {
+                countryCode = "us";
+            }
+            if (countries[countryCode]) {
+                countries[countryCode] += 1;
+            } else {
+                countries[countryCode] = 1;
+            }
           } else {
             toInsert += lines[i];
           }
@@ -321,8 +351,9 @@ page](join.html).
         }
       }
     }
+    nCountries = Object.keys(countries).length;
     toInsert += "     </ul>\n    </div>\n   </div>\n   <br>\n";
-    toInsert += "<p>These add up to "+nMembers+" members from "+nInst+" different groups.</p>";
+    toInsert += "<p>These add up to "+nMembers+" members from "+nInst+" different groups and "+nCountries+" countries.</p>";
   } else {
     toInsert = "Error: could not get members data";
   }

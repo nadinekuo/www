@@ -1,8 +1,6 @@
 ---
 layout: default
 ---
-<script src="jwplayer/jwplayer.js" type="text/javascript"> </script>
-
 <!-- markdown="1" is needed to get markdown inside of the div -->
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 section" markdown="1">
 
@@ -15,12 +13,15 @@ an equatorial slice of the simulation. The emitted gravitational waves of the
 inspiral and due to the oscillations in the formed hypermassive neutron star
 are shown as well.
 
-| Parameter file        | [NsNsToHMNS.par](nsnstohmns.par) |
-| Thornlist             | [nsnstohmns.th](nsnstohmns.th) (Thorn NSTracker added to ET_2018_02 release) |
-| Initial data file     | [G2_I12vs12_D4R33T21_45km.resu.xz](G2_I12vs12_D4R33T21_45km.resu.xz) (uncompress using unxz) |
-| Support scripts       | [scripts.tar.gz](scripts.tar.gz) |
-| approx. memory        | 8.8 GB |
-| approx. runtime       | 12\*48 SU |
+| Parameter file        | [nsnstohmns.par](nsnstohmns.par) | |
+| Thornlist             | [nsnstohmns.th](nsnstohmns.th) | Use wit `./GetComponents  http://einsteintoolkit.org/gallery/bns/nsnstohmns.th` to dowload the code and compile using `simfactory/bin/sim build --thornlist thornlists/nsnstohmns.th` once downloaded.  This thornlist contains the thorns of the Einstein Toolkit as well as the thorn `NSTracker` which is not part of the Einstein Toolkit yet. |
+| Initial data file     | [G2_I12vs12_D4R33T21_45km.resu.xz](G2_I12vs12_D4R33T21_45km.resu.xz) | Uncompress using [unxz](http://en.wikipedia.org/wiki/XZ_Utils).|
+| Support scripts       | [scripts.tar.gz](scripts.tar.gz) | |
+| approx. memory        | 8.8 GB | |
+| approx. runtime       | 24 hours using 12 cores | |
+| Results (11MB)        | [bns-20201112.tar.gz](https://bitbucket.org/einsteintoolkit/www/downloads/bns-20201112.tar.gz) | |
+
+This example was last tested on 12-November-2020.
 
 <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 section" markdown="1">
 
@@ -31,7 +32,7 @@ are shown as well.
 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 section">
 <video width="100%" controls preload="none" poster="rho.png">
   <source src="rho.mp4" type="video/mp4">
-  <!--<source src="movie.ogg" type="video/ogg">-->
+  <source src="rho.ogv" type="video/ogg">
   Your browser does not support the video tag.
 </video>
 </div>

@@ -18,7 +18,7 @@
 
 <?php
 /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
-$name = htmlentities($_POST['name'], ENT_QUOTES, "UTF-8");
+$name = htmlspecialchars($_POST['name'], ENT_NOQUOTES, "UTF-8");
 $email = $_POST['email'];
 $home = $_POST['home'];
 $institution = $_POST['institution'];
@@ -81,6 +81,8 @@ elseif (mail('maintainers@einsteintoolkit.org','New Einstein Toolkit registratio
 } else {
   echo '<h4>Unfortunately, there was a problem registering.</h4>';
   echo 'Go back to <a href="javascript:history.back(1);">try again</a>?';
+  echo 'Or contact the <a href="mailto:maintainers@einsteintoolkit.org">maintainers</a>';
+  error_log('Failed to send email: ' . implode(',', error_get_last()));
 }
 ?>
 

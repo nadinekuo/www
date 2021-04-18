@@ -16,10 +16,14 @@
    <div class="row">
    <div class="col-sm-10 col-sm-offset-1">
    <h1>Register as a User</h1>
-   <p>Please fill out the following information to register as a user of the Einstein Toolkit and a member of our consortium.</p>
-<form name="register" action="send-registration" method="post"><table>
+   <p>Please fill out the following information to register as a user of the
+   Einstein Toolkit and a member of our consortium. To update your information
+   please either register a second time (preferred) or contact
+   <a href="mailto:maintainers@einsteintoolkit.org">maintainers@einsteintoolkit.org</a>.
+   </p>
+<form name="register" action="send-registration.php" method="post">
  <div class="form-group">
-   <label for="name">Name:</label>
+   <label for="name">Full Name (e.g. "Chris Smith"):</label>
    <input type="text" class="form-control" id="name" name="name"/>
  </div>
  <div class="form-group">
@@ -28,7 +32,7 @@
  </div>
  <div class="form-group">
    <label for="home">personal home page (Optional):</label>
-   <input type="home" class="form-control" id="home" name="home" />
+   <input type="url" class="form-control" id="home" name="home" />
  </div>
  <div class="form-group">
    <label for="institiution">Institution Name:</label>
@@ -36,14 +40,14 @@
  </div>
  <div class="form-group">
    <label for="institiution-url">Institution URL:</label>
-   <input type="text" class="form-control" id="institution-url" name="institution-url"/>
+   <input type="url" class="form-control" id="institution-url" name="institution-url"/>
  </div>
  <div class="form-group">
    <label for="buechsenwursttest">Please enter 'Einstein' backwards here (to fight spam)</label>
-   <input type="text" class="form-control" id="buechsenwursttest" name="buechsenwursttest" /></td>
+   <input type="text" class="form-control" id="buechsenwursttest" name="buechsenwursttest" />
  </div>
  <div class="checkbox">
-  <label><input type="checkbox" id="list" name="list" value="yes"/>Add me to the users email list</label>
+  <label><input type="checkbox" id="list" name="list" value="yes"/>Add me to the <a href="http://lists.einsteintoolkit.org/mailman/listinfo/users">users email list</a></label>
  </div>
  <button type="submit" class="btn btn-default">Submit</button>
 </form>
@@ -52,7 +56,7 @@
 <ol>
 <li>Acknowledge use of the  Einstein Toolkit in publications and presentations following the Einstein Toolkit <a href="citation.html">citation guidelines</a>.</li>
 
-<li><a href="https://trac.einsteintoolkit.org/">Report</a> to the Einstein Toolkit Maintainers any identified bugs or patches to the Einstein Toolkit.</li>
+<li><a href="https://bitbucket.org/einsteintoolkit/tickets/issues/">Report</a> to the Einstein Toolkit Maintainers any identified bugs or patches to the Einstein Toolkit.</li>
 </ol>
   </div>
 </div></div>

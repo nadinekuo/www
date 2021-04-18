@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="head.js" type="text/javascript">
+  </script>
+  <title>CactusCode.org</title>
+</head>
+<body id="about">
+  <script src="menu.js" type="text/javascript"></script>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <img alt="A cartoon cactus which serves as the Cactus logo" style='float: left; margin: 5px;' src="images/logo/cactuslogo.png">
+        <h1 style='margin: 40px;'>CactusCode.org</h1>
+      </div>
+    </div>
+  </div>
+  <!-- start page -->
+	<div class="col-xs-12">
+			<h2>Visualization Packages and Data Output Formats</h2>
+
+<h3> pyGraph: Animated, Easy Client for 1D Line Plots </h3>
+   <p><a href="/visualization/pyGraph/index.html">pyGraph</a> pygraph is a PyQt re-implementation of xGraph and yGraph </p>
+
+<h3> Gnuplot - Powerful Visualization Tool for 1D and 2D Data </h3>
+   <p><a href="/visualization/gnuPlot/index.html">Gnuplot</a> is a command-driven interactive function plotting program. It can plot functions and data points in both two- and three-dimensional plots in various formats (points, lines, surfaces, contours). </p>
+
+<h3>VisIt</h3>
+<p><a href="/visualization/VisIt/index.html">VisIt</a> is a state-of-the-art data visualization tool based on the open source 
+visualization class-library VTK and is developed and maintained at the Lawrence 
+Livermore National Laboratory, University of California. VisIt is a uniquely 
+powerful, full-featured software package for the visualization of scientific, 
+engineering and analytical data: Its open system design is built on a standard 
+interface environment. And its sophisticated data model provides users with 
+great flexibility in creating visualizations.</p>
+
+<h3>Cactus Postprocessing Utilities</h3>
+
+<p>To aid the visualisation of very large HDF5 output data, thorn <code>ExternalLibraries/HDF5</code>
+provides a set of utility programs which can be used to manipulate HDF5 files, independently of
+their driver-specific format:
+
+<ul>
+ <li><code>hdf5_double_to_single</code><br/>
+    Copies the entire contents of an input HDF5 file to an output HDF5 file,
+    converting all double precision datasets to single precision.</li>
+ <li><code>hdf5_merge</code><br/>
+    Merges a list of HDF5 input files into a single HDF5 output file.
+    This can be used to concatenate HDF5 output data created as one file per timestep.</li>
+ <li>hdf5_extract<br/>
+    Extracts a given list of named objects (groups or datasets) from an HDF5
+    input file and writes them into a new HDF5 output file.
+    This is the reverse operation to what <code>hdf5_merge</code> does. Useful eg.
+    for extracting individual timesteps from a time series HDF5 datafile.</li>
+</ul>
+</p><p>
+For detail please refer to the thorn documentation of <code>ExternalLibraries/HDF5</code>
+</p>
+
+	</div> <!-- closing footer div -->
+
+  <!-- end page -->
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <script src="footer/footer.js" type="text/javascript">
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

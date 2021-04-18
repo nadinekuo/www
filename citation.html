@@ -9,6 +9,8 @@
   </script>
   <script src="js/latex-to-unicode-converter.min.js" type="text/javascript">
   </script>
+  <script src="js/download.min.js" type="text/javascript">
+  </script>
   <script src="js/citations.js" type="text/javascript">
   </script>
   <style>
@@ -47,15 +49,17 @@
         <p>The development of production level scientific software, such as the components of the Einstein Toolkit, represents the academic output of researchers who bring together
         skills in formulations, algorithms and software engineering as well as substantial domain knowledge. The scientific contributions of such researchers should be acknowledged
         and respected on a par with those whose expertise lie solely in theory or experiment. Further, most contributions to the Einstein Toolkit have been provided by early stage
-        researchers --- graduate students, postdocs and young assistant professors, where proper and appropriate citation of their contributions is crucial for furthering academic
+        researchers &mdash; graduate students, postdocs and young assistant professors, where proper and appropriate citation of their contributions is crucial for furthering academic
         careers.</p>
-        <p>The main publication for the Einstein Toolkit is (key Loffler:2011ay in the <a href="https://bitbucket.org/einsteintoolkit/manifest/raw/master/einsteintoolkit.bib">Einstein Toolkit bibtex file</a>): Frank Löffler, Joshua Faber,
+        <p>The primary way to cite the Einstein Toolkit is now by the DOI assigned to the current release<span id="etrequestedcite"><!-- the getCites function fills this in--></span>. This method cites the software and assigns
+           credit to the many contributers over the years.</p>
+        <p>A secondary way to cite the toolkit is through  the publication (key Loffler:2011ay in the <a href="https://bitbucket.org/einsteintoolkit/manifest/raw/master/einsteintoolkit.bib">Einstein Toolkit BibTeX file</a>): Frank Löffler, Joshua Faber,
         Eloisa Bentivegna, Tanja Bode, Peter Diener, Roland Haas, Ian Hinder, Bruno C. Mundim, Christian D. Ott, Erik Schnetter, Gabrielle Allen, Manuela Campanelli, and Pablo Laguna.
-        The Einstein Toolkit: A Community Computational Infrastructure for Relativistic Astrophysics. <cite>Classical and Quantum Gravity</cite>, 29(11):115001, 2012. ( <a href=
+        The Einstein Toolkit: A Community Computational Infrastructure for Relativistic Astrophysics. <cite>Classical and Quantum Gravity</cite>, 29(11):115001, 2012. (<a href=
         "http://dx.doi.org/10.1088/0264-9381/29/11/115001">doi:10.1088/0264-9381/29/11/115001</a>)</p>The current guidelines for citation of the Einstein Toolkit are:
         <p></p>
         <ol>
-          <li>Authors are <b>requested</b> to cite the Einstein Toolkit web page (http://www.einsteintoolkit.org) in publications using results or software obtained from the
+          <li>Authors are <b>requested</b> to cite the Einstein Toolkit DOI in publications using results or software obtained from the
           toolkit.</li>
           <li>Authors are <b>requested</b> to individually cite publications for identified key software components from the toolkit that are used to obtain published results. These
           publications include, for example, details of the equations, algorithms, and verification of components. A list of components for which this applies is provided below.</li>
@@ -69,10 +73,18 @@
         components used to obtain those results. These publications, that are listed below, include details of e.g. the equations, algorithm, and verification of components.
         Obviously, citations should only be given for components that were actually used.</p>
         <h3>Requested Citations</h3>
-        <div calss="table-responsive"><table id="requestedcites" class="citetable"></table></div>
+        <!-- the getCites function in citation.js creates this table using the
+             data in
+             https://bitbucket.org/einsteintoolkit/manifest/src/master/einsteintoolkit.bib
+             -->
+        <div class="table-responsive"><table id="requestedcites" class="citetable"></table></div>
         <h3>Suggested Citations</h3>
-        <div calss="table-responsive"><table id="suggestedcites" class="citetable"></table></div>
-        <p>(bibtex <a href="https://bitbucket.org/einsteintoolkit/manifest/raw/master/einsteintoolkit.bib">file</a>)</p>
+        <!-- the getCites function in citation.js creates this table using the
+             data in
+             https://bitbucket.org/einsteintoolkit/manifest/src/master/einsteintoolkit.bib
+             -->
+        <div class="table-responsive"><table id="suggestedcites" class="citetable"></table></div>
+        <p>(<a href="https://bitbucket.org/einsteintoolkit/manifest/raw/master/einsteintoolkit.bib">Einstein Toolkit BibTeX file</a>)</p>
       </div><br>
       <br>
     </div>

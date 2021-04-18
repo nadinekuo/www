@@ -1,0 +1,152 @@
+# Release Announcement
+
+We are pleased to announce the seventeenth release (code name "Chien-Shiung Wu") of the
+Einstein Toolkit, an open, community developed software infrastructure for
+relativistic astrophysics. The highlights of this release are
+
+Five new thorns have been added:
+
+* GiRaFFE
+* GiRaFFEfood
+* ShiftedKerrSchild
+* GiRaFFE_to_HydroBase
+* ID_converter_GiRaFFE
+
+In addition, bug fixes accumulated since the previous release in Feb 2018
+have been included.
+
+The Einstein Toolkit is a collection of software components and tools for
+simulating and analyzing general relativistic astrophysical systems that builds
+on numerous software efforts in the numerical relativity community including
+CactusEinstein, the Carpet AMR infrastructure and the relativistic
+magneto-hydrodynamics code GRHydro. For parts of the toolkit, the Cactus
+Framework is used as the underlying computational infrastructure providing
+large-scale parallelization, general computational components, and a model for
+collaborative, portable code development. The toolkit includes modules to build
+complete codes for simulating black hole spacetimes as well as systems governed
+by relativistic magneto-hydrodynamics.
+
+The Einstein Toolkit uses a distributed software model and its different
+modules are developed, distributed, and supported either by the core team of
+Einstein Toolkit Maintainers, or by individual groups. Where modules are
+provided by external groups, the Einstein Toolkit Maintainers provide quality
+control for modules for inclusion in the toolkit and help coordinate support.
+The Einstein Toolkit Maintainers currently involve postdocs and faculty from
+six different institutions, and host weekly meetings that are open for anyone
+to join in.
+
+Guiding principles for the design and implementation of the toolkit include:
+open, community-driven software development; well thought out and stable
+interfaces; separation of physics software from computational science
+infrastructure; provision of complete working production code; training and
+education for a new generation of researchers.
+
+For more information about using or contributing to the Einstein Toolkit, or to
+join the Einstein Toolkit Consortium, please visit our web pages at
+http://einsteintoolkit.org.
+
+The Einstein Toolkit is primarily supported by NSF
+1550551/1550461/1550436/1550514 (Einstein Toolkit Community Integration and
+Data Exploration).
+
+The Einstein Toolkit contains about 200 regression test cases.  On a large
+portion of the tested machines, almost all of these tests pass, using both
+MPI and OpenMP parallelization.
+
+The changes between this and the previous release include:
+
+## Larger changes since last release
+
+* Support has been added for GCC8.
+
+* Built-in OpenMPI tarball has been upgraded to 1.10.7
+
+   Note, we still recommend using the system MPI that is installed natively on your system.
+
+* And many bug fixes. Notably:
+
+    - Fixed bug in calculation of conserved S vector in MHD Prim2Con https://trac.einsteintoolkit.org/ticket/2155
+    - a significant correctness problem for NewRad was addressed which caused many simulations with more than two ranks to fail https://trac.einsteintoolkit.org/ticket/2182
+    - the wiki is now usable again (users can create logins). The wiki docker image is available here: https://github.com/stevenrbrandt/et-websites.git
+
+## New thorns or tools
+
+* GiRaFFE (~1,600 lines of code): Solves the GRFFE equations in the formalism of Paschalidis and Shapiro [2] using the same reconstruction (PPM) and staggered vector potential methods as IllinoisGRMHD.
+
+* GiRaFFEfood (~1,300 lines of code): Code validation initial data and basic diagnostics. Contains Five 1D tests in flat spacetime (fast wave, Alfvén wave, degenerate Alfvén wave, "three-wave", FFE breakdown), One 3D test in flat spacetime (aligned rotator), and Three 3D tests in curved spacetimes ("Exact Wald" solution, "Magnetospheric Wald" solution, and split monopole).
+
+* ShiftedKerrSchild (~230 lines of code): Sets up all 3+1 quantities for a Kerr-Schild spacetime with an arbitrary radial shift, to mitigate effects of extreme spacetime curvature near r_{KS}=0. See Appendix of code release paper for full discussion.
+
+* GiRaFFE_to_HydroBase and ID_converter_GiRaFFE (~230 lines of code): Acts as a translation layer to convert 3-velocities in HydroBase's Valencia formalism to/from the 3-velocity found in the induction equation (vi = ui/u0; native to GiRaFFE).
+
+## Upcoming changes for the next releases
+
+## New thorns planned for the next relases
+
+* Seed_Magnetic_Fields-modified Extended Seed_Magnetic_Fields thorn for binary neutron stars. Supercedes Seed_Magnetic_Fields thorn.
+
+* Meudon_Bin_NS-modified Modifications to Meudon BNS initial data thorn to disable the overwriting of initial lapse/shift, which acts to significantly reduce coordinate eccentricity. Supercedes Meudon_Bin_NS thorn.
+
+* VolumeIntegrals_GRMHD Nice GRMHD volume integration thorn, currently depends on IllinoisGRMHD and Carpet. Performs volume integrals on arbitrary "Swiss-cheese"-like topologies, and even interoperates with Carpet to track NS centers of mass.
+
+* VolumeIntegrals_vacuum Nice GRMHD volume integration thorn, currently depends on ML_BSSN. There is a bit of code duplication and duplicated functionality between VI_GRMHD and VI_vacuum, to ensure that VI_vacuum can be used without enabling a GRMHD code. There is probably a better way of doing this, but I haven't had the time to think deeply about this.
+
+* particle_tracerET Solves the ODE \partial_t xi = vi for typically thousands of tracer particles, using an RK4 integration atop the current timestepping. E.g., one RK4 substep in the particle integration might occur every 16 RK4 substeps in the GRMHD evolution. These tracer particle positions are quite useful for visualizing magnetic field lines in a consistent way from frame-to-frame in a movie (recall that in the GRMHD approximation, the magnetic field lines stay attached the fluid elements they thread Flux Freezing?). Note that the velocity must be consistent with the velocity appearing in the GRMHD induction equation. This thorn reads in the HydroBase vel[] vector gridfunction, which assumes the Valencia formalism, and converts it into the induction equation velocity.
+
+* smallbPoynET Computes bi, b2, and three spatial components of Poynting flux. It also computes (-1-u0), which is useful for tracking unbound matter.
+
+* LeanBSSNMoL and NPScalars: 
+LeanBSSNMoL evolves Einstein's Equations with the BSSN formulation. NPScalars 
+computes the Newman-Penrose scalars. For the
+conformal factor it uses the "W" version, i.e. W=\gamma^{-1/6}, and it employs
+the usual "1+log" and "Gamma-driver" gauge conditions. Also available, in the
+"new_gauge" branch, is the shift condition of Figueras et al for their
+evolutions of higher dimensional BHs, see:
+    https://arxiv.org/abs/1702.01755
+    https://arxiv.org/abs/1512.04532
+
+* Proca arrangement:
+  This repository (https://bitbucket.org/canuda/proca/src) provides the tools to evolve the Einstein-Proca system as first described in https://arxiv.org/abs/1505.00797
+
+## How to upgrade from Tesla (ET_2018_02) 
+
+To upgrade from the previous release, use GetComponents with the new thornlist
+to check out the new version.
+
+See the Download page (http://einsteintoolkit.org/download/) on the
+Einstein Toolkit website for download instructions.
+
+## Machine notes
+
+Supported (tested) machines include:
+
+- Default Debian, Ubuntu, Fedora, CentOS, Mint, OpenSUSE and MacOS (Homebrew and MacPorts) installations
+- Bluewaters
+- Comet
+- Cori
+- Edison
+- Golub
+- Marconi
+- Queenbee 2
+- Stampede 2
+- SuperMIC
+- Wheeler
+
+* TACC machines: defs.local.ini needs to have sourcebasedir = $WORK
+  and basedir = $SCRATCH/simulations configured for this machine.  You
+  need to determine $WORK and $SCRATCH by logging in to the machine.
+
+All repositories participating in this release carry a branch ET_2018_09
+marking this release.  These release branches will be updated if severe
+errors are found.
+
+The "Chien-Shiung Wu" Release Team on behalf of the Einstein Toolkit Consortium
+(2018-09-17)
+
+* Steven R. Brandt
+* Samuel D. Cupp
+* Peter Diener
+* Roland Haas
+* Roberto De Pietri
+
+Sep, 2018

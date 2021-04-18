@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+import sys
+from getopt import getopt
+
+bom_str = b'\xEF\xBB\xBF'
+
+delete = False
+opts, args = getopt(sys.argv[1:],":d",[])
+for o,a in opts:
+    if o == "-d":
+        delete = True
+
+def bom(fn):
+    with open(fn,"rb") as fd:
+        c = fd.read()
+    if delete:
+        if c[0:3] == bom_str:
+            with open(fn,"wb") as fd:
+                fd.write(c[3:])
+    else:
+        if c[0:3] != bom_str:
+            with open(fn,"wb") as fd:
+                fd.write(bom_str)
+                fd.write(c)
+
+for a in args:
+    bom(a)

@@ -51,32 +51,52 @@ function dirContent($dir) {
       $content[] = $entry;
     }
   }
-  asort($content);
+  asort($content, SORT_STRING | SORT_FLAG_CASE);
   closedir($dd);
   return $content;
 }
 
-$docdir = "../../documentation/ThornDoc/";
-$arrCount = 0;
+$thdocdir = "../../documentation/ThornDoc/";
+$ardocdir = "../../documentation/ArrangementDoc/";
 $colCount = array(
   "xs" => 6,
   "sm" => 4,
   "md" => 3,
   "lg" => 2, );
-foreach (dirContent($docdir) as $arrangement) {
+$arrangements = array_unique(array_merge(dirContent($thdocdir), dirContent($ardocdir)));
+asort($arrangements, SORT_STRING | SORT_FLAG_CASE);
+foreach ($arrangements as $arrangement) {
+  # if there is an arrangement doc. output a link to it as the header,
+  # if there is none, wait until we actually see a thorndoc
+  $arrHeader = false;
+  if (file_exists($ardocdir.$arrangement."/documentation.html")) {
+    echo "<div class='nobreak'>\n";
+    echo "<a href=\"../arrangementguide/".$arrangement."/documentation.html\">".
+         $arrangement."</a>\n";
+    echo "<ul>\n";
+    $arrHeader = true;
+  }
+
   $arrThornCount = 0;
-  foreach (dirContent($docdir.$arrangement) as $thorn) {
-    if (file_exists($docdir.$arrangement."/".$thorn."/documentation.html")) {
+  foreach (dirContent($thdocdir.$arrangement) as $thorn) {
+    if (file_exists($thdocdir.$arrangement."/".$thorn."/documentation.html")) {
       if ($arrThornCount == 0) {
-        echo "<div class='nobreak'>".$arrangement."<ul>\n";
+        if (!$arrHeader) {
+          echo "<div class='nobreak'>\n";
+          echo "$arrangement\n";
+          echo "<ul>\n";
+          $arrHeader = true;
+        }
       }
       $arrThornCount += 1;
       echo " <li><a href=\"../thornguide/".$arrangement."/".$thorn."/documentation.html\">".
            $thorn."</a></li>\n";
     }
   }
-  if ($arrThornCount > 0) {
-    echo " </ul></div>\n";
+
+  if ($arrHeader) {
+    echo " </ul>\n";
+    echo " </div>\n";
   }
 }
 ?>

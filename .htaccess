@@ -1,2 +1,3 @@
 Redirect 301 /about/gallery/GW150914 /gallery/bbh
 
+RedirectMatch 403 .*/[.]git/

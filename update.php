@@ -22,11 +22,13 @@ $category='internal';
 if(isset($_GET['update']))
 {
   echo '<h3>Updating the site...</h3>';
-  echo '<p>'.exec('/var/www/einstein/update').'</p>';
+  echo '<pre>';
+  system('/var/www/einstein/update 2>&1');
+  echo '</pre>';
   echo '<p>The site is now current.</p><br />';
 }
   echo '<br /><br />
-<input class="button" type="button" value="Make Recent Changes Live" onclick="window.location.href=\'/x/?update\'" />
+<input class="button" type="button" value="Make Recent Changes Live" onclick="window.location.href=\'/update.php/?update\'" />
 <br /><br />This updates changes from all relevant repositories to the live site.
 </p>';
 ?>

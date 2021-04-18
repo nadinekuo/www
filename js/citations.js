@@ -1,4 +1,16 @@
+// from https://www.npmjs.com/package/latex-to-unicode-converter MIT license
+// version 0.5.1
 var l2u = window["latex-to-unicode-converter"]
+// from https://github.com/rndme/download MIT license
+// version 09d6492f47ef18feca39c3d748960dce44f93a89
+var download = window['download']
+
+// downloads the stored bibtex information
+function download_bibtex(key)
+{
+  download(window.bibtex_downloads[key], key+'.bib', 'text/plain; charset=utf-8');
+  return false;
+}
 
 // joins strings a and b using separator sep or returns a or b if only one of
 // them is non-empty
@@ -120,7 +132,7 @@ function makeCitation(cite)
       anchorNode.appendChild(document.createTextNode("doi:"+doiString.replace(/^doi:/,"")));
       retval.appendChild(document.createTextNode(")"));
     }
-  } else if(entryType == "inproceedings") {
+  } else if(entryType == "inproceedings" || entryType == "incollection") {
     retval.appendChild(document.createTextNode(authorString + ". "));
     if(urlString) {
       var anchorNode = document.createElement("a");
@@ -244,6 +256,20 @@ function makeCitation(cite)
   } else {
     retval.appendChild(document.createTextNode(cite['cite']));
   }
+  if(typeof cite['raw'] !== 'undefined') {
+    retval.appendChild(document.createTextNode(" ("));
+    var anchorNode = document.createElement("a");
+    retval.appendChild(anchorNode);
+    // using this this returns the INSPIRE bibtex entry for this DOI which is
+    // almost but not exactly the ET einsteintoolkit.bib entry.
+    //anchorNode.href = "https://inspirehep.net/search?p=find+"+encodeURIComponent(cite['doi'])+"&of=hx";
+    anchorNode.href = "javascript:void(0)";
+    // since download_bibtex returns false it *should* not follow the link
+    // but somehow still does unless I makre the href void
+    anchorNode.addEventListener("click", function(){download(cite['raw'], cite['cite']+".bib", 'text/plain; charset=utf-8')});
+    anchorNode.appendChild(document.createTextNode("BibTeX"));
+    retval.appendChild(document.createTextNode(")"));
+  }
 
   return retval;
 }
@@ -259,10 +285,8 @@ function makeTable(cites, tableNode)
         var cell1Node = document.createElement("td");
         cell1Node.rowSpan = cites[thorn].length;
         rowNode.appendChild(cell1Node);
-        var boldNode = document.createElement("b");
-        cell1Node.appendChild(boldNode);
         var textNode = document.createTextNode(thorn);
-        boldNode.appendChild(textNode);
+        cell1Node.appendChild(textNode);
       }
 
       var cell2Node = document.createElement("td");
@@ -282,8 +306,35 @@ function makeTable(cites, tableNode)
   }
 }
 
+function makeMainCite(cite, spanNode)
+{
+  var spaceNode = document.createTextNode(" ");
+  spanNode.appendChild(spaceNode);
+
+  var anchorNode = document.createElement("a");
+  anchorNode.href = cite['url']
+  spanNode.appendChild(anchorNode);
+
+  var labelNode = document.createTextNode("doi:" + cite['doi']);
+  anchorNode.appendChild(labelNode);
+
+  spanNode.appendChild(document.createTextNode(" (key: "));
+  var anchorNode = document.createElement("a");
+  spanNode.appendChild(anchorNode);
+  // using this this returns the INSPIRE bibtex entry for this DOI which is
+  // almost but not exactly the ET einsteintoolkit.bib entry.
+  //anchorNode.href = "https://inspirehep.net/search?p=find+"+encodeURIComponent(cite['doi'])+"&of=hx";
+  anchorNode.href = "javascript:void(0)";
+  // since download_bibtex returns false it *should* not follow the link
+  // but somehow still does unless I makre the href void
+  anchorNode.addEventListener("click", function(){download(cite['raw'], cite['cite']+".bib", 'text/plain; charset=utf-8')});
+  anchorNode.appendChild(document.createTextNode(cite['cite']));
+  spanNode.appendChild(document.createTextNode(")"));
+}
+
 function makeTables(content)
 {
+  // from https://sourceforge.net/projects/jsbibtex/ GPL license
   var bibtex = new BibTex();
   bibtex.content = content; // the bibtex content as a string
   bibtex.parse();
@@ -323,6 +374,9 @@ function makeTables(content)
 
   // suggested
   makeTable(suggested, document.getElementById("suggestedcites"));
+
+  // main ET citation in bulk text
+  makeMainCite(requested["EinsteinToolkit"][0], document.getElementById("etrequestedcite"));
 }
 
 function httpGetAsync(theURL, callback)
